@@ -55,8 +55,10 @@ Notable: async `params` in dynamic routes; Turbopack is the default builder.
     Used on home (About, Packages) + wedding-decoration + wedding-planner.
   - `FeatureImage` is now a full-bleed arched banner (h-340 mobile / 560 desktop).
   - Home gallery = full-bleed 3-arch strip (`.arch-strip`) with captions.
-  - Arch motifs: `.arch-top` (clamp 110-280px top corners) for big photos/splits;
-    `.arch-strip` (clamp 80-220px) for photo strips. Responsive radius.
+  - Photo shape: plain rectangles, 16px radius on all corners (Olga removed all
+    arches, Batch 8). Classes `.arch-top`/`.arch-strip` are kept for stable
+    usages but now just render `border-radius:16px` — NOT arches. Don't reintroduce
+    arched/top-rounded photos.
   - Headings enlarged: H1 ~60px, H2 ~48px (Cormorant 500).
 - Mood: elegant, premium, light & readable, full-width, gold accents thin, mobile-first.
 - Animations: scroll reveal (`components/Reveal.tsx`), count-up

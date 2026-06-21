@@ -87,13 +87,11 @@ body {
   background: var(--color-gold);
 }
 
-/* Wedding arch motifs (responsive radius so it scales down on mobile). */
-.arch-top {
-  border-radius: clamp(110px, 18vw, 280px) clamp(110px, 18vw, 280px) 0 0;
-  overflow: hidden;
-}
+/* Arches removed (Olga's call): photos are plain rectangles with a light
+   16px radius on all four corners. Class names kept so usages stay stable. */
+.arch-top,
 .arch-strip {
-  border-radius: clamp(80px, 13vw, 220px) clamp(80px, 13vw, 220px) 18px 18px;
+  border-radius: 16px;
   overflow: hidden;
 }
 
@@ -262,7 +260,7 @@ body {
   position: relative;
   overflow: hidden;
   border: 1px solid var(--color-line);
-  border-radius: 14px;
+  border-radius: 16px;
   transition:
     box-shadow 0.5s ease,
     border-color 0.5s ease;
