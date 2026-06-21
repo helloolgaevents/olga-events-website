@@ -1,16 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 import Reveal from "./components/Reveal";
 import CountUp from "./components/CountUp";
-
-const NAV = [
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Packages", href: "#packages" },
-  { label: "Venues", href: "#venues" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Reviews", href: "#reviews" },
-  { label: "Contact", href: "#contact" },
-];
+import SiteHeader from "./components/SiteHeader";
+import SiteFooter from "./components/SiteFooter";
+import { Kicker, Divider } from "./components/ui";
 
 const SERVICES = [
   { title: "Planning", text: "First idea to final dance." },
@@ -88,46 +82,10 @@ const TEAM = [
 const HERO_IMG =
   "https://olga.events/cdn/shop/files/luxury-wedding-planner-dubai-stage-lighting.webp?v=1777517640&width=2400";
 
-function Kicker({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="font-sans text-[0.72rem] uppercase tracking-[0.32em] text-gold">
-      {children}
-    </span>
-  );
-}
-
-function Divider() {
-  return <span className="my-7 block h-px w-16 bg-gold/70" />;
-}
-
 export default function Home() {
   return (
     <div className="min-h-screen bg-ink text-cream">
-      {/* ---------- Header ---------- */}
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-line/70 bg-ink/70 backdrop-blur-md">
-        <div className="mx-auto flex h-[72px] w-full max-w-[1100px] items-center justify-between px-6">
-          <a
-            href="#top"
-            className="font-serif text-xl font-medium tracking-[0.28em] text-cream"
-          >
-            OLGA EVENTS
-          </a>
-          <nav className="hidden items-center gap-8 lg:flex">
-            {NAV.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="font-sans text-[0.82rem] font-light tracking-wide text-muted transition-colors hover:text-cream"
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
-          <a href="#contact" className="btn-outline">
-            Consultation
-          </a>
-        </div>
-      </header>
+      <SiteHeader />
 
       {/* ---------- Hero ---------- */}
       <section
@@ -167,9 +125,9 @@ export default function Home() {
           </Reveal>
           <Reveal delay={400}>
             <div className="mt-10">
-              <a href="#contact" className="btn-gold">
+              <Link href="/contact" className="btn-gold">
                 Book a free consultation
-              </a>
+              </Link>
             </div>
           </Reveal>
         </div>
@@ -350,9 +308,9 @@ export default function Home() {
                   know what&apos;s included.
                 </p>
                 <div className="mt-10">
-                  <a href="#" className="btn-gold">
-                    See packages & calculator
-                  </a>
+                  <Link href="/packages" className="btn-gold">
+                    See packages
+                  </Link>
                 </div>
               </div>
             </div>
@@ -442,47 +400,15 @@ export default function Home() {
               you. Free, no obligation.
             </p>
             <div className="mt-10">
-              <a href="#contact" className="btn-gold">
+              <Link href="/contact" className="btn-gold">
                 Book a free consultation
-              </a>
+              </Link>
             </div>
           </Reveal>
         </div>
       </section>
 
-      {/* ---------- Footer ---------- */}
-      <footer className="border-t border-line bg-ink-alt">
-        <div className="mx-auto w-full max-w-[1100px] px-6 py-16 text-center">
-          <p className="font-serif text-lg tracking-[0.28em] text-cream">
-            OLGA EVENTS
-          </p>
-          <p className="mt-4 font-sans text-sm font-light text-muted">
-            Luxury Wedding Planning · Dubai & all Emirates
-          </p>
-          <p className="mt-6 font-sans text-sm font-light text-muted">
-            <a
-              href="https://wa.me/971556704762"
-              className="transition-colors hover:text-gold"
-            >
-              WhatsApp +971 55 670 4762
-            </a>
-            <span className="mx-2 text-line">·</span>
-            <a
-              href="tel:+971586881554"
-              className="transition-colors hover:text-gold"
-            >
-              Call +971 58 688 1554
-            </a>
-            <span className="mx-2 text-line">·</span>
-            <a
-              href="mailto:hello@olga.events"
-              className="transition-colors hover:text-gold"
-            >
-              hello@olga.events
-            </a>
-          </p>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
