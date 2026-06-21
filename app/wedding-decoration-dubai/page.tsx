@@ -58,6 +58,7 @@ export default function WeddingDecorationPage() {
   return (
     <div className="min-h-screen bg-ink text-cream">
       <SiteHeader />
+      <main>
 
       <PageHeader
         kicker="Wedding Decoration Dubai"
@@ -227,6 +228,7 @@ export default function WeddingDecorationPage() {
 
       <CTASection title="Start Planning Your Wedding Decoration" />
 
+      </main>
       <SiteFooter />
     </div>
   );

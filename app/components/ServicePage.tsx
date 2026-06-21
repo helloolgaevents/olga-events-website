@@ -26,6 +26,7 @@ export default function ServicePage({
   return (
     <div className="min-h-screen bg-ink text-cream">
       <SiteHeader />
+      <main>
 
       <PageHeader kicker={kicker} title={title} intro={intro} />
 
@@ -42,6 +43,7 @@ export default function ServicePage({
 
       <CTASection title={ctaTitle} text={ctaText} />
 
+      </main>
       <SiteFooter />
     </div>
   );

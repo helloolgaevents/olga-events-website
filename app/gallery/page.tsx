@@ -86,6 +86,7 @@ export default function GalleryPage() {
   return (
     <div className="min-h-screen bg-ink text-cream">
       <SiteHeader />
+      <main>
 
       <PageHeader
         kicker="Selected work"
@@ -126,6 +127,7 @@ export default function GalleryPage() {
         text="Tell us your vision and we'll design a wedding that's entirely your own."
       />
 
+      </main>
       <SiteFooter />
     </div>
   );

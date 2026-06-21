@@ -85,6 +85,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-ink text-cream">
       <SiteHeader />
+      <main>
 
       {/* ---------- Hero ---------- */}
       <section
@@ -459,6 +460,7 @@ export default function Home() {
         </div>
       </section>
 
+      </main>
       <SiteFooter />
     </div>
   );

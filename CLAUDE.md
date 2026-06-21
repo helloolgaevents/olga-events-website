@@ -109,3 +109,27 @@ hello@olga.events · Dubai · Abu Dhabi · all Emirates · EN·RU·AR.
   fallbacks (`/collections/*`, `/products/*` → /furniture; `/blogs/*`,
   `/pages/*` → /). All use `statusCode: 301`. Regenerate by re-running the
   Python generator if old URLs change.
+- **Accessibility**: every page wraps content in `<main>` (header=banner,
+  footer=contentinfo); inline in-sentence links use `underline` so they aren't
+  colour-only.
+
+## Pre-launch QA (last run)
+Full QA passed — all checks green:
+- `npm run lint` clean; `npm run build` clean (27 routes prerendered).
+- All 22 routes return 200; 243 redirects return 301 (pages/collections/products/
+  blogs verified, incl. per-furniture-category and package/décor → /packages).
+- 0 broken images (1093 image URLs incl. srcset crawled); 0 non-200 internal
+  links (23 unique).
+- Every page has a unique `<title>` + meta description; sitemap.xml lists 22 URLs;
+  robots.txt valid.
+- `/contact` exposes mailto + WhatsApp + tel and all 6 form fields; the form's
+  submit builds a mailto (client JS).
+- `/packages` calculator SSR matches the spec formula (Classic+Signature+100 →
+  Total AED 56,430, save AED 10,570).
+- Mobile-first verified: viewport meta + `lang="en"` + single `<h1>` + alt text
+  on every image, responsive grids, mobile nav menu.
+- Lighthouse (Chrome headless): Home desktop **99 / 100 / 100 / 100**
+  (Perf/A11y/BP/SEO); Home mobile **91 / 100 / 100 / 100**; /packages desktop
+  **98 / 100 / 100 / 100**.
+- Minor future perf headroom: mobile "reduce unused JS" (framework JS); two
+  stage JPGs ~1.3 MB could be compressed further if desired.

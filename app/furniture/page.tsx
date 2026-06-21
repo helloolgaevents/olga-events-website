@@ -27,6 +27,7 @@ export default function FurniturePage() {
   return (
     <div className="min-h-screen bg-ink text-cream">
       <SiteHeader />
+      <main>
 
       <PageHeader
         kicker="Furniture Rentals"
@@ -79,6 +80,7 @@ export default function FurniturePage() {
         buttonLabel="Request a quote"
       />
 
+      </main>
       <SiteFooter />
     </div>
   );

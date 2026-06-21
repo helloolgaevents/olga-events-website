@@ -15,6 +15,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-ink text-cream">
       <SiteHeader />
+      <main>
 
       <PageHeader
         kicker="Contact"
@@ -80,6 +81,7 @@ export default function ContactPage() {
         </div>
       </Section>
 
+      </main>
       <SiteFooter />
     </div>
   );

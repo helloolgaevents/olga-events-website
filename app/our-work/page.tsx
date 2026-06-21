@@ -27,6 +27,7 @@ export default function OurWorkPage() {
   return (
     <div className="min-h-screen bg-ink text-cream">
       <SiteHeader />
+      <main>
 
       <PageHeader
         kicker="Our latest weddings"
@@ -67,7 +68,7 @@ export default function OurWorkPage() {
           </a>
           <p className="mt-6 font-sans text-sm font-light text-muted">
             See more on our{" "}
-            <Link href="/gallery" className="text-gold hover:text-cream">
+            <Link href="/gallery" className="text-gold underline underline-offset-2 hover:text-cream">
               full gallery
             </Link>
             .
@@ -77,6 +78,7 @@ export default function OurWorkPage() {
 
       <CTASection />
 
+      </main>
       <SiteFooter />
     </div>
   );

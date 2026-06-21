@@ -85,6 +85,7 @@ export default function WeddingPlannerPage() {
   return (
     <div className="min-h-screen bg-ink text-cream">
       <SiteHeader />
+      <main>
 
       <PageHeader
         kicker="Wedding Planner Dubai"
@@ -218,6 +219,7 @@ export default function WeddingPlannerPage() {
         text="With over 10 years of experience, we help couples plan elegant, structured, and stress-free weddings in Dubai. Let's plan your wedding step by step with full clarity and control."
       />
 
+      </main>
       <SiteFooter />
     </div>
   );

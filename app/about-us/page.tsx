@@ -21,6 +21,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-ink text-cream">
       <SiteHeader />
+      <main>
 
       <PageHeader
         kicker="About Olga Events"
@@ -98,6 +99,7 @@ export default function AboutPage() {
         text="Book a consultation and we'll define your vision, budget, and overall direction together."
       />
 
+      </main>
       <SiteFooter />
     </div>
   );

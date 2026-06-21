@@ -15,7 +15,7 @@ import PriceCalculator from "../components/PriceCalculator";
 export const metadata: Metadata = {
   title: "Wedding Planning & Décor Packages in Dubai | Olga Events",
   description:
-    "Transparent wedding planning packages (Essential, Classic, Luxe) and décor collections (Bloom, Signature, Elegance) for weddings in Dubai and the UAE.",
+    "Transparent wedding planning packages (Essential, Classic, Luxury) and décor collections (Bloom, Signature, Elegance) for weddings in Dubai and the UAE.",
 };
 
 const PLANNING = [
@@ -129,6 +129,7 @@ export default function PackagesPage() {
   return (
     <div className="min-h-screen bg-ink text-cream">
       <SiteHeader />
+      <main>
 
       <PageHeader
         kicker="Our packages"
@@ -211,13 +212,13 @@ export default function PackagesPage() {
         <div className="mx-auto max-w-2xl text-center">
           <p className="font-sans text-base font-light leading-relaxed text-muted">
             Want to understand pricing first? Read our{" "}
-            <Link href="/wedding-cost-dubai" className="text-gold hover:text-cream">
+            <Link href="/wedding-cost-dubai" className="text-gold underline underline-offset-2 hover:text-cream">
               wedding cost guide
             </Link>{" "}
             or explore our{" "}
             <Link
               href="/wedding-packages-dubai"
-              className="text-gold hover:text-cream"
+              className="text-gold underline underline-offset-2 hover:text-cream"
             >
               wedding packages overview
             </Link>
@@ -228,6 +229,7 @@ export default function PackagesPage() {
 
       <CTASection />
 
+      </main>
       <SiteFooter />
     </div>
   );

@@ -103,6 +103,7 @@ export default function ReviewsPage() {
   return (
     <div className="min-h-screen bg-ink text-cream">
       <SiteHeader />
+      <main>
 
       <PageHeader
         kicker="Testimonials"
@@ -135,6 +136,7 @@ export default function ReviewsPage() {
 
       <CTASection />
 
+      </main>
       <SiteFooter />
     </div>
   );

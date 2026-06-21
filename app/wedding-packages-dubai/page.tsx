@@ -44,6 +44,7 @@ export default function WeddingPackagesPage() {
   return (
     <div className="min-h-screen bg-ink text-cream">
       <SiteHeader />
+      <main>
 
       <PageHeader
         kicker="Wedding Packages Dubai"
@@ -168,6 +169,7 @@ export default function WeddingPackagesPage() {
 
       <CTASection title="Start Planning Your Wedding" />
 
+      </main>
       <SiteFooter />
     </div>
   );

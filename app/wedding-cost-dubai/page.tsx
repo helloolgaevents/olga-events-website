@@ -144,6 +144,7 @@ export default function WeddingCostPage() {
   return (
     <div className="min-h-screen bg-ink text-cream">
       <SiteHeader />
+      <main>
 
       <PageHeader
         kicker="Wedding Cost in Dubai"
@@ -305,6 +306,7 @@ export default function WeddingCostPage() {
         text="Share your budget and vision — we'll guide you on what's realistic and build a tailored plan."
       />
 
+      </main>
       <SiteFooter />
     </div>
   );
