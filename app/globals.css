@@ -5,16 +5,18 @@
      Token names kept stable (used site-wide); meanings are role-based:
      ink = surface, ink-alt = alt surface, cream = primary text,
      muted = body/secondary text, line = border. */
-  --color-ink: #f5f3ef; /* page surface (ivory) */
-  --color-ink-alt: #faf8f5; /* alt surface (cream) */
-  --color-cream: #111111; /* headings / package names (true black) */
+  /* Tokens matched to public/offer.html (approved design system). */
+  --color-ink: #f4f1ea; /* page surface (ivory) */
+  --color-ink-alt: #fbf9f4; /* card / alt surface (cream) */
+  --color-cream: #111110; /* headings / package names */
   --color-muted: #141414; /* body, list items, prices, calc labels */
-  --color-faint: #5b574e; /* ONLY tiny captions / struck old price */
-  --color-gold: #b89b6e; /* accent: kickers, hairlines, ro-labels, hover */
-  --color-line: #e8e4dc; /* hairline borders */
+  --color-faint: #5b574e; /* secondary / tiny captions / struck old price */
+  --color-gold: #a8854e; /* accent: kickers, hairlines, ro-labels, hover */
+  --color-gold-l: #c2a36b; /* lighter gold for dark zones */
+  --color-line: #e3ddd0; /* hairline borders */
   --color-green: #5e7d46; /* actions: buttons, ticks */
-  --color-green-deep: #4a6337; /* action hover + price text */
-  --color-beige: #efe8da; /* callout block */
+  --color-green-deep: #436031; /* action hover + price text */
+  --color-beige: #ece4d4; /* callout block */
 
   --font-serif: var(--font-cormorant);
   --font-sans: var(--font-inter);
@@ -28,13 +30,13 @@
 /* Dark zones — ONLY nav, hero and footer. Re-points the role tokens to the
    dark palette so descendants flip automatically with no markup changes. */
 .dark-zone {
-  --color-ink: #16140f;
-  --color-ink-alt: #1f1c16;
-  --color-cream: #f4efe6;
-  --color-muted: #9b9384;
-  --color-faint: #9b9384;
-  --color-gold: #b89b6e;
-  --color-line: #352f25;
+  --color-ink: #15130e;
+  --color-ink-alt: #1d1a13;
+  --color-cream: #f3ecdd;
+  --color-muted: #cfc6b2;
+  --color-faint: #cfc6b2;
+  --color-gold: #c2a36b;
+  --color-line: #3a3326;
   color-scheme: dark;
 }
 
@@ -72,17 +74,17 @@ body {
 /* Gold kicker rubric (Inter, 11px, 0.36em, uppercase). */
 .kicker {
   font-family: var(--font-sans), sans-serif;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.36em;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--color-gold);
 }
 
-/* Thin gold divider, 60×1px. */
+/* Thin gold divider, 56×1px. */
 .rule-gold {
   display: block;
-  width: 60px;
+  width: 56px;
   height: 1px;
   background: var(--color-gold);
 }

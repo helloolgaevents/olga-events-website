@@ -21,13 +21,17 @@ Notable: async `params` in dynamic routes; Turbopack is the default builder.
   final 21 Jun decision). LIGHT base, dark only in nav/hero/footer. Role-based
   Tailwind tokens in `app/globals.css`, light by default, re-pointed to dark
   inside `.dark-zone`:
-  - Light: surface `--color-ink #f5f3ef`, alt `--color-ink-alt #faf8f5`;
-    primary text `--color-cream #111111` (true black headings); body
-    `--color-muted #141414` (near-black, all body/list items/prices/calc labels);
-    secondary `--color-faint #5b574e` (ONLY tiny captions / struck price);
-    hairline `--color-line #e8e4dc`; callout `--color-beige #efe8da`.
-    Base body 17px; paragraphs/leads 18px; package list items 16px; package
-    names ~30px; prices 30px; H2 ~40-44px. (Batch 6: black text + larger sizes.)
+  - Tokens matched EXACTLY to **public/offer.html** (Batch 9, Olga's approved
+    reference): surface `--color-ink #f4f1ea`, card `--color-ink-alt #fbf9f4`;
+    headings `--color-cream #111110`; body `--color-muted #141414`; secondary
+    `--color-faint #5b574e`; hairline `--color-line #e3ddd0`; callout
+    `--color-beige #ece4d4`; gold `--color-gold #a8854e` (+ `--color-gold-l
+    #c2a36b` for dark zones); green `--color-green #5e7d46` / deep `#436031`.
+    Base body 17px; paragraphs/leads 18px; package list items 16px; names/prices
+    ~30px; H1 ~60 / H2 ~48. kicker = gold 12px / 3px letter-spacing / 600.
+    NOTE: gold kickers (#a8854e) are ~3:1 on ivory — slightly under WCAG AA for
+    small text, but this is the approved offer.html accent; do not change without
+    Olga's sign-off. Body text is all dark and high-contrast.
   - `.dark-zone` (ONLY `<header>`, hero `PageHeader` + home hero, `<footer>`):
     ink `#16140f`, alt `#1f1c16`, cream `#f4efe6`, muted/faint `#9b9384`,
     line `#352f25`. Add/remove `dark-zone` to re-theme a zone, no per-element edits.
@@ -158,7 +162,17 @@ hello@olga.events · Dubai · Abu Dhabi · all Emirates · EN·RU·AR.
   footer=contentinfo); inline in-sentence links use `underline` so they aren't
   colour-only.
 
-## Pre-launch QA (last run — after Batch 7 full-width + arches)
+## Pre-launch QA (last run — after Batch 9 align to offer.html)
+- All colour tokens matched exactly to public/offer.html (ivory #f4f1ea, cream
+  cards #fbf9f4, gold #a8854e, green #5e7d46/#436031, lines #e3ddd0, dark zones
+  #15130e). Inter now 400/500/600; Cormorant headings 500; DM Sans numbers.
+- Full-width layout, rectangular 16px photos (no arches), dark only nav/hero/footer,
+  open packages — all retained.
+- Lighthouse desktop: home & packages 99/100/100/100. Mobile: 92-93/100, no overflow.
+- a11y 96-100 across pages; the only contrast flag is the gold kicker (#a8854e),
+  which is the approved offer.html accent (decorative 12px label).
+
+### Earlier (Batch 7 full-width + arches → arches removed Batch 8):
 - Containers widened to max-w-1500 (px 22/56); home has 2 full-bleed split
   sections + a 3-arch gallery strip; decoration & planner have split sections;
   FeatureImage full-bleed arched everywhere. H1 ~60 / H2 ~48.
