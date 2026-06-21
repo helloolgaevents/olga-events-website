@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
+import { SITE_URL } from "./components/ui";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -18,7 +19,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Olga Events — Luxury Wedding Planning in Dubai",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Olga Events — Luxury Wedding Planning in Dubai",
+    template: "%s",
+  },
   description:
     "Olga Events plans and styles luxury weddings across Dubai and all Emirates. The flowers, the light, the timing, your guests — all on us.",
 };

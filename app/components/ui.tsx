@@ -3,6 +3,11 @@ import Reveal from "./Reveal";
 
 /* ---------------- Site-wide config ---------------- */
 
+// Canonical production domain. The new site replaces the old pages at the same
+// paths, so we keep olga.events as the canonical base for SEO continuity.
+export const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://olga.events";
+
 export const NAV_LINKS = [
   { label: "About", href: "/about-us" },
   { label: "Planning", href: "/wedding-planner-dubai" },
@@ -18,13 +23,14 @@ export const FOOTER_NAV = [
     heading: "Explore",
     links: [
       { label: "About us", href: "/about-us" },
+      { label: "Our Work", href: "/our-work" },
       { label: "Gallery", href: "/gallery" },
       { label: "Reviews", href: "/reviews" },
       { label: "Contact us", href: "/contact" },
     ],
   },
   {
-    heading: "Services",
+    heading: "Weddings",
     links: [
       { label: "Wedding Planner", href: "/wedding-planner-dubai" },
       { label: "Wedding Decoration", href: "/wedding-decoration-dubai" },
@@ -37,6 +43,49 @@ export const FOOTER_NAV = [
       { label: "Wedding Cost in Dubai", href: "/wedding-cost-dubai" },
       { label: "Wedding Packages", href: "/wedding-packages-dubai" },
     ],
+  },
+  {
+    heading: "More services",
+    links: [
+      { label: "Corporate Events", href: "/corporate-events" },
+      { label: "Private Events", href: "/private-events" },
+      { label: "Seasonal Events", href: "/seasonal-events" },
+      { label: "AV & Production", href: "/av-production" },
+      { label: "Furniture Rental", href: "/furniture" },
+    ],
+  },
+];
+
+export const FURNITURE_CATEGORIES = [
+  {
+    slug: "bridal-sofa",
+    name: "Bridal Sofas",
+    desc: "Statement bridal seating — velvet, linen, and metal-base designs that anchor your stage.",
+  },
+  {
+    slug: "dining-tables",
+    name: "Dining Tables",
+    desc: "Elegant dining and cocktail tables to set the scene for every guest.",
+  },
+  {
+    slug: "dining-chairs",
+    name: "Dining Chairs",
+    desc: "Refined seating that completes a cohesive, luxurious table.",
+  },
+  {
+    slug: "lounge-sofa",
+    name: "Lounge Sofas",
+    desc: "Comfortable lounge seating for relaxed, stylish guest areas.",
+  },
+  {
+    slug: "accent-chairs",
+    name: "Accent Chairs",
+    desc: "Sculptural accent chairs for photo corners and lounges.",
+  },
+  {
+    slug: "ottomans",
+    name: "Ottomans & Poufs",
+    desc: "Soft ottomans and poufs to layer texture into any setting.",
   },
 ];
 
