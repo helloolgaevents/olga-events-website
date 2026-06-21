@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Olga Events — Wedding Packages</title>
+<meta name="description" content="Olga Events wedding planning & décor packages with full details and a live price calculator. Dubai & all Emirates.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@500;600;700&family=Inter:wght@400;500;600&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--green:#5E7D46;--green-d:#436031;--dark:#111110;--ink:#141414;--ivory:#f4f1ea;--cream:#fbf9f4;--beige:#ece4d4;--gold:#a8854e;--gold-l:#c2a36b;--line:#e3ddd0;--muted:#5b574e}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--ivory);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  body[dir=rtl]{font-family:'Noto Naskh Arabic','Inter',sans-serif}
+  h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:500;color:var(--dark)}
+  body[dir=rtl] h1,body[dir=rtl] h2,body[dir=rtl] h3{font-family:'Noto Naskh Arabic',serif;font-weight:700}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 40px}
+  .kick{font-size:12px;letter-spacing:3px;text-transform:uppercase;font-weight:600;color:var(--gold)}
+
+  .nav{position:sticky;top:0;z-index:30;background:#15130e;border-bottom:1px solid #3a3327}
+  .nav .in{max-width:1200px;margin:0 auto;padding:15px 40px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .logo{font-family:'Cormorant Garamond',serif;font-size:23px;letter-spacing:3px;color:#f3ecdd;font-weight:500}
+  .langs{display:flex;gap:6px}
+  .langs button{font-family:'Inter';background:transparent;border:1px solid #4a4233;color:#cfc6b2;font-size:13px;font-weight:600;padding:7px 13px;border-radius:8px;cursor:pointer}
+  .langs button.on{background:var(--gold-l);border-color:var(--gold-l);color:#15130e}
+
+  .cover{text-align:center;padding:64px 40px 40px;border-bottom:1px solid var(--line)}
+  .cover h1{font-size:50px;line-height:1.06;margin-top:12px}
+  .cover p{font-size:18px;color:var(--muted);max-width:720px;margin:14px auto 0}
+  .ln{width:56px;height:1px;background:var(--gold);margin:20px auto}
+
+  .sec{padding:58px 0;border-bottom:1px solid var(--line)}
+  .sec h2{font-size:38px;text-align:center}
+  .sec .lead{font-size:17px;color:var(--muted);max-width:760px;margin:12px auto 0;text-align:center}
+
+  .paths{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:34px}
+  .path{border:1px solid var(--line);border-radius:16px;padding:28px;background:var(--cream)}
+  .path.best{border:1.5px solid var(--green);background:#f1f5ec}
+  .path .tag{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);font-weight:600}
+  .path.best .tag{color:var(--green-d)}
+  .path h3{font-size:26px;margin:7px 0 9px}
+  .path p{font-size:15.5px;color:var(--ink)}
+
+  .cols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px;margin-top:34px;align-items:start}
+  .pkg{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px 26px;position:relative;display:flex;flex-direction:column}
+  .pkg.win{border:1.5px solid var(--green);box-shadow:0 16px 42px rgba(67,96,49,.13)}
+  .pkg .badge{position:absolute;top:-13px;inset-inline-start:26px;background:var(--green);color:#fff;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;font-weight:600;padding:6px 14px;border-radius:7px}
+  .pkg .nm{font-family:'Cormorant Garamond',serif;font-size:29px;font-weight:500;color:var(--dark)}
+  body[dir=rtl] .pkg .nm{font-family:'Noto Naskh Arabic',serif;font-weight:700}
+  .pkg .ro{font-size:11.5px;letter-spacing:1.3px;text-transform:uppercase;color:var(--gold);font-weight:600;margin:4px 0 12px}
+  .pkg .prices{border-top:1px solid var(--line);padding-top:13px;min-height:60px}
+  .pkg .was{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--muted);text-decoration:line-through;text-decoration-color:var(--gold-l)}
+  .pkg .pr{font-family:'DM Sans',sans-serif;font-size:30px;font-weight:600;color:var(--green-d);line-height:1.1}
+  .pkg .perg{font-size:12.5px;color:var(--green-d);background:#eef3e6;border-radius:8px;padding:7px 11px;margin-top:10px}
+  .grp{font-size:10.5px;letter-spacing:.8px;text-transform:uppercase;color:var(--gold);font-weight:600;margin:16px 0 5px}
+  .pkg ul{list-style:none}
+  .pkg li{font-size:14.5px;color:var(--ink);padding:5px 0 5px 24px;position:relative;line-height:1.5}
+  .pkg li:before{content:'✓';position:absolute;left:0;top:5px;color:var(--green);font-weight:700}
+  body[dir=rtl] .pkg li{padding:5px 24px 5px 0}
+  body[dir=rtl] .pkg li:before{left:auto;right:0}
+  .pkg .pick{margin-top:auto;text-align:center;background:var(--green);color:#fff;font-size:13.5px;font-weight:600;padding:12px;border-radius:10px;margin-top:18px}
+  .pkg .pick.ghost{background:#fff;border:1.5px solid var(--green);color:var(--green-d)}
+
+  .guestrow{display:inline-flex;align-items:center;gap:12px;background:var(--cream);border:1px solid var(--line);border-radius:12px;padding:11px 16px;margin-top:18px;flex-wrap:wrap}
+  .guestrow label{font-size:13px;font-weight:600;color:var(--muted)}
+  .guestrow input[type=range]{width:200px;accent-color:var(--green)}
+  .guestrow input[type=number]{width:88px;font-family:'DM Sans';font-size:16px;font-weight:600;color:var(--green-d);text-align:center;padding:7px;border:1.5px solid var(--line);border-radius:9px}
+  .ghint{font-size:12.5px;color:var(--muted);margin-inline-start:10px;font-style:italic}
+
+  .quotebox{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px 28px;margin-top:26px;max-width:720px;margin-inline:auto}
+  .qrow{display:flex;align-items:center;gap:14px;margin-bottom:13px;flex-wrap:wrap}
+  .qrow>label{font-size:14px;font-weight:600;color:var(--muted);width:130px}
+  .qrow select,.qrow input[type=number]{font-family:'DM Sans';padding:10px 12px;border:1.5px solid var(--line);border-radius:9px;font-size:15px;background:#fff;flex:1;min-width:150px}
+  .qrow input[type=range]{flex:1;min-width:150px;accent-color:var(--green)}
+  .qsum{border-top:1px solid var(--line);margin-top:14px;padding-top:14px}
+  .qsum .ql{display:flex;justify-content:space-between;font-size:15px;padding:5px 0;color:var(--ink)}
+  .qsum .ql span:last-child{font-family:'DM Sans';font-weight:600}
+  .qtot{display:flex;justify-content:space-between;align-items:baseline;margin-top:8px;padding-top:11px;border-top:2px solid var(--dark)}
+  .qtot .l{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold)}
+  .qtot .v{font-family:'DM Sans';font-size:30px;font-weight:700;color:var(--green-d)}
+  .qsave{background:#f1f5ec;border:1px solid #cfe0bd;border-radius:10px;padding:11px 15px;margin-top:14px;font-size:14px;color:var(--green-d)}
+  .qsave b{font-family:'DM Sans';font-weight:700}
+  .qincl{font-size:12.5px;color:var(--muted);margin-top:10px}
+
+  .note{background:var(--cream);border:1px solid var(--line);border-inline-start:3px solid var(--gold);border-radius:12px;padding:18px 22px;margin-top:26px;font-size:14.5px;color:var(--ink);max-width:900px;margin-inline:auto}
+
+  .cta{padding:66px 40px;text-align:center}
+  .cta h2{font-size:42px}
+  .cta p{font-size:17px;color:var(--muted);max-width:580px;margin:13px auto 22px}
+  .btns{display:flex;gap:13px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-size:15px;font-weight:600;padding:15px 26px;border-radius:11px}
+  .btn.wa{background:#25D366;color:#fff}.btn.cons{background:var(--green);color:#fff}
+
+  .foot{background:#15130e;padding:38px;text-align:center;color:#cfc6b2;font-size:14px}
+  .foot .lg{font-family:'Cormorant Garamond',serif;font-size:23px;letter-spacing:3px;color:#f3ecdd;font-weight:500;margin-bottom:7px}
+  .wafloat{position:fixed;inset-inline-end:22px;bottom:22px;z-index:50;background:#25D366;color:#fff;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(0,0,0,.25);font-size:28px}
+
+  @media(max-width:880px){.wrap,.nav .in{padding-left:20px;padding-right:20px}.cover h1{font-size:38px}.sec h2,.cta h2{font-size:30px}.paths{grid-template-columns:1fr}.cols{grid-template-columns:1fr}}
+</style>
+</head>
+<body dir="ltr">
+
+<div class="nav"><div class="in">
+  <div class="logo">OLGA EVENTS</div>
+  <div class="langs">
+    <button data-l="en" class="on" onclick="setLang('en')">EN</button>
+    <button data-l="ar" onclick="setLang('ar')">العربية</button>
+    <button data-l="ru" onclick="setLang('ru')">RU</button>
+  </div>
+</div></div>
+
+<section class="cover">
+  <div class="kick" id="coverKick"></div>
+  <h1 id="coverTitle"></h1>
+  <div class="ln"></div>
+  <p id="coverSub"></p>
+</section>
+
+<!-- two ways -->
+<section class="sec"><div class="wrap">
+  <h2 id="pathsTitle"></h2>
+  <div class="paths">
+    <div class="path best"><div class="tag" id="pAtag"></div><h3 id="pAtitle"></h3><p id="pAtext"></p></div>
+    <div class="path"><div class="tag" id="pBtag"></div><h3 id="pBtitle"></h3><p id="pBtext"></p></div>
+  </div>
+</div></section>
+
+<!-- planning -->
+<section class="sec"><div class="wrap">
+  <h2 id="planTitle"></h2>
+  <p class="lead" id="planLead"></p>
+  <div class="cols" id="planCols"></div>
+</div></section>
+
+<!-- decor -->
+<section class="sec"><div class="wrap">
+  <h2 id="decorTitle"></h2>
+  <p class="lead" id="decorLead"></p>
+  <div style="text-align:center"><span class="guestrow"><label id="gLbl"></label><input type="range" id="cg" min="100" max="600" step="10" value="100"><input type="number" id="cgn" min="100" step="10" value="100"></span><div class="ghint" id="gHint" style="display:block;margin-top:8px"></div></div>
+  <div class="cols" id="decorCols"></div>
+  <div class="note" id="decorNote"></div>
+</div></section>
+
+<!-- calculator -->
+<section class="sec"><div class="wrap">
+  <h2 id="calcTitle"></h2>
+  <p class="lead" id="calcLead"></p>
+  <div class="quotebox">
+    <div class="qrow"><label id="qLplan"></label><select id="qplan"></select></div>
+    <div class="qrow"><label id="qLdec"></label><select id="qdec"></select></div>
+    <div class="qrow"><label id="qLg"></label><input type="range" id="qg" min="100" max="600" step="10" value="100"><input type="number" id="qgn" min="100" step="10" value="100" style="max-width:96px;flex:0 0 auto"></div>
+    <div class="qsum">
+      <div class="ql"><span id="qSplan"></span><span id="q-plan">—</span></div>
+      <div class="ql"><span id="q-decname">Décor</span><span id="q-dec">—</span></div>
+      <div class="qtot"><span class="l" id="qStot"></span><span class="v" id="q-total">—</span></div>
+      <div class="qsave"><span style="color:var(--gold)">★</span> <span id="qSsave1"></span> <b id="q-save">—</b></div>
+      <div class="qincl" id="qIncl"></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2 id="ctaTitle"></h2>
+  <p id="ctaSub"></p>
+  <div class="btns">
+    <a class="btn wa" id="waBtn" target="_blank">✆ <span id="waLabel"></span></a>
+    <a class="btn cons" id="consBtn" target="_blank"><span id="consLabel"></span></a>
+  </div>
+</section>
+
+<div class="foot"><div class="lg">OLGA EVENTS</div><div id="footTag"></div><div style="margin-top:7px">WhatsApp +971 55 670 4762 · hello@olga.events</div></div>
+<a class="wafloat" id="waFloat" target="_blank" title="WhatsApp">✆</a>
+
+<script>
+const WA="971556704762";
+const PRICE={soiree:{base:39050,std:47000,cp:350},signature:{base:46930,std:57000,cp:800},atelier:{base:66000,std:80000,cp:1500}};
+const fmt=n=>Math.round(n).toLocaleString('en-US');
+
+const T={
+ en:{dir:"ltr",
+  coverKick:"Wedding Planning & Décor · Dubai & all Emirates", coverTitle:"Our Wedding Packages",
+  coverSub:"Full details and transparent prices. Planning to lead your day, décor and florals to make it beautiful. Move the guest slider and the calculator to see your price.",
+  pathsTitle:"Two ways to begin",
+  pAtag:"Recommended · best price", pAtitle:"Planning + décor together", pAtext:"Book both at once and we run your wedding as one project from day one. Décor comes at a special, reduced price, and your saving grows with the guest count.",
+  pBtag:"Flexible", pBtitle:"Start with planning", pBtext:"Begin with a planning package and add décor later, at standard prices. A calm start, at your own pace.",
+  planTitle:"Planning packages", planLead:"The foundation of your wedding. Choose the level of support you need.",
+  decorTitle:"Décor packages", decorLead:"Each package is a complete set for a beautiful wedding, with florals included. Prices shown for 100 guests, move the slider for your guest count.",
+  gLbl:"Guests", gHint:"Move the slider to compare package prices at different guest counts.",
+  decorNote:"Two prices: the struck-through figure is the standard décor price on its own; the large figure is the special price when you book décor together with planning. The difference is your saving. Décor scales with guest count. All prices include VAT, transport & logistics.",
+  calcTitle:"Build your proposal in a minute", calcLead:"Choose planning, décor and guest count to see your total. VAT and transport included.",
+  qLplan:"Planning", qLdec:"Décor package", qLg:"Guests", qSplan:"Planning", qStot:"Total together",
+  qSsave1:"By booking both packages together you save", qIncl:"Transport and VAT are already included. All that's left is to confirm.",
+  ctaTitle:"Let's plan your wedding", ctaSub:"Tell us your date and your vision, and we'll prepare a proposal made just for you. Free, no obligation.",
+  waLabel:"Message us on WhatsApp", consLabel:"Book a free consultation", footTag:"Luxury Wedding Planning · Dubai & all Emirates",
+  waMsg:"Hello Olga Events! I saw your wedding packages and would like to know more.",
+  cur:"AED", was:"standard", most:"Most chosen", from:"from", decorWord:"Décor", guestsWord:"guests",
+  planSel:["Essential, AED 6,650","Classic, AED 9,500","Luxury, AED 17,100"],
+  decSel:["Bloom, from AED 39,050","Signature, from AED 46,930","Elegance, from AED 66,000"],
+  plan:[
+   {nm:"Essential",ro:"Start & coordination",was:"7,000",pr:"6,650",g:[
+     ["Planning basics",["Digital invitation (eCard)","Wedding design concept","Concept revisions, up to 2"]],
+     ["Floor plan",["Basic floor plan (CAD & Canva)"]],
+     ["Vendors",["Manage your external vendors (you book them, we coordinate on the day)"]],
+     ["Timings",["Set-up · ceremony · reception"]],
+     ["Wedding day",["Coordinator: up to 8 hours","1 coordinator: set-up, ceremony, reception"]],
+     ["Systems",["Online planning portal access"]]]},
+   {nm:"Classic",ro:"Partial planning",was:"10,000",pr:"9,500",win:true,g:[
+     ["Venue & guests",["Help selecting & booking the venue","Digital invitation (eCard)","Online RSVP (simple)"]],
+     ["Design & concept",["Design concept · up to 3 revisions","Floor plan (CAD & Canva)","2D seating plan"]],
+     ["Vendors",["Vendor selection from our base (agency rates)","Full management & negotiation (ours and your external)"]],
+     ["Timings",["Set-up · bridal prep · ceremony · reception"]],
+     ["Wedding day",["Coordinators: up to 8 hours","Set-up coordinator","Wedding programme coordinator"]],
+     ["Systems",["Online planning portal"]]]},
+   {nm:"Luxury",ro:"Full planning",was:"18,000",pr:"17,100",g:[
+     ["Venue & guests",["Help selecting & booking the venue","Digital invitation (eCard)","Advanced online RSVP"]],
+     ["Design & concept",["Concept · up to 5 revisions","Floor plan (CAD & Canva) · 2D overview","Full 3D venue render"]],
+     ["Vendors",["Vendor selection from our base (agency rates)","Full management & negotiation","Vendor payments via Olga Events (you transfer the invoiced amount, we settle with vendors)"]],
+     ["Timings",["Set-up · bridal prep · ceremony · reception"]],
+     ["Wedding day",["Team works in shifts, up to 8 hours","Set-up coordination","Reception coordinator","Ceremony coordinator","Entertainment coordinator","Bridal assistant","2 hostesses (guest welcome)"]],
+     ["Comms & systems",["Team chat · online portal"]]]}
+  ],
+  decor:[
+   {nm:"Bloom",ro:"Décor · level 1",k:"soiree",perg:"Extra table of 10 guests: +AED 850 (10 chairs + 1 Standard centerpiece)",g:[
+     ["Stage & structures",["Dance floor 5×5 m","Stage 5 m, with step","Backdrop (arches from our collection)"]],
+     ["Tables & guests",["10 Standard centerpieces, fresh flowers","100 VIP chairs"]],
+     ["Styling & logistics",["Entrance styling","Venue styling with artificial flowers","Lighting system","Transport & logistics"]]]},
+   {nm:"Signature",ro:"Décor · level 2",k:"signature",win:true,perg:"Extra table of 10 guests: +AED 1,300 (10 chairs + 1 Premium centerpiece)",g:[
+     ["Stage & structures",["Dance floor 6×6 m","Stage 8 m, with step","Full-width backdrop"]],
+     ["Tables & guests",["10 Premium centerpieces, fresh flowers (voluminous)","100 VIP chairs"]],
+     ["Styling & logistics",["Entrance styling","Venue styling with artificial flowers","Lighting system","Transport & logistics"]]]},
+   {nm:"Elegance",ro:"Décor · level 3",k:"atelier",perg:"Extra table of 10 guests: +AED 2,000 (10 chairs + 1 Exclusive centerpiece)",g:[
+     ["Stage & structures",["Dance floor 6×6 m","Stage 13 m, with step","Catwalk ~10 m","Full-width backdrop"]],
+     ["Tables & guests",["10 Exclusive centerpieces, fresh flowers (large, premium)","100 VIP chairs · 4 VIP tables","4 lounge sets (sofas)","Flowers for cocktail tables"]],
+     ["Styling & logistics",["Entrance styling","Venue styling with artificial flowers","Lighting system","Transport & logistics"]]]}
+  ]
+ },
+
+ ru:{dir:"ltr",
+  coverKick:"Свадебное планирование и décor · Дубай и все Эмираты", coverTitle:"Наши свадебные пакеты",
+  coverSub:"Полные детали и прозрачные цены. Планирование ведёт ваш день, décor и живые цветы делают его красивым. Двигайте ползунок гостей и калькулятор, чтобы увидеть цену.",
+  pathsTitle:"Два способа начать",
+  pAtag:"Рекомендуем · лучшая цена", pAtitle:"Планирование + décor вместе", pAtext:"Берёте оба пакета сразу, и мы ведём вашу свадьбу как единый проект с первого дня. décor идёт по специальной сниженной цене, а экономия растёт с числом гостей.",
+  pBtag:"Гибко", pBtitle:"Начать с планирования", pBtext:"Начинаете с пакета планирования, décor добавляете позже по обычной цене. Спокойный старт в своём темпе.",
+  planTitle:"Пакеты планирования", planLead:"Фундамент вашей свадьбы. Выберите нужный уровень поддержки.",
+  decorTitle:"Décor-пакеты", decorLead:"Каждый пакет, готовый набор для красивой свадьбы, флористика включена. Цены указаны на 100 гостей, двигайте ползунок под своё число гостей.",
+  gLbl:"Гостей", gHint:"Двигайте бегунок, чтобы сравнить цены пакетов на разное число гостей.",
+  decorNote:"Две цены: зачёркнутая, обычная цена décor отдельно; крупная, специальная цена при бронировании décor вместе с планированием. Разница, ваша выгода. décor растёт с числом гостей. Все цены включают VAT, транспорт и логистику.",
+  calcTitle:"Соберите предложение за минуту", calcLead:"Выберите планирование, décor и число гостей, увидите итог. Транспорт и VAT включены.",
+  qLplan:"Планирование", qLdec:"Décor-пакет", qLg:"Гостей", qSplan:"Планирование", qStot:"Итого вместе",
+  qSsave1:"Выбирая два пакета вместе, вы экономите", qIncl:"Транспорт и VAT уже включены. Останется только оформить заказ.",
+  ctaTitle:"Давайте спланируем вашу свадьбу", ctaSub:"Расскажите дату и ваше видение, и мы подготовим предложение специально для вас. Бесплатно, без обязательств.",
+  waLabel:"Написать в WhatsApp", consLabel:"Бесплатная консультация", footTag:"Luxury Wedding Planning · Дубай и все Эмираты",
+  waMsg:"Здравствуйте, Olga Events! Видела ваши свадебные пакеты, хочу узнать подробнее.",
+  cur:"AED", was:"стандарт", most:"Выбирают чаще", from:"от", decorWord:"Décor", guestsWord:"гостей",
+  planSel:["Essential, AED 6 650","Classic, AED 9 500","Luxury, AED 17 100"],
+  decSel:["Bloom, от AED 39 050","Signature, от AED 46 930","Elegance, от AED 66 000"],
+  plan:[
+   {nm:"Essential",ro:"Старт и координация",was:"7,000",pr:"6,650",g:[
+     ["Основа планирования",["Цифровое приглашение (eCard)","Дизайн-концепция свадьбы","Правки концепции, до 2"]],
+     ["План зала",["Базовый план зала (CAD & Canva)"]],
+     ["Вендоры",["Управление внешними вендорами (вы бронируете сами, мы координируем в день свадьбы)"]],
+     ["Тайминги",["Монтаж · церемония · банкет"]],
+     ["День свадьбы",["Координатор: до 8 часов","1 координатор: монтаж, церемония, reception"]],
+     ["Системы",["Доступ в онлайн-кабинет планирования"]]]},
+   {nm:"Classic",ro:"Частичное планирование",was:"10,000",pr:"9,500",win:true,g:[
+     ["Площадка и гости",["Помощь в подборе и бронировании площадки","Цифровое приглашение (eCard)","Онлайн-RSVP (простой)"]],
+     ["Дизайн и концепция",["Дизайн-концепция · правки до 3","План зала (CAD & Canva)","2D-план (рассадка)"]],
+     ["Вендоры",["Подбор подрядчиков из нашей базы (агентские цены)","Полное управление и переговоры (наши и ваши внешние)"]],
+     ["Тайминги",["Монтаж · сбор невесты · церемония · банкет"]],
+     ["День свадьбы",["Координаторы: до 8 часов","Координатор монтажа","Координатор свадебной программы"]],
+     ["Системы",["Онлайн-кабинет планирования"]]]},
+   {nm:"Luxury",ro:"Планирование под ключ",was:"18,000",pr:"17,100",g:[
+     ["Площадка и гости",["Помощь в подборе и бронировании площадки","Цифровое приглашение (eCard)","Онлайн-RSVP (многофункциональный)"]],
+     ["Дизайн и концепция",["Концепция · правки до 5","План зала (CAD & Canva) · 2D-обзор","3D-рендер всей площадки"]],
+     ["Вендоры",["Подбор подрядчиков из нашей базы (агентские цены)","Полное управление и переговоры","Оплата вендоров через Olga Events (вы переводите сумму по инвойсу, мы рассчитываемся)"]],
+     ["Тайминги",["Монтаж · сбор невесты · церемония · банкет"]],
+     ["День свадьбы",["Команда работает по сменам, до 8 часов","Координация монтажа","Координатор reception","Координатор церемонии","Координатор развлечений","Ассистент невесты","2 хостес (встреча гостей)"]],
+     ["Связь и системы",["Командный чат · онлайн-кабинет"]]]}
+  ],
+  decor:[
+   {nm:"Bloom",ro:"Décor · уровень 1",k:"soiree",perg:"Доп. стол на 10 гостей: +AED 850 (10 стульев + 1 центрпис Standard)",g:[
+     ["Сцена и конструкции",["Танцпол 5×5 м","Сцена 5 м, со ступенью","Бэкдроп (арки из коллекции)"]],
+     ["Столы и гости",["10 центрписов Standard, живые цветы","100 VIP-стульев"]],
+     ["Оформление и логистика",["Стайлинг входной зоны","Оформление площадки искусственными цветами","Световая система","Транспорт и логистика"]]]},
+   {nm:"Signature",ro:"Décor · уровень 2",k:"signature",win:true,perg:"Доп. стол на 10 гостей: +AED 1 300 (10 стульев + 1 центрпис Premium)",g:[
+     ["Сцена и конструкции",["Танцпол 6×6 м","Сцена 8 м, со ступенью","Бэкдроп во всю ширину сцены"]],
+     ["Столы и гости",["10 центрписов Premium, живые цветы (объёмные)","100 VIP-стульев"]],
+     ["Оформление и логистика",["Стайлинг входной зоны","Оформление площадки искусственными цветами","Световая система","Транспорт и логистика"]]]},
+   {nm:"Elegance",ro:"Décor · уровень 3",k:"atelier",perg:"Доп. стол на 10 гостей: +AED 2 000 (10 стульев + 1 центрпис Exclusive)",g:[
+     ["Сцена и конструкции",["Танцпол 6×6 м","Сцена 13 м, со ступенью","Подиум (catwalk) ~10 м","Бэкдроп во всю ширину"]],
+     ["Столы и гости",["10 центрписов Exclusive, живые цветы (крупные, премиальные)","100 VIP-стульев · 4 VIP-стола","4 lounge-комплекта (диваны)","Цветы для cocktail-столов"]],
+     ["Оформление и логистика",["Стайлинг входной зоны","Оформление площадки искусственными цветами","Световая система","Транспорт и логистика"]]]}
+  ]
+ },
+
+ ar:{dir:"rtl",
+  coverKick:"تنسيق وديكور الأعراس · دبي وجميع الإمارات", coverTitle:"باقات الأعراس لدينا",
+  coverSub:"تفاصيل كاملة وأسعار شفافة. التخطيط يدير يومكم، والديكور والزهور تجعله بديعاً. حرّكوا شريط عدد الضيوف والحاسبة لمعرفة السعر.",
+  pathsTitle:"طريقتان للبدء",
+  pAtag:"موصى به · أفضل سعر", pAtitle:"التخطيط + الديكور معاً", pAtext:"احجزوا الباقتين معاً وندير عرسكم كمشروع واحد منذ اليوم الأول. يأتي الديكور بسعر خاص مخفّض، ويزداد توفيركم مع عدد الضيوف.",
+  pBtag:"مرن", pBtitle:"ابدأوا بالتخطيط", pBtext:"ابدأوا بباقة التخطيط وأضيفوا الديكور لاحقاً بالأسعار الاعتيادية. بداية هادئة وعلى راحتكم.",
+  planTitle:"باقات التخطيط", planLead:"أساس عرسكم. اختاروا مستوى الدعم الذي يناسبكم.",
+  decorTitle:"باقات الديكور", decorLead:"كل باقة مجموعة متكاملة لعرس جميل، مع الزهور. الأسعار لـ100 ضيف، حرّكوا الشريط حسب عدد ضيوفكم.",
+  gLbl:"الضيوف", gHint:"حرّكوا الشريط لمقارنة أسعار الباقات حسب عدد الضيوف.",
+  decorNote:"سعران: السعر المشطوب هو سعر الديكور الاعتيادي وحده؛ والسعر الكبير هو السعر الخاص عند حجز الديكور مع التخطيط. الفرق هو توفيركم. يختلف الديكور بحسب عدد الضيوف. جميع الأسعار تشمل ضريبة القيمة المضافة والنقل والخدمات اللوجستية.",
+  calcTitle:"احسبوا عرضكم في دقيقة", calcLead:"اختاروا التخطيط والديكور وعدد الضيوف لرؤية الإجمالي. الضريبة والنقل مشمولان.",
+  qLplan:"التخطيط", qLdec:"باقة الديكور", qLg:"الضيوف", qSplan:"التخطيط", qStot:"الإجمالي معاً",
+  qSsave1:"بحجز الباقتين معاً توفّرون", qIncl:"النقل والضريبة مشمولان بالفعل. لم يبقَ سوى التأكيد.",
+  ctaTitle:"لنخطّط لعرسكم", ctaSub:"أخبرونا بالتاريخ ورؤيتكم، وسنعدّ لكم عرضاً خاصاً بكم. مجاناً ودون أي التزام.",
+  waLabel:"راسلونا على واتساب", consLabel:"احجزوا استشارة مجانية", footTag:"تنسيق أعراس فاخر · دبي وجميع الإمارات",
+  waMsg:"مرحباً Olga Events! اطّلعت على باقات الأعراس وأودّ معرفة المزيد.",
+  cur:"درهم", was:"السعر الاعتيادي", most:"الأكثر اختياراً", from:"تبدأ من", decorWord:"الديكور", guestsWord:"ضيف",
+  planSel:["Essential، 6,650 درهم","Classic، 9,500 درهم","Luxury، 17,100 درهم"],
+  decSel:["Bloom، من 39,050 درهم","Signature، من 46,930 درهم","Elegance، من 66,000 درهم"],
+  plan:[
+   {nm:"Essential",ro:"البداية والتنسيق",was:"7,000",pr:"6,650",g:[
+     ["أساسيات التخطيط",["دعوة رقمية (بطاقة إلكترونية)","مفهوم تصميم العرس","تعديلات المفهوم، حتى 2"]],
+     ["مخطط القاعة",["مخطط أساسي للقاعة (CAD وCanva)"]],
+     ["المورّدون",["إدارة مورّديكم الخارجيين (تحجزونهم بأنفسكم، وننسّقهم يوم العرس)"]],
+     ["الجدول الزمني",["التجهيز · المراسم · الحفل"]],
+     ["يوم العرس",["منسّق: حتى 8 ساعات","منسّق واحد: التجهيز، المراسم، الحفل"]],
+     ["الأنظمة",["الوصول إلى بوابة التخطيط الإلكترونية"]]]},
+   {nm:"Classic",ro:"تخطيط جزئي",was:"10,000",pr:"9,500",win:true,g:[
+     ["القاعة والضيوف",["المساعدة في اختيار القاعة وحجزها","دعوة رقمية (بطاقة إلكترونية)","RSVP إلكتروني (بسيط)"]],
+     ["التصميم والمفهوم",["مفهوم التصميم · حتى 3 تعديلات","مخطط القاعة (CAD وCanva)","مخطط جلوس ثنائي الأبعاد"]],
+     ["المورّدون",["اختيار المورّدين من قاعدتنا (أسعار الوكالة)","إدارة ومفاوضة كاملة (مورّدونا ومورّدوكم الخارجيون)"]],
+     ["الجدول الزمني",["التجهيز · تجهيز العروس · المراسم · الحفل"]],
+     ["يوم العرس",["منسّقون: حتى 8 ساعات","منسّق التجهيز","منسّق برنامج العرس"]],
+     ["الأنظمة",["بوابة التخطيط الإلكترونية"]]]},
+   {nm:"Luxury",ro:"تخطيط متكامل",was:"18,000",pr:"17,100",g:[
+     ["القاعة والضيوف",["المساعدة في اختيار القاعة وحجزها","دعوة رقمية (بطاقة إلكترونية)","RSVP إلكتروني متقدّم"]],
+     ["التصميم والمفهوم",["المفهوم · حتى 5 تعديلات","مخطط القاعة (CAD وCanva) · عرض ثنائي الأبعاد","مجسّم ثلاثي الأبعاد كامل للقاعة"]],
+     ["المورّدون",["اختيار المورّدين من قاعدتنا (أسعار الوكالة)","إدارة ومفاوضة كاملة","سداد المورّدين عبر Olga Events (تحوّلون المبلغ ونسدّد نحن)"]],
+     ["الجدول الزمني",["التجهيز · تجهيز العروس · المراسم · الحفل"]],
+     ["يوم العرس",["فريق يعمل بنظام النوبات، حتى 8 ساعات","تنسيق التجهيز","منسّق الحفل","منسّق المراسم","منسّق الترفيه","مساعِدة العروس","مضيّفتان (استقبال الضيوف)"]],
+     ["التواصل والأنظمة",["محادثة الفريق · بوابة إلكترونية"]]]}
+  ],
+  decor:[
+   {nm:"Bloom",ro:"ديكور · المستوى 1",k:"soiree",perg:"طاولة إضافية لـ10 ضيوف: +850 درهم (10 كراسٍ + قطعة مركزية Standard)",g:[
+     ["المنصة والإنشاءات",["حلبة رقص 5×5 م","منصة 5 م، مع درجة","خلفية (أقواس من مجموعتنا)"]],
+     ["الطاولات والضيوف",["10 قطع مركزية Standard، زهور طبيعية","100 كرسي VIP"]],
+     ["التنسيق والخدمات",["تنسيق منطقة المدخل","تنسيق القاعة بالزهور الصناعية","نظام إضاءة","النقل والخدمات اللوجستية"]]]},
+   {nm:"Signature",ro:"ديكور · المستوى 2",k:"signature",win:true,perg:"طاولة إضافية لـ10 ضيوف: +1,300 درهم (10 كراسٍ + قطعة مركزية Premium)",g:[
+     ["المنصة والإنشاءات",["حلبة رقص 6×6 م","منصة 8 م، مع درجة","خلفية بعرض المنصة بالكامل"]],
+     ["الطاولات والضيوف",["10 قطع مركزية Premium، زهور طبيعية (وافرة)","100 كرسي VIP"]],
+     ["التنسيق والخدمات",["تنسيق منطقة المدخل","تنسيق القاعة بالزهور الصناعية","نظام إضاءة","النقل والخدمات اللوجستية"]]]},
+   {nm:"Elegance",ro:"ديكور · المستوى 3",k:"atelier",perg:"طاولة إضافية لـ10 ضيوف: +2,000 درهم (10 كراسٍ + قطعة مركزية Exclusive)",g:[
+     ["المنصة والإنشاءات",["حلبة رقص 6×6 م","منصة 13 م، مع درجة","ممشى (catwalk) ~10 م","خلفية بالعرض الكامل"]],
+     ["الطاولات والضيوف",["10 قطع مركزية Exclusive، زهور طبيعية (كبيرة، فاخرة)","100 كرسي VIP · 4 طاولات VIP","4 أطقم لاونج (أرائك)","زهور لطاولات الكوكتيل"]],
+     ["التنسيق والخدمات",["تنسيق منطقة المدخل","تنسيق القاعة بالزهور الصناعية","نظام إضاءة","النقل والخدمات اللوجستية"]]]}
+  ]
+ }
+};
+
+let L='en';
+function waLink(){return `https://wa.me/${WA}?text=`+encodeURIComponent(T[L].waMsg);}
+function setText(id,v){const e=document.getElementById(id);if(e)e.textContent=v;}
+
+function render(l){
+ L=l; const t=T[l];
+ document.body.setAttribute('dir',t.dir); document.documentElement.lang=l;
+ ["coverKick","coverTitle","coverSub","pathsTitle","pAtag","pAtitle","pAtext","pBtag","pBtitle","pBtext","planTitle","planLead","decorTitle","decorLead","gLbl","gHint","decorNote","calcTitle","calcLead","qLplan","qLdec","qLg","qSplan","qStot","qSsave1","qIncl","ctaTitle","ctaSub","waLabel","consLabel","footTag"].forEach(id=>setText(id,t[id]));
+
+ // planning cards
+ const pc=document.getElementById('planCols'); pc.innerHTML='';
+ t.plan.forEach(p=>{
+   let groups=p.g.map(gr=>`<div class="grp">${gr[0]}</div><ul>${gr[1].map(i=>`<li>${i}</li>`).join('')}</ul>`).join('');
+   pc.insertAdjacentHTML('beforeend',`<div class="pkg ${p.win?'win':''}">${p.win?`<div class="badge">${t.most}</div>`:''}<div class="nm">${p.nm}</div><div class="ro">${p.ro}</div><div class="prices"><div class="was">${t.was} ${t.cur} ${p.was}</div><div class="pr">${t.cur} ${p.pr}</div></div><a class="pick ${p.win?'':'ghost'}" href="${waLink()}" target="_blank">${t.consLabel}</a>${groups}</div>`);
+ });
+
+ // decor cards (prices via data-price, filled by calc)
+ const dc=document.getElementById('decorCols'); dc.innerHTML='';
+ t.decor.forEach(p=>{
+   let groups=p.g.map(gr=>`<div class="grp">${gr[0]}</div><ul>${gr[1].map(i=>`<li>${i}</li>`).join('')}</ul>`).join('');
+   dc.insertAdjacentHTML('beforeend',`<div class="pkg ${p.win?'win':''}">${p.win?`<div class="badge">${t.most}</div>`:''}<div class="nm">${p.nm}</div><div class="ro">${p.ro}</div><div class="prices"><div class="was">${t.was} <span data-was="${p.k}"></span></div><div class="pr"><span data-price="${p.k}"></span></div></div><div class="perg">${p.perg}</div><a class="pick ${p.win?'':'ghost'}" href="${waLink()}" target="_blank">${t.consLabel}</a>${groups}</div>`);
+ });
+
+ // selects
+ const qp=document.getElementById('qplan'); qp.innerHTML='';
+ [["6650","7000"],["9500","10000"],["17100","18000"]].forEach((v,i)=>{const o=document.createElement('option');o.value=v[0];o.dataset.std=v[1];o.textContent=t.planSel[i];if(i===1)o.selected=true;qp.appendChild(o);});
+ const qd=document.getElementById('qdec'); qd.innerHTML='';
+ ["soiree","signature","atelier"].forEach((k,i)=>{const o=document.createElement('option');o.value=k;o.textContent=t.decSel[i];if(i===1)o.selected=true;qd.appendChild(o);});
+
+ // links
+ document.getElementById('waBtn').href=waLink();
+ document.getElementById('consBtn').href=waLink();
+ document.getElementById('waFloat').href=waLink();
+ document.querySelectorAll('.langs button').forEach(b=>b.classList.toggle('on',b.dataset.l===l));
+
+ bindCalc(); decorCalc(); quoteCalc();
+}
+
+// ---- décor live prices ----
+const cg=()=>document.getElementById('cg'), cgn=()=>document.getElementById('cgn');
+function decorCalc(){
+ const guests=Math.max(100,+cgn().value||100);
+ const eg=Math.max(0,guests-100), et=Math.max(0,Math.ceil(guests/10)-10);
+ for(const k in PRICE){const add=eg*50+et*PRICE[k].cp;const bundle=PRICE[k].base+add;const std=Math.round(bundle*PRICE[k].std/PRICE[k].base);
+   const e=document.querySelector(`[data-price="${k}"]`); if(e)e.textContent=`${T[L].cur} ${fmt(bundle)}`;
+   const w=document.querySelector(`[data-was="${k}"]`); if(w)w.textContent=`${T[L].cur} ${fmt(std)}`;}
+}
+// ---- proposal calculator ----
+function quoteCalc(){
+ const qp=document.getElementById('qplan'),qd=document.getElementById('qdec'),qgn=document.getElementById('qgn');
+ const plan=+qp.value, planStd=+qp.selectedOptions[0].dataset.std, k=qd.value, guests=Math.max(100,+qgn.value||100);
+ const eg=Math.max(0,guests-100), et=Math.max(0,Math.ceil(guests/10)-10), add=eg*50+et*PRICE[k].cp;
+ const decor=PRICE[k].base+add, std=Math.round(decor*PRICE[k].std/PRICE[k].base), save=(std-decor)+(planStd-plan), total=plan+decor;
+ const nm={soiree:'Bloom',signature:'Signature',atelier:'Elegance'}[k];
+ setText('q-plan',`${T[L].cur} ${fmt(plan)}`);
+ setText('q-decname',`${T[L].decorWord}: ${nm} · ${guests} ${T[L].guestsWord}`);
+ setText('q-dec',`${T[L].cur} ${fmt(decor)}`);
+ setText('q-total',`${T[L].cur} ${fmt(total)}`);
+ setText('q-save',`${T[L].cur} ${fmt(save)}`);
+}
+let bound=false;
+function bindCalc(){
+ if(bound) return; bound=true;
+ const g=cg(),gn=cgn();
+ g.addEventListener('input',()=>{gn.value=g.value;decorCalc();});
+ gn.addEventListener('input',()=>{g.value=Math.min(600,Math.max(100,+gn.value||100));decorCalc();});
+ const qp=document.getElementById('qplan'),qd=document.getElementById('qdec'),qg=document.getElementById('qg'),qgn=document.getElementById('qgn');
+ qp.onchange=quoteCalc; qd.onchange=quoteCalc;
+ qg.addEventListener('input',()=>{qgn.value=qg.value;quoteCalc();});
+ qgn.addEventListener('input',()=>{qg.value=Math.min(600,Math.max(100,+qgn.value||100));quoteCalc();});
+}
+function setLang(l){render(l);}
+render('en');
+</script>
+</body>
+</html>
