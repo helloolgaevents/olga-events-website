@@ -4,7 +4,13 @@ import Reveal from "./components/Reveal";
 import CountUp from "./components/CountUp";
 import SiteHeader from "./components/SiteHeader";
 import SiteFooter from "./components/SiteFooter";
-import { Kicker, Divider, INSTAGRAM, InstagramIcon } from "./components/ui";
+import {
+  Kicker,
+  Divider,
+  SplitSection,
+  INSTAGRAM,
+  InstagramIcon,
+} from "./components/ui";
 
 const SERVICES = [
   { title: "Planning", text: "First idea to final dance." },
@@ -142,7 +148,7 @@ export default function Home() {
 
       {/* ---------- Trust bar ---------- */}
       <section className="border-y border-line bg-ink">
-        <div className="mx-auto grid w-full max-w-[1100px] grid-cols-2 gap-y-10 px-6 py-12 text-center md:grid-cols-4">
+        <div className="mx-auto grid w-full max-w-[1500px] grid-cols-2 gap-y-10 px-6 py-12 text-center md:grid-cols-4">
           <Reveal className="px-2">
             <div className="font-num text-4xl font-bold text-gold">
               <CountUp target={300} suffix="+" />
@@ -178,29 +184,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---------- About ---------- */}
-      <section id="about" className="bg-ink-alt">
-        <div className="mx-auto w-full max-w-[1100px] px-6 py-28">
-          <Reveal className="mx-auto max-w-2xl text-center">
-            <Kicker>Who we are</Kicker>
-            <h2 className="mt-6 font-serif text-4xl font-light leading-tight text-cream sm:text-5xl">
-              A team in love with the details
-            </h2>
-            <div className="flex justify-center">
-              <Divider />
-            </div>
-            <p className="font-sans text-lg font-light leading-relaxed text-muted">
-              A wedding is born from the small things, thoughtful décor, fresh
-              flowers, the right rhythm of the evening. We lead and coordinate
-              the whole day so it feels warm and effortless.
-            </p>
-          </Reveal>
-        </div>
-      </section>
+      {/* ---------- About (split) ---------- */}
+      <div id="about">
+        <SplitSection
+          alt
+          imageSide="left"
+          imageSrc="/images/gallery/arabian-ranches.jpg"
+          imageAlt="Luxury wedding designed by Olga Events in Dubai"
+          kicker="Who we are"
+          title="A team in love with the details"
+          lead="A wedding is born from the small things, thoughtful décor, fresh flowers, the right rhythm of the evening. We lead and coordinate the whole day so it feels warm and effortless."
+          points={[
+            "Full-service planning, design and coordination",
+            "In-house décor and fresh florals",
+            "Across Dubai, Abu Dhabi and all Emirates",
+          ]}
+          cta={{ label: "About us", href: "/about-us" }}
+        />
+      </div>
 
       {/* ---------- Services ---------- */}
       <section id="services" className="bg-ink">
-        <div className="mx-auto w-full max-w-[1100px] px-6 py-28">
+        <div className="mx-auto w-full max-w-[1500px] px-[22px] sm:px-14 py-28">
           <Reveal className="text-center">
             <Kicker>What we do</Kicker>
             <h2 className="mt-6 font-serif text-4xl font-light text-cream sm:text-5xl">
@@ -227,40 +232,41 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---------- Gallery ---------- */}
-      <section id="gallery" className="bg-ink-alt">
-        <div className="mx-auto w-full max-w-[1100px] px-6 py-28">
-          <Reveal className="text-center">
+      {/* ---------- Gallery (full-bleed arch strip) ---------- */}
+      <section id="gallery" className="bg-ink-alt py-24">
+        <div className="mx-auto mb-14 w-full max-w-[1500px] px-[22px] text-center sm:px-14">
+          <Reveal>
             <Kicker>Selected work</Kicker>
-            <h2 className="mt-6 font-serif text-4xl font-light text-cream sm:text-5xl">
+            <h2 className="mt-3 font-serif text-[2.5rem] leading-[1.1] text-cream sm:text-[3rem]">
               Moments we have created
             </h2>
           </Reveal>
-          <div className="mt-16 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {GALLERY.map((item, i) => (
-              <Reveal key={item.title} delay={(i % 3) * 90}>
-                <figure className="tile aspect-[4/5]">
+        </div>
+        <div className="grid grid-cols-1 gap-4 px-3 sm:grid-cols-3 sm:px-4">
+          {GALLERY.slice(0, 3).map((item, i) => (
+            <Reveal key={item.title} delay={i * 90}>
+              <figure>
+                <div className="arch-strip relative h-[380px] sm:h-[520px]">
                   <Image
                     src={item.src}
                     alt={item.title}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 360px"
+                    sizes="(max-width: 640px) 100vw, 33vw"
                     className="object-cover"
                   />
-                  <figcaption className="tile-caption">
-                    <div>
-                      <p className="font-serif text-2xl font-light text-white">
-                        {item.title}
-                      </p>
-                      <p className="mt-1 font-sans text-[0.72rem] uppercase tracking-[0.2em] text-gold">
-                        {item.label}
-                      </p>
-                    </div>
-                  </figcaption>
-                </figure>
-              </Reveal>
-            ))}
-          </div>
+                </div>
+                <figcaption className="mt-4 text-center">
+                  <p className="font-serif text-2xl text-cream">{item.title}</p>
+                  <p className="kicker mt-1 inline-block">{item.label}</p>
+                </figcaption>
+              </figure>
+            </Reveal>
+          ))}
+        </div>
+        <div className="mt-12 text-center">
+          <Link href="/gallery" className="btn-outline">
+            View full gallery
+          </Link>
         </div>
       </section>
 
@@ -284,44 +290,27 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---------- Packages ---------- */}
-      <section id="packages" className="bg-ink-alt">
-        <div className="mx-auto w-full max-w-[1100px] px-6 py-28">
-          <Reveal>
-            <div className="relative overflow-hidden rounded-2xl border border-line bg-beige px-8 py-20 text-center sm:px-16">
-              <div
-                className="pointer-events-none absolute inset-0"
-                style={{
-                  background:
-                    "radial-gradient(60% 70% at 50% 50%, rgba(194,163,107,0.16), rgba(31,28,22,0) 70%)",
-                }}
-              />
-              <div className="relative z-10 mx-auto max-w-2xl">
-                <Kicker>Our packages</Kicker>
-                <h2 className="mt-6 font-serif text-4xl font-light text-cream sm:text-5xl">
-                  Planning & décor, made clear
-                </h2>
-                <div className="flex justify-center">
-                  <Divider />
-                </div>
-                <p className="font-sans text-lg font-light leading-relaxed text-muted">
-                  Transparent packages with a live price calculator, you always
-                  know what&apos;s included.
-                </p>
-                <div className="mt-10">
-                  <Link href="/packages" className="btn-gold">
-                    See packages
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+      {/* ---------- Packages (split) ---------- */}
+      <div id="packages">
+        <SplitSection
+          imageSide="right"
+          imageSrc="/images/gallery/chandelier-setup.jpg"
+          imageAlt="Luxury wedding décor and chandelier setup in Dubai"
+          kicker="Our packages"
+          title="Planning & décor, made clear"
+          lead="Transparent packages with a live price calculator, you always know what's included."
+          points={[
+            "Planning: Essential, Classic, Luxury",
+            "Décor collections: Bloom, Signature, Elegance",
+            "Best price when you book planning and décor together",
+          ]}
+          cta={{ label: "See packages", href: "/packages" }}
+        />
+      </div>
 
       {/* ---------- Reviews ---------- */}
       <section id="reviews" className="bg-ink">
-        <div className="mx-auto w-full max-w-[1100px] px-6 py-28">
+        <div className="mx-auto w-full max-w-[1500px] px-[22px] sm:px-14 py-28">
           <Reveal className="text-center">
             <Kicker>Kind words</Kicker>
             <h2 className="mt-6 font-serif text-4xl font-light text-cream sm:text-5xl">
@@ -350,7 +339,7 @@ export default function Home() {
 
       {/* ---------- Team ---------- */}
       <section className="bg-ink-alt">
-        <div className="mx-auto w-full max-w-[1100px] px-6 py-28">
+        <div className="mx-auto w-full max-w-[1500px] px-[22px] sm:px-14 py-28">
           <Reveal className="text-center">
             <Kicker>The people</Kicker>
             <h2 className="mt-6 font-serif text-4xl font-light text-cream sm:text-5xl">
@@ -388,7 +377,7 @@ export default function Home() {
               "radial-gradient(50% 60% at 50% 40%, rgba(194,163,107,0.14), rgba(22,20,15,0) 70%)",
           }}
         />
-        <div className="relative z-10 mx-auto w-full max-w-[1100px] px-6 py-32 text-center">
+        <div className="relative z-10 mx-auto w-full max-w-[1500px] px-[22px] sm:px-14 py-32 text-center">
           <Reveal className="mx-auto max-w-2xl">
             <h2 className="font-serif text-5xl font-light leading-tight text-cream sm:text-6xl">
               Let&apos;s plan your wedding
@@ -411,7 +400,7 @@ export default function Home() {
 
       {/* ---------- Instagram ---------- */}
       <section className="bg-ink-alt">
-        <div className="mx-auto w-full max-w-[1100px] px-6 py-24">
+        <div className="mx-auto w-full max-w-[1500px] px-[22px] sm:px-14 py-24">
           <Reveal className="text-center">
             <Kicker>Follow us on Instagram</Kicker>
             <h2 className="mt-5 font-serif text-4xl font-light text-cream sm:text-5xl">

@@ -10,6 +10,7 @@ import {
   FAQ,
   CTASection,
   FeatureImage,
+  SplitSection,
 } from "../components/ui";
 
 export const metadata: Metadata = {
@@ -93,26 +94,15 @@ export default function WeddingPlannerPage() {
         intro="Luxury wedding planner in Dubai with over 10 years of experience in high-end weddings. We design, plan, and execute fully customised weddings with complete control over budget, design, and guest experience."
       />
 
-      <FeatureImage
-        src="/images/gold-marble.jpg"
-        alt="Elegant wedding stage planned by Olga Events in Dubai"
+      <SplitSection
+        alt
+        imageSide="left"
+        imageSrc="/images/gold-marble.jpg"
+        imageAlt="Elegant wedding stage planned by Olga Events in Dubai"
+        kicker="Who we are"
+        title="Luxury Wedding Planner in Dubai"
+        lead="Olga Events is a luxury wedding planner in Dubai specialising in bespoke weddings, full-service planning, and high-end event design. We create elegant, fully customised weddings tailored to each couple, combining creative vision with structured planning and seamless execution. Looking for a professional wedding planner in Dubai? We help you plan your wedding step by step with clarity, control, and a refined final result."
       />
-
-      <Section alt>
-        <div className="mx-auto max-w-3xl">
-          <SectionTitle
-            kicker="Who we are"
-            title="Luxury Wedding Planner in Dubai"
-          />
-          <div className="mt-8">
-            <Prose
-              paragraphs={[
-                "Olga Events is a luxury wedding planner in Dubai specialising in bespoke weddings, full-service planning, and high-end event design. We create elegant, fully customised weddings tailored to each couple, combining creative vision with structured planning and seamless execution. Looking for a professional wedding planner in Dubai? We help you plan your wedding step by step with clarity, control, and a refined final result.",
-              ]}
-            />
-          </div>
-        </div>
-      </Section>
 
       <TextSection
         kicker="What we do"

@@ -10,6 +10,7 @@ import {
   FAQ,
   CTASection,
   FeatureImage,
+  SplitSection,
 } from "../components/ui";
 
 export const metadata: Metadata = {
@@ -66,26 +67,15 @@ export default function WeddingDecorationPage() {
         intro="Looking for luxury wedding decoration in Dubai? We create bespoke wedding designs with floral styling, custom décor, and full event transformation tailored to your venue and concept. At Olga Events, we specialise in high-end wedding decoration in Dubai, combining design, production, and execution to deliver a refined and cohesive result."
       />
 
-      <FeatureImage
-        src="/images/lavish-floral.jpg"
-        alt="Luxury floral wedding decoration by Olga Events in the UAE"
+      <SplitSection
+        alt
+        imageSide="left"
+        imageSrc="/images/lavish-floral.jpg"
+        imageAlt="Luxury floral wedding decoration by Olga Events in the UAE"
+        kicker="The experience"
+        title="Luxury Wedding Decoration in Dubai"
+        lead="Wedding decoration is not just about aesthetics, it is about creating a complete experience. We design full wedding environments, combining floral arrangements, lighting, structures, and styling elements to transform your venue into a unique and elegant setting. Decoration is part of our wider luxury wedding design and planning service."
       />
-
-      <Section alt>
-        <div className="mx-auto max-w-3xl">
-          <SectionTitle
-            kicker="The experience"
-            title="Luxury Wedding Decoration in Dubai"
-          />
-          <div className="mt-8">
-            <Prose
-              paragraphs={[
-                "Wedding decoration is not just about aesthetics, it is about creating a complete experience. We design full wedding environments, combining floral arrangements, lighting, structures, and styling elements to transform your venue into a unique and elegant setting. Decoration is part of our wider luxury wedding design and planning service.",
-              ]}
-            />
-          </div>
-        </div>
-      </Section>
 
       <Section>
         <div className="mx-auto max-w-3xl">

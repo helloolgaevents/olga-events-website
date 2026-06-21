@@ -14,7 +14,7 @@ export default function SiteHeader() {
 
   return (
     <header className="dark-zone fixed inset-x-0 top-0 z-50 border-b border-line/70 bg-ink/70 backdrop-blur-md">
-      <div className="mx-auto flex h-[72px] w-full max-w-[1100px] items-center justify-between px-6">
+      <div className="mx-auto flex h-[72px] w-full max-w-[1500px] items-center justify-between px-6">
         <Link
           href="/"
           onClick={() => setOpen(false)}

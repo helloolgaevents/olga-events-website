@@ -154,7 +154,7 @@ export function PageHeader({
       <div className="relative z-10 mx-auto max-w-[900px] px-6 pb-20 pt-36 text-center sm:pt-40">
         <Reveal>
           {kicker ? <Kicker>{kicker}</Kicker> : null}
-          <h1 className="mt-3 font-serif text-[2.8rem] leading-[1.08] text-cream sm:text-[3.6rem]">
+          <h1 className="mt-3 font-serif text-[3rem] leading-[1.06] text-cream sm:text-[3.75rem]">
             {title}
           </h1>
           {intro ? (
@@ -184,7 +184,7 @@ export function Section({
 }) {
   return (
     <section id={id} className={alt ? "bg-ink-alt" : "bg-ink"}>
-      <div className={`mx-auto w-full max-w-[1100px] px-6 py-20 ${className}`}>
+      <div className={`mx-auto w-full max-w-[1500px] px-[22px] sm:px-14 py-20 ${className}`}>
         {children}
       </div>
     </section>
@@ -203,7 +203,7 @@ export function SectionTitle({
   return (
     <Reveal className={center ? "text-center" : ""}>
       {kicker ? <Kicker>{kicker}</Kicker> : null}
-      <h2 className="mt-3 font-serif text-[2.25rem] leading-[1.12] text-cream sm:text-[2.75rem]">
+      <h2 className="mt-3 font-serif text-[2.5rem] leading-[1.1] text-cream sm:text-[3rem]">
         {title}
       </h2>
     </Reveal>
@@ -248,6 +248,7 @@ export function FAQ({ items }: { items: { q: string; a: string }[] }) {
   );
 }
 
+// Full-bleed arched banner image (edge to edge).
 export function FeatureImage({
   src,
   alt,
@@ -259,19 +260,98 @@ export function FeatureImage({
 }) {
   return (
     <section className="bg-ink">
-      <div className="mx-auto w-full max-w-[1100px] px-6 pt-12">
-        <Reveal>
-          <div className="tile relative aspect-[16/10] w-full sm:aspect-[16/8]">
-            <Image
-              src={src}
-              alt={alt}
-              fill
-              priority={priority}
-              sizes="(max-width: 1100px) 100vw, 1100px"
-              className="object-cover"
-            />
-          </div>
-        </Reveal>
+      <Reveal>
+        <div className="arch-top relative h-[340px] w-full sm:h-[560px]">
+          <Image
+            src={src}
+            alt={alt}
+            fill
+            priority={priority}
+            sizes="100vw"
+            className="object-cover"
+          />
+        </div>
+      </Reveal>
+    </section>
+  );
+}
+
+// Full-bleed text + photo split. Photo touches the screen edge, with an arch top.
+// On mobile both stack (photo first). Alternate sides with imageSide.
+export function SplitSection({
+  kicker,
+  title,
+  lead,
+  points,
+  imageSrc,
+  imageAlt,
+  imageSide = "right",
+  cta,
+  alt = false,
+}: {
+  kicker?: string;
+  title: string;
+  lead?: string;
+  points?: string[];
+  imageSrc: string;
+  imageAlt: string;
+  imageSide?: "left" | "right";
+  cta?: { label: string; href: string };
+  alt?: boolean;
+}) {
+  const photoOrder = imageSide === "left" ? "lg:order-1" : "lg:order-2";
+  const textOrder = imageSide === "left" ? "lg:order-2" : "lg:order-1";
+  return (
+    <section className={alt ? "bg-ink-alt" : "bg-ink"}>
+      <div className="grid items-stretch lg:grid-cols-2">
+        <div
+          className={`arch-top relative order-1 h-[340px] w-full overflow-hidden sm:h-[460px] lg:h-[620px] ${photoOrder}`}
+        >
+          <Image
+            src={imageSrc}
+            alt={imageAlt}
+            fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="object-cover"
+          />
+        </div>
+        <div
+          className={`order-2 flex items-center px-[22px] py-16 sm:px-14 lg:py-24 ${textOrder}`}
+        >
+          <Reveal className="mx-auto w-full max-w-[640px]">
+            {kicker ? <Kicker>{kicker}</Kicker> : null}
+            <h2 className="mt-3 font-serif text-[2.5rem] leading-[1.1] text-cream sm:text-[3rem]">
+              {title}
+            </h2>
+            {lead ? (
+              <p className="mt-5 font-sans text-[18px] leading-[1.7] text-muted">
+                {lead}
+              </p>
+            ) : null}
+            {points && points.length ? (
+              <ul className="mt-6 space-y-3">
+                {points.map((p) => (
+                  <li
+                    key={p}
+                    className="flex gap-3 font-sans text-[16px] leading-snug text-muted"
+                  >
+                    <span className="mt-0.5 shrink-0 text-green" aria-hidden>
+                      ✓
+                    </span>
+                    {p}
+                  </li>
+                ))}
+              </ul>
+            ) : null}
+            {cta ? (
+              <div className="mt-9">
+                <Link href={cta.href} className="btn-gold">
+                  {cta.label}
+                </Link>
+              </div>
+            ) : null}
+          </Reveal>
+        </div>
       </div>
     </section>
   );
@@ -297,9 +377,9 @@ export function CTASection({
             "radial-gradient(50% 60% at 50% 40%, rgba(194,163,107,0.14), rgba(22,20,15,0) 70%)",
         }}
       />
-      <div className="relative z-10 mx-auto w-full max-w-[1100px] px-6 py-28 text-center">
+      <div className="relative z-10 mx-auto w-full max-w-[1500px] px-[22px] sm:px-14 py-28 text-center">
         <Reveal className="mx-auto max-w-2xl">
-          <h2 className="font-serif text-[2.25rem] leading-[1.12] text-cream sm:text-[2.6rem]">
+          <h2 className="font-serif text-[2.5rem] leading-[1.1] text-cream sm:text-[3rem]">
             {title}
           </h2>
           <Divider />

@@ -87,6 +87,16 @@ body {
   background: var(--color-gold);
 }
 
+/* Wedding arch motifs (responsive radius so it scales down on mobile). */
+.arch-top {
+  border-radius: clamp(110px, 18vw, 280px) clamp(110px, 18vw, 280px) 0 0;
+  overflow: hidden;
+}
+.arch-strip {
+  border-radius: clamp(80px, 13vw, 220px) clamp(80px, 13vw, 220px) 18px 18px;
+  overflow: hidden;
+}
+
 /* ---- Scroll reveal ---- */
 .reveal {
   opacity: 0;

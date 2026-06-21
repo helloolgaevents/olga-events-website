@@ -46,7 +46,19 @@ Notable: async `params` in dynamic routes; Turbopack is the default builder.
   excluded = faint `○` (never em-dash/tire).
 - **No em-dashes (—) in visible text** anywhere (replaced with comma/colon).
   Only SEO `title:`/`description:`/`alt` attributes may keep them.
-- Mood: elegant, premium, light & readable, gold accents thin (~10%), mobile-first.
+- **Layout = FULL-WIDTH edge-to-edge** (Batch 7, "FULL-WIDTH reference" mockup):
+  content container `max-w-[1500px]` with `px-[22px] sm:px-14` (56px). Text-only
+  sections stay narrow inside (max-w ~640-900) for readability, but section
+  backgrounds and photos go full width.
+  - `SplitSection` (ui.tsx): full-bleed text + photo, photo edge-to-edge with an
+    arch top, alternating `imageSide`; stacks photo-first on mobile (h-340).
+    Used on home (About, Packages) + wedding-decoration + wedding-planner.
+  - `FeatureImage` is now a full-bleed arched banner (h-340 mobile / 560 desktop).
+  - Home gallery = full-bleed 3-arch strip (`.arch-strip`) with captions.
+  - Arch motifs: `.arch-top` (clamp 110-280px top corners) for big photos/splits;
+    `.arch-strip` (clamp 80-220px) for photo strips. Responsive radius.
+  - Headings enlarged: H1 ~60px, H2 ~48px (Cormorant 500).
+- Mood: elegant, premium, light & readable, full-width, gold accents thin, mobile-first.
 - Animations: scroll reveal (`components/Reveal.tsx`), count-up
   (`components/CountUp.tsx`), hover-glow tiles/cards, venue marquee, button glow.
   All respect `prefers-reduced-motion`.
@@ -144,7 +156,16 @@ hello@olga.events · Dubai · Abu Dhabi · all Emirates · EN·RU·AR.
   footer=contentinfo); inline in-sentence links use `underline` so they aren't
   colour-only.
 
-## Pre-launch QA (last run — after Batch 6 contrast/size/mobile fix)
+## Pre-launch QA (last run — after Batch 7 full-width + arches)
+- Containers widened to max-w-1500 (px 22/56); home has 2 full-bleed split
+  sections + a 3-arch gallery strip; decoration & planner have split sections;
+  FeatureImage full-bleed arched everywhere. H1 ~60 / H2 ~48.
+- Lighthouse: home/packages/decor desktop 97-99/100/100/100; mobile 90-92/100/100.
+  No content-width (overflow), tap-target, or contrast issues on mobile.
+- Splits/arches stack to one column on mobile; photos h-340 with arch top.
+- Black text + no visible em-dashes retained.
+
+### Earlier (Batch 6 contrast/size/mobile fix):
 - Text now true black (#111111 headings / #141414 body); base 17px, leads 18px,
   package list items 16px, names/prices 30px, H2 ~40-44px. No pale/beige body text.
 - Décor packages confirmed open as 3 comparison columns (no "+" toggles), ✓/○ markers.
