@@ -147,7 +147,7 @@ export function PageHeader({
   intro?: string;
 }) {
   return (
-    <section className="relative overflow-hidden border-b border-line bg-ink">
+    <section className="dark-zone relative overflow-hidden border-b border-line bg-ink">
       <div
         className="pointer-events-none absolute inset-0"
         style={{

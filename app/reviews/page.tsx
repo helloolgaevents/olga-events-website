@@ -128,7 +128,7 @@ export default function ReviewsPage() {
           ))}
         </div>
 
-        <p className="mt-12 text-center font-sans text-xs font-light italic text-muted/70">
+        <p className="mt-12 text-center font-sans text-xs font-light italic text-muted">
           Example testimonials, shown to illustrate the page — being replaced
           with verified client reviews.
         </p>

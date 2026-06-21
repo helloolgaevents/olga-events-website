@@ -31,7 +31,7 @@ export default function PriceCalculator() {
         {/* ---- Inputs ---- */}
         <div className="space-y-8 p-8 sm:p-10">
           <fieldset>
-            <legend className="font-sans text-[0.72rem] uppercase tracking-[0.22em] text-gold">
+            <legend className="font-sans text-[0.72rem] uppercase tracking-[0.22em] text-muted">
               Planning package
             </legend>
             <div className="mt-4 grid grid-cols-1 gap-3">
@@ -50,7 +50,7 @@ export default function PriceCalculator() {
                   <span className="font-serif text-lg font-light text-cream">
                     {p.name}
                   </span>
-                  <span className="font-sans text-sm text-gold">
+                  <span className="font-sans text-sm font-normal text-muted">
                     {fmtAED(p.price)}
                   </span>
                 </button>
@@ -59,7 +59,7 @@ export default function PriceCalculator() {
           </fieldset>
 
           <fieldset>
-            <legend className="font-sans text-[0.72rem] uppercase tracking-[0.22em] text-gold">
+            <legend className="font-sans text-[0.72rem] uppercase tracking-[0.22em] text-muted">
               Décor collection
             </legend>
             <div className="mt-4 grid grid-cols-1 gap-3">
@@ -78,7 +78,7 @@ export default function PriceCalculator() {
                   <span className="font-serif text-lg font-light text-cream">
                     {d.name}
                   </span>
-                  <span className="font-sans text-sm text-gold">
+                  <span className="font-sans text-sm font-normal text-muted">
                     from {fmtAED(d.base)}
                   </span>
                 </button>
@@ -89,7 +89,7 @@ export default function PriceCalculator() {
           <div>
             <label
               htmlFor="calc-guests"
-              className="font-sans text-[0.72rem] uppercase tracking-[0.22em] text-gold"
+              className="font-sans text-[0.72rem] uppercase tracking-[0.22em] text-muted"
             >
               Number of guests
             </label>
@@ -137,13 +137,13 @@ export default function PriceCalculator() {
               <span className="font-sans text-sm uppercase tracking-[0.18em] text-cream">
                 Total
               </span>
-              <span className="font-serif text-3xl font-light text-gold">
+              <span className="font-serif text-3xl font-light text-cream">
                 AED <AnimatedNumber value={result.total} />
               </span>
             </div>
 
             {result.save > 0 ? (
-              <p className="border border-emerald-500/40 bg-emerald-500/10 px-4 py-3 font-sans text-sm font-light text-emerald-300">
+              <p className="border border-green/40 bg-green/10 px-4 py-3 font-sans text-sm font-light text-[#3f5a2e]">
                 You save by booking both packages together:{" "}
                 <span className="font-normal">
                   AED <AnimatedNumber value={result.save} />

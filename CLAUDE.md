@@ -17,13 +17,23 @@ Next.js 16 (App Router, Turbopack) + React 19 + TypeScript + Tailwind v4.
 Notable: async `params` in dynamic routes; Turbopack is the default builder.
 
 ## Design system — "Cinematic Dark (C2)"
-- Colors (Tailwind theme tokens in `app/globals.css`):
-  bg `--color-ink #16140f`, alt `--color-ink-alt #1f1c16`,
-  text `--color-cream #f4efe6`, `--color-muted #9b9384`,
-  accent `--color-gold #c2a36b`, hairline `--color-line #352f25`.
+- **Colour scheme = LIGHT base, dark only in nav/hero/footer** (Batch 4).
+  Role-based Tailwind tokens in `app/globals.css` are LIGHT by default and are
+  re-pointed to dark inside `.dark-zone`:
+  - Light (all content): surface `--color-ink #f5f3ef`, alt `--color-ink-alt
+    #faf8f5`, cards `#ffffff`; primary text `--color-cream #1a1a18`; body/secondary
+    `--color-muted #3a3833`; hairline `--color-line #e8e4dc`.
+  - `.dark-zone` (ONLY `<header>`, hero `<section>` / `PageHeader`, `<footer>`):
+    ink `#16140f`, alt `#1f1c16`, cream `#f4efe6`, muted `#9b9384`, line `#352f25`.
+  - Accent gold: `--color-gold` = `#846a24` on light (deepened so gold TEXT
+    passes WCAG AA), `#c2a36b` in dark zones. Gold = kickers/lines/icons only.
+  - Action green: `--color-green #5e7d46` (hover `#4a6337`). `.btn-gold` =
+    green-filled white text (primary CTA); `.btn-outline` = green outline. These
+    are the "Book / Choose / Send / Enquire" buttons.
+  - To re-theme a zone, just add/remove `dark-zone` — no per-element edits.
 - Fonts (next/font, `app/layout.tsx`): **Cormorant Garamond** (serif) for
   headings + logo; **Inter** (300/400) for body.
-- Mood: elegant, premium, dramatic, soft gold glow, lots of air, mobile-first.
+- Mood: elegant, premium, light & readable, gold accents, lots of air, mobile-first.
 - Animations: scroll reveal (`components/Reveal.tsx`), count-up
   (`components/CountUp.tsx`), hover-glow tiles/cards, venue marquee, button glow.
   All respect `prefers-reduced-motion`.
@@ -68,8 +78,10 @@ hello@olga.events · Dubai · Abu Dhabi · all Emirates · EN·RU·AR.
       i18n-ready). Copy lives in `app/packages/content.ts` (structured object —
       add RU/AR siblings later). Pricing single-source in `app/packages/pricing.ts`.
       Sections: hero, who-we-are, how-it-works, two-ways-to-book, planning
-      (tabbed tiers `PlanningTabs` with "adds over previous" highlight), décor
-      (`DecorPackages`: guest slider + expandable cards + animated prices),
+      (`PlanningComparison` — 3 open comparison columns with ✓/— per feature,
+      "Most chosen" on Classic, `content.planningComparison` matrix), décor
+      (`DecorPackages`: guest slider + open side-by-side spec cards + animated
+      prices, "Most chosen" on Signature),
       accordions (optional elements, individual décor, notes, how-we-work),
       live calculator (`PriceCalculator` + `AnimatedNumber`), additional
       services, transparent pricing, book-early timeline, fully-custom, CTA.
@@ -119,8 +131,16 @@ hello@olga.events · Dubai · Abu Dhabi · all Emirates · EN·RU·AR.
   footer=contentinfo); inline in-sentence links use `underline` so they aren't
   colour-only.
 
-## Pre-launch QA (last run — after /packages rebuild)
-Full QA passed — all checks green, no bugs found:
+## Pre-launch QA (last run — after Batch 4 light recolor + packages columns)
+Full QA passed — all checks green:
+- Light recolour verified: content is light, only nav/hero/footer are `.dark-zone`
+  dark. Accessibility (contrast) swept across all page types — all **100**, zero
+  colour-contrast failures (fixed: deepened light gold to `#846a24`, darkened
+  green outline-button text, dark calculator Total/labels + green savings, dark
+  "Transparent" formula line, removed faded `muted/70`).
+- `/packages` planning shown as 3 open comparison columns (✓/—, "Most chosen");
+  décor as 3 open side-by-side spec cards; slider + calculator recoloured & working.
+Earlier full QA (still valid):
 - `npm run lint` clean; `npm run build` clean (27 routes prerendered).
 - All 22 routes return 200; 243 redirects return 301 (pages/collections/products/
   blogs verified, incl. per-furniture-category and package/décor → /packages).
@@ -130,9 +150,9 @@ Full QA passed — all checks green, no bugs found:
   robots.txt valid.
 - `/contact` exposes mailto + WhatsApp + tel and all 6 form fields (client JS
   builds the mailto on submit).
-- `/packages` interactivity verified in SSR + components: 3 planning tabs,
-  2 sliders (décor + calculator), 17 accordion toggles, animated décor prices
-  (AED 46,930 etc.), live savings line. Calculator matches spec formula.
+- `/packages` verified: open planning comparison columns (✓/—), open décor spec
+  cards, 2 sliders (décor + calculator), accordions for notes/how-we-work,
+  animated décor prices, live savings line. Calculator matches spec formula.
 - Mobile-first verified: viewport meta + `lang="en"` + single `<h1>` + `<main>`
   landmark + no empty alts on every page; responsive grids; tap-to-expand
   interactivity; mobile nav menu.

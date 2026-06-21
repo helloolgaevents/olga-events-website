@@ -263,6 +263,78 @@ export const packagesContent = {
     ],
   },
 
+  // Side-by-side comparison matrix (all open) for the 3 planning tiers.
+  // Each row cell: true = included (✓), false = not included (—),
+  // string = included with a detail note.
+  planningComparison: {
+    cols: [
+      { key: "essential", name: "Essential", subtitle: "Start & coordination" },
+      {
+        key: "classic",
+        name: "Classic",
+        subtitle: "Partial planning",
+        popular: true,
+      },
+      { key: "luxury", name: "Luxury Planning", subtitle: "Full planning" },
+    ],
+    groups: [
+      {
+        title: "Venue & guests",
+        rows: [
+          { label: "Help selecting & booking the venue", cells: [false, true, true] },
+          { label: "Digital invitation (eCard)", cells: [true, true, true] },
+          { label: "Online RSVP", cells: [false, "Simple", "Advanced"] },
+        ],
+      },
+      {
+        title: "Design & concept",
+        rows: [
+          { label: "Wedding design concept", cells: [true, true, true] },
+          { label: "Concept revisions", cells: ["up to 2", "up to 3", "up to 5"] },
+          { label: "Floor plan (CAD & Canva)", cells: ["Basic", true, true] },
+          { label: "2D layout (seating)", cells: [false, true, true] },
+          { label: "Full 3D venue render", cells: [false, false, true] },
+        ],
+      },
+      {
+        title: "Vendors",
+        rows: [
+          { label: "Manage your external vendors", cells: [true, true, true] },
+          {
+            label: "Vendor selection from our base (special rates)",
+            cells: [false, true, true],
+          },
+          { label: "Full management & negotiation", cells: [false, true, true] },
+          { label: "Vendor payments via Olga Events", cells: [false, false, true] },
+        ],
+      },
+      {
+        title: "Wedding day",
+        rows: [
+          { label: "Coordination up to 8 hours", cells: [true, true, true] },
+          { label: "Set-up coordinator", cells: [true, true, true] },
+          {
+            label: "Reception / programme coordinator",
+            cells: [false, true, true],
+          },
+          { label: "Ceremony coordinator", cells: [false, false, true] },
+          { label: "Entertainment coordinator", cells: [false, false, true] },
+          { label: "Bridal assistant", cells: [false, false, true] },
+          { label: "2 hostesses (greeting guests)", cells: [false, false, true] },
+          { label: "Team works in shifts", cells: [false, false, true] },
+        ],
+      },
+      {
+        title: "Systems",
+        rows: [
+          { label: "Online planning portal", cells: [true, true, true] },
+          { label: "Team chat", cells: [false, false, true] },
+        ],
+      },
+    ],
+    choose: "Choose",
+  },
+
   decor: {
     heading: "Décor packages — everything for a beautiful wedding.",
     lead: "Each package includes everything needed for a beautiful wedding in a standard format — the core styling elements gathered into one solution with a clear price. Prices are shown for 100 guests; move the slider to your guest count and the price recalculates. What changes it: the number of chairs and the table styling in the chosen package. Florals included; décor is arranged separately from the planning package.",

@@ -3,7 +3,7 @@ import { FOOTER_NAV, CONTACT, INSTAGRAM, InstagramIcon } from "./ui";
 
 export default function SiteFooter() {
   return (
-    <footer className="border-t border-line bg-ink-alt">
+    <footer className="dark-zone border-t border-line bg-ink-alt">
       <div className="mx-auto w-full max-w-[1100px] px-6 py-16">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
           <div>

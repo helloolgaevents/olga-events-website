@@ -90,7 +90,7 @@ export default function Home() {
       {/* ---------- Hero ---------- */}
       <section
         id="top"
-        className="relative flex min-h-[92vh] items-center justify-center overflow-hidden"
+        className="dark-zone relative flex min-h-[92vh] items-center justify-center overflow-hidden"
       >
         <Image
           src={HERO_IMG}
@@ -273,10 +273,10 @@ export default function Home() {
             {[...VENUES, ...VENUES].map((venue, i) => (
               <span
                 key={`${venue}-${i}`}
-                className="flex shrink-0 items-center font-serif text-2xl font-light text-gold/80 sm:text-3xl"
+                className="flex shrink-0 items-center font-serif text-2xl font-light text-cream sm:text-3xl"
               >
                 {venue}
-                <span className="mx-8 text-gold/40">·</span>
+                <span className="mx-8 text-gold">·</span>
               </span>
             ))}
           </div>

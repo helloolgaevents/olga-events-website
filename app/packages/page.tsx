@@ -13,7 +13,7 @@ import {
   CTASection,
   FeatureImage,
 } from "../components/ui";
-import PlanningTabs from "./PlanningTabs";
+import PlanningComparison from "./PlanningComparison";
 import DecorPackages from "./DecorPackages";
 import { packagesContent as c } from "./content";
 
@@ -105,7 +105,7 @@ export default function PackagesPage() {
                   }}
                 />
                 <div className="relative z-10">
-                  <span className="inline-block bg-gold px-3 py-1 font-sans text-[0.6rem] uppercase tracking-[0.2em] text-ink">
+                  <span className="inline-block bg-green px-3 py-1 font-sans text-[0.6rem] uppercase tracking-[0.2em] text-white">
                     {c.book.recommended.tag}
                   </span>
                   <h3 className="mt-5 font-serif text-2xl font-light text-cream sm:text-3xl">
@@ -217,9 +217,9 @@ export default function PackagesPage() {
             </p>
           </Reveal>
 
-          <Reveal className="mt-14">
-            <PlanningTabs />
-          </Reveal>
+          <div className="mt-14">
+            <PlanningComparison />
+          </div>
         </Section>
 
         {/* ---------- DÉCOR PACKAGES ---------- */}
@@ -339,7 +339,7 @@ export default function PackagesPage() {
         <Section alt>
           <div className="mx-auto max-w-3xl text-center">
             <SectionTitle kicker="Pricing" title={c.transparent.heading} center />
-            <p className="mt-8 font-serif text-xl font-light leading-relaxed text-gold sm:text-2xl">
+            <p className="mt-8 font-serif text-xl font-light leading-relaxed text-cream sm:text-2xl">
               {c.transparent.formula}
             </p>
             <div className="flex justify-center">
