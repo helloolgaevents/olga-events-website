@@ -1,0 +1,1217 @@
+[
+  {
+    "source": "/pages/about-us",
+    "destination": "/about-us",
+    "statusCode": 301
+  },
+  {
+    "source": "/pages/reviews",
+    "destination": "/reviews",
+    "statusCode": 301
+  },
+  {
+    "source": "/pages/our-work",
+    "destination": "/our-work",
+    "statusCode": 301
+  },
+  {
+    "source": "/pages/wedding-decoration-dubai",
+    "destination": "/wedding-decoration-dubai",
+    "statusCode": 301
+  },
+  {
+    "source": "/pages/wedding-cost-dubai",
+    "destination": "/wedding-cost-dubai",
+    "statusCode": 301
+  },
+  {
+    "source": "/pages/wedding-planner-dubai",
+    "destination": "/wedding-planner-dubai",
+    "statusCode": 301
+  },
+  {
+    "source": "/pages/wedding-packages-dubai",
+    "destination": "/wedding-packages-dubai",
+    "statusCode": 301
+  },
+  {
+    "source": "/pages/wedding-planning-form",
+    "destination": "/contact",
+    "statusCode": 301
+  },
+  {
+    "source": "/pages/contact",
+    "destination": "/contact",
+    "statusCode": 301
+  },
+  {
+    "source": "/pages/contact-us",
+    "destination": "/contact",
+    "statusCode": 301
+  },
+  {
+    "source": "/collections/designed-packages",
+    "destination": "/gallery",
+    "statusCode": 301
+  },
+  {
+    "source": "/collections/event-planning-packages",
+    "destination": "/packages",
+    "statusCode": 301
+  },
+  {
+    "source": "/collections/bridal-sofa",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/collections/dining-tables",
+    "destination": "/furniture/dining-tables",
+    "statusCode": 301
+  },
+  {
+    "source": "/collections/dining-chairs",
+    "destination": "/furniture/dining-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/collections/louge-sofa",
+    "destination": "/furniture/lounge-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/collections/armchairs",
+    "destination": "/furniture/accent-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/collections/ottoman-puff",
+    "destination": "/furniture/ottomans",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/italian-bridal-sofa-baby-blue-velvet",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/new-moon-bridal-sofa-light-beige-velvet",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/pinsofa-bridal-sofa",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/orsetto-bridal-sofa-ivory",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/naive-bridal-sofa-topaz-velvet",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/elentra-bridal-sofa-beige",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/uris-bridal-sofa-beige",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/copy-of-borghese-bridal-sofa-beige-metal-base",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/copy-of-borghese-bridal-sofa-gray-metal-base",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/horizon-bridal-sofa-yellow-white",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/lavida-bridal-sofa-beige",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/santo-bridal-sofa-beige",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/victoria-bridal-sofa-beige",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/shell-bridal-sofa-beige",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/marina-bridal-sofa-beige",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/nostalgic-bridal-sofa-beige-nostalgic-bridal-sofa-beige",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/uris-bridal-sofa-beige-bridal-sofa",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/copy-of-lyon-bridal-sofa-black-white-stripes",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/copy-of-lena-bridal-sofa-beige-linen-wooden-legs",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/copy-of-dandelion-bridal-sofa-yellow-velvet-curve",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/copy-of-paris-bridal-sofa-beige-velvet-wooden-legs",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/copy-of-borghese-bridal-sofa-green-metal-base",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/copy-of-borghese-bridal-sofa-blue-metal-base",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/mirage-bridal-sofa-beige-1",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/copy-of-strabo-bridal-sofa-silver-white",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/copy-of-strabo-bridal-sofa-pastel-white",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/copy-of-strabo-bridal-sofa-dark-gray-ivory",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/copy-of-strabo-bridal-sofa-bronze-oyster",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/horizon-bridal-sofa-yellow-crimson",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/horizon-bridal-sofa-ivory-green",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/horizon-bridal-sofa-brown-pink",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/jimi-bridal-sofa-modern-design-silver-velvet",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/jimi-bridal-sofa-modern-design-blue-velvet",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/jimi-bridal-sofa-modern-design-yellow-velvet",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/jimi-bridal-sofa-modern-design-green",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/circe-bridal-sofa-modern-design",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/circe-bridal-sofa-modern-design-3colors-velvet",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/circs-bridal-sofa-modern-design-blue-sky-velvet",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/circe-bridal-sofa-white",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/vintage-italian-bridal-sofa-grey-velvet",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/vintage-italian-bridal-sofa-dusty-pink-velvet",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/vintage-italian-bridal-sofa-topaz-velvet",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/vintage-italian-bridal-sofa-oyster-velvet",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/yin-yang-sofa-bridal-sofa",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/vintage-minera-bridal-sofa",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/marseille-oyster-velvet-bridal-sofa",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/marseille-bridal-sofa-ivory-velvet-wooden-legs",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/bansallo-oyster-velvet-bridal-sofa",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/sag-harbor-bridal-sofa-soft-base",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/copy-of-the-naive-bridal-sofa-beige-velvet",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/palm-beach-bridal-sofa-peach",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/the-pill-bridal-bench-grey-velvet",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/marseille-bridal-sofa-baby-blue",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/parametric-bridal-bench",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/hermes-bridal-sofa",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/chubby-bridal-sofa",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/new-life-bridal-sofa",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/st-barts-bridal-sofa-ombre",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/new-moon-bridal-sofa",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/santorina-bridal-sofa-oyster-velvet",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/sag-harbor-bridal-sofa-oyster",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/st-tropez-bridal-soft-brown",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/eden-bridal-sofa-silver-velvet",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/chaise-bridal-sofa-gray-velvet",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/bella-bridal-sofa-ivory-velvet-wooden-legs",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/clarissa-bridal-sofa-ivory-velvet",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/art-deco-xl-bridal-sofa-peach",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/art-deco-xl-bridal-sofa-green-velvet",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/art-deco-bridal-sofa-dark-blue",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/copy-of-marseille-bridal-sofa-topaz-velvet",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/marseille-bridal-sofa-ivory-velvet",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/marseille-bridal-sofa-green-velvet",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/marseille-bridal-sofa-silver-velvet",
+    "destination": "/furniture/bridal-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/silver-mirror-topped-dining-table",
+    "destination": "/furniture/dining-tables",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/round-grey-wooden-dining-table-8-10-people",
+    "destination": "/furniture/dining-tables",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/transparent-acrylic-dining-table",
+    "destination": "/furniture/dining-tables",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/gold-mirror-topped-dining-table-8-12-people",
+    "destination": "/furniture/dining-tables",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/round-gold-dining-table-8-10-people-1",
+    "destination": "/furniture/dining-tables",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/copy-of-round-white-gold-dining-table-8-10-people",
+    "destination": "/furniture/dining-tables",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/copy-of-round-grey-wooden-dining-table-8-10-people",
+    "destination": "/furniture/dining-tables",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/round-white-wooden-dining-table-8-10-people",
+    "destination": "/furniture/dining-tables",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/half-moon-gold-white-dining-table",
+    "destination": "/furniture/dining-tables",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/gold-mirror-topped-dining-table",
+    "destination": "/furniture/dining-tables",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/s-shape-wooden-dining-table",
+    "destination": "/furniture/dining-tables",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/gold-half-moon-dining-table",
+    "destination": "/furniture/dining-tables",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/wooden-oval-dining-table",
+    "destination": "/furniture/dining-tables",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/rose-gold-steal-dining-table",
+    "destination": "/furniture/dining-tables",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/gold-mirror-dining-table",
+    "destination": "/furniture/dining-tables",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/golden-or-white-wooden-table",
+    "destination": "/furniture/dining-tables",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/white-wooden-dining-table",
+    "destination": "/furniture/dining-tables",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/antique-wooden-dining-table",
+    "destination": "/furniture/dining-tables",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/rustic-wooden-dining-table",
+    "destination": "/furniture/dining-tables",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/medline-dining-table",
+    "destination": "/furniture/dining-tables",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/antique-dining-table",
+    "destination": "/furniture/dining-tables",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/vintage-dior-dining-chair",
+    "destination": "/furniture/dining-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/vintage-dior-dining-chair-mesh-back",
+    "destination": "/furniture/dining-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/classic-white-dior-dining-chair-wooden-frame",
+    "destination": "/furniture/dining-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/silver-chanel-dining-chair-chrom",
+    "destination": "/furniture/dining-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/copy-of-round-back-light-pink-dining-chair-steel-gold-frame",
+    "destination": "/furniture/dining-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/white-oakland-dining-chair",
+    "destination": "/furniture/dining-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/gold-chivari-dining-chair-with-cushion",
+    "destination": "/furniture/dining-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/copy-of-caelynn-dining-chair-ivory-velvet-gold-legs",
+    "destination": "/furniture/dining-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/copy-of-vintage-dior-dining-chair-wooden-frame-beige-color",
+    "destination": "/furniture/dining-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/gold-dining-chair-ivory-velvet",
+    "destination": "/furniture/dining-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/caelynn-gold-dining-chair-light-gray-velvet",
+    "destination": "/furniture/dining-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/caelynn-gold-dining-chair-dark-gray-velvet",
+    "destination": "/furniture/dining-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/caelynn-gold-dining-chair",
+    "destination": "/furniture/dining-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/rodeo-dining-chair-steel-gold-frame-black-cushion",
+    "destination": "/furniture/dining-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/rodeo-dining-chair",
+    "destination": "/furniture/dining-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/black-chivari-dining-chair-with-cushion",
+    "destination": "/furniture/dining-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/transparent-chivari-dining-chair-with-cushion",
+    "destination": "/furniture/dining-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/silver-chivari-dining-chair",
+    "destination": "/furniture/dining-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/acrylic-criss-cross-dining-chair",
+    "destination": "/furniture/dining-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/louis-chost-dining-chair-transparent",
+    "destination": "/furniture/dining-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/flora-dining-chair-transparent-acrylic",
+    "destination": "/furniture/dining-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/ruby-dining-chair-acrylic",
+    "destination": "/furniture/dining-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/gold-infinity-dining-chair",
+    "destination": "/furniture/dining-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/rose-gold-milano-dining-chair",
+    "destination": "/furniture/dining-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/oval-back-white-dining-chair-steel-gold-fram",
+    "destination": "/furniture/dining-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/round-back-green-dining-chair",
+    "destination": "/furniture/dining-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/round-back-light-pink-dining-chair",
+    "destination": "/furniture/dining-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/classic-gold-dior-dining-chair",
+    "destination": "/furniture/dining-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/rustic-vintage-dior-dining-chair",
+    "destination": "/furniture/dining-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/black-dior-dining-chair-wooden-frame",
+    "destination": "/furniture/dining-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/pink-dior-dining-chair-wooden-frame",
+    "destination": "/furniture/dining-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/aqua-dior-dining-chair-wooden-frame",
+    "destination": "/furniture/dining-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/white-dining-chair",
+    "destination": "/furniture/dining-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/era-dining-chair",
+    "destination": "/furniture/dining-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/copy-of-backer-dining-chair",
+    "destination": "/furniture/dining-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/backer-dining-chair",
+    "destination": "/furniture/dining-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/copy-of-vintage-dior-dining-chair-wooden-frame-beige-color-1",
+    "destination": "/furniture/dining-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/lexington-large-lounge-sofa-1",
+    "destination": "/furniture/lounge-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/eye-lid-lounge-sofa-oyster-velvet",
+    "destination": "/furniture/lounge-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/bowery-lounge-sofa-blush-velvet-3-seats-gold-legs",
+    "destination": "/furniture/lounge-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/oasis-loveseat-velvet-3-seats-lounge-curve-gray-sofa",
+    "destination": "/furniture/lounge-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/endless-large-curve-8-seats-lounge-sofa-navy-velvet",
+    "destination": "/furniture/lounge-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/endless-large-curve-8-seats-lounge-sofa-beige-velvet",
+    "destination": "/furniture/lounge-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/endless-large-curve-8-seats-lounge-sofa-blusg-pink",
+    "destination": "/furniture/lounge-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/endless-large-curve-8-seats-lounge-sofa",
+    "destination": "/furniture/lounge-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/eye-lid-lounge-sofa-black-velvet",
+    "destination": "/furniture/lounge-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/bowery-lounge-sofa-navy-velvet",
+    "destination": "/furniture/lounge-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/hethro-lounge-sofa-3-seats-velvet-green",
+    "destination": "/furniture/lounge-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/hethro-lounge-sofa-navy-velvet",
+    "destination": "/furniture/lounge-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/hethro-lounge-sofa",
+    "destination": "/furniture/lounge-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/reeve-lounge-sofa",
+    "destination": "/furniture/lounge-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/abrow-lounge-sofa-3-seats",
+    "destination": "/furniture/lounge-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/3-seats-lounge-curve-gray-sofa",
+    "destination": "/furniture/lounge-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/prima-sofa",
+    "destination": "/furniture/lounge-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/tufted-2-seats-lounge-sofa-pink-color-velvet",
+    "destination": "/furniture/lounge-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/tufted-2-seats-lounge-sofa",
+    "destination": "/furniture/lounge-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/copy-of-oasis-loveseat-velvet-3-seats-lounge-curve-beige-sofa",
+    "destination": "/furniture/lounge-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/oasis-loveseat-velvet-3-seats-lounge-curve-beige-sofa",
+    "destination": "/furniture/lounge-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/oasis-loveseat-velvet-3-seats-lounge-curve-pink-sofa",
+    "destination": "/furniture/lounge-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/oasis-loveseat-blush-velvet-3-seats-lounge-sofa",
+    "destination": "/furniture/lounge-sofa",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/eye-lid-accent-chair-black-velvet-gold-frame",
+    "destination": "/furniture/accent-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/eye-lid-accent-chair-oyster-velvet-gold-legs",
+    "destination": "/furniture/accent-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/abrow-accent-chair-blush-pink-velvet-gold-legs",
+    "destination": "/furniture/accent-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/abrow-accent-chair-navy-velvet-gold-legs-1",
+    "destination": "/furniture/accent-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/hethro-accent-chair-green-velvet-gold-legs",
+    "destination": "/furniture/accent-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/carrol-accent-chair-ivory-velvet",
+    "destination": "/furniture/accent-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/browery-accent-chair-blush-pink-velvet",
+    "destination": "/furniture/accent-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/abrow-accent-chair-green-velvet-gold-legs",
+    "destination": "/furniture/accent-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/marika-accent-chair-navy-velvet",
+    "destination": "/furniture/accent-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/hethro-accent-chair-navy-velvet-gold-frame",
+    "destination": "/furniture/accent-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/lexington-accent-chair-navy-velvet",
+    "destination": "/furniture/accent-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/abrow-accent-chair-navy-velvet-gold-legs",
+    "destination": "/furniture/accent-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/hethro-accent-chair-navy-velvet",
+    "destination": "/furniture/accent-chairs",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/lotus-round-ottoman-oyster-velvet-gold-base",
+    "destination": "/furniture/ottomans",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/daisy-pouf-round-ottoman-white-leaves",
+    "destination": "/furniture/ottomans",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/daisy-pouf-round-ottoman-white-tulip",
+    "destination": "/furniture/ottomans",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/daisy-pouf-round-ottoman-dark-peach-velvet",
+    "destination": "/furniture/ottomans",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/daisy-pouf-ottoman",
+    "destination": "/furniture/ottomans",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/dennis-ottoman-green-velvet-cube-gold-base",
+    "destination": "/furniture/ottomans",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/dennis-ottoman-gray-velvet-cube-gold-base",
+    "destination": "/furniture/ottomans",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/dennis-ottoman-ivory-velvet-cube-gold-base",
+    "destination": "/furniture/ottomans",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/dennis-ottoman-dusty-pink-velvet-cube-gold-base",
+    "destination": "/furniture/ottomans",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/lotus-round-ottoman-navy-velvet-gold-base",
+    "destination": "/furniture/ottomans",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/copy-of-lotus-round-ottoman-oyster-velvet-gold-base",
+    "destination": "/furniture/ottomans",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/lotus-round-ottoman-olive-velvet-gold-base",
+    "destination": "/furniture/ottomans",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/hethro-round-ottoman-blue-velvet-silver-base",
+    "destination": "/furniture/ottomans",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/hethro-round-ottoman-gray-velvet-silver-base",
+    "destination": "/furniture/ottomans",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/hethro-round-ottoman-light-gray-velvet-silver-base",
+    "destination": "/furniture/ottomans",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/hethro-round-ottoman-blush-pink-velvet-silver-base",
+    "destination": "/furniture/ottomans",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/hethro-round-ottoman-baby-pink-velvet-gold-base",
+    "destination": "/furniture/ottomans",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/hethro-round-ottoman-yellow-velvet-gold-base",
+    "destination": "/furniture/ottomans",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/hethro-round-ottoman-crimson-velvet-gold-base",
+    "destination": "/furniture/ottomans",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/hethro-round-ottoman-oyster-velvet-gold-base",
+    "destination": "/furniture/ottomans",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/hethro-round-ottoman-gray-velvet-gold-base",
+    "destination": "/furniture/ottomans",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/hethro-round-ottoman-dusty-pink-velvet-gold-base",
+    "destination": "/furniture/ottomans",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/hethro-round-ottoman-blush-pink-velvet",
+    "destination": "/furniture/ottomans",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/hethro-round-ottoman-black-velvet",
+    "destination": "/furniture/ottomans",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/hethro-round-ottoman-ivory-velvet",
+    "destination": "/furniture/ottomans",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/hethro-round-ottoman-green-velvet",
+    "destination": "/furniture/ottomans",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/hethro-round-ottoman-navy-velvet",
+    "destination": "/furniture/ottomans",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/roma-cube-ottoman",
+    "destination": "/furniture/ottomans",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/roma-round-ottoman-faux-leather-black-white",
+    "destination": "/furniture/ottomans",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/marrakech-moroccan-ottoman",
+    "destination": "/furniture/ottomans",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/full-event-planning-package",
+    "destination": "/packages",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/classic-wedding-planner-dubai",
+    "destination": "/packages",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/wedding-planner-dubai-coordination-design",
+    "destination": "/packages",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/lavish-floral-fantasy-copy-1",
+    "destination": "/packages",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/bollywood-bliss-copy",
+    "destination": "/packages",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/the-scarlet-serenade-copy",
+    "destination": "/packages",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/glamorous-gold-marble-copy",
+    "destination": "/packages",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/celestial-romance-copy",
+    "destination": "/packages",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/the-scarlet-serenade",
+    "destination": "/packages",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/mary-garden-wedding-decoration-package",
+    "destination": "/packages",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/rain-forest-wedding-decoration-package",
+    "destination": "/packages",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/enigma-wedding-decoration-package",
+    "destination": "/packages",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/neon-wedding-decoration-package",
+    "destination": "/packages",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/levant-wedding-decoration-package",
+    "destination": "/packages",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/boulevard-wedding-decoration-package",
+    "destination": "/packages",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/astoria-wedding-decoration-package",
+    "destination": "/packages",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/veronica-wedding-decoration-package",
+    "destination": "/packages",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/euphoria-wedding-decoration-package",
+    "destination": "/packages",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/serena-wedding-decoration-package",
+    "destination": "/packages",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/laimarine-wedding-decoration-package",
+    "destination": "/packages",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/samara-wedding-decoration-package",
+    "destination": "/packages",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/bohemia-wedding-decoration-package",
+    "destination": "/packages",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/dianasha-wedding-decoration-package",
+    "destination": "/packages",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/givenchy-wedding-design-by-bianca-design",
+    "destination": "/packages",
+    "statusCode": 301
+  },
+  {
+    "source": "/collections/:slug*",
+    "destination": "/furniture",
+    "statusCode": 301
+  },
+  {
+    "source": "/products/:slug*",
+    "destination": "/furniture",
+    "statusCode": 301
+  },
+  {
+    "source": "/blogs/:slug*",
+    "destination": "/",
+    "statusCode": 301
+  },
+  {
+    "source": "/pages/:slug*",
+    "destination": "/",
+    "statusCode": 301
+  }
+]

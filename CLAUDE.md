@@ -58,35 +58,38 @@ hello@olga.events · Dubai · Abu Dhabi · all Emirates · EN·RU·AR.
 - [x] `/` homepage (C2, wedding-focused)
 - [x] `/about-us` ← pages/about-us
 - [x] `/reviews` ← pages/reviews
-- [x] `/gallery` ← collections/designed-packages (cdn photos)
+- [x] `/gallery` ← collections/designed-packages — large 36-tile grid, local photos
 - [x] `/our-work` ← pages/our-work
 - [x] `/wedding-decoration-dubai` ← pages/wedding-decoration-dubai
 - [x] `/wedding-cost-dubai` ← pages/wedding-cost-dubai
 - [x] `/wedding-planner-dubai` ← pages/wedding-planner-dubai
 - [x] `/wedding-packages-dubai` ← pages/wedding-packages-dubai
-- [x] `/packages` — planning (Essential/Classic/Luxe) + décor (Bloom/Signature/
-      Elegance) + **live price calculator** (`components/PriceCalculator.tsx`):
-      planning + décor tiers, guest count, instant Total + green savings line,
-      AED formatting, "VAT, transport & logistics included".
+- [x] `/packages` — planning (Essential/Classic/**Luxury Planning**) + décor
+      (Bloom/Signature/Elegance) + **live price calculator**
+      (`components/PriceCalculator.tsx`): planning + décor tiers, guest count,
+      instant Total + green savings line, AED formatting, "VAT, transport &
+      logistics included".
 - [x] `/contact` — enquiry form (name, date, location, guests, budget) → mailto
       hello@olga.events + WhatsApp/Call buttons. CRM integration pending.
 - [x] `/corporate-events`, `/private-events`, `/seasonal-events`,
       `/av-production` — carried from homepage service sections. Off the wedding
       homepage; linked in footer "More services".
 - [x] `/furniture` overview + `/furniture/[category]` (bridal-sofa,
-      dining-tables, dining-chairs, lounge-sofa, accent-chairs, ottomans).
-      Off homepage; footer-linked.
+      dining-tables, dining-chairs, lounge-sofa, accent-chairs, ottomans) —
+      **populated with 12 real products each** from `app/furniture/products.json`
+      (name, photo, short desc, Enquire; no prices/cart). Images local in
+      `public/images/furniture/<category>/`.
 - [x] `sitemap.xml` (`app/sitemap.ts`) + `robots.txt` (`app/robots.ts`).
+- [x] **301 redirects** old Shopify URLs → new routes (`old-redirects.json`,
+      wired in `next.config.ts` via `statusCode: 301`).
 
 ## Pending imports (GM will provide)
 1. **Instagram auto-feed** — the home "Follow us on Instagram" section and
    footer icon are live, but the 6 tiles use local photos linking to the
    profile. Wiring the real IG feed via API is still pending.
-2. **Full furniture catalog** (Shopify export). Structure is ready: add per-
-   category products to `SAMPLE_PRODUCTS` in `app/furniture/[category]/page.tsx`
-   (or move to a data file) — bridal-sofa has a representative preview; other
-   categories show a "catalog being imported" placeholder. Product images live
-   on the olga.events CDN (`/cdn/shop/...`).
+2. **More furniture products** — currently 12 per category (a good sample). To
+   add more, re-run the products.json import (raise the per-category cap) and
+   drop images into `public/images/furniture/<category>/`.
 3. **CRM integration** for the contact form (currently mailto).
 
 ## Notes
@@ -96,7 +99,13 @@ hello@olga.events · Dubai · Abu Dhabi · all Emirates · EN·RU·AR.
   `next/image` optimizes them. To add photos, drop files in `public/images/` and
   reference `/images/<name>`.
 - `next.config.ts` still allows the olga.events CDN
-  (`images.remotePatterns`, `/cdn/shop/files/**`) for the future furniture
-  catalog, but site pages no longer depend on it.
+  (`images.remotePatterns`, `/cdn/shop/files/**`) but site pages no longer
+  depend on it (all images local now).
 - `SITE_URL` (ui.tsx) defaults to `https://olga.events` (override with
   `NEXT_PUBLIC_SITE_URL`) — used by sitemap/robots/metadataBase.
+- **Redirects**: `old-redirects.json` (243 entries) is loaded by `next.config.ts`
+  `redirects()`. Exact mappings come first (pages, key collections, per-product
+  furniture → category, package/décor products → /packages), then wildcard
+  fallbacks (`/collections/*`, `/products/*` → /furniture; `/blogs/*`,
+  `/pages/*` → /). All use `statusCode: 301`. Regenerate by re-running the
+  Python generator if old URLs change.
