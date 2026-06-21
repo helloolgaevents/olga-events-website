@@ -45,7 +45,7 @@ const PLANNING = [
     featured: true,
   },
   {
-    name: "Luxe Full Planning",
+    name: "Luxury Planning",
     price: "AED 18,000",
     tag: "Fully managed",
     desc: "A completely managed, stress-free experience. From concept and design to full production and execution, our team runs everything in the background.",

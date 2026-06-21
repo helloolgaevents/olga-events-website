@@ -9,7 +9,7 @@ type Decor = { name: string; base: number; std: number; cp: number };
 const PLANS: Plan[] = [
   { name: "Essential", price: 6650, std: 7000 },
   { name: "Classic", price: 9500, std: 10000 },
-  { name: "Luxe Full", price: 17100, std: 18000 },
+  { name: "Luxury Planning", price: 17100, std: 18000 },
 ];
 
 const DECORS: Decor[] = [

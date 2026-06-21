@@ -51,7 +51,7 @@ const REVIEWS = [
     place: "Dubai · 2026",
     rating: 5,
     quote:
-      "We booked the Luxe Full Planning package and on the day I didn't lift a finger. Hani and John seemed to be everywhere at once, everyone knew exactly their role, and it was all quietly run by Olga Events in the background. My husband and I actually got to be with our guests — which was all we really wanted.",
+      "We booked the Luxury Planning package and on the day I didn't lift a finger. Hani and John seemed to be everywhere at once, everyone knew exactly their role, and it was all quietly run by Olga Events in the background. My husband and I actually got to be with our guests — which was all we really wanted.",
   },
   {
     names: "Maria & Sergio",
