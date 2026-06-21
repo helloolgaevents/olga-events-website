@@ -273,9 +273,9 @@ export default function Home() {
       {/* ---------- Venues marquee ---------- */}
       <section
         id="venues"
-        className="border-y border-line bg-beige py-9 sm:py-16"
+        className="mb-12 border-y border-line bg-beige py-9 sm:mb-14 sm:py-10"
       >
-        <Reveal className="mb-8 text-center sm:mb-10">
+        <Reveal className="mb-5 text-center sm:mb-6">
           <Kicker>Venues we love</Kicker>
         </Reveal>
         <div className="marquee-mask relative overflow-hidden">
