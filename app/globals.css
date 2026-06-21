@@ -236,6 +236,22 @@ body {
 }
 
 /* ---- Marquee ---- */
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 9%,
+    #000 91%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 9%,
+    #000 91%,
+    transparent
+  );
+}
 .marquee-track {
   display: flex;
   width: max-content;

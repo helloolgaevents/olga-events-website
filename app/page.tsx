@@ -271,8 +271,11 @@ export default function Home() {
       </section>
 
       {/* ---------- Venues marquee ---------- */}
-      <section id="venues" className="border-y border-line bg-ink py-14">
-        <Reveal className="mb-10 text-center">
+      <section
+        id="venues"
+        className="border-y border-line bg-beige py-9 sm:py-16"
+      >
+        <Reveal className="mb-8 text-center sm:mb-10">
           <Kicker>Venues we love</Kicker>
         </Reveal>
         <div className="marquee-mask relative overflow-hidden">
@@ -280,7 +283,7 @@ export default function Home() {
             {[...VENUES, ...VENUES].map((venue, i) => (
               <span
                 key={`${venue}-${i}`}
-                className="flex shrink-0 items-center font-serif text-2xl font-light text-cream sm:text-3xl"
+                className="flex shrink-0 items-center font-serif text-2xl text-cream sm:text-3xl"
               >
                 {venue}
                 <span className="mx-8 text-gold">·</span>
