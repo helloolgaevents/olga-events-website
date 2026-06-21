@@ -8,6 +8,7 @@ import {
   SectionTitle,
   Prose,
   CTASection,
+  FeatureImage,
 } from "../components/ui";
 
 export const metadata: Metadata = {
@@ -25,6 +26,11 @@ export default function AboutPage() {
         kicker="About Olga Events"
         title="Luxury Wedding Planner in Dubai"
         intro="At Olga Events, we design and deliver luxury wedding planning in Dubai with a fully customized approach — where every detail is created specifically for your event, your venue, and your vision. We do not follow templates or repeat concepts. Each wedding is developed from zero and executed with precision, combining creative direction, in-house production, and full-service planning."
+      />
+
+      <FeatureImage
+        src="/images/blue-ember.jpg"
+        alt="Luxury wedding stage designed by Olga Events in Dubai"
       />
 
       <Section alt>

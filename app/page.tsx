@@ -4,7 +4,7 @@ import Reveal from "./components/Reveal";
 import CountUp from "./components/CountUp";
 import SiteHeader from "./components/SiteHeader";
 import SiteFooter from "./components/SiteFooter";
-import { Kicker, Divider } from "./components/ui";
+import { Kicker, Divider, INSTAGRAM, InstagramIcon } from "./components/ui";
 
 const SERVICES = [
   { title: "Planning", text: "First idea to final dance." },
@@ -17,32 +17,32 @@ const GALLERY = [
   {
     title: "Blue Ember Elegance",
     label: "Stage design · Dubai",
-    src: "https://olga.events/cdn/shop/files/olga-events-luxury-wedding-stage-dubai-planner-address_sky_vew.jpg?v=1742637826&width=900",
+    src: "/images/blue-ember.jpg",
   },
   {
     title: "Lavish Floral Fantasy",
     label: "Stage design · Abu Dhabi",
-    src: "https://olga.events/cdn/shop/files/olga-events-luxury-wedding-stage-dubai-planner-AbuDhabi_png.jpg?v=1742637465&width=900",
+    src: "/images/lavish-floral.jpg",
   },
   {
     title: "The Scarlet Serenade",
     label: "Stage design · UAE",
-    src: "https://olga.events/cdn/shop/files/olga-events-luxury-wedding-stage-dubai-planner-TheScarletSerenade.png?v=1753890131&width=900",
+    src: "/images/scarlet-serenade.jpg",
   },
   {
     title: "Table styling & florals",
     label: "Centerpieces · UAE",
-    src: "https://olga.events/cdn/shop/files/elegant-wedding-table-centerpiece-fresh_flowers-uae__png.jpg?v=1742634234&width=900",
+    src: "/images/table-florals.jpg",
   },
   {
     title: "Celestial Romance",
     label: "Stage design · Dubai",
-    src: "https://olga.events/cdn/shop/files/olga-events-luxury-wedding-stage-dubai.png?v=1742625682&width=900",
+    src: "/images/celestial-romance.jpg",
   },
   {
     title: "Floral Design",
     label: "Fresh flowers · UAE",
-    src: "https://olga.events/cdn/shop/files/olga_events_floral_arrangment_fresh_flowers_bouquet_weddings_events_florist_decorator_wedding_planner.webp?v=1755870534&width=900",
+    src: "/images/floral-design.webp",
   },
 ];
 
@@ -79,8 +79,7 @@ const TEAM = [
   { name: "Tatiana", role: "Planner & Designer" },
 ];
 
-const HERO_IMG =
-  "https://olga.events/cdn/shop/files/luxury-wedding-planner-dubai-stage-lighting.webp?v=1777517640&width=2400";
+const HERO_IMG = "/images/hero-stage.webp";
 
 export default function Home() {
   return (
@@ -405,6 +404,58 @@ export default function Home() {
               </Link>
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      {/* ---------- Instagram ---------- */}
+      <section className="bg-ink-alt">
+        <div className="mx-auto w-full max-w-[1100px] px-6 py-24">
+          <Reveal className="text-center">
+            <Kicker>Follow us on Instagram</Kicker>
+            <h2 className="mt-5 font-serif text-4xl font-light text-cream sm:text-5xl">
+              {INSTAGRAM.handle}
+            </h2>
+            <p className="mx-auto mt-5 max-w-xl font-sans text-base font-light leading-relaxed text-muted">
+              Real moments, behind-the-scenes and design reveals from the
+              weddings we create across Dubai and the UAE.
+            </p>
+            <div className="mt-8">
+              <a
+                href={INSTAGRAM.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline"
+              >
+                <InstagramIcon className="mr-2 h-4 w-4" />
+                Follow on Instagram
+              </a>
+            </div>
+          </Reveal>
+
+          <div className="mt-14 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+            {GALLERY.map((g, i) => (
+              <Reveal key={g.title} delay={(i % 6) * 70}>
+                <a
+                  href={INSTAGRAM.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Olga Events on Instagram — ${g.title}`}
+                  className="tile group relative block aspect-square"
+                >
+                  <Image
+                    src={g.src}
+                    alt={`Olga Events wedding — ${g.title}`}
+                    fill
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 180px"
+                    className="object-cover"
+                  />
+                  <span className="pointer-events-none absolute inset-0 flex items-center justify-center bg-ink/45 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                    <InstagramIcon className="h-7 w-7 text-cream" />
+                  </span>
+                </a>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 

@@ -8,7 +8,9 @@ import {
   Section,
   SectionTitle,
   CTASection,
+  FeatureImage,
 } from "../components/ui";
+import PriceCalculator from "../components/PriceCalculator";
 
 export const metadata: Metadata = {
   title: "Wedding Planning & Décor Packages in Dubai | Olga Events",
@@ -134,6 +136,11 @@ export default function PackagesPage() {
         intro="Transparent packages designed to give you clarity, control, and a smooth wedding experience — from structured guidance to a fully managed celebration. Every package is flexible and customised to your guest count, venue, and design."
       />
 
+      <FeatureImage
+        src="/images/table-florals.jpg"
+        alt="Wedding table styling and florals by Olga Events"
+      />
+
       <Section>
         <SectionTitle
           kicker="Planning"
@@ -184,41 +191,20 @@ export default function PackagesPage() {
         </div>
       </Section>
 
-      {/* ---- Price calculator placeholder (interactive tool to be added) ---- */}
+      {/* ---- Live price calculator ---- */}
       <Section>
-        <Reveal>
-          <div
-            id="calculator"
-            className="relative overflow-hidden border border-gold/40 px-8 py-16 text-center sm:px-16"
-          >
-            <div
-              className="pointer-events-none absolute inset-0"
-              style={{
-                background:
-                  "radial-gradient(60% 70% at 50% 50%, rgba(194,163,107,0.14), rgba(22,20,15,0) 70%)",
-              }}
-            />
-            <div className="relative z-10 mx-auto max-w-2xl">
-              <span className="font-sans text-[0.72rem] uppercase tracking-[0.32em] text-gold">
-                Coming soon
-              </span>
-              <h2 className="mt-5 font-serif text-3xl font-light text-cream sm:text-4xl">
-                Live Price Calculator
-              </h2>
-              <p className="mt-6 font-sans text-lg font-light leading-relaxed text-muted">
-                An interactive calculator is on its way — build your package and
-                see a transparent estimate instantly. In the meantime, tell us
-                your guest count and vision and we&apos;ll prepare a tailored
-                proposal.
-              </p>
-              <div className="mt-10">
-                <Link href="/contact" className="btn-gold">
-                  Request a tailored proposal
-                </Link>
-              </div>
-            </div>
-          </div>
-        </Reveal>
+        <SectionTitle
+          kicker="Estimate"
+          title="Live Price Calculator"
+          center
+        />
+        <p className="mx-auto mt-5 max-w-2xl text-center font-sans text-base font-light leading-relaxed text-muted">
+          Build your package and see a transparent estimate instantly. Final
+          quotations are confirmed during planning.
+        </p>
+        <div className="mt-12">
+          <PriceCalculator />
+        </div>
       </Section>
 
       <Section alt>

@@ -9,6 +9,7 @@ import {
   Prose,
   FAQ,
   CTASection,
+  FeatureImage,
 } from "../components/ui";
 
 export const metadata: Metadata = {
@@ -89,6 +90,11 @@ export default function WeddingPlannerPage() {
         kicker="Wedding Planner Dubai"
         title="Wedding Planner Dubai — Luxury Wedding Planning Services"
         intro="Luxury wedding planner in Dubai with over 10 years of experience in high-end weddings. We design, plan, and execute fully customised weddings with complete control over budget, design, and guest experience."
+      />
+
+      <FeatureImage
+        src="/images/gold-marble.jpg"
+        alt="Elegant wedding stage planned by Olga Events in Dubai"
       />
 
       <Section alt>

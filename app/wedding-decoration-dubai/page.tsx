@@ -9,6 +9,7 @@ import {
   Prose,
   FAQ,
   CTASection,
+  FeatureImage,
 } from "../components/ui";
 
 export const metadata: Metadata = {
@@ -62,6 +63,11 @@ export default function WeddingDecorationPage() {
         kicker="Wedding Decoration Dubai"
         title="Wedding Decoration Dubai — Luxury Wedding Decor & Design"
         intro="Looking for luxury wedding decoration in Dubai? We create bespoke wedding designs with floral styling, custom décor, and full event transformation tailored to your venue and concept. At Olga Events, we specialise in high-end wedding decoration in Dubai, combining design, production, and execution to deliver a refined and cohesive result."
+      />
+
+      <FeatureImage
+        src="/images/lavish-floral.jpg"
+        alt="Luxury floral wedding decoration by Olga Events in the UAE"
       />
 
       <Section alt>

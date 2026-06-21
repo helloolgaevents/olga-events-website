@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FOOTER_NAV, CONTACT } from "./ui";
+import { FOOTER_NAV, CONTACT, INSTAGRAM, InstagramIcon } from "./ui";
 
 export default function SiteFooter() {
   return (
@@ -16,6 +16,16 @@ export default function SiteFooter() {
             <p className="mt-4 font-sans text-sm font-light leading-relaxed text-muted">
               Luxury Wedding Planning · Dubai & all Emirates
             </p>
+            <a
+              href={INSTAGRAM.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Olga Events on Instagram (${INSTAGRAM.handle})`}
+              className="mt-5 inline-flex items-center gap-2 font-sans text-sm font-light text-muted transition-colors hover:text-gold"
+            >
+              <InstagramIcon className="h-5 w-5" />
+              {INSTAGRAM.handle}
+            </a>
           </div>
 
           {FOOTER_NAV.map((col) => (

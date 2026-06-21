@@ -11,53 +11,46 @@ export const metadata: Metadata = {
     "A curated gallery of elegant luxury wedding and event designs created by Olga Events across Dubai and the UAE — stages, florals and full venue transformations.",
 };
 
-const CDN = "https://olga.events/cdn/shop/files";
-
 const GALLERY = [
   {
     title: "Blue Ember Elegance",
     label: "Stage design · Dubai",
-    src: `${CDN}/olga-events-luxury-wedding-stage-dubai-planner-address_sky_vew.jpg?width=1000`,
+    src: "/images/blue-ember.jpg",
   },
   {
     title: "Lavish Floral Fantasy",
     label: "Stage design · Abu Dhabi",
-    src: `${CDN}/olga-events-luxury-wedding-stage-dubai-planner-AbuDhabi_png.jpg?width=1000`,
+    src: "/images/lavish-floral.jpg",
   },
   {
     title: "The Scarlet Serenade",
     label: "Stage design · UAE",
-    src: `${CDN}/olga-events-luxury-wedding-stage-dubai-planner-TheScarletSerenade.png?width=1000`,
+    src: "/images/scarlet-serenade.jpg",
   },
   {
     title: "Bollywood Bliss",
     label: "Sangeet & Henna · Dubai",
-    src: `${CDN}/WhatsApp_Image_2025-01-27_at_17.12.14.jpg?width=1000`,
+    src: "/images/bollywood-bliss.jpg",
   },
   {
     title: "Glamorous Gold & Marble",
     label: "Stage design · Dubai",
-    src: `${CDN}/olga-events-luxury-wedding-stage-dubai-planner2.jpg?width=1000`,
+    src: "/images/gold-marble.jpg",
   },
   {
     title: "Celestial Romance",
     label: "Stage design · Dubai",
-    src: `${CDN}/olga-events-luxury-wedding-stage-dubai.png?width=1000`,
-  },
-  {
-    title: "Indian Wedding Décor",
-    label: "Sangeet & Henna · Dubai",
-    src: `${CDN}/olga-events-luxury-wedding-stage-dubai-planner-TheScarletSerenade-sangeet-henna-indianwedding_png.jpg?width=1000`,
+    src: "/images/celestial-romance.jpg",
   },
   {
     title: "Table styling & florals",
     label: "Centerpieces · UAE",
-    src: `${CDN}/elegant-wedding-table-centerpiece-fresh_flowers-uae__png.jpg?width=1000`,
+    src: "/images/table-florals.jpg",
   },
   {
     title: "Floral Design",
     label: "Fresh flowers · UAE",
-    src: `${CDN}/olga_events_floral_arrangment_fresh_flowers_bouquet_weddings_events_florist_decorator_wedding_planner.webp?width=1000`,
+    src: "/images/floral-design.webp",
   },
 ];
 

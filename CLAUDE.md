@@ -65,8 +65,9 @@ hello@olga.events · Dubai · Abu Dhabi · all Emirates · EN·RU·AR.
 - [x] `/wedding-planner-dubai` ← pages/wedding-planner-dubai
 - [x] `/wedding-packages-dubai` ← pages/wedding-packages-dubai
 - [x] `/packages` — planning (Essential/Classic/Luxe) + décor (Bloom/Signature/
-      Elegance). **Calculator slot is built & marked** (`#calculator`) — GM will
-      provide the interactive price calculator next; drop it into that section.
+      Elegance) + **live price calculator** (`components/PriceCalculator.tsx`):
+      planning + décor tiers, guest count, instant Total + green savings line,
+      AED formatting, "VAT, transport & logistics included".
 - [x] `/contact` — enquiry form (name, date, location, guests, budget) → mailto
       hello@olga.events + WhatsApp/Call buttons. CRM integration pending.
 - [x] `/corporate-events`, `/private-events`, `/seasonal-events`,
@@ -78,8 +79,9 @@ hello@olga.events · Dubai · Abu Dhabi · all Emirates · EN·RU·AR.
 - [x] `sitemap.xml` (`app/sitemap.ts`) + `robots.txt` (`app/robots.ts`).
 
 ## Pending imports (GM will provide)
-1. **Interactive price calculator** for `/packages` → place in the `#calculator`
-   section (currently a styled "coming soon" placeholder).
+1. **Instagram auto-feed** — the home "Follow us on Instagram" section and
+   footer icon are live, but the 6 tiles use local photos linking to the
+   profile. Wiring the real IG feed via API is still pending.
 2. **Full furniture catalog** (Shopify export). Structure is ready: add per-
    category products to `SAMPLE_PRODUCTS` in `app/furniture/[category]/page.tsx`
    (or move to a data file) — bridal-sofa has a representative preview; other
@@ -88,7 +90,13 @@ hello@olga.events · Dubai · Abu Dhabi · all Emirates · EN·RU·AR.
 3. **CRM integration** for the contact form (currently mailto).
 
 ## Notes
-- Remote images: olga.events CDN allowed in `next.config.ts`
-  (`images.remotePatterns`, `/cdn/shop/files/**`).
+- Images are now **local** in `public/images/` (hero + gallery + work + feature
+  banners) — switched off the Shopify CDN because versioned CDN URLs failed to
+  load in production. The two heavy stage PNGs were recompressed to JPEG.
+  `next/image` optimizes them. To add photos, drop files in `public/images/` and
+  reference `/images/<name>`.
+- `next.config.ts` still allows the olga.events CDN
+  (`images.remotePatterns`, `/cdn/shop/files/**`) for the future furniture
+  catalog, but site pages no longer depend on it.
 - `SITE_URL` (ui.tsx) defaults to `https://olga.events` (override with
   `NEXT_PUBLIC_SITE_URL`) — used by sitemap/robots/metadataBase.

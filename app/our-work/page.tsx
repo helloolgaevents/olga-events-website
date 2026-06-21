@@ -12,33 +12,13 @@ export const metadata: Metadata = {
     "Real moments, behind-the-scenes and design reveals from luxury weddings created by Olga Events across Dubai and the UAE.",
 };
 
-const CDN = "https://olga.events/cdn/shop/files";
-
 const WORK = [
-  {
-    title: "Blue Ember Elegance",
-    src: `${CDN}/olga-events-luxury-wedding-stage-dubai-planner-address_sky_vew.jpg?width=1000`,
-  },
-  {
-    title: "Lavish Floral Fantasy",
-    src: `${CDN}/olga-events-luxury-wedding-stage-dubai-planner-AbuDhabi_png.jpg?width=1000`,
-  },
-  {
-    title: "The Scarlet Serenade",
-    src: `${CDN}/olga-events-luxury-wedding-stage-dubai-planner-TheScarletSerenade.png?width=1000`,
-  },
-  {
-    title: "Glamorous Gold & Marble",
-    src: `${CDN}/olga-events-luxury-wedding-stage-dubai-planner2.jpg?width=1000`,
-  },
-  {
-    title: "Celestial Romance",
-    src: `${CDN}/olga-events-luxury-wedding-stage-dubai.png?width=1000`,
-  },
-  {
-    title: "Table styling & florals",
-    src: `${CDN}/elegant-wedding-table-centerpiece-fresh_flowers-uae__png.jpg?width=1000`,
-  },
+  { title: "Blue Ember Elegance", src: "/images/blue-ember.jpg" },
+  { title: "Lavish Floral Fantasy", src: "/images/lavish-floral.jpg" },
+  { title: "The Scarlet Serenade", src: "/images/scarlet-serenade.jpg" },
+  { title: "Glamorous Gold & Marble", src: "/images/gold-marble.jpg" },
+  { title: "Celestial Romance", src: "/images/celestial-romance.jpg" },
+  { title: "Table styling & florals", src: "/images/table-florals.jpg" },
 ];
 
 const INSTAGRAM = "https://www.instagram.com/weddingplannerdubaiuae/";

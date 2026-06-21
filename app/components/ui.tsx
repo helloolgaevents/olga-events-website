@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Reveal from "./Reveal";
 
@@ -97,6 +98,30 @@ export const CONTACT = {
   email: "hello@olga.events",
   emailHref: "mailto:hello@olga.events",
 };
+
+export const INSTAGRAM = {
+  handle: "@weddingplannerdubaiuae",
+  url: "https://www.instagram.com/weddingplannerdubaiuae/",
+};
+
+export function InstagramIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
 
 /* ---------------- Presentational helpers ---------------- */
 
@@ -226,6 +251,35 @@ export function FAQ({ items }: { items: { q: string; a: string }[] }) {
         ))}
       </div>
     </Reveal>
+  );
+}
+
+export function FeatureImage({
+  src,
+  alt,
+  priority = false,
+}: {
+  src: string;
+  alt: string;
+  priority?: boolean;
+}) {
+  return (
+    <section className="bg-ink">
+      <div className="mx-auto w-full max-w-[1100px] px-6 pt-12">
+        <Reveal>
+          <div className="tile relative aspect-[16/10] w-full sm:aspect-[16/8]">
+            <Image
+              src={src}
+              alt={alt}
+              fill
+              priority={priority}
+              sizes="(max-width: 1100px) 100vw, 1100px"
+              className="object-cover"
+            />
+          </div>
+        </Reveal>
+      </div>
+    </section>
   );
 }
 
