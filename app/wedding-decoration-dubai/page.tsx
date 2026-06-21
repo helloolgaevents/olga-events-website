@@ -111,7 +111,7 @@ export default function WeddingDecorationPage() {
                   key={item}
                   className="flex items-center gap-3 border border-line px-5 py-4 font-sans text-sm font-light text-cream"
                 >
-                  <span className="text-gold">, </span>
+                  <span className="text-green">✓</span>
                   {item}
                 </li>
               ))}

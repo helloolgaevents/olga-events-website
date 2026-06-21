@@ -216,13 +216,13 @@ export default function Home() {
             {SERVICES.map((svc, i) => (
               <Reveal key={svc.title} delay={i * 90}>
                 <div className="svc-card h-full p-8">
-                  <span className="font-serif text-2xl text-gold">
+                  <span className="font-num text-sm font-semibold tracking-wider text-gold">
                     0{i + 1}
                   </span>
-                  <h3 className="mt-6 font-serif text-2xl font-light text-cream">
+                  <h3 className="mt-4 font-serif text-[26px] leading-tight text-cream sm:text-[28px]">
                     {svc.title}
                   </h3>
-                  <p className="mt-3 font-sans text-base font-light leading-relaxed text-muted">
+                  <p className="mt-3 font-sans text-[15px] font-normal leading-relaxed text-faint">
                     {svc.text}
                   </p>
                 </div>

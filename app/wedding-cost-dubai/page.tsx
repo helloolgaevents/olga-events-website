@@ -219,7 +219,7 @@ export default function WeddingCostPage() {
                 key={f}
                 className="flex gap-3 font-sans text-lg font-light leading-relaxed text-muted"
               >
-                <span className="mt-1 text-gold">, </span>
+                <span className="mt-1 shrink-0 text-green">✓</span>
                 {f}
               </li>
             ))}

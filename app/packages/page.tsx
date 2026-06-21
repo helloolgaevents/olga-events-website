@@ -31,7 +31,7 @@ function BulletList({ items }: { items: string[] }) {
           key={it}
           className="flex gap-3 font-sans text-lg font-light leading-relaxed text-muted"
         >
-          <span className="mt-0.5 text-gold">, </span>
+          <span className="mt-0.5 shrink-0 text-green">✓</span>
           {it}
         </li>
       ))}
@@ -68,14 +68,14 @@ export default function PackagesPage() {
           <div className="mt-14 grid grid-cols-2 gap-6 lg:grid-cols-4">
             {c.how.steps.map((s, i) => (
               <Reveal key={s.n} delay={i * 90}>
-                <div className="svc-card h-full p-7">
-                  <span className="font-serif text-3xl font-light text-gold">
+                <div className="svc-card h-full p-7 sm:p-8">
+                  <span className="font-num text-sm font-semibold tracking-wider text-gold">
                     {s.n}
                   </span>
-                  <h3 className="mt-5 font-serif text-xl font-light text-cream">
+                  <h3 className="mt-4 font-serif text-[26px] leading-tight text-cream sm:text-[28px]">
                     {s.title}
                   </h3>
-                  <p className="mt-2 font-sans text-base font-light leading-relaxed text-muted">
+                  <p className="mt-3 font-sans text-[15px] font-normal leading-relaxed text-faint">
                     {s.text}
                   </p>
                 </div>
@@ -319,7 +319,7 @@ export default function PackagesPage() {
                         key={it}
                         className="flex gap-3 font-sans text-base font-light text-cream/90"
                       >
-                        <span className="text-gold">, </span>
+                        <span className="text-green">✓</span>
                         {it}
                       </li>
                     ))}

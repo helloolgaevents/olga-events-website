@@ -162,7 +162,17 @@ hello@olga.events · Dubai · Abu Dhabi · all Emirates · EN·RU·AR.
   footer=contentinfo); inline in-sentence links use `underline` so they aren't
   colour-only.
 
-## Pre-launch QA (last run — after Batch 9 align to offer.html)
+## Pre-launch QA (last run — after Batch 10 card sections fix)
+- Cards (`.svc-card`, `.pc`) now white #fff + border #e3ddd0 + soft shadow
+  (0 10px 28px rgba(80,64,40,.10)) so they lift off the ivory page.
+- Step/feature card hierarchy fixed: number = small gold (DM Sans); title =
+  Cormorant 500, 26-28px #111110 (dominant); description = Inter 15px/400 faint
+  #5b574e. Applied to home "What we do" + packages "How it works".
+- Fixed leftover bullet markers (were ", " from an old em-dash sweep) → green ✓
+  in accordions, wedding-cost factors, decoration includes, packages lists.
+- Lighthouse: home/packages desktop 99-100/100/100/100; mobile 85-92/100; a11y 100.
+
+### Earlier (Batch 9 align to offer.html):
 - All colour tokens matched exactly to public/offer.html (ivory #f4f1ea, cream
   cards #fbf9f4, gold #a8854e, green #5e7d46/#436031, lines #e3ddd0, dark zones
   #15130e). Inter now 400/500/600; Cormorant headings 500; DM Sans numbers.
