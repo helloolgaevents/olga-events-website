@@ -61,7 +61,7 @@ export default async function FurnitureCategoryPage({
       <Section>
         {products.length > 0 ? (
           <>
-            <p className="mb-10 text-center font-sans text-sm font-light text-muted">
+            <p className="mb-10 text-center font-sans text-base font-light text-muted">
               A selection of our {cat.name.toLowerCase()} available for rental
               across Dubai and the UAE. Contact us for availability and a quote.
             </p>
@@ -83,7 +83,7 @@ export default async function FurnitureCategoryPage({
                         {p.title}
                       </h2>
                       {p.desc ? (
-                        <p className="mt-3 flex-1 font-sans text-sm font-light leading-relaxed text-muted">
+                        <p className="mt-3 flex-1 font-sans text-base font-light leading-relaxed text-muted">
                           {p.desc}
                         </p>
                       ) : (
@@ -107,7 +107,7 @@ export default async function FurnitureCategoryPage({
               <h2 className="mt-5 font-serif text-3xl font-light text-cream">
                 {cat.name}
               </h2>
-              <p className="mt-6 font-sans text-base font-light leading-relaxed text-muted">
+              <p className="mt-6 font-sans text-lg font-light leading-relaxed text-muted">
                 Our full {cat.name.toLowerCase()} collection is being added.
                 Tell us your style, colours, and guest count and we&apos;ll send
                 you available pieces and a quote right away.

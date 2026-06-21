@@ -133,7 +133,7 @@ function PriceCard({
     <div className="svc-card flex h-full flex-col p-7">
       <h3 className="font-serif text-2xl font-light text-cream">{title}</h3>
       <p className="mt-3 font-serif text-xl text-gold">{price}</p>
-      <p className="mt-4 font-sans text-sm font-light leading-relaxed text-muted">
+      <p className="mt-4 font-sans text-base font-light leading-relaxed text-muted">
         {note}
       </p>
     </div>
@@ -201,7 +201,7 @@ export default function WeddingCostPage() {
             </Reveal>
           ))}
         </div>
-        <p className="mt-10 text-center font-sans text-sm font-light text-muted">
+        <p className="mt-10 text-center font-sans text-base font-light text-muted">
           On average, weddings in Dubai range from 1,000 AED to 3,000 AED per
           guest.
         </p>
@@ -217,7 +217,7 @@ export default function WeddingCostPage() {
             {FACTORS.map((f) => (
               <li
                 key={f}
-                className="flex gap-3 font-sans text-base font-light leading-relaxed text-muted"
+                className="flex gap-3 font-sans text-lg font-light leading-relaxed text-muted"
               >
                 <span className="mt-1 text-gold">, </span>
                 {f}

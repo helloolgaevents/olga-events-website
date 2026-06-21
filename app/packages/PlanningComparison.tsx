@@ -14,7 +14,7 @@ function Row({ value, label }: { value: Cell; label: string }) {
         <span className="mt-0.5 shrink-0 text-faint" aria-hidden>
           ○
         </span>
-        <span className="font-sans text-[13.5px] leading-snug text-faint">
+        <span className="font-sans text-[16px] leading-snug text-faint">
           {label}
         </span>
       </li>
@@ -26,7 +26,7 @@ function Row({ value, label }: { value: Cell; label: string }) {
       <span className="mt-0.5 shrink-0 text-green" aria-hidden>
         ✓
       </span>
-      <span className="font-sans text-[13.5px] leading-snug text-muted">
+      <span className="font-sans text-[16px] leading-snug text-muted">
         {label}
         {detail ? <span className="text-faint"> · {detail}</span> : null}
       </span>
@@ -48,22 +48,22 @@ export default function PlanningComparison() {
               {popular ? <span className="badge-win">✓ Most chosen</span> : null}
 
               <div className="pc-head border-b border-line pb-5">
-                <h3 className="font-serif text-[1.7rem] text-cream">
+                <h3 className="font-serif text-[1.9rem] text-cream">
                   {col.name}
                 </h3>
-                <p className="mt-1 font-sans text-[11px] uppercase tracking-[0.14em] text-gold">
+                <p className="mt-1 font-sans text-[12px] uppercase tracking-[0.14em] text-gold">
                   {col.subtitle}
                 </p>
                 {price ? (
                   <div className="mt-4">
-                    <span className="font-num text-sm text-faint line-through decoration-gold">
+                    <span className="font-num text-[15px] text-faint line-through decoration-gold">
                       AED {fmt(price.std)}
                     </span>
                     <div className="mt-1 flex items-baseline gap-1.5">
-                      <span className="font-num text-xs font-medium text-green-deep">
+                      <span className="font-num text-sm font-medium text-green-deep">
                         AED
                       </span>
-                      <span className="font-num text-[28px] font-semibold leading-none text-green-deep">
+                      <span className="font-num text-[30px] font-semibold leading-none text-green-deep">
                         {fmt(price.price)}
                       </span>
                     </div>
@@ -74,7 +74,7 @@ export default function PlanningComparison() {
               <div className="mt-6 flex-1 space-y-6">
                 {groups.map((g) => (
                   <div key={g.title}>
-                    <h4 className="font-sans text-[10.5px] font-medium uppercase tracking-[0.08em] text-gold">
+                    <h4 className="font-sans text-[11.5px] font-medium uppercase tracking-[0.08em] text-gold">
                       {g.title}
                     </h4>
                     <ul className="mt-3 space-y-2">

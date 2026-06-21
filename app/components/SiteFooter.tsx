@@ -13,7 +13,7 @@ export default function SiteFooter() {
             >
               OLGA EVENTS
             </Link>
-            <p className="mt-4 font-sans text-sm font-light leading-relaxed text-muted">
+            <p className="mt-4 font-sans text-base font-light leading-relaxed text-muted">
               Luxury Wedding Planning · Dubai & all Emirates
             </p>
             <a
@@ -21,7 +21,7 @@ export default function SiteFooter() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`Olga Events on Instagram (${INSTAGRAM.handle})`}
-              className="mt-5 inline-flex items-center gap-2 font-sans text-sm font-light text-muted transition-colors hover:text-gold"
+              className="mt-5 inline-flex items-center gap-2 font-sans text-base font-light text-muted transition-colors hover:text-gold"
             >
               <InstagramIcon className="h-5 w-5" />
               {INSTAGRAM.handle}
@@ -38,7 +38,7 @@ export default function SiteFooter() {
                   <li key={l.href}>
                     <Link
                       href={l.href}
-                      className="font-sans text-sm font-light text-muted transition-colors hover:text-cream"
+                      className="font-sans text-base font-light text-muted transition-colors hover:text-cream"
                     >
                       {l.label}
                     </Link>
@@ -49,7 +49,7 @@ export default function SiteFooter() {
           ))}
         </div>
 
-        <div className="mt-12 flex flex-col gap-3 border-t border-line pt-8 text-center font-sans text-sm font-light text-muted sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-4 sm:text-left">
+        <div className="mt-12 flex flex-col gap-3 border-t border-line pt-8 text-center font-sans text-base font-light text-muted sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-4 sm:text-left">
           <a
             href={CONTACT.whatsappHref}
             className="transition-colors hover:text-gold"

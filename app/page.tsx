@@ -217,7 +217,7 @@ export default function Home() {
                   <h3 className="mt-6 font-serif text-2xl font-light text-cream">
                     {svc.title}
                   </h3>
-                  <p className="mt-3 font-sans text-sm font-light leading-relaxed text-muted">
+                  <p className="mt-3 font-sans text-base font-light leading-relaxed text-muted">
                     {svc.text}
                   </p>
                 </div>
@@ -417,7 +417,7 @@ export default function Home() {
             <h2 className="mt-5 font-serif text-4xl font-light text-cream sm:text-5xl">
               {INSTAGRAM.handle}
             </h2>
-            <p className="mx-auto mt-5 max-w-xl font-sans text-base font-light leading-relaxed text-muted">
+            <p className="mx-auto mt-5 max-w-xl font-sans text-lg font-light leading-relaxed text-muted">
               Real moments, behind-the-scenes and design reveals from the
               weddings we create across Dubai and the UAE.
             </p>

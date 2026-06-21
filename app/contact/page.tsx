@@ -29,7 +29,7 @@ export default function ContactPage() {
             <h2 className="font-serif text-2xl font-light text-cream">
               Send us an enquiry
             </h2>
-            <p className="mt-3 font-sans text-sm font-light leading-relaxed text-muted">
+            <p className="mt-3 font-sans text-base font-light leading-relaxed text-muted">
               Share a few details and we&apos;ll be in touch with the next steps.
             </p>
             <div className="mt-8">
@@ -42,7 +42,7 @@ export default function ContactPage() {
               <h2 className="font-serif text-2xl font-light text-cream">
                 Prefer to talk now?
               </h2>
-              <p className="mt-3 font-sans text-sm font-light leading-relaxed text-muted">
+              <p className="mt-3 font-sans text-base font-light leading-relaxed text-muted">
                 Message or call us directly, we reply quickly and speak EN · RU
                 · AR.
               </p>

@@ -154,13 +154,13 @@ export function PageHeader({
       <div className="relative z-10 mx-auto max-w-[900px] px-6 pb-20 pt-36 text-center sm:pt-40">
         <Reveal>
           {kicker ? <Kicker>{kicker}</Kicker> : null}
-          <h1 className="mt-3 font-serif text-[2.6rem] leading-[1.08] text-cream sm:text-[3.4rem]">
+          <h1 className="mt-3 font-serif text-[2.8rem] leading-[1.08] text-cream sm:text-[3.6rem]">
             {title}
           </h1>
           {intro ? (
             <>
               <Divider />
-              <p className="mx-auto max-w-2xl font-sans text-[18px] leading-relaxed text-faint">
+              <p className="mx-auto max-w-2xl font-sans text-[18px] leading-relaxed text-cream/85">
                 {intro}
               </p>
             </>
@@ -203,7 +203,7 @@ export function SectionTitle({
   return (
     <Reveal className={center ? "text-center" : ""}>
       {kicker ? <Kicker>{kicker}</Kicker> : null}
-      <h2 className="mt-3 font-serif text-[2rem] leading-[1.15] text-cream sm:text-[2.25rem]">
+      <h2 className="mt-3 font-serif text-[2.25rem] leading-[1.12] text-cream sm:text-[2.75rem]">
         {title}
       </h2>
     </Reveal>
@@ -222,7 +222,7 @@ export function Prose({
       {paragraphs.map((p, i) => (
         <p
           key={i}
-          className="font-sans text-base leading-[1.7] text-muted"
+          className="font-sans text-[18px] leading-[1.7] text-muted"
         >
           {p}
         </p>
@@ -237,8 +237,8 @@ export function FAQ({ items }: { items: { q: string; a: string }[] }) {
       <div className="divide-y divide-line border-y border-line">
         {items.map((it, i) => (
           <div key={i} className="py-7">
-            <h3 className="font-serif text-[1.45rem] text-cream">{it.q}</h3>
-            <p className="mt-3 font-sans text-base leading-[1.7] text-muted">
+            <h3 className="font-serif text-[1.6rem] text-cream">{it.q}</h3>
+            <p className="mt-3 font-sans text-[17px] leading-[1.7] text-muted">
               {it.a}
             </p>
           </div>

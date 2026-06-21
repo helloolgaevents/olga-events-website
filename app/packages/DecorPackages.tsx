@@ -22,7 +22,7 @@ export default function DecorPackages() {
           >
             {packagesContent.decor.sliderLabel}
           </label>
-          <span className="font-num text-2xl font-semibold text-cream">{g}</span>
+          <span className="font-num text-3xl font-semibold text-cream">{g}</span>
         </div>
         <input
           id="decor-guests"
@@ -56,26 +56,26 @@ export default function DecorPackages() {
               ) : null}
 
               <div className="border-b border-line pb-5">
-                <p className="font-sans text-[11px] uppercase tracking-[0.14em] text-gold">
+                <p className="font-sans text-[12px] uppercase tracking-[0.14em] text-gold">
                   {t.level}
                 </p>
                 <h3 className="mt-1 font-serif text-[1.9rem] text-cream">
                   {t.name}
                 </h3>
                 <div className="mt-3">
-                  <span className="font-num text-sm text-faint line-through decoration-gold">
+                  <span className="font-num text-[15px] text-faint line-through decoration-gold">
                     AED <AnimatedNumber value={standard} />
                   </span>
                   <div className="mt-1 flex items-baseline gap-1.5">
-                    <span className="font-num text-xs font-medium text-green-deep">
+                    <span className="font-num text-sm font-medium text-green-deep">
                       AED
                     </span>
-                    <span className="font-num text-[26px] font-semibold leading-none text-green-deep">
+                    <span className="font-num text-[30px] font-semibold leading-none text-green-deep">
                       <AnimatedNumber value={special} />
                     </span>
                   </div>
                 </div>
-                <p className="mt-3 font-sans text-xs leading-relaxed text-faint">
+                <p className="mt-3 font-sans text-sm leading-relaxed text-muted">
                   {t.addon}
                 </p>
               </div>
@@ -83,14 +83,14 @@ export default function DecorPackages() {
               <div className="mt-6 flex-1 space-y-5">
                 {t.groups.map((grp) => (
                   <div key={grp.title}>
-                    <h4 className="font-sans text-[10.5px] font-medium uppercase tracking-[0.08em] text-gold">
+                    <h4 className="font-sans text-[11.5px] font-medium uppercase tracking-[0.08em] text-gold">
                       {grp.title}
                     </h4>
                     <ul className="mt-2 space-y-1.5">
                       {grp.items.map((it) => (
                         <li
                           key={it}
-                          className="flex gap-2.5 font-sans text-[13.5px] leading-snug text-muted"
+                          className="flex gap-2.5 font-sans text-[16px] leading-snug text-muted"
                         >
                           <span className="mt-0.5 shrink-0 text-green" aria-hidden>
                             ✓

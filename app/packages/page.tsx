@@ -29,7 +29,7 @@ function BulletList({ items }: { items: string[] }) {
       {items.map((it) => (
         <li
           key={it}
-          className="flex gap-3 font-sans text-base font-light leading-relaxed text-muted"
+          className="flex gap-3 font-sans text-lg font-light leading-relaxed text-muted"
         >
           <span className="mt-0.5 text-gold">, </span>
           {it}
@@ -75,7 +75,7 @@ export default function PackagesPage() {
                   <h3 className="mt-5 font-serif text-xl font-light text-cream">
                     {s.title}
                   </h3>
-                  <p className="mt-2 font-sans text-sm font-light leading-relaxed text-muted">
+                  <p className="mt-2 font-sans text-base font-light leading-relaxed text-muted">
                     {s.text}
                   </p>
                 </div>
@@ -88,7 +88,7 @@ export default function PackagesPage() {
         <Section>
           <SectionTitle kicker="Getting started" title={c.book.heading} center />
           <Reveal className="mx-auto mt-8 max-w-3xl text-center">
-            <p className="font-sans text-base font-light leading-relaxed text-muted">
+            <p className="font-sans text-lg font-light leading-relaxed text-muted">
               {c.book.lead}
             </p>
           </Reveal>
@@ -111,12 +111,12 @@ export default function PackagesPage() {
                   <h3 className="mt-5 font-serif text-2xl font-light text-cream sm:text-3xl">
                     {c.book.recommended.title}
                   </h3>
-                  <p className="mt-4 font-sans text-sm font-light leading-relaxed text-muted">
+                  <p className="mt-4 font-sans text-base font-light leading-relaxed text-muted">
                     {c.book.recommended.intro}
                   </p>
                   <ul className="mt-6 space-y-3">
                     {c.book.recommended.points.map((p) => (
-                      <li key={p.h} className="flex gap-3 font-sans text-sm font-light">
+                      <li key={p.h} className="flex gap-3 font-sans text-base font-light">
                         <span className="mt-0.5 text-gold">✦</span>
                         <span className="text-cream/90">
                           <span className="text-cream">{p.h}</span> {p.t}
@@ -127,7 +127,7 @@ export default function PackagesPage() {
                   <p className="mt-6 border-l-2 border-gold/50 pl-4 font-sans text-sm font-light italic text-muted">
                     {c.book.recommended.note}
                   </p>
-                  <p className="mt-4 font-sans text-sm font-light text-cream/90">
+                  <p className="mt-4 font-sans text-base font-light text-cream/90">
                     {c.book.recommended.forText}
                   </p>
                 </div>
@@ -143,12 +143,12 @@ export default function PackagesPage() {
                 <h3 className="mt-5 font-serif text-2xl font-light text-cream sm:text-3xl">
                   {c.book.flexible.title}
                 </h3>
-                <p className="mt-4 font-sans text-sm font-light leading-relaxed text-muted">
+                <p className="mt-4 font-sans text-base font-light leading-relaxed text-muted">
                   {c.book.flexible.intro}
                 </p>
                 <ul className="mt-6 space-y-3">
                   {c.book.flexible.points.map((p) => (
-                    <li key={p.h} className="flex gap-3 font-sans text-sm font-light">
+                    <li key={p.h} className="flex gap-3 font-sans text-base font-light">
                       <span className="mt-0.5 text-gold">✦</span>
                       <span className="text-cream/90">
                         <span className="text-cream">{p.h}</span> {p.t}
@@ -181,7 +181,7 @@ export default function PackagesPage() {
           </div>
 
           <Reveal className="mx-auto mt-10 max-w-3xl text-center">
-            <p className="font-sans text-base font-light leading-relaxed text-muted">
+            <p className="font-sans text-lg font-light leading-relaxed text-muted">
               {c.book.closing}
             </p>
           </Reveal>
@@ -191,7 +191,7 @@ export default function PackagesPage() {
         <Section alt>
           <div className="mx-auto max-w-3xl text-center">
             <SectionTitle kicker="Planning" title={c.planning.heading} center />
-            <p className="mt-6 font-sans text-base font-light leading-relaxed text-muted">
+            <p className="mt-6 font-sans text-lg font-light leading-relaxed text-muted">
               {c.planning.lead}
             </p>
           </div>
@@ -212,7 +212,7 @@ export default function PackagesPage() {
           </Reveal>
 
           <Reveal className="mx-auto mt-10 max-w-3xl text-center">
-            <p className="font-sans text-base font-light leading-relaxed text-muted">
+            <p className="font-sans text-lg font-light leading-relaxed text-muted">
               {c.planning.everyCouple}
             </p>
           </Reveal>
@@ -226,7 +226,7 @@ export default function PackagesPage() {
         <Section>
           <div className="mx-auto max-w-3xl text-center">
             <SectionTitle kicker="Décor" title={c.decor.heading} center />
-            <p className="mt-6 font-sans text-base font-light leading-relaxed text-muted">
+            <p className="mt-6 font-sans text-lg font-light leading-relaxed text-muted">
               {c.decor.lead}
             </p>
           </div>
@@ -254,7 +254,7 @@ export default function PackagesPage() {
                 ]}
               />
             </div>
-            <p className="mt-6 font-sans text-sm font-light leading-relaxed text-muted">
+            <p className="mt-6 font-sans text-base font-light leading-relaxed text-muted">
               {c.decor.callout.afterText}
             </p>
           </Reveal>
@@ -290,7 +290,7 @@ export default function PackagesPage() {
         {/* ---------- BUILD YOUR ESTIMATE ---------- */}
         <Section alt>
           <SectionTitle kicker="Estimate" title={c.estimate.heading} center />
-          <p className="mx-auto mt-6 max-w-2xl text-center font-sans text-base font-light leading-relaxed text-muted">
+          <p className="mx-auto mt-6 max-w-2xl text-center font-sans text-lg font-light leading-relaxed text-muted">
             {c.estimate.lead}
           </p>
           <div className="mt-12">
@@ -302,7 +302,7 @@ export default function PackagesPage() {
         <Section>
           <div className="mx-auto max-w-3xl text-center">
             <SectionTitle kicker="Add-ons" title={c.additional.heading} center />
-            <p className="mt-6 font-sans text-base font-light leading-relaxed text-muted">
+            <p className="mt-6 font-sans text-lg font-light leading-relaxed text-muted">
               {c.additional.lead}
             </p>
           </div>
@@ -317,7 +317,7 @@ export default function PackagesPage() {
                     {col.items.map((it) => (
                       <li
                         key={it}
-                        className="flex gap-3 font-sans text-sm font-light text-cream/90"
+                        className="flex gap-3 font-sans text-base font-light text-cream/90"
                       >
                         <span className="text-gold">, </span>
                         {it}
@@ -345,7 +345,7 @@ export default function PackagesPage() {
             <div className="flex justify-center">
               <Divider />
             </div>
-            <p className="font-sans text-base font-light leading-relaxed text-muted">
+            <p className="font-sans text-lg font-light leading-relaxed text-muted">
               {c.transparent.para}
             </p>
           </div>
@@ -359,7 +359,7 @@ export default function PackagesPage() {
               title={c.howWeWork.heading}
               center
             />
-            <p className="mt-6 font-sans text-base font-light leading-relaxed text-muted">
+            <p className="mt-6 font-sans text-lg font-light leading-relaxed text-muted">
               {c.howWeWork.lead}
             </p>
           </div>
@@ -371,7 +371,7 @@ export default function PackagesPage() {
                   <h3 className="font-serif text-xl font-light text-cream">
                     {b.title}
                   </h3>
-                  <p className="mt-3 font-sans text-sm font-light leading-relaxed text-muted">
+                  <p className="mt-3 font-sans text-base font-light leading-relaxed text-muted">
                     {b.body}
                   </p>
                 </div>
@@ -416,7 +416,7 @@ export default function PackagesPage() {
           </div>
 
           <Reveal className="mx-auto mt-10 max-w-3xl text-center">
-            <p className="font-sans text-base font-light leading-relaxed text-muted">
+            <p className="font-sans text-lg font-light leading-relaxed text-muted">
               {c.howWeWork.closing}
             </p>
           </Reveal>

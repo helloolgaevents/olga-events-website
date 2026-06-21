@@ -31,7 +31,7 @@ export default function PriceCalculator() {
         {/* ---- Inputs ---- */}
         <div className="space-y-8 p-8 sm:p-10">
           <fieldset>
-            <legend className="font-sans text-[0.72rem] uppercase tracking-[0.22em] text-muted">
+            <legend className="font-sans text-[13px] uppercase tracking-[0.22em] text-muted">
               Planning package
             </legend>
             <div className="mt-4 grid grid-cols-1 gap-3">
@@ -47,10 +47,10 @@ export default function PriceCalculator() {
                       : "border-line hover:border-gold/50"
                   }`}
                 >
-                  <span className="font-serif text-lg font-light text-cream">
+                  <span className="font-serif text-[1.2rem] font-light text-cream">
                     {p.name}
                   </span>
-                  <span className="font-num text-sm text-muted">{fmtAED(p.price)}
+                  <span className="font-num text-base text-muted">{fmtAED(p.price)}
                   </span>
                 </button>
               ))}
@@ -58,7 +58,7 @@ export default function PriceCalculator() {
           </fieldset>
 
           <fieldset>
-            <legend className="font-sans text-[0.72rem] uppercase tracking-[0.22em] text-muted">
+            <legend className="font-sans text-[13px] uppercase tracking-[0.22em] text-muted">
               Décor collection
             </legend>
             <div className="mt-4 grid grid-cols-1 gap-3">
@@ -74,10 +74,10 @@ export default function PriceCalculator() {
                       : "border-line hover:border-gold/50"
                   }`}
                 >
-                  <span className="font-serif text-lg font-light text-cream">
+                  <span className="font-serif text-[1.2rem] font-light text-cream">
                     {d.name}
                   </span>
-                  <span className="font-num text-sm text-muted">from {fmtAED(d.base)}
+                  <span className="font-num text-base text-muted">from {fmtAED(d.base)}
                   </span>
                 </button>
               ))}
@@ -87,7 +87,7 @@ export default function PriceCalculator() {
           <div>
             <label
               htmlFor="calc-guests"
-              className="font-sans text-[0.72rem] uppercase tracking-[0.22em] text-muted"
+              className="font-sans text-[13px] uppercase tracking-[0.22em] text-muted"
             >
               Number of guests
             </label>
@@ -102,7 +102,7 @@ export default function PriceCalculator() {
                 onChange={(e) => setGuests(Number(e.target.value))}
                 className="h-1 w-full cursor-pointer appearance-none rounded-full bg-line accent-gold"
               />
-              <span className="min-w-[3.5rem] text-right font-num text-xl font-semibold text-cream">
+              <span className="min-w-[3.5rem] text-right font-num text-2xl font-semibold text-cream">
                 {clampGuests(guests)}
               </span>
             </div>
@@ -116,23 +116,23 @@ export default function PriceCalculator() {
         <div className="flex flex-col justify-between bg-ink-alt p-8 sm:p-10">
           <div className="space-y-5">
             <div className="flex items-baseline justify-between border-b border-line pb-4">
-              <span className="font-sans text-sm font-light text-muted">
+              <span className="font-sans text-base font-light text-muted">
                 Planning
               </span>
-              <span className="font-num text-xl font-semibold text-cream">
+              <span className="font-num text-2xl font-semibold text-cream">
                 AED <AnimatedNumber value={result.planPrice} />
               </span>
             </div>
             <div className="flex items-baseline justify-between border-b border-line pb-4">
-              <span className="font-sans text-sm font-light text-muted">
+              <span className="font-sans text-base font-light text-muted">
                 Décor
               </span>
-              <span className="font-num text-xl font-semibold text-cream">
+              <span className="font-num text-2xl font-semibold text-cream">
                 AED <AnimatedNumber value={result.decorPrice} />
               </span>
             </div>
             <div className="flex items-baseline justify-between pt-1">
-              <span className="font-sans text-sm uppercase tracking-[0.18em] text-cream">
+              <span className="font-sans text-base uppercase tracking-[0.18em] text-cream">
                 Total
               </span>
               <span className="font-num text-3xl font-bold text-green-deep">
@@ -141,7 +141,7 @@ export default function PriceCalculator() {
             </div>
 
             {result.save > 0 ? (
-              <p className="border border-green/40 bg-green/10 px-4 py-3 font-sans text-sm font-light text-[#3f5a2e]">
+              <p className="border border-green/40 bg-green/10 px-4 py-3 font-sans text-base font-light text-[#2f4a22]">
                 You save by booking both packages together:{" "}
                 <span className="font-normal">
                   AED <AnimatedNumber value={result.save} />

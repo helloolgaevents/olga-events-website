@@ -22,9 +22,12 @@ Notable: async `params` in dynamic routes; Turbopack is the default builder.
   Tailwind tokens in `app/globals.css`, light by default, re-pointed to dark
   inside `.dark-zone`:
   - Light: surface `--color-ink #f5f3ef`, alt `--color-ink-alt #faf8f5`;
-    primary text `--color-cream #1a1a18`; body `--color-muted #3a3833`; secondary
-    `--color-faint #857f73`; hairline `--color-line #e8e4dc`; callout
-    `--color-beige #efe8da`.
+    primary text `--color-cream #111111` (true black headings); body
+    `--color-muted #141414` (near-black, all body/list items/prices/calc labels);
+    secondary `--color-faint #5b574e` (ONLY tiny captions / struck price);
+    hairline `--color-line #e8e4dc`; callout `--color-beige #efe8da`.
+    Base body 17px; paragraphs/leads 18px; package list items 16px; package
+    names ~30px; prices 30px; H2 ~40-44px. (Batch 6: black text + larger sizes.)
   - `.dark-zone` (ONLY `<header>`, hero `PageHeader` + home hero, `<footer>`):
     ink `#16140f`, alt `#1f1c16`, cream `#f4efe6`, muted/faint `#9b9384`,
     line `#352f25`. Add/remove `dark-zone` to re-theme a zone, no per-element edits.
@@ -141,7 +144,17 @@ hello@olga.events · Dubai · Abu Dhabi · all Emirates · EN·RU·AR.
   footer=contentinfo); inline in-sentence links use `underline` so they aren't
   colour-only.
 
-## Pre-launch QA (last run — after Batch 5 mockup design system)
+## Pre-launch QA (last run — after Batch 6 contrast/size/mobile fix)
+- Text now true black (#111111 headings / #141414 body); base 17px, leads 18px,
+  package list items 16px, names/prices 30px, H2 ~40-44px. No pale/beige body text.
+- Décor packages confirmed open as 3 comparison columns (no "+" toggles), ✓/○ markers.
+- Packages collected within max-w-1100; cards equal width; prices aligned.
+- Mobile (Lighthouse mobile preset): no content-width/tap-target/contrast issues;
+  grids stack (grid-cols-1 → lg:grid-cols-3); calculator stacks.
+- Lighthouse: home & /packages desktop 99-100/100/100/100; mobile 92-93/100/100.
+- No em-dashes in visible text.
+
+### Earlier (Batch 5 mockup design system):
 - Restyled WHOLE site to the official mockup: 3 fonts (Cormorant/Inter/DM Sans),
   exact light palette + gold #b89b6e accents, rounded cards, kicker/divider specs.
 - Packages prices ALIGNED across all 3 cards (badge made absolute; `.pc-head`

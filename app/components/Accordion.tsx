@@ -67,7 +67,7 @@ export default function Accordion({
               <div className="overflow-hidden">
                 <div className="pb-6">
                   {it.body ? (
-                    <p className="font-sans text-base font-light leading-relaxed text-muted">
+                    <p className="font-sans text-lg font-light leading-relaxed text-muted">
                       {it.body}
                     </p>
                   ) : null}
@@ -76,7 +76,7 @@ export default function Accordion({
                       {it.list.map((li) => (
                         <li
                           key={li}
-                          className="flex gap-3 font-sans text-sm font-light text-cream/90"
+                          className="flex gap-3 font-sans text-base font-light text-cream/90"
                         >
                           <span className="text-gold">, </span>
                           {li}

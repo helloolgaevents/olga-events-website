@@ -60,7 +60,7 @@ export default function FurniturePage() {
                     <h2 className="font-serif text-2xl font-light text-cream">
                       {cat.name}
                     </h2>
-                    <p className="mt-3 flex-1 font-sans text-sm font-light leading-relaxed text-muted">
+                    <p className="mt-3 flex-1 font-sans text-base font-light leading-relaxed text-muted">
                       {cat.desc}
                     </p>
                     <span className="mt-6 font-sans text-sm tracking-wide text-green-deep">
