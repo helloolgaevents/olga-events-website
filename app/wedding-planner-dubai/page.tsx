@@ -199,6 +199,11 @@ export default function WeddingPlannerPage() {
         ]}
       />
 
+      <FeatureImage
+        src="/images/gallery/event-setup.jpg"
+        alt="Full wedding production and event setup in Dubai by Olga Events"
+      />
+
       <Section alt>
         <div className="mx-auto max-w-3xl">
           <SectionTitle kicker="Good to know" title="FAQ" center />

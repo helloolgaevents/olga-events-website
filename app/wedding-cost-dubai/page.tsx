@@ -10,6 +10,7 @@ import {
   Prose,
   FAQ,
   CTASection,
+  FeatureImage,
 } from "../components/ui";
 
 export const metadata: Metadata = {
@@ -148,6 +149,11 @@ export default function WeddingCostPage() {
         kicker="Wedding Cost in Dubai"
         title="Wedding Cost in Dubai — Budget Guide & Packages"
         intro="The cost of a wedding in Dubai depends on your guest count, venue, decoration, flowers, entertainment, photography, and overall level of customization. Dubai offers everything from simple weddings to large luxury celebrations, and budgets can vary significantly depending on your vision."
+      />
+
+      <FeatureImage
+        src="/images/gallery/stage-dubai.jpg"
+        alt="Luxury wedding stage and ballroom design in Dubai by Olga Events"
       />
 
       <Section alt>

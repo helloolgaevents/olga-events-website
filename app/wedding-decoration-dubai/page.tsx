@@ -211,6 +211,11 @@ export default function WeddingDecorationPage() {
         </div>
       </Section>
 
+      <FeatureImage
+        src="/images/gallery/chandelier-setup.jpg"
+        alt="Luxury chandelier and wedding décor setup in Dubai by Olga Events"
+      />
+
       <Section alt>
         <div className="mx-auto max-w-3xl">
           <SectionTitle kicker="Good to know" title="FAQ" center />

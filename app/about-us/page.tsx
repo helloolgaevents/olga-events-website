@@ -88,6 +88,11 @@ export default function AboutPage() {
         </div>
       </Section>
 
+      <FeatureImage
+        src="/images/gallery/arabian-ranches.jpg"
+        alt="Private villa wedding designed by Olga Events in Dubai"
+      />
+
       <CTASection
         title="Start Planning Your Wedding"
         text="Book a consultation and we'll define your vision, budget, and overall direction together."
