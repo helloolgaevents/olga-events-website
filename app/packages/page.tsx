@@ -1,127 +1,41 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import Reveal from "../components/Reveal";
+import Accordion from "../components/Accordion";
+import PriceCalculator from "../components/PriceCalculator";
 import {
   PageHeader,
   Section,
   SectionTitle,
+  Prose,
+  Divider,
   CTASection,
   FeatureImage,
 } from "../components/ui";
-import PriceCalculator from "../components/PriceCalculator";
+import PlanningTabs from "./PlanningTabs";
+import DecorPackages from "./DecorPackages";
+import { packagesContent as c } from "./content";
 
 export const metadata: Metadata = {
   title: "Wedding Planning & Décor Packages in Dubai | Olga Events",
   description:
-    "Transparent wedding planning packages (Essential, Classic, Luxury) and décor collections (Bloom, Signature, Elegance) for weddings in Dubai and the UAE.",
+    "Transparent wedding planning packages (Essential, Classic, Luxury) and décor collections (Bloom, Signature, Elegance) with a live price calculator — Olga Events, Dubai.",
 };
 
-const PLANNING = [
-  {
-    name: "Essential Planning",
-    price: "AED 7,000",
-    tag: "Structured guidance",
-    desc: "For hands-on couples who want expert structure and support. Planning framework, timeline, supplier guidance, and a clear path from idea to wedding day.",
-    features: [
-      "Planning structure & timeline",
-      "Venue & supplier guidance",
-      "Budget framework",
-      "Ongoing expert support",
-    ],
-  },
-  {
-    name: "Classic Planning",
-    price: "AED 10,000",
-    tag: "Most popular",
-    desc: "A balanced level of support combining coordination and design. We manage the moving parts while you stay involved in the decisions that matter most.",
-    features: [
-      "Everything in Essential",
-      "Supplier coordination",
-      "Design concept development",
-      "Day-of coordination",
-    ],
-    featured: true,
-  },
-  {
-    name: "Luxury Planning",
-    price: "AED 18,000",
-    tag: "Fully managed",
-    desc: "A completely managed, stress-free experience. From concept and design to full production and execution, our team runs everything in the background.",
-    features: [
-      "Everything in Classic",
-      "Full design & production",
-      "Complete supplier management",
-      "Full on-the-day execution",
-    ],
-  },
-];
-
-const DECOR = [
-  {
-    name: "Bloom",
-    tag: "Refined florals",
-    desc: "Soft, romantic décor led by fresh flowers — elegant centrepieces, aisle styling, and a cohesive palette for intimate, graceful celebrations.",
-  },
-  {
-    name: "Signature",
-    tag: "Statement design",
-    desc: "Our signature look — custom stages and backdrops, layered lighting, and full table styling that transforms your venue into a refined, cohesive setting.",
-  },
-  {
-    name: "Elegance",
-    tag: "Grand luxury",
-    desc: "Large-scale, bespoke production — dramatic structures, premium floral installations, and complete venue transformation for grand luxury weddings.",
-  },
-];
-
-function PlanCard({
-  name,
-  price,
-  tag,
-  desc,
-  features,
-  featured,
-}: {
-  name: string;
-  price: string;
-  tag: string;
-  desc: string;
-  features: string[];
-  featured?: boolean;
-}) {
+function BulletList({ items }: { items: string[] }) {
   return (
-    <div
-      className={`svc-card flex h-full flex-col p-8 ${
-        featured ? "border-gold/60" : ""
-      }`}
-    >
-      <span className="font-sans text-[0.7rem] uppercase tracking-[0.22em] text-gold">
-        {tag}
-      </span>
-      <h3 className="mt-4 font-serif text-3xl font-light text-cream">{name}</h3>
-      <p className="mt-2 font-serif text-xl text-gold">{price}</p>
-      <p className="mt-5 font-sans text-sm font-light leading-relaxed text-muted">
-        {desc}
-      </p>
-      <ul className="mt-6 space-y-2.5">
-        {features.map((f) => (
-          <li
-            key={f}
-            className="flex gap-3 font-sans text-sm font-light text-cream/90"
-          >
-            <span className="text-gold">—</span>
-            {f}
-          </li>
-        ))}
-      </ul>
-      <div className="mt-8 pt-2">
-        <Link href="/contact" className="btn-outline">
-          Enquire
-        </Link>
-      </div>
-    </div>
+    <ul className="mt-4 space-y-2.5">
+      {items.map((it) => (
+        <li
+          key={it}
+          className="flex gap-3 font-sans text-base font-light leading-relaxed text-muted"
+        >
+          <span className="mt-0.5 text-gold">—</span>
+          {it}
+        </li>
+      ))}
+    </ul>
   );
 }
 
@@ -130,105 +44,400 @@ export default function PackagesPage() {
     <div className="min-h-screen bg-ink text-cream">
       <SiteHeader />
       <main>
+        {/* ---------- HERO ---------- */}
+        <PageHeader kicker={c.hero.kicker} title={c.hero.title} intro={c.hero.sub} />
 
-      <PageHeader
-        kicker="Our packages"
-        title="Planning & Décor, Made Clear"
-        intro="Transparent packages designed to give you clarity, control, and a smooth wedding experience — from structured guidance to a fully managed celebration. Every package is flexible and customised to your guest count, venue, and design."
-      />
-
-      <FeatureImage
-        src="/images/table-florals.jpg"
-        alt="Wedding table styling and florals by Olga Events"
-      />
-
-      <Section>
-        <SectionTitle
-          kicker="Planning"
-          title="Wedding Planning Packages"
-          center
+        <FeatureImage
+          src="/images/table-florals.jpg"
+          alt="Wedding table styling and florals by Olga Events in Dubai"
         />
-        <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-3">
-          {PLANNING.map((p, i) => (
-            <Reveal key={p.name} delay={i * 90}>
-              <PlanCard {...p} />
-            </Reveal>
-          ))}
-        </div>
-        <p className="mt-8 text-center font-sans text-sm font-light text-muted">
-          All packages can be upgraded with additional services and design
-          elements.
-        </p>
-      </Section>
 
-      <Section alt>
-        <SectionTitle
-          kicker="Décor & design"
-          title="Décor Collections"
-          center
-        />
-        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
-          {DECOR.map((d, i) => (
-            <Reveal key={d.name} delay={i * 90}>
-              <div className="svc-card flex h-full flex-col p-8">
-                <span className="font-sans text-[0.7rem] uppercase tracking-[0.22em] text-gold">
-                  {d.tag}
-                </span>
-                <h3 className="mt-4 font-serif text-3xl font-light text-cream">
-                  {d.name}
-                </h3>
-                <p className="mt-2 font-serif text-lg text-gold">Custom quote</p>
-                <p className="mt-5 font-sans text-sm font-light leading-relaxed text-muted">
-                  {d.desc}
-                </p>
-                <div className="mt-8 pt-2">
-                  <Link href="/contact" className="btn-outline">
-                    Enquire
-                  </Link>
+        {/* ---------- WHO WE ARE ---------- */}
+        <Section>
+          <div className="mx-auto max-w-3xl">
+            <SectionTitle kicker="Who we are" title={c.who.heading} />
+            <div className="mt-8">
+              <Prose paragraphs={c.who.paras} />
+            </div>
+          </div>
+        </Section>
+
+        {/* ---------- HOW IT WORKS ---------- */}
+        <Section alt>
+          <SectionTitle kicker="Process" title={c.how.heading} center />
+          <div className="mt-14 grid grid-cols-2 gap-6 lg:grid-cols-4">
+            {c.how.steps.map((s, i) => (
+              <Reveal key={s.n} delay={i * 90}>
+                <div className="svc-card h-full p-7">
+                  <span className="font-serif text-3xl font-light text-gold">
+                    {s.n}
+                  </span>
+                  <h3 className="mt-5 font-serif text-xl font-light text-cream">
+                    {s.title}
+                  </h3>
+                  <p className="mt-2 font-sans text-sm font-light leading-relaxed text-muted">
+                    {s.text}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </Section>
+
+        {/* ---------- HOW TO BOOK ---------- */}
+        <Section>
+          <SectionTitle kicker="Getting started" title={c.book.heading} center />
+          <Reveal className="mx-auto mt-8 max-w-3xl text-center">
+            <p className="font-sans text-base font-light leading-relaxed text-muted">
+              {c.book.lead}
+            </p>
+          </Reveal>
+
+          <div className="mt-14 grid grid-cols-1 gap-6 lg:grid-cols-2">
+            {/* Recommended */}
+            <Reveal>
+              <div className="relative h-full overflow-hidden border border-gold/60 p-8 sm:p-10">
+                <div
+                  className="pointer-events-none absolute inset-0"
+                  style={{
+                    background:
+                      "radial-gradient(60% 50% at 50% 0%, rgba(194,163,107,0.14), rgba(22,20,15,0) 70%)",
+                  }}
+                />
+                <div className="relative z-10">
+                  <span className="inline-block bg-gold px-3 py-1 font-sans text-[0.6rem] uppercase tracking-[0.2em] text-ink">
+                    {c.book.recommended.tag}
+                  </span>
+                  <h3 className="mt-5 font-serif text-2xl font-light text-cream sm:text-3xl">
+                    {c.book.recommended.title}
+                  </h3>
+                  <p className="mt-4 font-sans text-sm font-light leading-relaxed text-muted">
+                    {c.book.recommended.intro}
+                  </p>
+                  <ul className="mt-6 space-y-3">
+                    {c.book.recommended.points.map((p) => (
+                      <li key={p.h} className="flex gap-3 font-sans text-sm font-light">
+                        <span className="mt-0.5 text-gold">✦</span>
+                        <span className="text-cream/90">
+                          <span className="text-cream">{p.h}</span> {p.t}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-6 border-l-2 border-gold/50 pl-4 font-sans text-sm font-light italic text-muted">
+                    {c.book.recommended.note}
+                  </p>
+                  <p className="mt-4 font-sans text-sm font-light text-cream/90">
+                    {c.book.recommended.forText}
+                  </p>
                 </div>
               </div>
             </Reveal>
-          ))}
-        </div>
-      </Section>
 
-      {/* ---- Live price calculator ---- */}
-      <Section>
-        <SectionTitle
-          kicker="Estimate"
-          title="Live Price Calculator"
-          center
-        />
-        <p className="mx-auto mt-5 max-w-2xl text-center font-sans text-base font-light leading-relaxed text-muted">
-          Build your package and see a transparent estimate instantly. Final
-          quotations are confirmed during planning.
-        </p>
-        <div className="mt-12">
-          <PriceCalculator />
-        </div>
-      </Section>
+            {/* Flexible */}
+            <Reveal delay={120}>
+              <div className="h-full border border-line p-8 sm:p-10">
+                <span className="inline-block border border-gold/50 px-3 py-1 font-sans text-[0.6rem] uppercase tracking-[0.2em] text-gold">
+                  {c.book.flexible.tag}
+                </span>
+                <h3 className="mt-5 font-serif text-2xl font-light text-cream sm:text-3xl">
+                  {c.book.flexible.title}
+                </h3>
+                <p className="mt-4 font-sans text-sm font-light leading-relaxed text-muted">
+                  {c.book.flexible.intro}
+                </p>
+                <ul className="mt-6 space-y-3">
+                  {c.book.flexible.points.map((p) => (
+                    <li key={p.h} className="flex gap-3 font-sans text-sm font-light">
+                      <span className="mt-0.5 text-gold">✦</span>
+                      <span className="text-cream/90">
+                        <span className="text-cream">{p.h}</span> {p.t}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-6 font-sans text-sm font-light text-gold">
+                  {c.book.flexible.pricingLine}
+                </p>
+                <p className="mt-4 border-l-2 border-line pl-4 font-sans text-sm font-light italic text-muted">
+                  {c.book.flexible.note}
+                </p>
+                <p className="mt-6 font-sans text-[0.72rem] uppercase tracking-[0.2em] text-muted">
+                  {c.book.flexible.suitableTitle}
+                </p>
+                <ul className="mt-3 space-y-2">
+                  {c.book.flexible.suitable.map((s) => (
+                    <li
+                      key={s}
+                      className="flex gap-3 font-sans text-sm font-light leading-relaxed text-cream/90"
+                    >
+                      <span className="text-gold">·</span>
+                      {s}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
+          </div>
 
-      <Section alt>
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="font-sans text-base font-light leading-relaxed text-muted">
-            Want to understand pricing first? Read our{" "}
-            <Link href="/wedding-cost-dubai" className="text-gold underline underline-offset-2 hover:text-cream">
-              wedding cost guide
-            </Link>{" "}
-            or explore our{" "}
-            <Link
-              href="/wedding-packages-dubai"
-              className="text-gold underline underline-offset-2 hover:text-cream"
-            >
-              wedding packages overview
-            </Link>
-            .
+          <Reveal className="mx-auto mt-10 max-w-3xl text-center">
+            <p className="font-sans text-base font-light leading-relaxed text-muted">
+              {c.book.closing}
+            </p>
+          </Reveal>
+        </Section>
+
+        {/* ---------- PLANNING PACKAGES ---------- */}
+        <Section alt>
+          <div className="mx-auto max-w-3xl text-center">
+            <SectionTitle kicker="Planning" title={c.planning.heading} center />
+            <p className="mt-6 font-sans text-base font-light leading-relaxed text-muted">
+              {c.planning.lead}
+            </p>
+          </div>
+
+          <Reveal className="mx-auto mt-12 grid max-w-3xl grid-cols-1 gap-8 sm:grid-cols-2">
+            <div>
+              <p className="font-sans text-[0.72rem] uppercase tracking-[0.2em] text-gold">
+                {c.planning.understandTitle}
+              </p>
+              <BulletList items={c.planning.understand} />
+            </div>
+            <div>
+              <p className="font-sans text-[0.72rem] uppercase tracking-[0.2em] text-gold">
+                {c.planning.letsTitle}
+              </p>
+              <BulletList items={c.planning.lets} />
+            </div>
+          </Reveal>
+
+          <Reveal className="mx-auto mt-10 max-w-3xl text-center">
+            <p className="font-sans text-base font-light leading-relaxed text-muted">
+              {c.planning.everyCouple}
+            </p>
+          </Reveal>
+
+          <Reveal className="mt-14">
+            <PlanningTabs />
+          </Reveal>
+        </Section>
+
+        {/* ---------- DÉCOR PACKAGES ---------- */}
+        <Section>
+          <div className="mx-auto max-w-3xl text-center">
+            <SectionTitle kicker="Décor" title={c.decor.heading} center />
+            <p className="mt-6 font-sans text-base font-light leading-relaxed text-muted">
+              {c.decor.lead}
+            </p>
+          </div>
+
+          <Reveal className="mt-14">
+            <DecorPackages />
+          </Reveal>
+
+          <Reveal className="mx-auto mt-12 max-w-3xl">
+            <Prose paragraphs={[c.decor.compareParagraph]} />
+          </Reveal>
+
+          {/* Callout */}
+          <Reveal className="mx-auto mt-10 max-w-3xl border border-gold/40 p-8">
+            <p className="font-sans text-base font-light leading-relaxed text-cream/90">
+              {c.decor.callout.lead}
+            </p>
+            <div className="mt-6">
+              <Accordion
+                items={[
+                  {
+                    title: c.decor.callout.optionalTitle,
+                    list: c.decor.callout.optional,
+                  },
+                ]}
+              />
+            </div>
+            <p className="mt-6 font-sans text-sm font-light leading-relaxed text-muted">
+              {c.decor.callout.afterText}
+            </p>
+          </Reveal>
+
+          {/* Individual décor — how it works */}
+          <Reveal className="mx-auto mt-12 max-w-3xl">
+            <p className="font-sans text-[0.72rem] uppercase tracking-[0.2em] text-gold">
+              {c.decor.individual.title}
+            </p>
+            <div className="mt-4">
+              <Accordion
+                items={c.decor.individual.items.map((it) => ({
+                  title: it.h,
+                  body: it.t,
+                }))}
+              />
+            </div>
+          </Reveal>
+
+          {/* Notes */}
+          <Reveal className="mx-auto mt-12 max-w-3xl">
+            <p className="font-sans text-[0.72rem] uppercase tracking-[0.2em] text-gold">
+              Good to know
+            </p>
+            <div className="mt-4">
+              <Accordion
+                items={c.decor.notes.map((n) => ({ title: n.title, body: n.body }))}
+              />
+            </div>
+          </Reveal>
+        </Section>
+
+        {/* ---------- BUILD YOUR ESTIMATE ---------- */}
+        <Section alt>
+          <SectionTitle kicker="Estimate" title={c.estimate.heading} center />
+          <p className="mx-auto mt-6 max-w-2xl text-center font-sans text-base font-light leading-relaxed text-muted">
+            {c.estimate.lead}
           </p>
-        </div>
-      </Section>
+          <div className="mt-12">
+            <PriceCalculator />
+          </div>
+        </Section>
 
-      <CTASection />
+        {/* ---------- ADDITIONAL DÉCOR & SERVICES ---------- */}
+        <Section>
+          <div className="mx-auto max-w-3xl text-center">
+            <SectionTitle kicker="Add-ons" title={c.additional.heading} center />
+            <p className="mt-6 font-sans text-base font-light leading-relaxed text-muted">
+              {c.additional.lead}
+            </p>
+          </div>
+          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
+            {c.additional.columns.map((col, i) => (
+              <Reveal key={col.title} delay={i * 90}>
+                <div className="svc-card h-full p-8">
+                  <h3 className="font-serif text-xl font-light text-cream">
+                    {col.title}
+                  </h3>
+                  <ul className="mt-5 space-y-2.5">
+                    {col.items.map((it) => (
+                      <li
+                        key={it}
+                        className="flex gap-3 font-sans text-sm font-light text-cream/90"
+                      >
+                        <span className="text-gold">—</span>
+                        {it}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal className="mx-auto mt-10 max-w-3xl text-center">
+            <p className="font-sans text-sm font-light italic text-muted">
+              {c.additional.note}
+            </p>
+          </Reveal>
+        </Section>
 
+        {/* ---------- TRANSPARENT ---------- */}
+        <Section alt>
+          <div className="mx-auto max-w-3xl text-center">
+            <SectionTitle kicker="Pricing" title={c.transparent.heading} center />
+            <p className="mt-8 font-serif text-xl font-light leading-relaxed text-gold sm:text-2xl">
+              {c.transparent.formula}
+            </p>
+            <div className="flex justify-center">
+              <Divider />
+            </div>
+            <p className="font-sans text-base font-light leading-relaxed text-muted">
+              {c.transparent.para}
+            </p>
+          </div>
+        </Section>
+
+        {/* ---------- HOW WE WORK & WHY BOOK EARLY ---------- */}
+        <Section>
+          <div className="mx-auto max-w-3xl text-center">
+            <SectionTitle
+              kicker="Transparency"
+              title={c.howWeWork.heading}
+              center
+            />
+            <p className="mt-6 font-sans text-base font-light leading-relaxed text-muted">
+              {c.howWeWork.lead}
+            </p>
+          </div>
+
+          <div className="mx-auto mt-12 grid max-w-3xl grid-cols-1 gap-6 sm:grid-cols-2">
+            {c.howWeWork.blocks.map((b, i) => (
+              <Reveal key={b.title} delay={i * 90}>
+                <div className="h-full border border-line p-7">
+                  <h3 className="font-serif text-xl font-light text-cream">
+                    {b.title}
+                  </h3>
+                  <p className="mt-3 font-sans text-sm font-light leading-relaxed text-muted">
+                    {b.body}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal className="mx-auto mt-8 max-w-3xl">
+            <Accordion
+              items={[
+                {
+                  title: c.howWeWork.whyTimeTitle,
+                  list: c.howWeWork.whyTime,
+                  note: c.howWeWork.whyTimeNote,
+                },
+                {
+                  title: c.howWeWork.inventoryTitle,
+                  list: c.howWeWork.inventory,
+                  note: c.howWeWork.inventoryNote,
+                },
+                {
+                  title: c.howWeWork.idealTitle,
+                  list: c.howWeWork.ideal,
+                },
+              ]}
+            />
+          </Reveal>
+
+          <div className="mt-12 grid grid-cols-2 gap-4 lg:grid-cols-4">
+            {c.howWeWork.timeline.map((t, i) => (
+              <Reveal key={t.label} delay={i * 80}>
+                <div className="border border-line p-6 text-center">
+                  <p className="font-serif text-xl font-light text-gold">
+                    {t.range}
+                  </p>
+                  <p className="mt-2 font-sans text-[0.72rem] uppercase tracking-[0.16em] text-muted">
+                    {t.label}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal className="mx-auto mt-10 max-w-3xl text-center">
+            <p className="font-sans text-base font-light leading-relaxed text-muted">
+              {c.howWeWork.closing}
+            </p>
+          </Reveal>
+        </Section>
+
+        {/* ---------- FULLY CUSTOM ---------- */}
+        <Section alt>
+          <div className="mx-auto max-w-3xl text-center">
+            <SectionTitle kicker="Bespoke" title={c.custom.heading} center />
+            <div className="mt-8">
+              <Prose paragraphs={[c.custom.para]} className="text-center" />
+            </div>
+          </div>
+        </Section>
+
+        {/* ---------- FINAL CTA ---------- */}
+        <CTASection
+          title={c.cta.heading}
+          text={c.cta.para}
+          buttonLabel={c.cta.button}
+        />
       </main>
       <SiteFooter />
     </div>

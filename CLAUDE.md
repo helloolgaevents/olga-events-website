@@ -64,11 +64,17 @@ hello@olga.events · Dubai · Abu Dhabi · all Emirates · EN·RU·AR.
 - [x] `/wedding-cost-dubai` ← pages/wedding-cost-dubai
 - [x] `/wedding-planner-dubai` ← pages/wedding-planner-dubai
 - [x] `/wedding-packages-dubai` ← pages/wedding-packages-dubai
-- [x] `/packages` — planning (Essential/Classic/**Luxury Planning**) + décor
-      (Bloom/Signature/Elegance) + **live price calculator**
-      (`components/PriceCalculator.tsx`): planning + décor tiers, guest count,
-      instant Total + green savings line, AED formatting, "VAT, transport &
-      logistics included".
+- [x] `/packages` — **full presentation page, highly interactive** (C2, EN,
+      i18n-ready). Copy lives in `app/packages/content.ts` (structured object —
+      add RU/AR siblings later). Pricing single-source in `app/packages/pricing.ts`.
+      Sections: hero, who-we-are, how-it-works, two-ways-to-book, planning
+      (tabbed tiers `PlanningTabs` with "adds over previous" highlight), décor
+      (`DecorPackages`: guest slider + expandable cards + animated prices),
+      accordions (optional elements, individual décor, notes, how-we-work),
+      live calculator (`PriceCalculator` + `AnimatedNumber`), additional
+      services, transparent pricing, book-early timeline, fully-custom, CTA.
+      Reusable interactive bits: `components/Accordion.tsx`,
+      `components/AnimatedNumber.tsx`. All respect prefers-reduced-motion.
 - [x] `/contact` — enquiry form (name, date, location, guests, budget) → mailto
       hello@olga.events + WhatsApp/Call buttons. CRM integration pending.
 - [x] `/corporate-events`, `/private-events`, `/seasonal-events`,

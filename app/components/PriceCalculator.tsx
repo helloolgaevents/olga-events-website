@@ -2,23 +2,14 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-
-type Plan = { name: string; price: number; std: number };
-type Decor = { name: string; base: number; std: number; cp: number };
-
-const PLANS: Plan[] = [
-  { name: "Essential", price: 6650, std: 7000 },
-  { name: "Classic", price: 9500, std: 10000 },
-  { name: "Luxury Planning", price: 17100, std: 18000 },
-];
-
-const DECORS: Decor[] = [
-  { name: "Bloom", base: 39050, std: 47000, cp: 350 },
-  { name: "Signature", base: 46930, std: 57000, cp: 800 },
-  { name: "Elegance", base: 66000, std: 80000, cp: 1500 },
-];
-
-const fmt = (n: number) => `AED ${new Intl.NumberFormat("en-US").format(n)}`;
+import AnimatedNumber from "./AnimatedNumber";
+import {
+  PLANS,
+  DECORS,
+  clampGuests,
+  decorPricing,
+  fmtAED,
+} from "../packages/pricing";
 
 export default function PriceCalculator() {
   const [planIdx, setPlanIdx] = useState(1); // Classic
@@ -28,18 +19,10 @@ export default function PriceCalculator() {
   const result = useMemo(() => {
     const plan = PLANS[planIdx];
     const decor = DECORS[decorIdx];
-    const g = Number.isFinite(guests) && guests >= 100 ? guests : 100;
-
-    const extraG = Math.max(0, g - 100);
-    const extraT = Math.max(0, Math.ceil(g / 10) - 10);
-    const add = extraG * 50 + extraT * decor.cp;
-
-    const decorPrice = decor.base + add;
-    const decorStandard = Math.round((decorPrice * decor.std) / decor.base);
-    const total = plan.price + decorPrice;
-    const save = decorStandard - decorPrice + (plan.std - plan.price);
-
-    return { planPrice: plan.price, decorPrice, total, save };
+    const { special, standard } = decorPricing(guests, decor);
+    const total = plan.price + special;
+    const save = standard - special + (plan.std - plan.price);
+    return { planPrice: plan.price, decorPrice: special, total, save };
   }, [planIdx, decorIdx, guests]);
 
   return (
@@ -54,7 +37,7 @@ export default function PriceCalculator() {
             <div className="mt-4 grid grid-cols-1 gap-3">
               {PLANS.map((p, i) => (
                 <button
-                  key={p.name}
+                  key={p.key}
                   type="button"
                   aria-pressed={planIdx === i}
                   onClick={() => setPlanIdx(i)}
@@ -68,7 +51,7 @@ export default function PriceCalculator() {
                     {p.name}
                   </span>
                   <span className="font-sans text-sm text-gold">
-                    {fmt(p.price)}
+                    {fmtAED(p.price)}
                   </span>
                 </button>
               ))}
@@ -82,7 +65,7 @@ export default function PriceCalculator() {
             <div className="mt-4 grid grid-cols-1 gap-3">
               {DECORS.map((d, i) => (
                 <button
-                  key={d.name}
+                  key={d.key}
                   type="button"
                   aria-pressed={decorIdx === i}
                   onClick={() => setDecorIdx(i)}
@@ -96,7 +79,7 @@ export default function PriceCalculator() {
                     {d.name}
                   </span>
                   <span className="font-sans text-sm text-gold">
-                    from {fmt(d.base)}
+                    from {fmtAED(d.base)}
                   </span>
                 </button>
               ))}
@@ -105,25 +88,26 @@ export default function PriceCalculator() {
 
           <div>
             <label
-              htmlFor="guests"
+              htmlFor="calc-guests"
               className="font-sans text-[0.72rem] uppercase tracking-[0.22em] text-gold"
             >
               Number of guests
             </label>
-            <input
-              id="guests"
-              type="number"
-              min={100}
-              step={10}
-              value={guests}
-              onChange={(e) => setGuests(Number(e.target.value))}
-              onBlur={() =>
-                setGuests((g) =>
-                  Number.isFinite(g) && g >= 100 ? Math.round(g) : 100,
-                )
-              }
-              className="mt-3 w-full border border-line bg-ink px-4 py-3 font-sans text-base font-light text-cream outline-none transition-colors focus:border-gold"
-            />
+            <div className="mt-4 flex items-center gap-4">
+              <input
+                id="calc-guests"
+                type="range"
+                min={100}
+                max={600}
+                step={10}
+                value={clampGuests(guests)}
+                onChange={(e) => setGuests(Number(e.target.value))}
+                className="h-1 w-full cursor-pointer appearance-none rounded-full bg-line accent-gold"
+              />
+              <span className="min-w-[3.5rem] text-right font-serif text-xl font-light text-cream">
+                {clampGuests(guests)}
+              </span>
+            </div>
             <p className="mt-2 font-sans text-xs font-light text-muted">
               Minimum 100 guests.
             </p>
@@ -138,7 +122,7 @@ export default function PriceCalculator() {
                 Planning
               </span>
               <span className="font-serif text-xl font-light text-cream">
-                {fmt(result.planPrice)}
+                AED <AnimatedNumber value={result.planPrice} />
               </span>
             </div>
             <div className="flex items-baseline justify-between border-b border-line pb-4">
@@ -146,7 +130,7 @@ export default function PriceCalculator() {
                 Décor
               </span>
               <span className="font-serif text-xl font-light text-cream">
-                {fmt(result.decorPrice)}
+                AED <AnimatedNumber value={result.decorPrice} />
               </span>
             </div>
             <div className="flex items-baseline justify-between pt-1">
@@ -154,14 +138,16 @@ export default function PriceCalculator() {
                 Total
               </span>
               <span className="font-serif text-3xl font-light text-gold">
-                {fmt(result.total)}
+                AED <AnimatedNumber value={result.total} />
               </span>
             </div>
 
             {result.save > 0 ? (
               <p className="border border-emerald-500/40 bg-emerald-500/10 px-4 py-3 font-sans text-sm font-light text-emerald-300">
                 You save by booking both packages together:{" "}
-                <span className="font-normal">{fmt(result.save)}</span>
+                <span className="font-normal">
+                  AED <AnimatedNumber value={result.save} />
+                </span>
               </p>
             ) : null}
           </div>
