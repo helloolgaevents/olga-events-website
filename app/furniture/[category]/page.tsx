@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import SiteHeader from "../../components/SiteHeader";
@@ -10,24 +11,12 @@ import {
   CTASection,
   FURNITURE_CATEGORIES,
 } from "../../components/ui";
+import PRODUCTS from "../products.json";
 
 type Params = { category: string };
+type Product = { title: string; desc: string; img: string };
 
-// Sample catalog carried from the live store. The full per-category product
-// catalog will be imported later (see CLAUDE.md). For now bridal-sofa shows a
-// representative preview; other categories show a structural placeholder.
-const SAMPLE_PRODUCTS: Record<string, { name: string; price: string }[]> = {
-  "bridal-sofa": [
-    { name: "Borghese Bridal Sofa — Beige Metal Base", price: "AED 8,500" },
-    { name: "Paris Bridal Sofa — Beige Velvet, Wooden Legs", price: "AED 4,000" },
-    { name: "Pinsofa Bridal Sofa — Colored Fabric", price: "AED 4,200" },
-    { name: "Italian Bridal Sofa — Dark Blue Velvet", price: "AED 3,800" },
-    { name: "Orsetto Bridal Sofa — Ivory Fabric", price: "AED 3,800" },
-    { name: "Lena Bridal Sofa — Beige Linen, Wooden Legs", price: "AED 3,500" },
-    { name: "New Moon Bridal Sofa — Light Beige Velvet", price: "AED 2,500" },
-    { name: "Mirage Single Bridal Sofa — Dark Beige", price: "AED 1,500" },
-  ],
-};
+const CATALOG = PRODUCTS as Record<string, Product[]>;
 
 export function generateStaticParams(): Params[] {
   return FURNITURE_CATEGORIES.map((c) => ({ category: c.slug }));
@@ -56,7 +45,7 @@ export default async function FurnitureCategoryPage({
   const cat = FURNITURE_CATEGORIES.find((c) => c.slug === category);
   if (!cat) notFound();
 
-  const products = SAMPLE_PRODUCTS[cat.slug] ?? [];
+  const products = CATALOG[cat.slug] ?? [];
 
   return (
     <div className="min-h-screen bg-ink text-cream">
@@ -72,19 +61,37 @@ export default async function FurnitureCategoryPage({
         {products.length > 0 ? (
           <>
             <p className="mb-10 text-center font-sans text-sm font-light text-muted">
-              A selection of our {cat.name.toLowerCase()}. Daily rental rates;
-              the full catalog is available on request.
+              A selection of our {cat.name.toLowerCase()} available for rental
+              across Dubai and the UAE. Contact us for availability and a quote.
             </p>
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {products.map((p, i) => (
-                <Reveal key={p.name} delay={(i % 3) * 70}>
-                  <div className="svc-card flex h-full flex-col justify-between p-7">
-                    <h2 className="font-serif text-xl font-light text-cream">
-                      {p.name}
-                    </h2>
-                    <p className="mt-4 font-serif text-lg text-gold">
-                      {p.price}
-                    </p>
+                <Reveal key={p.title + i} delay={(i % 3) * 70}>
+                  <div className="svc-card group flex h-full flex-col overflow-hidden">
+                    <div className="relative aspect-[4/5] w-full overflow-hidden border-b border-line bg-ink-alt">
+                      <Image
+                        src={p.img}
+                        alt={`${p.title} — furniture rental Dubai`}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 360px"
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                    </div>
+                    <div className="flex flex-1 flex-col p-6">
+                      <h2 className="font-serif text-lg font-light leading-snug text-cream">
+                        {p.title}
+                      </h2>
+                      {p.desc ? (
+                        <p className="mt-3 flex-1 font-sans text-sm font-light leading-relaxed text-muted">
+                          {p.desc}
+                        </p>
+                      ) : (
+                        <div className="flex-1" />
+                      )}
+                      <Link href="/contact" className="btn-outline mt-6 self-start">
+                        Enquire
+                      </Link>
+                    </div>
                   </div>
                 </Reveal>
               ))}
@@ -113,7 +120,7 @@ export default async function FurnitureCategoryPage({
           </Reveal>
         )}
 
-        <div className="mt-12 text-center">
+        <div className="mt-14 text-center">
           <Link
             href="/furniture"
             className="font-sans text-sm tracking-wide text-gold hover:text-cream"
