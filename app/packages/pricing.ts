@@ -1,4 +1,4 @@
-// Single source of truth for package pricing — shared by the calculator,
+// Single source of truth for package pricing, shared by the calculator,
 // the décor cards and the planning tabs.
 
 export type Plan = { key: string; name: string; price: number; std: number };

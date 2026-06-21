@@ -20,7 +20,7 @@ const CATALOG = PRODUCTS as Record<
 export const metadata: Metadata = {
   title: "Event & Wedding Furniture Rental in Dubai | Olga Events",
   description:
-    "Stylish event furniture rental in Dubai — bridal sofas, dining tables and chairs, lounge sofas, accent chairs, and ottomans to complement any celebration.",
+    "Stylish event furniture rental in Dubai, bridal sofas, dining tables and chairs, lounge sofas, accent chairs, and ottomans to complement any celebration.",
 };
 
 export default function FurniturePage() {
@@ -32,7 +32,7 @@ export default function FurniturePage() {
       <PageHeader
         kicker="Furniture Rentals"
         title="Event & Wedding Furniture Rental in Dubai"
-        intro="We offer a wide range of stylish furniture rentals to complement any event — from elegant dining tables, chairs, and cocktail tables to comfortable sofas, lounge seating, bar counters, and display stands."
+        intro="We offer a wide range of stylish furniture rentals to complement any event, from elegant dining tables, chairs, and cocktail tables to comfortable sofas, lounge seating, bar counters, and display stands."
       />
 
       <Section>
@@ -63,7 +63,7 @@ export default function FurniturePage() {
                     <p className="mt-3 flex-1 font-sans text-sm font-light leading-relaxed text-muted">
                       {cat.desc}
                     </p>
-                    <span className="mt-6 font-sans text-sm tracking-wide text-gold">
+                    <span className="mt-6 font-sans text-sm tracking-wide text-green-deep">
                       View collection →
                     </span>
                   </div>
@@ -76,7 +76,7 @@ export default function FurniturePage() {
 
       <CTASection
         title="Need furniture for your event?"
-        text="Tell us your style and guest count — we'll recommend the perfect pieces and send a quote."
+        text="Tell us your style and guest count, we'll recommend the perfect pieces and send a quote."
         buttonLabel="Request a quote"
       />
 

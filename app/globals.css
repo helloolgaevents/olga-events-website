@@ -8,14 +8,17 @@
   --color-ink: #f5f3ef; /* page surface (ivory) */
   --color-ink-alt: #faf8f5; /* alt surface (cream) */
   --color-cream: #1a1a18; /* primary text / headings */
-  --color-muted: #3a3833; /* body & secondary text (readable on light) */
-  --color-gold: #846a24; /* accent (kickers, lines, icons) — deepened so gold
-                            TEXT passes WCAG AA on the light surfaces */
+  --color-muted: #3a3833; /* body paragraph text */
+  --color-faint: #857f73; /* secondary / lead / old-price */
+  --color-gold: #b89b6e; /* accent: kickers, hairlines, ro-labels, hover */
   --color-line: #e8e4dc; /* hairline borders */
-  --color-green: #5e7d46; /* actions — buttons, ticks */
+  --color-green: #5e7d46; /* actions: buttons, ticks */
+  --color-green-deep: #4a6337; /* action hover + price text */
+  --color-beige: #efe8da; /* callout block */
 
   --font-serif: var(--font-cormorant);
   --font-sans: var(--font-inter);
+  --font-num: var(--font-dmsans); /* numbers / prices only */
 }
 
 :root {
@@ -29,7 +32,8 @@
   --color-ink-alt: #1f1c16;
   --color-cream: #f4efe6;
   --color-muted: #9b9384;
-  --color-gold: #c2a36b; /* bright gold reads well on dark */
+  --color-faint: #9b9384;
+  --color-gold: #b89b6e;
   --color-line: #352f25;
   color-scheme: dark;
 }
@@ -40,16 +44,47 @@ html {
 
 body {
   background: var(--color-ink);
-  color: var(--color-cream);
+  color: var(--color-muted);
   font-family: var(--font-sans), system-ui, sans-serif;
   font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.005em;
+}
+
+/* Headings & package names: Cormorant, never 300/700 — always 500. */
+.font-serif {
+  font-weight: 500;
+}
+
+/* Numbers / prices use DM Sans. */
+.font-num {
+  font-family: var(--font-num), var(--font-sans), sans-serif;
+  font-feature-settings: "tnum" 1;
 }
 
 ::selection {
-  background: rgba(194, 163, 107, 0.25);
+  background: rgba(184, 155, 110, 0.25);
   color: var(--color-cream);
+}
+
+/* Gold kicker rubric (Inter, 11px, 0.36em, uppercase). */
+.kicker {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+/* Thin gold divider, 60×1px. */
+.rule-gold {
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: var(--color-gold);
 }
 
 /* ---- Scroll reveal ---- */
@@ -96,7 +131,7 @@ body {
 }
 
 /* ---- Buttons ---- */
-/* Primary action — green */
+/* Primary action — green fill */
 .btn-gold {
   display: inline-flex;
   align-items: center;
@@ -105,22 +140,21 @@ body {
   background: var(--color-green);
   color: #ffffff;
   font-family: var(--font-sans), sans-serif;
-  font-weight: 400;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  font-size: 0.78rem;
-  padding: 1rem 2.1rem;
-  border-radius: 999px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  font-size: 0.94rem;
+  padding: 0.85rem 1.9rem;
+  border-radius: 10px;
   box-shadow: 0 0 0 rgba(94, 125, 70, 0);
   transition:
-    box-shadow 0.45s ease,
-    transform 0.45s ease,
-    background 0.45s ease;
+    box-shadow 0.4s ease,
+    transform 0.4s ease,
+    background 0.4s ease;
 }
 .btn-gold:hover {
-  box-shadow: 0 10px 34px rgba(94, 125, 70, 0.35);
+  box-shadow: 0 10px 30px rgba(94, 125, 70, 0.32);
   transform: translateY(-2px);
-  background: #4a6337;
+  background: var(--color-green-deep);
 }
 
 /* Secondary action — green outline */
@@ -128,33 +162,66 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--color-green);
-  color: #44602f; /* darker green text passes AA on light */
+  gap: 0.5rem;
+  border: 1.5px solid var(--color-green);
+  color: var(--color-green-deep);
   font-family: var(--font-sans), sans-serif;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-size: 0.72rem;
-  padding: 0.6rem 1.3rem;
-  border-radius: 999px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  font-size: 0.9rem;
+  padding: 0.7rem 1.5rem;
+  border-radius: 10px;
   transition:
-    box-shadow 0.45s ease,
-    background 0.45s ease,
-    color 0.45s ease;
+    box-shadow 0.4s ease,
+    background 0.4s ease,
+    color 0.4s ease;
 }
 .btn-outline:hover {
   background: var(--color-green);
   color: #ffffff;
-  box-shadow: 0 6px 22px rgba(94, 125, 70, 0.28);
+  box-shadow: 0 6px 20px rgba(94, 125, 70, 0.26);
 }
-/* On dark zones the green outline needs a lighter idle text for contrast */
+/* Outline on dark zones needs a lighter idle tint */
 .dark-zone .btn-outline {
-  color: #8aa06f;
+  color: #b6c7a3;
   border-color: #6f8d54;
 }
 .dark-zone .btn-outline:hover {
   color: #ffffff;
   background: var(--color-green);
+}
+
+/* ---- Package / comparison card ---- */
+.pc {
+  background: var(--color-ink-alt);
+  border: 1px solid var(--color-line);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+}
+.pc-win {
+  border: 1.5px solid var(--color-green);
+  box-shadow: 0 20px 50px rgba(26, 26, 24, 0.1);
+}
+/* Equal-height header block so the three prices line up across cards. */
+.pc-head {
+  min-height: 132px;
+}
+.badge-win {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  background: var(--color-green);
+  color: #ffffff;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
 }
 
 /* ---- Marquee ---- */
@@ -185,6 +252,7 @@ body {
   position: relative;
   overflow: hidden;
   border: 1px solid var(--color-line);
+  border-radius: 14px;
   transition:
     box-shadow 0.5s ease,
     border-color 0.5s ease;
@@ -237,10 +305,11 @@ body {
   }
 }
 
-/* ---- Service / package card ---- */
+/* ---- Service card ---- */
 .svc-card {
-  background: #ffffff;
+  background: var(--color-ink-alt);
   border: 1px solid var(--color-line);
+  border-radius: 16px;
   transition:
     transform 0.5s ease,
     border-color 0.5s ease,
@@ -250,5 +319,5 @@ body {
 .svc-card:hover {
   transform: translateY(-6px);
   border-color: rgba(184, 155, 110, 0.6);
-  box-shadow: 0 18px 44px rgba(26, 26, 24, 0.1);
+  box-shadow: 0 18px 44px rgba(26, 26, 24, 0.08);
 }

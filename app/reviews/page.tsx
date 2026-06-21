@@ -16,42 +16,42 @@ const REVIEWS = [
     place: "Dubai · 2025",
     rating: 5,
     quote:
-      "Honestly, what stayed with us wasn't how beautiful everything looked — it was how calm we felt. A week before the wedding our timeline fell apart in two places, and Sawsan fixed both in one afternoon. She just messaged, 'handled, don't worry,' and it was. That kind of support is rare.",
+      "Honestly, what stayed with us wasn't how beautiful everything looked, it was how calm we felt. A week before the wedding our timeline fell apart in two places, and Sawsan fixed both in one afternoon. She just messaged, 'handled, don't worry,' and it was. That kind of support is rare.",
   },
   {
     names: "Nadia & Tariq",
     place: "Dubai · 2025",
     rating: 5,
     quote:
-      "What surprised me most was how organised it all was. We could see the prices, message the team in the online chat whenever a question came up, and everything lived in one place. It never felt like we were chasing one busy person — there was a whole team behind us, so decisions happened quickly and the plan genuinely felt built around us.",
+      "What surprised me most was how organised it all was. We could see the prices, message the team in the online chat whenever a question came up, and everything lived in one place. It never felt like we were chasing one busy person, there was a whole team behind us, so decisions happened quickly and the plan genuinely felt built around us.",
   },
   {
     names: "Reem & Saif",
     place: "Abu Dhabi · 2025",
     rating: 4,
     quote:
-      "Genuinely lovely team and a beautiful day. The only reason it's not five stars is that early on, replies sometimes took a day during their busy season — closer to the date they were instant with everything. Honestly, I'd still recommend them without hesitation.",
+      "Genuinely lovely team and a beautiful day. The only reason it's not five stars is that early on, replies sometimes took a day during their busy season, closer to the date they were instant with everything. Honestly, I'd still recommend them without hesitation.",
   },
   {
     names: "Carla & Ahmed",
     place: "Abu Dhabi · 2025",
     rating: 5,
     quote:
-      "We loved working with Olga Events, truly. My one regret is that we came to them only about three months before the date. They still created something gorgeous, but if I could go back I'd start nine months to a year out — it would have let us actually enjoy the process instead of squeezing it between work and life. If you have the time, give yourselves that gift.",
+      "We loved working with Olga Events, truly. My one regret is that we came to them only about three months before the date. They still created something gorgeous, but if I could go back I'd start nine months to a year out, it would have let us actually enjoy the process instead of squeezing it between work and life. If you have the time, give yourselves that gift.",
   },
   {
     names: "Elena & Dmitri",
     place: "Dubai · 2026",
     rating: 5,
     quote:
-      "I run a business myself, so I notice how teams work — and this is a real operation, not a side hobby. The tools they use, the way everything is tracked, how openly they talk about every cost… you can tell Olga trains her people, because everyone works to the same standard. We were never handed off or forgotten.",
+      "I run a business myself, so I notice how teams work, and this is a real operation, not a side hobby. The tools they use, the way everything is tracked, how openly they talk about every cost… you can tell Olga trains her people, because everyone works to the same standard. We were never handed off or forgotten.",
   },
   {
     names: "Priya & Rohan",
     place: "Dubai · 2026",
     rating: 5,
     quote:
-      "We booked the Luxury Planning package and on the day I didn't lift a finger. Hani and John seemed to be everywhere at once, everyone knew exactly their role, and it was all quietly run by Olga Events in the background. My husband and I actually got to be with our guests — which was all we really wanted.",
+      "We booked the Luxury Planning package and on the day I didn't lift a finger. Hani and John seemed to be everywhere at once, everyone knew exactly their role, and it was all quietly run by Olga Events in the background. My husband and I actually got to be with our guests, which was all we really wanted.",
   },
   {
     names: "Maria & Sergio",
@@ -72,21 +72,21 @@ const REVIEWS = [
     place: "Abu Dhabi · 2025",
     rating: 5,
     quote:
-      "Over the year we planned together, a lot happened in our lives, and not all of it was about the wedding. What I'll always remember is that Olga was simply there. She understood when I was overwhelmed, picked up when I called, and sometimes we just talked — not about flowers or seating, just life. It stopped feeling like a vendor and started feeling like having someone in your corner.",
+      "Over the year we planned together, a lot happened in our lives, and not all of it was about the wedding. What I'll always remember is that Olga was simply there. She understood when I was overwhelmed, picked up when I called, and sometimes we just talked, not about flowers or seating, just life. It stopped feeling like a vendor and started feeling like having someone in your corner.",
   },
   {
     names: "Sophie & James",
     place: "Dubai · 2026",
     rating: 5,
     quote:
-      "We chose the Classic Planning package, and a year on I can honestly say what we paid doesn't compare to what we got back — the attention, the patience, the sheer amount of work behind the scenes. The coordination, the décor, the feeling on the day… it left us with the warmest memories. Thank you to the whole team.",
+      "We chose the Classic Planning package, and a year on I can honestly say what we paid doesn't compare to what we got back, the attention, the patience, the sheer amount of work behind the scenes. The coordination, the décor, the feeling on the day… it left us with the warmest memories. Thank you to the whole team.",
   },
   {
     names: "Fatima & Hassan",
     place: "Dubai · 2026",
     rating: 5,
     quote:
-      "We're not the easiest couple — we ask a lot of questions — and not once did they make us feel like a bother. Every message got an answer, every change was tracked. By the wedding day we trusted them completely, and honestly that trust was the best part.",
+      "We're not the easiest couple, we ask a lot of questions, and not once did they make us feel like a bother. Every message got an answer, every change was tracked. By the wedding day we trusted them completely, and honestly that trust was the best part.",
   },
 ];
 
@@ -129,7 +129,7 @@ export default function ReviewsPage() {
         </div>
 
         <p className="mt-12 text-center font-sans text-xs font-light italic text-muted">
-          Example testimonials, shown to illustrate the page — being replaced
+          Example testimonials, shown to illustrate the page, being replaced
           with verified client reviews.
         </p>
       </Section>

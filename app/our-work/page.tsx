@@ -68,7 +68,7 @@ export default function OurWorkPage() {
           </a>
           <p className="mt-6 font-sans text-sm font-light text-muted">
             See more on our{" "}
-            <Link href="/gallery" className="text-gold underline underline-offset-2 hover:text-cream">
+            <Link href="/gallery" className="text-green-deep underline underline-offset-2 hover:text-green">
               full gallery
             </Link>
             .

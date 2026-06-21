@@ -17,23 +17,33 @@ Next.js 16 (App Router, Turbopack) + React 19 + TypeScript + Tailwind v4.
 Notable: async `params` in dynamic routes; Turbopack is the default builder.
 
 ## Design system — "Cinematic Dark (C2)"
-- **Colour scheme = LIGHT base, dark only in nav/hero/footer** (Batch 4).
-  Role-based Tailwind tokens in `app/globals.css` are LIGHT by default and are
-  re-pointed to dark inside `.dark-zone`:
-  - Light (all content): surface `--color-ink #f5f3ef`, alt `--color-ink-alt
-    #faf8f5`, cards `#ffffff`; primary text `--color-cream #1a1a18`; body/secondary
-    `--color-muted #3a3833`; hairline `--color-line #e8e4dc`.
-  - `.dark-zone` (ONLY `<header>`, hero `<section>` / `PageHeader`, `<footer>`):
-    ink `#16140f`, alt `#1f1c16`, cream `#f4efe6`, muted `#9b9384`, line `#352f25`.
-  - Accent gold: `--color-gold` = `#846a24` on light (deepened so gold TEXT
-    passes WCAG AA), `#c2a36b` in dark zones. Gold = kickers/lines/icons only.
-  - Action green: `--color-green #5e7d46` (hover `#4a6337`). `.btn-gold` =
-    green-filled white text (primary CTA); `.btn-outline` = green outline. These
-    are the "Book / Choose / Send / Enquire" buttons.
-  - To re-theme a zone, just add/remove `dark-zone` — no per-element edits.
-- Fonts (next/font, `app/layout.tsx`): **Cormorant Garamond** (serif) for
-  headings + logo; **Inter** (300/400) for body.
-- Mood: elegant, premium, light & readable, gold accents, lots of air, mobile-first.
+- **OFFICIAL design = "Wedding Packages Presentation" mockup** (Batch 5, Olga's
+  final 21 Jun decision). LIGHT base, dark only in nav/hero/footer. Role-based
+  Tailwind tokens in `app/globals.css`, light by default, re-pointed to dark
+  inside `.dark-zone`:
+  - Light: surface `--color-ink #f5f3ef`, alt `--color-ink-alt #faf8f5`;
+    primary text `--color-cream #1a1a18`; body `--color-muted #3a3833`; secondary
+    `--color-faint #857f73`; hairline `--color-line #e8e4dc`; callout
+    `--color-beige #efe8da`.
+  - `.dark-zone` (ONLY `<header>`, hero `PageHeader` + home hero, `<footer>`):
+    ink `#16140f`, alt `#1f1c16`, cream `#f4efe6`, muted/faint `#9b9384`,
+    line `#352f25`. Add/remove `dark-zone` to re-theme a zone, no per-element edits.
+  - Accent gold `--color-gold #b89b6e` (kickers, hairlines, ro-labels). Body text
+    is always dark; inline nav links are green (not gold) so everything passes AA.
+  - Action green `--color-green #5e7d46`, hover/price `--color-green-deep #4a6337`.
+    `.btn-gold` = green-filled white CTA; `.btn-outline` = green outline. Radius 10px.
+- **Fonts (only three)**: **Cormorant Garamond** 400/500/600 — all headings, package
+  names, logo (forced to 500 via `.font-serif{font-weight:500}`, never 300/700);
+  **Inter** 300/400/500 — body, menu, buttons, lists; **DM Sans** 400-700 — numbers
+  & prices ONLY (`.font-num`).
+- Helpers in globals.css: `.kicker` (gold 11px/0.36em uppercase), `.rule-gold`
+  (60×1px divider), `.pc`/`.pc-win` (package cards r16, green-border highlight),
+  `.badge-win` (absolute "Most chosen", does NOT push price down → prices align
+  across the 3 cards), `.svc-card` (r16). Markers: included = green `✓`,
+  excluded = faint `○` (never em-dash/tire).
+- **No em-dashes (—) in visible text** anywhere (replaced with comma/colon).
+  Only SEO `title:`/`description:`/`alt` attributes may keep them.
+- Mood: elegant, premium, light & readable, gold accents thin (~10%), mobile-first.
 - Animations: scroll reveal (`components/Reveal.tsx`), count-up
   (`components/CountUp.tsx`), hover-glow tiles/cards, venue marquee, button glow.
   All respect `prefers-reduced-motion`.
@@ -131,8 +141,19 @@ hello@olga.events · Dubai · Abu Dhabi · all Emirates · EN·RU·AR.
   footer=contentinfo); inline in-sentence links use `underline` so they aren't
   colour-only.
 
-## Pre-launch QA (last run — after Batch 4 light recolor + packages columns)
-Full QA passed — all checks green:
+## Pre-launch QA (last run — after Batch 5 mockup design system)
+- Restyled WHOLE site to the official mockup: 3 fonts (Cormorant/Inter/DM Sans),
+  exact light palette + gold #b89b6e accents, rounded cards, kicker/divider specs.
+- Packages prices ALIGNED across all 3 cards (badge made absolute; `.pc-head`
+  min-height). Markers ✓ green / ○ faint, no em-dashes.
+- All em-dashes removed from visible text (116 + content-data); only SEO meta/alt keep them.
+- Accessibility swept across all page types: **100**, zero contrast failures
+  (inline gold nav links converted to green to pass AA on light).
+- Lighthouse: Home & /packages **desktop 100/100/100/100**; **mobile ~92-93 perf /
+  100 a11y / 100 BP / 100 SEO**.
+- Layout/structure/content/images/SEO unchanged; only visual styling.
+
+### Earlier QA (after Batch 4) — superseded values, still structurally valid:
 - Light recolour verified: content is light, only nav/hero/footer are `.dark-zone`
   dark. Accessibility (contrast) swept across all page types — all **100**, zero
   colour-contrast failures (fixed: deepened light gold to `#846a24`, darkened

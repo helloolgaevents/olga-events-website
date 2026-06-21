@@ -4,7 +4,7 @@ import ServicePage from "../components/ServicePage";
 export const metadata: Metadata = {
   title: "Private Events in Dubai | Celebrations by Olga Events",
   description:
-    "Unforgettable private celebrations of every size in Dubai — from intimate gatherings to grand occasions, designed and produced by Olga Events.",
+    "Unforgettable private celebrations of every size in Dubai, from intimate gatherings to grand occasions, designed and produced by Olga Events.",
 };
 
 export default function PrivateEventsPage() {
@@ -12,13 +12,13 @@ export default function PrivateEventsPage() {
     <ServicePage
       kicker="Private Events"
       title="Private Events in Dubai"
-      intro="At Olga Events, we create unforgettable celebrations of every size — from intimate gatherings to grand occasions."
+      intro="At Olga Events, we create unforgettable celebrations of every size, from intimate gatherings to grand occasions."
       blocks={[
         {
           kicker: "What we do",
           title: "Celebrations of every size",
           paragraphs: [
-            "Birthdays, anniversaries, engagements, baby celebrations, and milestone parties — we design private events that feel personal, warm, and beautifully produced.",
+            "Birthdays, anniversaries, engagements, baby celebrations, and milestone parties, we design private events that feel personal, warm, and beautifully produced.",
             "Every celebration is fully customised to you: concept, design, décor, florals, lighting, and full coordination on the day, so you can simply enjoy the moment with your guests.",
           ],
         },

@@ -8,7 +8,7 @@ import { PageHeader, Section, CONTACT } from "../components/ui";
 export const metadata: Metadata = {
   title: "Contact Olga Events | Book a Wedding Consultation in Dubai",
   description:
-    "Tell us about your wedding — date, venue, guests and budget. Book a free consultation with Olga Events in Dubai. WhatsApp +971 55 670 4762.",
+    "Tell us about your wedding, date, venue, guests and budget. Book a free consultation with Olga Events in Dubai. WhatsApp +971 55 670 4762.",
 };
 
 export default function ContactPage() {
@@ -43,7 +43,7 @@ export default function ContactPage() {
                 Prefer to talk now?
               </h2>
               <p className="mt-3 font-sans text-sm font-light leading-relaxed text-muted">
-                Message or call us directly — we reply quickly and speak EN · RU
+                Message or call us directly, we reply quickly and speak EN · RU
                 · AR.
               </p>
 

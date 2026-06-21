@@ -33,7 +33,7 @@ const FAQS = [
   },
   {
     q: "How much does a wedding planner cost in Dubai?",
-    a: "The cost depends on your guest count, venue, and the scope of planning. We prepare a tailored proposal for each couple — see our wedding cost guide for typical budget ranges.",
+    a: "The cost depends on your guest count, venue, and the scope of planning. We prepare a tailored proposal for each couple, see our wedding cost guide for typical budget ranges.",
   },
   {
     q: "How far in advance should I book a wedding planner?",
@@ -69,7 +69,7 @@ function TextSection({
         <div className="mt-8">
           <Prose paragraphs={paragraphs} />
           {link ? (
-            <div className="mt-6 font-sans text-sm tracking-wide text-gold">
+            <div className="mt-6 font-sans text-sm tracking-wide text-green-deep">
               <Link href={link.href} className="hover:text-cream">
                 {link.label} →
               </Link>
@@ -89,7 +89,7 @@ export default function WeddingPlannerPage() {
 
       <PageHeader
         kicker="Wedding Planner Dubai"
-        title="Wedding Planner Dubai — Luxury Wedding Planning Services"
+        title="Wedding Planner Dubai, Luxury Wedding Planning Services"
         intro="Luxury wedding planner in Dubai with over 10 years of experience in high-end weddings. We design, plan, and execute fully customised weddings with complete control over budget, design, and guest experience."
       />
 
@@ -118,7 +118,7 @@ export default function WeddingPlannerPage() {
         kicker="What we do"
         title="Luxury Wedding Planning in Dubai"
         paragraphs={[
-          "Planning a wedding in Dubai requires experience, strong supplier coordination, and a clear structure. We manage every stage of the process — from concept and design to full execution — ensuring your wedding is smooth, organised, and stress-free. Our services include venue sourcing, wedding concept development, supplier management, floral design, lighting production, and full coordination.",
+          "Planning a wedding in Dubai requires experience, strong supplier coordination, and a clear structure. We manage every stage of the process, from concept and design to full execution, ensuring your wedding is smooth, organised, and stress-free. Our services include venue sourcing, wedding concept development, supplier management, floral design, lighting production, and full coordination.",
         ]}
       />
 
@@ -139,7 +139,7 @@ export default function WeddingPlannerPage() {
         kicker="Why us"
         title="Why Choose Olga Events"
         paragraphs={[
-          "As an experienced wedding planner in Dubai, we combine design expertise with strong operational control. We don't just organise weddings — we create structured systems that allow you to plan your wedding without stress, confusion, or unexpected costs. Our approach is structured, transparent, and detail-focused, ensuring every part of your wedding is planned and executed at a high level. We focus not only on aesthetics, but also on timing, logistics, and guest experience.",
+          "As an experienced wedding planner in Dubai, we combine design expertise with strong operational control. We don't just organise weddings, we create structured systems that allow you to plan your wedding without stress, confusion, or unexpected costs. Our approach is structured, transparent, and detail-focused, ensuring every part of your wedding is planned and executed at a high level. We focus not only on aesthetics, but also on timing, logistics, and guest experience.",
         ]}
         link={{ href: "/gallery", label: "Explore our luxury weddings in Dubai" }}
       />
@@ -188,7 +188,7 @@ export default function WeddingPlannerPage() {
         kicker="Every tradition"
         title="Weddings for Every Culture in Dubai"
         paragraphs={[
-          "Dubai brings together couples from around the world, and we plan across cultures and traditions — Arabic and Emirati celebrations, Indian and South Asian weddings, Russian and European ceremonies, and multicultural destination weddings. We understand the customs, timing, and design expectations of each, and tailor every detail of your wedding accordingly.",
+          "Dubai brings together couples from around the world, and we plan across cultures and traditions, Arabic and Emirati celebrations, Indian and South Asian weddings, Russian and European ceremonies, and multicultural destination weddings. We understand the customs, timing, and design expectations of each, and tailor every detail of your wedding accordingly.",
         ]}
       />
 
@@ -196,7 +196,7 @@ export default function WeddingPlannerPage() {
         kicker="From anywhere"
         title="Planning Your Wedding from Abroad"
         paragraphs={[
-          "Planning your Dubai wedding from overseas? We manage everything remotely on your behalf — venue, design, suppliers, and the full wedding day — so you can plan with confidence from anywhere.",
+          "Planning your Dubai wedding from overseas? We manage everything remotely on your behalf, venue, design, suppliers, and the full wedding day, so you can plan with confidence from anywhere.",
         ]}
       />
 

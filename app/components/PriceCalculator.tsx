@@ -26,7 +26,7 @@ export default function PriceCalculator() {
   }, [planIdx, decorIdx, guests]);
 
   return (
-    <div className="mx-auto max-w-4xl border border-gold/40">
+    <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl border border-line">
       <div className="grid grid-cols-1 lg:grid-cols-2">
         {/* ---- Inputs ---- */}
         <div className="space-y-8 p-8 sm:p-10">
@@ -50,8 +50,7 @@ export default function PriceCalculator() {
                   <span className="font-serif text-lg font-light text-cream">
                     {p.name}
                   </span>
-                  <span className="font-sans text-sm font-normal text-muted">
-                    {fmtAED(p.price)}
+                  <span className="font-num text-sm text-muted">{fmtAED(p.price)}
                   </span>
                 </button>
               ))}
@@ -78,8 +77,7 @@ export default function PriceCalculator() {
                   <span className="font-serif text-lg font-light text-cream">
                     {d.name}
                   </span>
-                  <span className="font-sans text-sm font-normal text-muted">
-                    from {fmtAED(d.base)}
+                  <span className="font-num text-sm text-muted">from {fmtAED(d.base)}
                   </span>
                 </button>
               ))}
@@ -104,7 +102,7 @@ export default function PriceCalculator() {
                 onChange={(e) => setGuests(Number(e.target.value))}
                 className="h-1 w-full cursor-pointer appearance-none rounded-full bg-line accent-gold"
               />
-              <span className="min-w-[3.5rem] text-right font-serif text-xl font-light text-cream">
+              <span className="min-w-[3.5rem] text-right font-num text-xl font-semibold text-cream">
                 {clampGuests(guests)}
               </span>
             </div>
@@ -121,7 +119,7 @@ export default function PriceCalculator() {
               <span className="font-sans text-sm font-light text-muted">
                 Planning
               </span>
-              <span className="font-serif text-xl font-light text-cream">
+              <span className="font-num text-xl font-semibold text-cream">
                 AED <AnimatedNumber value={result.planPrice} />
               </span>
             </div>
@@ -129,7 +127,7 @@ export default function PriceCalculator() {
               <span className="font-sans text-sm font-light text-muted">
                 Décor
               </span>
-              <span className="font-serif text-xl font-light text-cream">
+              <span className="font-num text-xl font-semibold text-cream">
                 AED <AnimatedNumber value={result.decorPrice} />
               </span>
             </div>
@@ -137,7 +135,7 @@ export default function PriceCalculator() {
               <span className="font-sans text-sm uppercase tracking-[0.18em] text-cream">
                 Total
               </span>
-              <span className="font-serif text-3xl font-light text-cream">
+              <span className="font-num text-3xl font-bold text-green-deep">
                 AED <AnimatedNumber value={result.total} />
               </span>
             </div>

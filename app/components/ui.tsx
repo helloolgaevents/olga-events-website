@@ -61,7 +61,7 @@ export const FURNITURE_CATEGORIES = [
   {
     slug: "bridal-sofa",
     name: "Bridal Sofas",
-    desc: "Statement bridal seating — velvet, linen, and metal-base designs that anchor your stage.",
+    desc: "Statement bridal seating, velvet, linen, and metal-base designs that anchor your stage.",
   },
   {
     slug: "dining-tables",
@@ -126,15 +126,11 @@ export function InstagramIcon({ className = "" }: { className?: string }) {
 /* ---------------- Presentational helpers ---------------- */
 
 export function Kicker({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="font-sans text-[0.72rem] uppercase tracking-[0.32em] text-gold">
-      {children}
-    </span>
-  );
+  return <span className="kicker inline-block">{children}</span>;
 }
 
 export function Divider() {
-  return <span className="mx-auto my-7 block h-px w-16 bg-gold/70" />;
+  return <span className="rule-gold mx-auto my-7" />;
 }
 
 export function PageHeader({
@@ -147,7 +143,7 @@ export function PageHeader({
   intro?: string;
 }) {
   return (
-    <section className="dark-zone relative overflow-hidden border-b border-line bg-ink">
+    <section className="dark-zone relative overflow-hidden border-b border-gold/30 bg-ink">
       <div
         className="pointer-events-none absolute inset-0"
         style={{
@@ -158,13 +154,13 @@ export function PageHeader({
       <div className="relative z-10 mx-auto max-w-[900px] px-6 pb-20 pt-36 text-center sm:pt-40">
         <Reveal>
           {kicker ? <Kicker>{kicker}</Kicker> : null}
-          <h1 className="mt-6 font-serif text-4xl font-light leading-[1.1] text-cream sm:text-5xl lg:text-6xl">
+          <h1 className="mt-3 font-serif text-[2.6rem] leading-[1.08] text-cream sm:text-[3.4rem]">
             {title}
           </h1>
           {intro ? (
             <>
               <Divider />
-              <p className="mx-auto max-w-2xl font-sans text-lg font-light leading-relaxed text-muted">
+              <p className="mx-auto max-w-2xl font-sans text-[18px] leading-relaxed text-faint">
                 {intro}
               </p>
             </>
@@ -207,7 +203,7 @@ export function SectionTitle({
   return (
     <Reveal className={center ? "text-center" : ""}>
       {kicker ? <Kicker>{kicker}</Kicker> : null}
-      <h2 className="mt-5 font-serif text-3xl font-light leading-tight text-cream sm:text-4xl">
+      <h2 className="mt-3 font-serif text-[2rem] leading-[1.15] text-cream sm:text-[2.25rem]">
         {title}
       </h2>
     </Reveal>
@@ -226,7 +222,7 @@ export function Prose({
       {paragraphs.map((p, i) => (
         <p
           key={i}
-          className="font-sans text-base font-light leading-relaxed text-muted sm:text-lg"
+          className="font-sans text-base leading-[1.7] text-muted"
         >
           {p}
         </p>
@@ -241,10 +237,8 @@ export function FAQ({ items }: { items: { q: string; a: string }[] }) {
       <div className="divide-y divide-line border-y border-line">
         {items.map((it, i) => (
           <div key={i} className="py-7">
-            <h3 className="font-serif text-xl font-light text-cream sm:text-2xl">
-              {it.q}
-            </h3>
-            <p className="mt-3 font-sans text-base font-light leading-relaxed text-muted">
+            <h3 className="font-serif text-[1.45rem] text-cream">{it.q}</h3>
+            <p className="mt-3 font-sans text-base leading-[1.7] text-muted">
               {it.a}
             </p>
           </div>
@@ -285,7 +279,7 @@ export function FeatureImage({
 
 export function CTASection({
   title = "Let's plan your wedding",
-  text = "Tell us your vision — we'll put together a proposal made for you. Free, no obligation.",
+  text = "Tell us your vision, we'll put together a proposal made for you. Free, no obligation.",
   buttonLabel = "Book a free consultation",
   href = "/contact",
 }: {
@@ -305,11 +299,11 @@ export function CTASection({
       />
       <div className="relative z-10 mx-auto w-full max-w-[1100px] px-6 py-28 text-center">
         <Reveal className="mx-auto max-w-2xl">
-          <h2 className="font-serif text-4xl font-light leading-tight text-cream sm:text-5xl">
+          <h2 className="font-serif text-[2.25rem] leading-[1.12] text-cream sm:text-[2.6rem]">
             {title}
           </h2>
           <Divider />
-          <p className="font-sans text-lg font-light leading-relaxed text-muted">
+          <p className="font-sans text-[18px] leading-relaxed text-faint">
             {text}
           </p>
           <div className="mt-10">

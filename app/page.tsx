@@ -59,7 +59,7 @@ const VENUES = [
 
 const REVIEWS = [
   {
-    quote: "Everything was perfect — we just enjoyed our day.",
+    quote: "Everything was perfect, we just enjoyed our day.",
     meta: "Couple · Emirati · Atlantis The Palm",
   },
   {
@@ -119,7 +119,7 @@ export default function Home() {
           </Reveal>
           <Reveal delay={300}>
             <p className="mx-auto max-w-xl font-sans text-base font-light leading-relaxed text-cream/80 sm:text-lg">
-              The flowers, the light, the timing, your guests — all on us. You
+              The flowers, the light, the timing, your guests, all on us. You
               are simply there, living every moment.
             </p>
           </Reveal>
@@ -137,13 +137,14 @@ export default function Home() {
             Scroll to explore
           </span>
         </div>
+        <div className="absolute inset-x-0 bottom-0 z-10 h-px bg-gold/40" />
       </section>
 
       {/* ---------- Trust bar ---------- */}
       <section className="border-y border-line bg-ink">
         <div className="mx-auto grid w-full max-w-[1100px] grid-cols-2 gap-y-10 px-6 py-12 text-center md:grid-cols-4">
           <Reveal className="px-2">
-            <div className="font-serif text-4xl font-light text-gold">
+            <div className="font-num text-4xl font-bold text-gold">
               <CountUp target={300} suffix="+" />
             </div>
             <p className="mt-2 font-sans text-[0.78rem] uppercase tracking-[0.18em] text-muted">
@@ -189,7 +190,7 @@ export default function Home() {
               <Divider />
             </div>
             <p className="font-sans text-lg font-light leading-relaxed text-muted">
-              A wedding is born from the small things — thoughtful décor, fresh
+              A wedding is born from the small things, thoughtful décor, fresh
               flowers, the right rhythm of the evening. We lead and coordinate
               the whole day so it feels warm and effortless.
             </p>
@@ -287,7 +288,7 @@ export default function Home() {
       <section id="packages" className="bg-ink-alt">
         <div className="mx-auto w-full max-w-[1100px] px-6 py-28">
           <Reveal>
-            <div className="relative overflow-hidden border border-gold/40 px-8 py-20 text-center sm:px-16">
+            <div className="relative overflow-hidden rounded-2xl border border-line bg-beige px-8 py-20 text-center sm:px-16">
               <div
                 className="pointer-events-none absolute inset-0"
                 style={{
@@ -304,7 +305,7 @@ export default function Home() {
                   <Divider />
                 </div>
                 <p className="font-sans text-lg font-light leading-relaxed text-muted">
-                  Transparent packages with a live price calculator — you always
+                  Transparent packages with a live price calculator, you always
                   know what&apos;s included.
                 </p>
                 <div className="mt-10">
@@ -396,7 +397,7 @@ export default function Home() {
               <Divider />
             </div>
             <p className="font-sans text-lg font-light leading-relaxed text-muted">
-              Tell us your vision — we&apos;ll put together a proposal made for
+              Tell us your vision, we&apos;ll put together a proposal made for
               you. Free, no obligation.
             </p>
             <div className="mt-10">
@@ -440,7 +441,7 @@ export default function Home() {
                   href={INSTAGRAM.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`Olga Events on Instagram — ${g.title}`}
+                  aria-label={`Olga Events on Instagram, ${g.title}`}
                   className="tile group relative block aspect-square"
                 >
                   <Image

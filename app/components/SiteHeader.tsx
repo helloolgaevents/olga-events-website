@@ -28,8 +28,8 @@ export default function SiteHeader() {
             <Link
               key={l.href}
               href={l.href}
-              className={`font-sans text-[0.82rem] font-light tracking-wide transition-colors hover:text-cream ${
-                isActive(l.href) ? "text-gold" : "text-muted"
+              className={`font-sans text-[15px] font-medium tracking-wide transition-colors hover:text-gold ${
+                isActive(l.href) ? "text-gold" : "text-cream"
               }`}
             >
               {l.label}

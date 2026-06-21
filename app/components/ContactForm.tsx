@@ -24,9 +24,9 @@ export default function ContactForm() {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
-    const get = (k: string) => (data.get(k) as string)?.trim() || "—";
+    const get = (k: string) => (data.get(k) as string)?.trim() || ", ";
 
-    const subject = `Wedding enquiry — ${get("name")}`;
+    const subject = `Wedding enquiry, ${get("name")}`;
     const body = [
       `Name: ${get("name")}`,
       `Wedding date: ${get("date")}`,

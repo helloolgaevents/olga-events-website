@@ -41,7 +41,7 @@ const BREAKDOWN = [
   {
     title: "Venue & Catering",
     price: "60,000 – 300,000+ AED",
-    note: "Most Dubai venues operate on a minimum spend basis, which includes food, beverages, and service staff — depending on the venue, guest count, and menu.",
+    note: "Most Dubai venues operate on a minimum spend basis, which includes food, beverages, and service staff, depending on the venue, guest count, and menu.",
   },
   {
     title: "Wedding Decoration",
@@ -89,12 +89,12 @@ const EXAMPLES = [
 ];
 
 const FACTORS = [
-  "Guest count — more guests increase venue, catering, furniture, and staffing costs.",
-  "Venue selection — luxury hotels and beachfront venues have higher minimum spend requirements.",
-  "Decoration and design — custom setups, staging, lighting, and materials significantly impact the budget.",
-  "Flowers — imported flowers and large installations can increase costs.",
-  "Entertainment — live performers, DJs, and show programs add to the overall budget.",
-  "Logistics — setup time, transport, labor, and venue restrictions can affect pricing.",
+  "Guest count, more guests increase venue, catering, furniture, and staffing costs.",
+  "Venue selection, luxury hotels and beachfront venues have higher minimum spend requirements.",
+  "Decoration and design, custom setups, staging, lighting, and materials significantly impact the budget.",
+  "Flowers, imported flowers and large installations can increase costs.",
+  "Entertainment, live performers, DJs, and show programs add to the overall budget.",
+  "Logistics, setup time, transport, labor, and venue restrictions can affect pricing.",
 ];
 
 const FAQS = [
@@ -148,7 +148,7 @@ export default function WeddingCostPage() {
 
       <PageHeader
         kicker="Wedding Cost in Dubai"
-        title="Wedding Cost in Dubai — Budget Guide & Packages"
+        title="Wedding Cost in Dubai, Budget Guide & Packages"
         intro="The cost of a wedding in Dubai depends on your guest count, venue, decoration, flowers, entertainment, photography, and overall level of customization. Dubai offers everything from simple weddings to large luxury celebrations, and budgets can vary significantly depending on your vision."
       />
 
@@ -219,7 +219,7 @@ export default function WeddingCostPage() {
                 key={f}
                 className="flex gap-3 font-sans text-base font-light leading-relaxed text-muted"
               >
-                <span className="mt-1 text-gold">—</span>
+                <span className="mt-1 text-gold">, </span>
                 {f}
               </li>
             ))}
@@ -252,7 +252,7 @@ export default function WeddingCostPage() {
             <Prose
               paragraphs={[
                 "A hotel wedding means choosing a venue package where most elements are predefined. Hotels focus mainly on food and catering, so their packages usually include standard setups with limited flexibility. While they may provide basic AV systems and a simple stage, these setups are often designed for corporate events rather than fully customized wedding experiences.",
-                "A custom wedding, on the other hand, is a fully tailored event where every detail is designed around your vision — from layout and décor to lighting and guest experience. This approach offers complete creative freedom but requires a more flexible budget and a detailed planning process.",
+                "A custom wedding, on the other hand, is a fully tailored event where every detail is designed around your vision, from layout and décor to lighting and guest experience. This approach offers complete creative freedom but requires a more flexible budget and a detailed planning process.",
               ]}
             />
           </div>
@@ -271,15 +271,15 @@ export default function WeddingCostPage() {
       <Section>
         <div className="mx-auto max-w-3xl">
           <SectionTitle kicker="Please note" title="Important Pricing Information" />
-          <div className="mt-8 border border-gold/40 p-8">
+          <div className="mt-8 rounded-2xl border border-line bg-beige p-8">
             <Prose
               paragraphs={[
-                "Please note that during a phone call or initial online consultation, we are not able to provide an exact price for wedding decoration, venue, or entertainment. Each wedding is a unique project, and the final cost is developed through a detailed planning process that depends on many factors — including design concept, guest count, location, materials, logistics, and vendor availability.",
-                "Creating an accurate quotation typically takes around 30–40 days, as our team works collaboratively — including designers, coordinators, and production specialists — to build a complete concept and cost structure. We always ask clients to share an approximate budget at the beginning. Based on this, we can guide you on what can realistically be achieved within your budget and help adjust the concept accordingly.",
-                "It's important to understand that the cost of a wedding is not determined by the wedding planner alone — it is influenced by market prices, materials, flowers, vendors, and logistics. This is why proper budget planning and coordination require time and a structured approach. For this reason, we begin by booking one of our wedding planning packages. Once the service is confirmed and payment is completed, our team will start working on your project and develop a tailored concept with a detailed quotation.",
+                "Please note that during a phone call or initial online consultation, we are not able to provide an exact price for wedding decoration, venue, or entertainment. Each wedding is a unique project, and the final cost is developed through a detailed planning process that depends on many factors, including design concept, guest count, location, materials, logistics, and vendor availability.",
+                "Creating an accurate quotation typically takes around 30–40 days, as our team works collaboratively, including designers, coordinators, and production specialists, to build a complete concept and cost structure. We always ask clients to share an approximate budget at the beginning. Based on this, we can guide you on what can realistically be achieved within your budget and help adjust the concept accordingly.",
+                "It's important to understand that the cost of a wedding is not determined by the wedding planner alone, it is influenced by market prices, materials, flowers, vendors, and logistics. This is why proper budget planning and coordination require time and a structured approach. For this reason, we begin by booking one of our wedding planning packages. Once the service is confirmed and payment is completed, our team will start working on your project and develop a tailored concept with a detailed quotation.",
               ]}
             />
-            <div className="mt-6 font-sans text-sm tracking-wide text-gold">
+            <div className="mt-6 font-sans text-sm tracking-wide text-green-deep">
               <Link href="/packages" className="hover:text-cream">
                 Explore our planning packages →
               </Link>
@@ -294,7 +294,7 @@ export default function WeddingCostPage() {
           <div className="mt-8">
             <Prose
               paragraphs={[
-                "A wedding budget in Dubai is not fixed — it depends entirely on your choices, expectations, and level of customization. The key is to plan in the right order, understand the realistic cost structure, and work with professionals who can guide your budget properly.",
+                "A wedding budget in Dubai is not fixed, it depends entirely on your choices, expectations, and level of customization. The key is to plan in the right order, understand the realistic cost structure, and work with professionals who can guide your budget properly.",
               ]}
             />
           </div>
@@ -303,7 +303,7 @@ export default function WeddingCostPage() {
 
       <CTASection
         title="Plan Your Wedding in Dubai & UAE"
-        text="Share your budget and vision — we'll guide you on what's realistic and build a tailored plan."
+        text="Share your budget and vision, we'll guide you on what's realistic and build a tailored plan."
       />
 
       </main>

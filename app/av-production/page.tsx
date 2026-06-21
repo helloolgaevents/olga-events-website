@@ -4,7 +4,7 @@ import ServicePage from "../components/ServicePage";
 export const metadata: Metadata = {
   title: "AV Systems & Event Production in Dubai | Olga Events",
   description:
-    "State-of-the-art AV systems and full event production in Dubai — dynamic lighting, LED and projection screens, stage lights, sound, and custom-built structures.",
+    "State-of-the-art AV systems and full event production in Dubai, dynamic lighting, LED and projection screens, stage lights, sound, and custom-built structures.",
 };
 
 export default function AvProductionPage() {
@@ -12,7 +12,7 @@ export default function AvProductionPage() {
     <ServicePage
       kicker="AV & Production"
       title="AV Systems & Event Production in Dubai"
-      intro="Bring your event to life with our state-of-the-art AV systems and full production team — from lighting and sound to large custom-built structures."
+      intro="Bring your event to life with our state-of-the-art AV systems and full production team, from lighting and sound to large custom-built structures."
       blocks={[
         {
           kicker: "AV System",
@@ -26,7 +26,7 @@ export default function AvProductionPage() {
           kicker: "Event Build & Production",
           title: "Structures & custom installations",
           paragraphs: [
-            "We handle the full production of event structures and décor — from stages, catwalks, and exhibition stands to large custom-built installations.",
+            "We handle the full production of event structures and décor, from stages, catwalks, and exhibition stands to large custom-built installations.",
             "With in-house production, we maintain full control over quality, timelines, and execution, delivering complex builds safely and to a high standard.",
           ],
         },

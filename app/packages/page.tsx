@@ -20,7 +20,7 @@ import { packagesContent as c } from "./content";
 export const metadata: Metadata = {
   title: "Wedding Planning & Décor Packages in Dubai | Olga Events",
   description:
-    "Transparent wedding planning packages (Essential, Classic, Luxury) and décor collections (Bloom, Signature, Elegance) with a live price calculator — Olga Events, Dubai.",
+    "Transparent wedding planning packages (Essential, Classic, Luxury) and décor collections (Bloom, Signature, Elegance) with a live price calculator, Olga Events, Dubai.",
 };
 
 function BulletList({ items }: { items: string[] }) {
@@ -31,7 +31,7 @@ function BulletList({ items }: { items: string[] }) {
           key={it}
           className="flex gap-3 font-sans text-base font-light leading-relaxed text-muted"
         >
-          <span className="mt-0.5 text-gold">—</span>
+          <span className="mt-0.5 text-gold">, </span>
           {it}
         </li>
       ))}
@@ -240,7 +240,7 @@ export default function PackagesPage() {
           </Reveal>
 
           {/* Callout */}
-          <Reveal className="mx-auto mt-10 max-w-3xl border border-gold/40 p-8">
+          <Reveal className="mx-auto mt-10 max-w-3xl rounded-2xl border border-line bg-beige p-8">
             <p className="font-sans text-base font-light leading-relaxed text-cream/90">
               {c.decor.callout.lead}
             </p>
@@ -259,7 +259,7 @@ export default function PackagesPage() {
             </p>
           </Reveal>
 
-          {/* Individual décor — how it works */}
+          {/* Individual décor, how it works */}
           <Reveal className="mx-auto mt-12 max-w-3xl">
             <p className="font-sans text-[0.72rem] uppercase tracking-[0.2em] text-gold">
               {c.decor.individual.title}
@@ -319,7 +319,7 @@ export default function PackagesPage() {
                         key={it}
                         className="flex gap-3 font-sans text-sm font-light text-cream/90"
                       >
-                        <span className="text-gold">—</span>
+                        <span className="text-gold">, </span>
                         {it}
                       </li>
                     ))}

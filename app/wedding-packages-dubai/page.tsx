@@ -14,7 +14,7 @@ import {
 export const metadata: Metadata = {
   title: "Wedding Packages Dubai | Luxury & Custom Packages | Olga Events",
   description:
-    "Structured wedding planning and decoration packages in Dubai — clarity, control and a smooth experience, customised to your guest count, venue and design.",
+    "Structured wedding planning and decoration packages in Dubai, clarity, control and a smooth experience, customised to your guest count, venue and design.",
 };
 
 const FAQS = [
@@ -48,7 +48,7 @@ export default function WeddingPackagesPage() {
 
       <PageHeader
         kicker="Wedding Packages Dubai"
-        title="Wedding Packages Dubai — Planning & Decoration Packages"
+        title="Wedding Packages Dubai, Planning & Decoration Packages"
         intro="Looking for wedding packages in Dubai? We offer structured planning packages designed to give you clarity, control, and a smooth wedding experience."
       />
 
@@ -62,7 +62,7 @@ export default function WeddingPackagesPage() {
             <Prose
               paragraphs={[
                 "Our wedding packages are flexible and can be customised based on your guest count, venue, and design requirements.",
-                "We provide different levels of support depending on your needs — from structured guidance to full wedding planning and execution.",
+                "We provide different levels of support depending on your needs, from structured guidance to full wedding planning and execution.",
               ]}
             />
           </div>
@@ -98,7 +98,7 @@ export default function WeddingPackagesPage() {
                 "We offer packages across three levels of support: structured planning guidance for hands-on couples, full-service wedding planning for a completely managed experience, and design and decoration packages focused on the look and styling of your day.",
               ]}
             />
-            <div className="mt-6 font-sans text-sm tracking-wide text-gold">
+            <div className="mt-6 font-sans text-sm tracking-wide text-green-deep">
               <Link href="/packages" className="hover:text-cream">
                 See our planning & décor packages →
               </Link>
@@ -151,7 +151,7 @@ export default function WeddingPackagesPage() {
           <div className="mt-8">
             <Prose
               paragraphs={[
-                "We create packages for couples of every background and location — Arabic, Indian, Russian, European, and multicultural weddings, as well as destination weddings for couples planning from abroad.",
+                "We create packages for couples of every background and location, Arabic, Indian, Russian, European, and multicultural weddings, as well as destination weddings for couples planning from abroad.",
               ]}
             />
           </div>

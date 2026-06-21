@@ -100,7 +100,7 @@ export default async function FurnitureCategoryPage({
           </>
         ) : (
           <Reveal>
-            <div className="mx-auto max-w-2xl border border-gold/40 p-10 text-center">
+            <div className="mx-auto max-w-2xl rounded-2xl border border-line bg-beige p-10 text-center">
               <span className="font-sans text-[0.72rem] uppercase tracking-[0.32em] text-gold">
                 Catalog being imported
               </span>
@@ -124,7 +124,7 @@ export default async function FurnitureCategoryPage({
         <div className="mt-14 text-center">
           <Link
             href="/furniture"
-            className="font-sans text-sm tracking-wide text-gold hover:text-cream"
+            className="font-sans text-sm tracking-wide text-green-deep hover:text-cream"
           >
             ← All furniture categories
           </Link>
@@ -133,7 +133,7 @@ export default async function FurnitureCategoryPage({
 
       <CTASection
         title="Furnish your event beautifully"
-        text="Tell us your style and guest count — we'll recommend the perfect pieces and send a quote."
+        text="Tell us your style and guest count, we'll recommend the perfect pieces and send a quote."
         buttonLabel="Request a quote"
       />
 

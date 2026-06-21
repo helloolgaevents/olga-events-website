@@ -78,7 +78,7 @@ export default function Accordion({
                           key={li}
                           className="flex gap-3 font-sans text-sm font-light text-cream/90"
                         >
-                          <span className="text-gold">—</span>
+                          <span className="text-gold">, </span>
                           {li}
                         </li>
                       ))}

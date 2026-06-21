@@ -14,15 +14,15 @@ export default function DecorPackages() {
   return (
     <div>
       {/* Guest slider */}
-      <div className="mx-auto mb-12 max-w-xl border border-line bg-ink-alt p-6">
+      <div className="mx-auto mb-12 max-w-xl rounded-2xl border border-line bg-ink-alt p-6">
         <div className="flex items-center justify-between">
           <label
             htmlFor="decor-guests"
-            className="font-sans text-[0.72rem] uppercase tracking-[0.22em] text-gold"
+            className="font-sans text-[11px] font-medium uppercase tracking-[0.22em] text-gold"
           >
             {packagesContent.decor.sliderLabel}
           </label>
-          <span className="font-serif text-2xl font-light text-cream">{g}</span>
+          <span className="font-num text-2xl font-semibold text-cream">{g}</span>
         </div>
         <input
           id="decor-guests"
@@ -34,13 +34,13 @@ export default function DecorPackages() {
           onChange={(e) => setGuests(Number(e.target.value))}
           className="mt-4 h-1 w-full cursor-pointer appearance-none rounded-full bg-line accent-green"
         />
-        <div className="mt-2 flex justify-between font-sans text-[0.65rem] uppercase tracking-[0.16em] text-muted">
+        <div className="mt-2 flex justify-between font-num text-[11px] text-faint">
           <span>100</span>
           <span>600</span>
         </div>
       </div>
 
-      {/* Tier cards — full spec always open for comparison */}
+      {/* Tier cards, full spec open, side by side */}
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
         {tiers.map((t) => {
           const d = DECORS.find((x) => x.key === t.key)!;
@@ -49,51 +49,52 @@ export default function DecorPackages() {
           return (
             <div
               key={t.key}
-              className={`svc-card flex h-full flex-col p-8 ${
-                popular ? "border-green/70 ring-1 ring-green/30" : ""
-              }`}
+              className={`pc relative h-full p-6 sm:p-7 ${popular ? "pc-win" : ""}`}
             >
-              <div className="flex items-center justify-between">
-                <span className="font-sans text-[0.7rem] uppercase tracking-[0.22em] text-gold">
+              {popular ? (
+                <span className="badge-win">✓ {t.badge}</span>
+              ) : null}
+
+              <div className="border-b border-line pb-5">
+                <p className="font-sans text-[11px] uppercase tracking-[0.14em] text-gold">
                   {t.level}
-                </span>
-                {popular ? (
-                  <span className="inline-flex items-center gap-1 bg-green px-2.5 py-1 font-sans text-[0.55rem] uppercase tracking-[0.18em] text-white">
-                    ✓ {t.badge}
+                </p>
+                <h3 className="mt-1 font-serif text-[1.9rem] text-cream">
+                  {t.name}
+                </h3>
+                <div className="mt-3">
+                  <span className="font-num text-sm text-faint line-through decoration-gold">
+                    AED <AnimatedNumber value={standard} />
                   </span>
-                ) : null}
+                  <div className="mt-1 flex items-baseline gap-1.5">
+                    <span className="font-num text-xs font-medium text-green-deep">
+                      AED
+                    </span>
+                    <span className="font-num text-[26px] font-semibold leading-none text-green-deep">
+                      <AnimatedNumber value={special} />
+                    </span>
+                  </div>
+                </div>
+                <p className="mt-3 font-sans text-xs leading-relaxed text-faint">
+                  {t.addon}
+                </p>
               </div>
 
-              <h3 className="mt-4 font-serif text-3xl font-light text-cream">
-                {t.name}
-              </h3>
-
-              <div className="mt-4 flex items-baseline gap-3">
-                <span className="font-sans text-sm font-light text-muted line-through">
-                  AED <AnimatedNumber value={standard} />
-                </span>
-                <span className="font-serif text-2xl font-light text-cream">
-                  AED <AnimatedNumber value={special} />
-                </span>
-              </div>
-
-              <p className="mt-3 font-sans text-xs font-light leading-relaxed text-muted">
-                {t.addon}
-              </p>
-
-              <div className="mt-6 flex-1 space-y-5 border-t border-line pt-6">
+              <div className="mt-6 flex-1 space-y-5">
                 {t.groups.map((grp) => (
                   <div key={grp.title}>
-                    <h4 className="font-sans text-[0.68rem] uppercase tracking-[0.2em] text-muted">
+                    <h4 className="font-sans text-[10.5px] font-medium uppercase tracking-[0.08em] text-gold">
                       {grp.title}
                     </h4>
                     <ul className="mt-2 space-y-1.5">
                       {grp.items.map((it) => (
                         <li
                           key={it}
-                          className="flex gap-2.5 font-sans text-sm font-light leading-relaxed text-cream"
+                          className="flex gap-2.5 font-sans text-[13.5px] leading-snug text-muted"
                         >
-                          <span className="mt-0.5 text-green">✓</span>
+                          <span className="mt-0.5 shrink-0 text-green" aria-hidden>
+                            ✓
+                          </span>
                           {it}
                         </li>
                       ))}

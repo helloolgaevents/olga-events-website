@@ -8,7 +8,7 @@ import { PageHeader, Section, CTASection } from "../components/ui";
 export const metadata: Metadata = {
   title: "Wedding Gallery in Dubai | Luxury Wedding Designs | Olga Events",
   description:
-    "A curated gallery of elegant luxury wedding and event designs created by Olga Events across Dubai and the UAE — stages, florals and full venue transformations.",
+    "A curated gallery of elegant luxury wedding and event designs created by Olga Events across Dubai and the UAE, stages, florals and full venue transformations.",
 };
 
 const GALLERY = [

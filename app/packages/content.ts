@@ -19,8 +19,8 @@ export const packagesContent = {
   who: {
     heading: "Calm, reliable, to the point.",
     paras: [
-      "A team with experience and an eye for detail, on the level of Dubai's best planners. No loud words — we simply do our work and see it through to the result.",
-      "We are especially in love with flowers. For us a wedding is born from the small things: thoughtful décor, fresh flowers, the right rhythm of the evening. We don't just decorate — we lead and coordinate the whole day so it feels warm, heartfelt and truly family.",
+      "A team with experience and an eye for detail, on the level of Dubai's best planners. No loud words, we simply do our work and see it through to the result.",
+      "We are especially in love with flowers. For us a wedding is born from the small things: thoughtful décor, fresh flowers, the right rhythm of the evening. We don't just decorate, we lead and coordinate the whole day so it feels warm, heartfelt and truly family.",
       "A full-service team is priceless: otherwise the timeline, invitations, vendors, the programme and permits fall on the couple. We carry it for you, so on your day you are guests, not managers.",
     ],
   },
@@ -36,8 +36,8 @@ export const packagesContent = {
   },
 
   book: {
-    heading: "How to book — two ways to begin",
-    lead: "With Olga Events everything starts with planning — the team that leads your wedding and is responsible for every moment. We add décor to the planning, and here you have two comfortable paths: take both packages at once for the best price, or start with planning and add décor later. This is how we organise every project to give you the best experience and allocate the right resources. Below we show which path is closer to you.",
+    heading: "How to book, two ways to begin",
+    lead: "With Olga Events everything starts with planning, the team that leads your wedding and is responsible for every moment. We add décor to the planning, and here you have two comfortable paths: take both packages at once for the best price, or start with planning and add décor later. This is how we organise every project to give you the best experience and allocate the right resources. Below we show which path is closer to you.",
     recommended: {
       tag: "Recommended · best price",
       title: "Planning + décor together",
@@ -54,7 +54,7 @@ export const packagesContent = {
         },
         {
           h: "Complete peace of mind.",
-          t: "Everything is booked at once — no worrying about finding vendors in time or prices rising.",
+          t: "Everything is booked at once, no worrying about finding vendors in time or prices rising.",
         },
         {
           h: "One vision, one team.",
@@ -69,7 +69,7 @@ export const packagesContent = {
           t: "50% of the total (a comfortable start, no full prepayment).",
         },
       ],
-      note: "The special décor price is our thank-you for trusting us with both planning and styling at once — so we meet you on price.",
+      note: "The special décor price is our thank-you for trusting us with both planning and styling at once, so we meet you on price.",
       forText:
         "Ideal if the wedding is near, or you want to settle everything in one step, calmly and at the best price.",
     },
@@ -99,12 +99,12 @@ export const packagesContent = {
       ],
     },
     closing:
-      "Both paths lead to the same dream wedding. If there's still time and you want to go calmly, start with planning. If the wedding is near or you want the best price, one style and to close everything in one step, take both packages at once — it's faster and better value.",
+      "Both paths lead to the same dream wedding. If there's still time and you want to go calmly, start with planning. If the wedding is near or you want the best price, one style and to close everything in one step, take both packages at once, it's faster and better value.",
   },
 
   planning: {
-    heading: "Planning — the foundation of your wedding.",
-    lead: "The planning package is not an extra service — it's the foundation of the whole wedding. Before we begin the design, we need to understand your celebration.",
+    heading: "Planning, the foundation of your wedding.",
+    lead: "The planning package is not an extra service, it's the foundation of the whole wedding. Before we begin the design, we need to understand your celebration.",
     understandTitle: "What we understand at this stage:",
     understand: [
       "scale of the celebration",
@@ -187,7 +187,7 @@ export const packagesContent = {
             title: "Vendors",
             items: [
               "Vendor selection from our base (at the special agency rates)",
-              "Full management & negotiation (we negotiate and fully manage vendors — ours and your external ones)",
+              "Full management & negotiation (we negotiate and fully manage vendors, ours and your external ones)",
             ],
           },
           {
@@ -264,7 +264,7 @@ export const packagesContent = {
   },
 
   // Side-by-side comparison matrix (all open) for the 3 planning tiers.
-  // Each row cell: true = included (✓), false = not included (—),
+  // Each row cell: true = included (✓), false = not included (, ),
   // string = included with a detail note.
   planningComparison: {
     cols: [
@@ -336,8 +336,8 @@ export const packagesContent = {
   },
 
   decor: {
-    heading: "Décor packages — everything for a beautiful wedding.",
-    lead: "Each package includes everything needed for a beautiful wedding in a standard format — the core styling elements gathered into one solution with a clear price. Prices are shown for 100 guests; move the slider to your guest count and the price recalculates. What changes it: the number of chairs and the table styling in the chosen package. Florals included; décor is arranged separately from the planning package.",
+    heading: "Décor packages, everything for a beautiful wedding.",
+    lead: "Each package includes everything needed for a beautiful wedding in a standard format, the core styling elements gathered into one solution with a clear price. Prices are shown for 100 guests; move the slider to your guest count and the price recalculates. What changes it: the number of chairs and the table styling in the chosen package. Florals included; décor is arranged separately from the planning package.",
     sliderLabel: "Guests",
     tiers: [
       {
@@ -418,7 +418,7 @@ export const packagesContent = {
       },
     ],
     compareParagraph:
-      "Packages differ by level of styling, and so by price. Bloom — a neat base: compact centerpieces, a basic choice of flowers and candles. Signature — a step up: medium-sized arrangements, more flowers and candles, more expressive candle holders. Elegance — the premium level: large, luxurious arrangements, premium flowers and crystal candelabra. The higher the package, the richer the stage, backdrop and florals — hence the price difference.",
+      "Packages differ by level of styling, and so by price. Bloom, a neat base: compact centerpieces, a basic choice of flowers and candles. Signature, a step up: medium-sized arrangements, more flowers and candles, more expressive candle holders. Elegance, the premium level: large, luxurious arrangements, premium flowers and crystal candelabra. The higher the package, the richer the stage, backdrop and florals, hence the price difference.",
     callout: {
       lead: "Each package is a ready set of everything needed for a beautiful wedding: stage, dance floor, backdrop, fresh-flower centerpieces, venue styling with artificial flowers, VIP chairs, entrance styling, light, transport & logistics. A convenient starting point with a clear price.",
       optionalTitle:
@@ -434,10 +434,10 @@ export const packagesContent = {
         "Custom structures",
       ],
       afterText:
-        "Many couples simply don't need these. So we keep the package base simple and don't make you pay for what you may never use — we let each wedding grow to your style, priorities and budget. And if you want a fully custom approach, it's convenient to start with the open budget: take planning and fill the décor with exactly what you need.",
+        "Many couples simply don't need these. So we keep the package base simple and don't make you pay for what you may never use, we let each wedding grow to your style, priorities and budget. And if you want a fully custom approach, it's convenient to start with the open budget: take planning and fill the décor with exactly what you need.",
     },
     individual: {
-      title: "Individual décor — how it works",
+      title: "Individual décor, how it works",
       items: [
         {
           h: "Minimum order from AED 47,000.",
@@ -460,11 +460,11 @@ export const packagesContent = {
     notes: [
       {
         title: "Flowers",
-        body: "Centerpieces — fresh flowers. The rest of the styling — quality artificial flowers.",
+        body: "Centerpieces, fresh flowers. The rest of the styling, quality artificial flowers.",
       },
       {
         title: "Florals by table shape",
-        body: "Round / rectangular / S-shape — calculated individually.",
+        body: "Round / rectangular / S-shape, calculated individually.",
       },
       {
         title: "Candles",
@@ -542,11 +542,11 @@ export const packagesContent = {
     blocks: [
       {
         title: "What's in the packages is already ready.",
-        body: "These elements are in our collection, with thought-through designs and clear prices. We assemble this standard set confidently and on time — no waiting.",
+        body: "These elements are in our collection, with thought-through designs and clear prices. We assemble this standard set confidently and on time, no waiting.",
       },
       {
         title: "Everything additional is created for your wedding.",
-        body: "Floor and wall covering, canopies and ceiling structures, hanging arrangements, photo zones and stands — each such element we plan and cost separately, for your venue, its size, zones and theme.",
+        body: "Floor and wall covering, canopies and ceiling structures, hanging arrangements, photo zones and stands, each such element we plan and cost separately, for your venue, its size, zones and theme.",
       },
     ],
     whyTimeTitle:
@@ -585,7 +585,7 @@ export const packagesContent = {
       "everyone make better decisions",
     ],
     closing:
-      "Shorter timelines raise the pace and pressure for both the couple and the team. So we stay in touch from day one and are sincerely grateful to couples who plan ahead — this is our care for the result.",
+      "Shorter timelines raise the pace and pressure for both the couple and the team. So we stay in touch from day one and are sincerely grateful to couples who plan ahead, this is our care for the result.",
   },
 
   custom: {

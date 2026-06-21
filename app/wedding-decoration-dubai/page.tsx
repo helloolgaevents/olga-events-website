@@ -15,7 +15,7 @@ import {
 export const metadata: Metadata = {
   title: "Wedding Decoration Dubai | Luxury Decor by Olga Events",
   description:
-    "Bespoke luxury wedding decoration in Dubai — floral design, custom stages, lighting and full venue transformation tailored to your venue and concept by Olga Events.",
+    "Bespoke luxury wedding decoration in Dubai, floral design, custom stages, lighting and full venue transformation tailored to your venue and concept by Olga Events.",
 };
 
 const INCLUDED = [
@@ -62,7 +62,7 @@ export default function WeddingDecorationPage() {
 
       <PageHeader
         kicker="Wedding Decoration Dubai"
-        title="Wedding Decoration Dubai — Luxury Wedding Decor & Design"
+        title="Wedding Decoration Dubai, Luxury Wedding Decor & Design"
         intro="Looking for luxury wedding decoration in Dubai? We create bespoke wedding designs with floral styling, custom décor, and full event transformation tailored to your venue and concept. At Olga Events, we specialise in high-end wedding decoration in Dubai, combining design, production, and execution to deliver a refined and cohesive result."
       />
 
@@ -80,7 +80,7 @@ export default function WeddingDecorationPage() {
           <div className="mt-8">
             <Prose
               paragraphs={[
-                "Wedding decoration is not just about aesthetics — it is about creating a complete experience. We design full wedding environments, combining floral arrangements, lighting, structures, and styling elements to transform your venue into a unique and elegant setting. Decoration is part of our wider luxury wedding design and planning service.",
+                "Wedding decoration is not just about aesthetics, it is about creating a complete experience. We design full wedding environments, combining floral arrangements, lighting, structures, and styling elements to transform your venue into a unique and elegant setting. Decoration is part of our wider luxury wedding design and planning service.",
               ]}
             />
           </div>
@@ -112,7 +112,7 @@ export default function WeddingDecorationPage() {
           <div className="mt-8">
             <Prose
               paragraphs={[
-                "Our wedding decoration services include concept development, floral design, stage and backdrop creation, lighting design, table styling, and full venue transformation. We manage the entire process — from design to installation — ensuring that every detail is executed with precision.",
+                "Our wedding decoration services include concept development, floral design, stage and backdrop creation, lighting design, table styling, and full venue transformation. We manage the entire process, from design to installation, ensuring that every detail is executed with precision.",
               ]}
             />
             <ul className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -121,7 +121,7 @@ export default function WeddingDecorationPage() {
                   key={item}
                   className="flex items-center gap-3 border border-line px-5 py-4 font-sans text-sm font-light text-cream"
                 >
-                  <span className="text-gold">—</span>
+                  <span className="text-gold">, </span>
                   {item}
                 </li>
               ))}
@@ -139,7 +139,7 @@ export default function WeddingDecorationPage() {
           <div className="mt-8">
             <Prose
               paragraphs={[
-                "We design across a wide range of styles — from classic and romantic to modern, minimal, and grand luxury — always tailored to the couple and the venue. Whether you envision soft floral elegance, dramatic staged structures, or refined contemporary design, we develop a cohesive concept that brings your vision to life.",
+                "We design across a wide range of styles, from classic and romantic to modern, minimal, and grand luxury, always tailored to the couple and the venue. Whether you envision soft floral elegance, dramatic staged structures, or refined contemporary design, we develop a cohesive concept that brings your vision to life.",
               ]}
             />
           </div>
@@ -155,7 +155,7 @@ export default function WeddingDecorationPage() {
           <div className="mt-8">
             <Prose
               paragraphs={[
-                "Flowers are at the heart of every wedding we design. Our in-house floral team creates bespoke arrangements — from ceremony arches and aisle styling to centrepieces and full installations — using premium fresh flowers selected for your palette and season.",
+                "Flowers are at the heart of every wedding we design. Our in-house floral team creates bespoke arrangements, from ceremony arches and aisle styling to centrepieces and full installations, using premium fresh flowers selected for your palette and season.",
               ]}
             />
           </div>
@@ -184,7 +184,7 @@ export default function WeddingDecorationPage() {
           <div className="mt-8">
             <Prose
               paragraphs={[
-                "We design wedding decoration for couples of every background — Arabic and Emirati celebrations, Indian and South Asian weddings, Russian and European ceremonies, and multicultural weddings — respecting the customs, colours, and traditions of each.",
+                "We design wedding decoration for couples of every background, Arabic and Emirati celebrations, Indian and South Asian weddings, Russian and European ceremonies, and multicultural weddings, respecting the customs, colours, and traditions of each.",
               ]}
             />
           </div>
@@ -203,7 +203,7 @@ export default function WeddingDecorationPage() {
                 "The cost of wedding decoration in Dubai depends on the level of design, number of guests, and complexity of the setup. Custom-built structures, premium flowers, and advanced lighting significantly influence the final budget.",
               ]}
             />
-            <div className="mt-6 font-sans text-sm tracking-wide text-gold">
+            <div className="mt-6 font-sans text-sm tracking-wide text-green-deep">
               <Link href="/wedding-cost-dubai" className="hover:text-cream">
                 See our full wedding cost guide →
               </Link>

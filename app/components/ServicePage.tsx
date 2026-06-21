@@ -14,7 +14,7 @@ export default function ServicePage({
   intro,
   blocks,
   ctaTitle = "Let's plan your event",
-  ctaText = "Tell us about your occasion — we'll put together a proposal made for you. Free, no obligation.",
+  ctaText = "Tell us about your occasion, we'll put together a proposal made for you. Free, no obligation.",
 }: {
   kicker: string;
   title: string;
