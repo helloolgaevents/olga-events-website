@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Olga Events — Wedding Packages</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--green:#5E7D46;--green-d:#4a6337;--dark:#1a1a18;--ivory:#f5f3ef;--cream:#faf8f5;--beige:#efe8da;--gold:#b89b6e;--line:#e8e4dc;--muted:#857f73}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--ivory);color:var(--dark);font-family:'DM Sans','Inter',system-ui,sans-serif;font-weight:400;line-height:1.6}
+  .num{font-family:'DM Sans',sans-serif}
+  .slide{max-width:1000px;margin:0 auto;padding:56px 40px;border-bottom:1px solid var(--line)}
+  .kick{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:12px}
+  h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:54px;line-height:1.08}
+  h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:36px;line-height:1.15;margin-bottom:8px}
+  h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:25px}
+  p{font-size:16px;color:#3a3833;max-width:680px}
+  p.lead{font-size:18px;color:var(--muted)}
+  .cover{text-align:center;padding:88px 40px}
+  .cover h1{font-size:60px;color:var(--green)}
+  .cover .sub{font-size:13px;letter-spacing:5px;text-transform:uppercase;color:var(--muted);margin-top:18px}
+  .cover .ln{width:60px;height:1px;background:var(--gold);margin:24px auto}
+  .flow{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
+  .fstep{flex:1;min-width:150px;background:var(--cream);border:1px solid var(--line);border-radius:13px;padding:16px 18px}
+  .fstep .n{font-family:'DM Sans',sans-serif;font-weight:600;font-size:24px;color:var(--gold)}
+  .fstep .t{font-weight:500;font-size:15px;margin:4px 0 3px}
+  .fstep .d{font-size:12.5px;color:var(--muted)}
+  .blist{margin:8px 0 0 18px;padding:0}
+  .blist li{font-size:13.5px;color:#3a3833;margin-top:5px;line-height:1.5}
+  .blist.sm li{font-size:12.5px}
+  .paths{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
+  @media(max-width:760px){.paths{grid-template-columns:1fr}}
+  .path{border:1.5px solid var(--line);border-radius:16px;padding:22px;background:var(--cream)}
+  .path .pk{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:500}
+  .path h3{margin:6px 0 8px}.path p{font-size:14.5px}
+  .path .for{font-size:13px;color:var(--muted);margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
+  .cols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:24px}
+  @media(max-width:840px){.cols{grid-template-columns:1fr}}
+  .pc{border:1px solid var(--line);border-radius:16px;padding:22px;background:var(--cream);display:flex;flex-direction:column}
+  .pc.win{border:1.5px solid var(--green);box-shadow:0 10px 30px rgba(94,125,70,.12);position:relative}
+  .pc .badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--green);color:#fff;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;padding:4px 13px;border-radius:20px;white-space:nowrap}
+  .pc .nm{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:500}
+  .pc .ro{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin:2px 0 10px}
+  .pc .was{font-size:14px;color:var(--muted);text-decoration:line-through;text-decoration-color:var(--gold)}
+  .pc .pr{font-family:'DM Sans',sans-serif;font-size:27px;color:var(--green-d);font-weight:600;line-height:1}
+  .pc .perg{font-size:12.5px;color:var(--green-d);background:#eef3e6;border-radius:8px;padding:6px 10px;margin-top:10px}
+  .guestrow{display:inline-flex;align-items:center;gap:12px;background:var(--cream);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin-top:14px;flex-wrap:wrap}
+  .guestrow label{font-size:12.5px;font-weight:500;color:var(--muted)}
+  .guestrow input[type=range]{width:170px;accent-color:var(--green)}
+  .guestrow input[type=number]{width:84px;font-family:'DM Sans',sans-serif;font-size:16px;font-weight:600;color:var(--green-d);text-align:center;padding:6px 8px;border:1.5px solid var(--line);border-radius:9px;background:#fff}
+  .ghint{font-size:11.5px;color:var(--muted);margin-left:12px;font-style:italic}
+  .quotebox{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px 26px;margin-top:20px;max-width:660px}
+  .qrow{display:flex;align-items:center;gap:14px;margin-bottom:12px;flex-wrap:wrap}
+  .qrow>label{font-size:13px;font-weight:500;color:var(--muted);width:118px}
+  .qrow select,.qrow input[type=number]{font-family:'DM Sans',sans-serif;padding:9px 11px;border:1.5px solid var(--line);border-radius:9px;font-size:14px;background:#fff;flex:1;min-width:130px}
+  .qrow input[type=range]{flex:1;min-width:130px;accent-color:var(--green)}
+  .qsum{border-top:1px solid var(--line);margin-top:16px;padding-top:14px}
+  .qsum .ql{display:flex;justify-content:space-between;font-size:14px;padding:5px 0;color:#3a3833}
+  .qsum .ql span:last-child{font-family:'DM Sans',sans-serif;font-weight:500}
+  .qsum .qtot{display:flex;justify-content:space-between;align-items:baseline;margin-top:8px;padding-top:10px;border-top:2px solid var(--dark)}
+  .qsum .qtot .l{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
+  .qsum .qtot .v{font-family:'DM Sans',sans-serif;font-size:27px;font-weight:700;color:var(--green-d)}
+  .qsave2{background:#f3f6ee;border:1px solid #c7dcab;border-radius:10px;padding:10px 14px;margin-top:14px;font-size:13.5px;color:var(--green-d)}
+  .qsave2 b{font-family:'DM Sans',sans-serif;font-weight:700;font-size:16px;color:var(--green-d)}
+  .qincl{font-size:12px;color:var(--muted);margin-top:10px}
+  .notesgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px 24px;margin-top:18px}
+  @media(max-width:760px){.notesgrid{grid-template-columns:1fr}}
+  .notesgrid .ni{font-size:12.5px;color:#3a3833;line-height:1.5;border-left:2px solid var(--line);padding-left:12px}
+  .notesgrid .ni .lbl{display:block;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:3px}
+  .notesgrid .ni b{color:var(--green-d)}
+  .grp{font-size:10.5px;letter-spacing:.8px;text-transform:uppercase;color:var(--gold);margin:14px 0 4px;font-weight:500}
+  .pc ul{list-style:none;font-size:13px;color:#3a3833}
+  .pc li{padding:3px 0 3px 18px;position:relative;line-height:1.4}
+  .pc li:before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:600}
+  .pc li .sub2{display:block;color:var(--muted);font-size:11px;font-weight:400;line-height:1.35;margin-top:2px}
+  .addsum{background:var(--cream);border:1px solid var(--line);color:#3a3833;border-radius:16px;padding:28px 30px;margin-top:22px}
+  .addsum .row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--green-d)}
+  .addsum .row span{background:var(--beige);border-radius:10px;padding:8px 15px}
+  .addsum .row .pl{color:var(--gold);background:none;padding:0 2px}
+  .addsum p{color:var(--muted);margin-top:13px;max-width:700px}
+  .quiet{background:var(--cream);border:1px solid var(--line);border-radius:16px;padding:30px 32px;margin-top:8px}
+  .cta{text-align:center;background:var(--cream);padding:68px 40px}
+  .cta .pill{display:inline-block;margin-top:16px;border:1.5px solid var(--green);color:var(--green-d);border-radius:30px;padding:11px 24px;font-size:14px;font-weight:500}
+  .fineprint{font-size:12px;color:var(--muted);margin-top:14px;max-width:680px;margin-left:auto;margin-right:auto}
+  .langbar{position:sticky;top:0;z-index:40;background:#1a1a18;display:flex;justify-content:center;gap:8px;padding:10px}
+  .langbar a{font-family:'Inter',sans-serif;font-size:13px;font-weight:500;letter-spacing:.5px;color:#cfc6b2;border:1px solid #3a3327;border-radius:8px;padding:6px 14px}
+  .langbar a.on{background:var(--gold);border-color:var(--gold);color:#1a1a18}
+</style>
+</head>
+<body>
+
+  <div class="langbar"><a class="on" href="packages-en.html">EN</a><a href="packages-ar.html">العربية</a><a href="packages-ru.html">RU</a></div>
+
+  <section class="cover">
+    <div class="kick">Olga Events · Dubai</div>
+    <h1>Wedding Packages</h1>
+    <div class="ln"></div>
+    <div class="sub">Wedding Planning &amp; Décor · All Emirates · EN / RU / AR</div>
+  </section>
+
+  <section class="slide">
+    <div class="kick">About us, briefly</div>
+    <h2>Calm, reliable, to the point</h2>
+    <p class="lead">An experienced team with real attention to detail, at the level of Dubai's best planners. No loud words, we simply do our work and carry it through to the result.</p>
+    <p style="margin-top:16px">We are especially in love with flowers. A wedding, for us, is born from the small things: thoughtful décor, fresh flowers, the right rhythm of the evening. We don't just style, we lead and coordinate the whole day so it feels warm, heartfelt and truly family.</p>
+    <p style="margin-top:14px">A full-service team is priceless: otherwise the timeline, invitations, vendors, programme and permits fall on the couple. We take this on, so on your day you are guests, not managers.</p>
+  </section>
+
+  <section class="slide">
+    <div class="kick">How it works</div>
+    <h2>A clear path</h2>
+    <div class="flow">
+      <div class="fstep"><div class="n">01</div><div class="t">Consultation</div><div class="d">Vision, culture, guests, budget</div></div>
+      <div class="fstep"><div class="n">02</div><div class="t">Choose your path</div><div class="d">Planning to-budget or a ready package</div></div>
+      <div class="fstep"><div class="n">03</div><div class="t">Design</div><div class="d">Concept, palette, flowers, made for you</div></div>
+      <div class="fstep"><div class="n">04</div><div class="t">Your day</div><div class="d">We hold the coordination</div></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kick">Two ways to begin</div>
+    <h2>Whichever suits you</h2>
+    <div class="paths">
+      <div class="path">
+        <div class="pk">Path A · flexible</div>
+        <h3>Start with planning</h3>
+        <p>You take a planning package, and step by step we build the wedding <b>to your budget</b>, openly showing the cost of each element. Every choice is yours.</p>
+        <div class="for">Convenient if you want to pick everything individually and keep the budget under control.</div>
+      </div>
+      <div class="path" style="border-color:var(--green);background:#f3f6ee">
+        <div class="pk">Path B · ready</div>
+        <h3>A ready décor package</h3>
+        <p>Three complete décor packages at a <b>special price</b>, the essentials already inside, florals included. You see the final price right away.</p>
+        <div class="for">Convenient if you want a ready solution without a long selection process.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kick">How to book</div>
+    <h2>Two ways to begin, choose yours</h2>
+    <p class="lead">With Olga Events everything starts with planning, the team that leads your wedding and is responsible for every moment. We add décor to planning, and here you have two comfortable paths: take both packages at once for the best price, or start with planning and add décor later. This is how we organise every project, to give you the best experience and allocate the right resources. Below we suggest which path is closer to you.</p>
+    <div class="paths">
+      <div class="path" style="border-color:var(--green);background:#f3f6ee">
+        <div class="pk">Recommended · best price</div>
+        <h3>Planning + décor together</h3>
+        <p style="font-size:14px">You take both packages at once and we run your wedding as <b>one project</b> from day one. Why it's the best choice:</p>
+        <div style="margin-top:10px">
+          <div style="display:flex;gap:8px;margin-top:9px"><span style="color:var(--green);font-weight:700">1.</span><span style="font-size:13.5px"><b>Best price.</b> Décor comes at a special, reduced rate, and your saving grows with the guest count.</span></div>
+          <div style="display:flex;gap:8px;margin-top:9px"><span style="color:var(--green);font-weight:700">2.</span><span style="font-size:13.5px"><b>Fast decision.</b> In one step you close both planning and styling, cutting prep time by 60-70%. Especially valuable if the wedding is near.</span></div>
+          <div style="display:flex;gap:8px;margin-top:9px"><span style="color:var(--green);font-weight:700">3.</span><span style="font-size:13.5px"><b>Complete peace of mind.</b> Everything booked at once, no more worrying about finding vendors in time or prices rising.</span></div>
+          <div style="display:flex;gap:8px;margin-top:9px"><span style="color:var(--green);font-weight:700">4.</span><span style="font-size:13.5px"><b>One vision, one team.</b> Planning and décor are created together, one style, nothing lost between stages.</span></div>
+          <div style="display:flex;gap:8px;margin-top:9px"><span style="color:var(--green);font-weight:700">5.</span><span style="font-size:13.5px"><b>Price locked today.</b> Décor at today's rate, no seasonal increase.</span></div>
+        </div>
+        <p style="margin-top:10px;font-size:13.5px">Booking payment: <b>50% of the total</b> (a comfortable start without full prepayment).</p>
+        <p style="margin-top:8px;font-size:12.5px;color:var(--muted)">The special décor price is our thank-you for trusting us with both planning and styling at once. That's why we meet you on price.</p>
+        <p class="for">Ideal if the wedding is near, or you want to settle everything in one step, calmly and at the best price.</p>
+      </div>
+      <div class="path">
+        <div class="pk">Planning only · flexible</div>
+        <h3>Open budget</h3>
+        <p style="font-size:14px">You start with the planning package, we add décor later. Why this path is convenient:</p>
+        <div style="margin-top:10px">
+          <div style="display:flex;gap:8px;margin-top:9px"><span style="color:var(--gold);font-weight:700">1.</span><span style="font-size:13.5px"><b>Calm start.</b> You pay only for planning, no large sum up front.</span></div>
+          <div style="display:flex;gap:8px;margin-top:9px"><span style="color:var(--gold);font-weight:700">2.</span><span style="font-size:13.5px"><b>Budget flexibility.</b> We choose décor later, to your final budget.</span></div>
+          <div style="display:flex;gap:8px;margin-top:9px"><span style="color:var(--gold);font-weight:700">3.</span><span style="font-size:13.5px"><b>Trust gradually.</b> First you see our work in action, then you expand.</span></div>
+          <div style="display:flex;gap:8px;margin-top:9px"><span style="color:var(--gold);font-weight:700">4.</span><span style="font-size:13.5px"><b>Your own pace.</b> You spread decisions and payments over time, no rush.</span></div>
+        </div>
+        <p style="margin-top:10px;font-size:13.5px">Standard prices here, no discount: planning from <b>AED 7,000</b>, décor added later from <b>AED 47,000</b> (grows with guest count).</p>
+        <p style="margin-top:8px;font-size:12.5px;color:var(--muted)">The special discount applies to both packages only when booked together. Here you go calmer and more flexibly, but planning and décor are both at standard price.</p>
+        <div class="for"><b>Suits you if:</b>
+          <div style="display:flex;gap:8px;margin-top:7px"><span style="color:var(--gold);font-weight:700">·</span><span>there is time before the wedding and you want to start light;</span></div>
+          <div style="display:flex;gap:8px;margin-top:6px"><span style="color:var(--gold);font-weight:700">·</span><span>you've already planned décor, or plan it with another company, but need the professional support of a wedding planner and a coordination team.</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="note" style="margin-top:16px">Both paths lead to the same wedding of your dreams. If there is plenty of time and you'd like to go calmly, start with planning. If the wedding is near, or you want the best price, one style and to settle everything in one step, <b>take both packages at once</b>: it's both faster and better value.</p>
+  </section>
+
+  <section class="slide">
+    <div class="kick">Path A · Planning packages</div>
+    <h2>Planning, the foundation of your wedding</h2>
+    <p class="lead">A planning package is not an add-on, it's the foundation of the whole wedding. Before we start the design, we need to understand your celebration.</p>
+    <p style="margin-top:10px">What we understand at this stage:</p>
+    <ul class="blist">
+      <li>the scale of the celebration;</li>
+      <li>the level of support needed;</li>
+      <li>the amount of coordination;</li>
+      <li>the size of the team;</li>
+      <li>the resources and time to set aside.</li>
+    </ul>
+    <p style="margin-top:12px">Planning lets us:</p>
+    <ul class="blist">
+      <li>assign the right team;</li>
+      <li>reserve time and resources;</li>
+      <li>organise vendors and schedules;</li>
+      <li>guide you through the whole process;</li>
+      <li>free you from stress and uncertainty.</li>
+    </ul>
+    <p style="margin-top:12px">Every couple is unique, so we offer several planning options for different budgets and levels of support.</p>
+    <div class="cols">
+      <div class="pc">
+        <div class="nm">Essential Planning</div><div class="ro">Start &amp; coordination</div>
+        <div class="was">standard AED 7,000</div>
+        <div class="pr">AED 6,650</div>
+        <div class="grp">Planning basics</div>
+        <ul><li>Digital invitation (eCard, image)</li><li>Wedding design concept</li><li>Concept revisions, up to 2</li></ul>
+        <div class="grp">Floor plan</div>
+        <ul><li>Basic floor plan (CAD &amp; Canva)</li></ul>
+        <div class="grp">Vendors</div>
+        <ul><li>Manage your external vendors<span class="sub2">You book the vendors yourself and give us the list; we coordinate and manage them on the wedding day.</span></li></ul>
+        <div class="grp">Timings</div>
+        <ul><li>Set-up · ceremony · reception</li></ul>
+        <div class="grp">Wedding day</div>
+        <ul><li>Coordinator: <b>up to 8 hours</b></li><li>1 coordinator: set-up, ceremony, reception</li></ul>
+        <div class="grp">Systems</div>
+        <ul><li>Access to the online planning portal</li></ul>
+      </div>
+      <div class="pc">
+        <div class="nm">Classic Planning</div><div class="ro">Partial planning</div>
+        <div class="was">standard AED 10,000</div>
+        <div class="pr">AED 9,500</div>
+        <div class="grp">Venue &amp; guests</div>
+        <ul><li>Help selecting &amp; booking the venue</li><li>Digital invitation (eCard)</li><li>Online RSVP (simple)</li></ul>
+        <div class="grp">Design &amp; concept</div>
+        <ul><li>Design concept · up to 3 revisions</li><li>Floor plan (CAD &amp; Canva)</li><li>2D seating plan</li></ul>
+        <div class="grp">Vendors</div>
+        <ul><li>Vendor selection from our base<span class="sub2">At the special rates vendors give us as an agency.</span></li><li>Full management &amp; negotiation<span class="sub2">We negotiate and fully manage the vendors, both ours and your external ones.</span></li></ul>
+        <div class="grp">Timings</div>
+        <ul><li>Set-up · bridal prep · ceremony · reception</li></ul>
+        <div class="grp">Wedding day</div>
+        <ul><li>Coordinators: <b>up to 8 hours</b></li><li>Set-up coordinator</li><li>Wedding programme coordinator</li></ul>
+        <div class="grp">Systems</div>
+        <ul><li>Online planning portal</li></ul>
+      </div>
+      <div class="pc">
+        <div class="nm">Luxury Planning</div><div class="ro">Full planning</div>
+        <div class="was">standard AED 18,000</div>
+        <div class="pr">AED 17,100</div>
+        <div class="grp">Venue &amp; guests</div>
+        <ul><li>Help selecting &amp; booking the venue</li><li>Digital invitation (eCard)</li><li>Advanced online RSVP</li></ul>
+        <div class="grp">Design &amp; concept</div>
+        <ul><li>Concept · up to 5 revisions</li><li>Floor plan (CAD &amp; Canva) · 2D overview</li><li>Full 3D venue render</li></ul>
+        <div class="grp">Vendors</div>
+        <ul><li>Vendor selection from our base<span class="sub2">At the special rates vendors give us as an agency.</span></li><li>Full management &amp; negotiation<span class="sub2">We negotiate and fully manage the vendors, both ours and your external ones.</span></li><li>Vendor payments via Olga Events<span class="sub2">You transfer us the invoiced amount and we settle with all vendors.</span></li></ul>
+        <div class="grp">Timings</div>
+        <ul><li>Set-up · bridal prep · ceremony · reception</li></ul>
+        <div class="grp">Wedding day</div>
+        <ul><li>Team works in shifts, <b>up to 8 hours</b></li><li>Set-up coordination</li><li>Reception coordinator</li><li>Ceremony coordinator</li><li>Entertainment coordinator</li><li>Bridal assistant</li><li>2 hostesses (guest welcome)</li></ul>
+        <div class="grp">Comms &amp; systems</div>
+        <ul><li>Team chat · online portal</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kick">Path B · Décor packages</div>
+    <h2>Décor packages, everything for a beautiful wedding</h2>
+    <p class="lead">Each package includes everything needed for a beautiful wedding in a standard format, the key décor elements gathered into one solution with a clear price. Prices are shown for 100 guests: move the slider to your guest count and the price recalculates. It changes with the number of chairs and the table styling in the chosen package. Florals are included; décor is arranged separately from the planning package.</p>
+    <div class="guestrow"><label>Guests</label><input type="range" id="cg" min="100" max="600" step="10" value="100"><input type="number" id="cgn" min="100" step="10" value="100"></div>
+    <span class="ghint">Move the slider to compare package prices at different guest counts.</span>
+    <div class="cols">
+      <div class="pc">
+        <div class="nm">Bloom</div><div class="ro">Décor · level 1</div>
+        <div class="was">standard <span data-was="soiree">AED 47,000</span></div>
+        <div class="pr"><span data-price="soiree">AED 39,050</span></div>
+        <div class="perg">Extra table of 10 guests: <b>+ AED 850</b> (10 chairs + 1 Standard centerpiece)</div>
+        <div class="grp">Stage &amp; structures</div>
+        <ul><li>Dance floor 5×5 m</li><li>Stage 5 m, with step</li><li>Backdrop (arches from our collection)</li></ul>
+        <div class="grp">Tables &amp; guests</div>
+        <ul><li><span class="d-cp">10</span> Standard centerpieces, fresh flowers</li><li><span class="d-ch">100</span> VIP chairs</li></ul>
+        <div class="grp">Styling &amp; setup</div>
+        <ul><li>Entrance styling</li><li>Venue styling with artificial flowers (entrance, arch, accents)</li><li>Lighting system</li></ul>
+      </div>
+      <div class="pc win">
+        <div class="badge">Most chosen</div>
+        <div class="nm">Signature</div><div class="ro">Décor · level 2</div>
+        <div class="was">standard <span data-was="signature">AED 57,000</span></div>
+        <div class="pr"><span data-price="signature">AED 46,930</span></div>
+        <div class="perg">Extra table of 10 guests: <b>+ AED 1,300</b> (10 chairs + 1 Premium centerpiece)</div>
+        <div class="grp">Stage &amp; structures</div>
+        <ul><li>Dance floor 6×6 m</li><li>Stage 8 m, with step</li><li>Full-width backdrop</li></ul>
+        <div class="grp">Tables &amp; guests</div>
+        <ul><li><span class="d-cp">10</span> Premium centerpieces, fresh flowers (voluminous)</li><li><span class="d-ch">100</span> VIP chairs</li></ul>
+        <div class="grp">Styling &amp; setup</div>
+        <ul><li>Entrance styling</li><li>Venue styling with artificial flowers (entrance, arch, accents)</li><li>Lighting system</li></ul>
+      </div>
+      <div class="pc">
+        <div class="nm">Elegance</div><div class="ro">Décor · level 3</div>
+        <div class="was">standard <span data-was="atelier">AED 80,000</span></div>
+        <div class="pr"><span data-price="atelier">AED 66,000</span></div>
+        <div class="perg">Extra table of 10 guests: <b>+ AED 2,000</b> (10 chairs + 1 Exclusive centerpiece)</div>
+        <div class="grp">Stage &amp; structures</div>
+        <ul><li>Dance floor 6×6 m</li><li>Stage 13 m, with step</li><li>Catwalk ~10 m</li><li>Full-width backdrop</li></ul>
+        <div class="grp">Tables &amp; guests</div>
+        <ul><li><span class="d-cp">10</span> Exclusive centerpieces, fresh flowers (large, premium)</li><li><span class="d-ch">100</span> VIP chairs · 4 VIP tables</li><li>4 lounge sets (sofas)</li><li>Flowers for cocktail tables</li></ul>
+        <div class="grp">Styling &amp; setup</div>
+        <ul><li>Entrance styling</li><li>Venue styling with artificial flowers (entrance, arch, accents)</li><li>Lighting system</li></ul>
+      </div>
+    </div>
+    <p style="max-width:820px;margin-top:22px;font-size:14px;color:#3a3833">The packages differ by <b>level of styling</b>, and so by price. <b>Bloom</b>, a neat base: compact centerpieces, a basic choice of flowers and candles. <b>Signature</b>, a step up: medium-sized arrangements, more flowers and candles, more expressive candleholders. <b>Elegance</b>, premium level: large, lavish arrangements, premium flowers and crystal candelabra. The higher the package, the richer the stage, backdrop and florals, hence the difference in price.</p>
+    <div style="background:var(--cream);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:12px;padding:18px 20px;margin-top:22px;max-width:780px">
+      <p style="font-size:14px"><b>Each package is a complete set of everything needed for a beautiful wedding:</b> stage, dance floor, backdrop, centerpieces with fresh flowers, venue styling with artificial flowers, VIP chairs, entrance styling, lighting. A convenient starting point with a clear price.</p>
+      <p style="font-size:13.5px;margin-top:10px;color:#3a3833">Additional elements stay optional, since every venue and every wedding is different. These can be:</p>
+      <ul class="blist sm">
+        <li>staircase styling;</li>
+        <li>entrance-zone styling;</li>
+        <li>floor covering;</li>
+        <li>wall covering;</li>
+        <li>ceiling structures;</li>
+        <li>hanging installations;</li>
+        <li>photo zones;</li>
+        <li>custom-made structures.</li>
+      </ul>
+      <p style="font-size:13.5px;margin-top:10px;color:#3a3833">Many couples simply don't need these elements. So we keep the package base simple and don't make you pay for what you may not use, letting every wedding grow to your style, priorities and budget. And if you want a <b>fully bespoke approach</b>, it's convenient to start with an <b>open budget</b>: take planning and fill the décor with exactly what you need.</p>
+      <p style="font-size:12.5px;margin-top:14px;color:var(--gold);font-weight:600;letter-spacing:.5px;text-transform:uppercase">Custom décor, how it works</p>
+      <div style="margin-top:8px">
+        <div style="display:flex;gap:8px;margin-top:7px"><span style="color:var(--gold);font-weight:700">·</span><span style="font-size:12.5px;color:#3a3833"><b>Minimum order from AED 47,000.</b> Covers logistics and preparation.</span></div>
+        <div style="display:flex;gap:8px;margin-top:6px"><span style="color:var(--gold);font-weight:700">·</span><span style="font-size:12.5px;color:#3a3833"><b>Depends on the guest count.</b> The more guests, the higher the minimum (see the scale above).</span></div>
+        <div style="display:flex;gap:8px;margin-top:6px"><span style="color:var(--gold);font-weight:700">·</span><span style="font-size:12.5px;color:#3a3833"><b>Décor your way.</b> Within the amount you can remove or swap things: more flowers instead of a dance floor; a catwalk or arch instead of a large stage.</span></div>
+        <div style="display:flex;gap:8px;margin-top:6px"><span style="color:var(--gold);font-weight:700">·</span><span style="font-size:12.5px;color:#3a3833"><b>Reasonable limits.</b> Everything is budgeted to our costs, so we agree the composition with your planner: we advise what really fits and where a top-up is needed.</span></div>
+      </div>
+    </div>
+    <div class="notesgrid">
+      <div class="ni"><span class="lbl">Flowers</span>Centerpieces, <b>fresh flowers</b>. The rest of the styling, quality artificial flowers.</div>
+      <div class="ni"><span class="lbl">Florals by table shape</span>Round / rectangular / S-shaped, calculated individually.</div>
+      <div class="ni"><span class="lbl">Candles</span>Live candles in tall glass cylinders are <b>part of the package</b>: the water inside makes the flame safe, so they suit outdoors and indoor venues where open flame is allowed. We place them in centerpieces, on the floor and on stands around the décor; if flame isn't allowed, we use elegant electronic candles. <b>Natural wax candles, optional and at extra cost:</b> only premium wax with no drips on linens or holders, colour and quantity chosen individually.</div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div class="ni"><span class="lbl">Why two prices</span>The figure on top, the standard price for décor on its own. The large figure, the special price when booking décor <b>together with planning</b>. The difference between them is your saving.</div>
+        <div class="ni"><span class="lbl">Price &amp; guest count</span>The price is shown for <b>100 guests</b>. With each additional table of 10 guests it grows by a fixed amount (new chairs and a centerpiece for that table). The slider recalculates the total automatically.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kick">Your estimate</div>
+    <h2>Build your proposal in a minute</h2>
+    <p class="lead">Choose planning, décor and the guest count to see the total. VAT, transport &amp; logistics are not included and are quoted separately.</p>
+    <div class="quotebox">
+      <div class="qrow"><label>Planning</label>
+        <select id="qplan"><option value="6650" data-std="7000">Essential, AED 6,650</option><option value="9500" data-std="10000" selected>Classic, AED 9,500</option><option value="17100" data-std="18000">Luxury, AED 17,100</option></select></div>
+      <div class="qrow"><label>Décor package</label>
+        <select id="qdec"><option value="soiree">Bloom, from AED 39,050</option><option value="signature" selected>Signature, from AED 46,930</option><option value="atelier">Elegance, from AED 66,000</option></select></div>
+      <div class="qrow"><label>Guests</label>
+        <input type="range" id="qg" min="100" max="600" step="10" value="100"><input type="number" id="qgn" min="100" step="10" value="100" style="max-width:92px;flex:0 0 auto"></div>
+      <div class="qsum">
+        <div class="ql"><span>Planning</span><span id="q-plan">—</span></div>
+        <div class="ql"><span id="q-decname">Décor</span><span id="q-dec">—</span></div>
+        <div class="qtot"><span class="l">Total together</span><span class="v" id="q-total">—</span></div>
+        <div class="qsave2"><span style="color:var(--gold)">★</span> By booking both packages together you save <b id="q-save">—</b></div>
+        <div class="qincl">VAT, transport &amp; logistics are not included; they are quoted separately.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kick">Optional · to budget</div>
+    <h2>Additional décor &amp; services</h2>
+    <p class="lead">The packages include everything needed for a beautiful wedding. If you'd like more, we add it to your budget. The cost is discussed separately, on request, only if you really need it.</p>
+    <div class="cols">
+      <div class="pc">
+        <div class="grp">Structures &amp; production</div>
+        <ul>
+          <li>Floor covering</li><li>Wall covering</li><li>Ceiling décor</li>
+          <li>Truss structures</li><li>Stage / catwalk / dance-floor extension</li>
+          <li>Bar counter</li><li>Acrylic &amp; mirror elements</li>
+        </ul>
+      </div>
+      <div class="pc">
+        <div class="grp">Light &amp; effects</div>
+        <ul>
+          <li>Extra / truss lighting</li><li>Chandeliers &amp; stands</li>
+          <li>Haze / low fog</li><li>Cold sparks</li>
+          <li>CO₂ / confetti</li><li>Photo booth</li><li>Hanging LED lights</li>
+        </ul>
+      </div>
+      <div class="pc">
+        <div class="grp">Flowers &amp; table</div>
+        <ul>
+          <li>Floral chandeliers &amp; hanging installations</li><li>Floral arch · entrance décor · ceremony aisle</li>
+          <li>Premium fresh flowers</li><li>Cake-table styling</li>
+          <li>Premium chairs · charger plates · linens</li><li>Welcome sign · table numbers · printing</li>
+          <li>Extra lounge areas</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note" style="font-size:12.5px;color:var(--muted);margin-top:14px">We offer what a standard wedding needs. Anything beyond that is up to your wishes and budget; prices are discussed individually.</p>
+  </section>
+
+  <section class="slide">
+    <div class="kick">How the price adds up</div>
+    <h2>Transparent</h2>
+    <div class="addsum">
+      <div class="row"><span>Planning</span><span class="pl">+</span><span>Décor package</span><span class="pl">+</span><span>Guest count</span><span class="pl">+</span><span>Optional extras</span></div>
+      <p>The planning package is the team's work and your peace of mind. The décor package is everything guests see and feel. Any extras are optional: we show 2-3 options at different prices in advance, you pick the one you like most (often you can even save), and if needed we tailor a solution exactly to your budget. We always confirm the final cost with you before any work begins.</p>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kick">Transparency · timing &amp; preparation</div>
+    <h2>How we work and why booking early matters</h2>
+    <p class="lead">We want to be completely open with you, so you understand how our work is organised and can trust us with ease.</p>
+    <p style="margin-top:16px"><b>What's inside the packages is already ready.</b> These elements are in our collection, with thought-through designs and clear prices. This standard set we assemble confidently and right on time, you don't need to wait.</p>
+    <p style="margin-top:12px"><b>Everything additional is created for your wedding.</b> Floor and wall covering, canopies and ceiling structures, hanging installations, photo zones and stands, each such element we plan and cost separately: to your venue, its size, zones and theme.</p>
+    <p style="margin-top:12px"><b>Why additional décor takes time.</b> To give you an exact price, we may need to:</p>
+    <ul class="blist">
+      <li>visit the venue;</li>
+      <li>discuss the project with designers;</li>
+      <li>cost the flowers and materials;</li>
+      <li>align with the production team;</li>
+      <li>check our inventory;</li>
+      <li>order decorative elements from abroad;</li>
+      <li>custom-make pieces from acrylic, foam and glass;</li>
+      <li>bring in specialised contractors and factories;</li>
+      <li>run tests if needed.</li>
+    </ul>
+    <p style="margin-top:10px">Production itself often takes months.</p>
+    <p style="margin-top:12px"><b>We do have our own inventory</b>, but it constantly needs:</p>
+    <ul class="blist">
+      <li>painting;</li>
+      <li>restoration;</li>
+      <li>refinements;</li>
+      <li>adapting to each wedding.</li>
+    </ul>
+    <p style="margin-top:10px">Luxury weddings aren't assembled in one evening.</p>
+    <div style="display:flex;gap:12px;margin-top:18px;flex-wrap:wrap">
+      <div class="fstep" style="flex:1;min-width:180px"><div class="n">20-60 days</div><div class="t">Venue selection</div><div class="d">viewing, options, date hold</div></div>
+      <div class="fstep" style="flex:1;min-width:180px"><div class="n">30-90 days</div><div class="t">Design</div><div class="d">concept, sketches, approval</div></div>
+      <div class="fstep" style="flex:1;min-width:180px"><div class="n">20-60 days</div><div class="t">Vendor selection</div><div class="d">requests, negotiation, confirmations</div></div>
+      <div class="fstep" style="flex:1;min-width:180px"><div class="n">3-6 months</div><div class="t">Production</div><div class="d">sourcing, build, paint, install</div></div>
+    </div>
+    <p style="margin-top:18px"><b>Why 12 months is the ideal lead time.</b> That much time lets:</p>
+    <ul class="blist">
+      <li>the couple live and work calmly, without pressure;</li>
+      <li>the designers create beautiful concepts;</li>
+      <li>the production team prepare properly;</li>
+      <li>everyone make the best decisions.</li>
+    </ul>
+    <p style="margin-top:12px">And what if there's less time? Six months, three, sometimes even two, that's absolutely fine, and we take it on with joy 🙂 We simply adjust our speed and the whole process to your timeframe, and get everything done beautifully and on time.</p>
+    <p style="margin-top:12px">Why we're still in love with "early": in our experience, when there's more time, couples truly enjoy the preparation, brides worry and stress less, and we have the time not only to plan the wedding but also to look after your mood and peace of mind, because that's part of our work too. But whatever the timeframe, a year or a couple of months, we're by your side from day one and carry everything through to the result.</p>
+  </section>
+
+  <section class="slide">
+    <div class="kick">If you'd like it differently</div>
+    <h2>Fully tailored to you</h2>
+    <div class="quiet">
+      <p>The packages are a convenient starting point, not a frame. If you'd like to build everything from scratch to your taste, you take a planning package and we calmly run the project to your budget, openly showing the cost of each element. No pressure, at your pace.</p>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="kick">Next step</div>
+    <h2>Let's start with a consultation</h2>
+    <p style="margin:14px auto 0">Every wedding with us is fully bespoke, so we begin with the essentials: getting to know you and understanding your vision and wishes. Tell us what matters to you, and we'll put together a proposal made for you. No obligation.</p>
+    <div class="pill">Planning + décor together, décor at a better price · 50% deposit books · we hold the date for 7 days</div>
+    <div class="fineprint">Prices exclude VAT, transport &amp; logistics, which are quoted separately. Décor prices are shown for 100 guests and grow with the count. Olga Events · hello@olga.events</div>
+  </section>
+
+<script>
+(function(){
+  var P={soiree:{base:39050,std:47000,cp:350},signature:{base:46930,std:57000,cp:800},atelier:{base:66000,std:80000,cp:1500}};
+  var f=function(n){return Math.round(n).toLocaleString('en-US');};
+  var g=document.getElementById('cg'),gn=document.getElementById('cgn');
+  function calc(){
+    var guests=Math.max(100,+gn.value||100);
+    var extraG=Math.max(0,guests-100), extraT=Math.max(0,Math.ceil(guests/10)-10);
+    var tables=Math.ceil(guests/10);
+    document.querySelectorAll('.d-cp').forEach(function(e){e.textContent=tables;});
+    document.querySelectorAll('.d-ch').forEach(function(e){e.textContent=guests;});
+    for(var k in P){
+      var add=extraG*50+extraT*P[k].cp;
+      var bundle=P[k].base+add, standard=Math.round(bundle*P[k].std/P[k].base);
+      var el=document.querySelector('[data-price="'+k+'"]');
+      if(el) el.textContent='AED '+f(bundle);
+      var ws=document.querySelector('[data-was="'+k+'"]');
+      if(ws) ws.textContent='AED '+f(standard);
+    }
+  }
+  g.addEventListener('input',function(){gn.value=g.value;calc();});
+  gn.addEventListener('input',function(){g.value=Math.min(600,Math.max(100,+gn.value||100));calc();});
+  calc();
+})();
+(function(){
+  var P={soiree:{base:39050,std:47000,cp:350},signature:{base:46930,std:57000,cp:800},atelier:{base:66000,std:80000,cp:1500}};
+  var NM={soiree:'Bloom',signature:'Signature',atelier:'Elegance'};
+  var f=function(n){return Math.round(n).toLocaleString('en-US');};
+  var qp=document.getElementById('qplan'),qd=document.getElementById('qdec'),qg=document.getElementById('qg'),qgn=document.getElementById('qgn');
+  function q(){
+    var plan=+qp.value, planStd=+qp.selectedOptions[0].dataset.std, k=qd.value, guests=Math.max(100,+qgn.value||100);
+    var eg=Math.max(0,guests-100), et=Math.max(0,Math.ceil(guests/10)-10), add=eg*50+et*P[k].cp;
+    var decor=P[k].base+add, standard=Math.round(decor*P[k].std/P[k].base), save=(standard-decor)+(planStd-plan), total=plan+decor;
+    document.getElementById('q-plan').textContent='AED '+f(plan);
+    document.getElementById('q-decname').textContent='Décor, '+NM[k]+' · '+guests+' guests';
+    document.getElementById('q-dec').textContent='AED '+f(decor);
+    document.getElementById('q-total').textContent='AED '+f(total);
+    document.getElementById('q-save').textContent='AED '+f(save);
+  }
+  qp.onchange=q; qd.onchange=q;
+  qg.addEventListener('input',function(){qgn.value=qg.value;q();});
+  qgn.addEventListener('input',function(){qg.value=Math.min(600,Math.max(100,+qgn.value||100));q();});
+  q();
+})();
+</script>
+</body>
+</html>

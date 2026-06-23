@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Olga Events — باقات الأعراس</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--green:#5E7D46;--green-d:#4a6337;--dark:#1a1a18;--ivory:#f5f3ef;--cream:#faf8f5;--beige:#efe8da;--gold:#b89b6e;--line:#e8e4dc;--muted:#857f73}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--ivory);color:var(--dark);font-family:'Noto Naskh Arabic',system-ui,sans-serif;font-weight:400;line-height:1.7;direction:rtl}
+  .num{font-family:'DM Sans',sans-serif;direction:ltr;display:inline-block}
+  .slide{max-width:1000px;margin:0 auto;padding:56px 40px;border-bottom:1px solid var(--line)}
+  .kick{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:12px}
+  h1{font-family:'Noto Naskh Arabic',serif;font-weight:700;font-size:48px;line-height:1.15}
+  h2{font-family:'Noto Naskh Arabic',serif;font-weight:700;font-size:32px;line-height:1.2;margin-bottom:8px}
+  h3{font-family:'Noto Naskh Arabic',serif;font-weight:700;font-size:23px}
+  p{font-size:16px;color:#3a3833;max-width:680px}
+  p.lead{font-size:18px;color:var(--muted)}
+  .cover{text-align:center;padding:88px 40px}
+  .cover h1{font-size:52px;color:var(--green)}
+  .cover .sub{font-size:13px;letter-spacing:2px;color:var(--muted);margin-top:18px}
+  .cover .ln{width:60px;height:1px;background:var(--gold);margin:24px auto}
+  .flow{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
+  .fstep{flex:1;min-width:150px;background:var(--cream);border:1px solid var(--line);border-radius:13px;padding:16px 18px}
+  .fstep .n{font-family:'DM Sans',sans-serif;font-weight:600;font-size:24px;color:var(--gold);direction:ltr}
+  .fstep .t{font-weight:600;font-size:15px;margin:4px 0 3px}
+  .fstep .d{font-size:12.5px;color:var(--muted)}
+  .blist{margin:8px 18px 0 0;padding:0}
+  .blist li{font-size:13.5px;color:#3a3833;margin-top:5px;line-height:1.6}
+  .blist.sm li{font-size:12.5px}
+  .paths{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
+  @media(max-width:760px){.paths{grid-template-columns:1fr}}
+  .path{border:1.5px solid var(--line);border-radius:16px;padding:22px;background:var(--cream)}
+  .path .pk{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);font-weight:600}
+  .path h3{margin:6px 0 8px}.path p{font-size:14.5px}
+  .path .for{font-size:13px;color:var(--muted);margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
+  .cols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:24px}
+  @media(max-width:840px){.cols{grid-template-columns:1fr}}
+  .pc{border:1px solid var(--line);border-radius:16px;padding:22px;background:var(--cream);display:flex;flex-direction:column}
+  .pc.win{border:1.5px solid var(--green);box-shadow:0 10px 30px rgba(94,125,70,.12);position:relative}
+  .pc .badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--green);color:#fff;font-size:10px;letter-spacing:.5px;padding:4px 13px;border-radius:20px;white-space:nowrap}
+  .pc .nm{font-family:'Noto Naskh Arabic',serif;font-size:24px;font-weight:700}
+  .pc .ro{font-size:11px;letter-spacing:.5px;text-transform:uppercase;color:var(--gold);margin:2px 0 10px}
+  .pc .was{font-size:14px;color:var(--muted);text-decoration:line-through;text-decoration-color:var(--gold)}
+  .pc .pr{font-family:'DM Sans',sans-serif;font-size:27px;color:var(--green-d);font-weight:600;line-height:1;direction:ltr;text-align:right}
+  .pc .perg{font-size:12.5px;color:var(--green-d);background:#eef3e6;border-radius:8px;padding:6px 10px;margin-top:10px}
+  .guestrow{display:inline-flex;align-items:center;gap:12px;background:var(--cream);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin-top:14px;flex-wrap:wrap}
+  .guestrow label{font-size:12.5px;font-weight:600;color:var(--muted)}
+  .guestrow input[type=range]{width:170px;accent-color:var(--green)}
+  .guestrow input[type=number]{width:84px;font-family:'DM Sans',sans-serif;font-size:16px;font-weight:600;color:var(--green-d);text-align:center;padding:6px 8px;border:1.5px solid var(--line);border-radius:9px;background:#fff}
+  .ghint{font-size:11.5px;color:var(--muted);margin-right:12px;font-style:italic}
+  .quotebox{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px 26px;margin-top:20px;max-width:660px}
+  .qrow{display:flex;align-items:center;gap:14px;margin-bottom:12px;flex-wrap:wrap}
+  .qrow>label{font-size:13px;font-weight:600;color:var(--muted);width:130px}
+  .qrow select,.qrow input[type=number]{font-family:'DM Sans','Noto Naskh Arabic',sans-serif;padding:9px 11px;border:1.5px solid var(--line);border-radius:9px;font-size:14px;background:#fff;flex:1;min-width:130px}
+  .qrow input[type=range]{flex:1;min-width:130px;accent-color:var(--green)}
+  .qsum{border-top:1px solid var(--line);margin-top:16px;padding-top:14px}
+  .qsum .ql{display:flex;justify-content:space-between;font-size:14px;padding:5px 0;color:#3a3833}
+  .qsum .ql span:last-child{font-family:'DM Sans',sans-serif;font-weight:500;direction:ltr}
+  .qsum .qtot{display:flex;justify-content:space-between;align-items:baseline;margin-top:8px;padding-top:10px;border-top:2px solid var(--dark)}
+  .qsum .qtot .l{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--gold)}
+  .qsum .qtot .v{font-family:'DM Sans',sans-serif;font-size:27px;font-weight:700;color:var(--green-d);direction:ltr}
+  .qsave2{background:#f3f6ee;border:1px solid #c7dcab;border-radius:10px;padding:10px 14px;margin-top:14px;font-size:13.5px;color:var(--green-d)}
+  .qsave2 b{font-family:'DM Sans',sans-serif;font-weight:700;font-size:16px;color:var(--green-d);direction:ltr}
+  .qincl{font-size:12px;color:var(--muted);margin-top:10px}
+  .notesgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px 24px;margin-top:18px}
+  @media(max-width:760px){.notesgrid{grid-template-columns:1fr}}
+  .notesgrid .ni{font-size:12.5px;color:#3a3833;line-height:1.6;border-right:2px solid var(--line);padding-right:12px}
+  .notesgrid .ni .lbl{display:block;font-size:10px;letter-spacing:.5px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:3px}
+  .notesgrid .ni b{color:var(--green-d)}
+  .grp{font-size:10.5px;letter-spacing:.5px;text-transform:uppercase;color:var(--gold);margin:14px 0 4px;font-weight:600}
+  .pc ul{list-style:none;font-size:13px;color:#3a3833}
+  .pc li{padding:3px 18px 3px 0;position:relative;line-height:1.5}
+  .pc li:before{content:'✓';position:absolute;right:0;color:var(--green);font-weight:600}
+  .pc li .sub2{display:block;color:var(--muted);font-size:11px;font-weight:400;line-height:1.45;margin-top:2px}
+  .addsum{background:var(--cream);border:1px solid var(--line);color:#3a3833;border-radius:16px;padding:28px 30px;margin-top:22px}
+  .addsum .row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-family:'Noto Naskh Arabic',serif;font-size:20px;color:var(--green-d)}
+  .addsum .row span{background:var(--beige);border-radius:10px;padding:8px 15px}
+  .addsum .row .pl{color:var(--gold);background:none;padding:0 2px}
+  .addsum p{color:var(--muted);margin-top:13px;max-width:700px}
+  .quiet{background:var(--cream);border:1px solid var(--line);border-radius:16px;padding:30px 32px;margin-top:8px}
+  .cta{text-align:center;background:var(--cream);padding:68px 40px}
+  .cta .pill{display:inline-block;margin-top:16px;border:1.5px solid var(--green);color:var(--green-d);border-radius:30px;padding:11px 24px;font-size:14px;font-weight:600}
+  .fineprint{font-size:12px;color:var(--muted);margin-top:14px;max-width:680px;margin-left:auto;margin-right:auto}
+  .langbar{position:sticky;top:0;z-index:40;background:#1a1a18;display:flex;justify-content:center;gap:8px;padding:10px;direction:ltr}
+  .langbar a{font-family:'Inter','Noto Naskh Arabic',sans-serif;font-size:13px;font-weight:600;letter-spacing:.5px;color:#cfc6b2;border:1px solid #3a3327;border-radius:8px;padding:6px 14px}
+  .langbar a.on{background:var(--gold);border-color:var(--gold);color:#1a1a18}
+</style>
+</head>
+<body>
+
+  <div class="langbar"><a href="packages-en.html">EN</a><a class="on" href="packages-ar.html">العربية</a><a href="packages-ru.html">RU</a></div>
+
+  <section class="cover">
+    <div class="kick">Olga Events · Dubai</div>
+    <h1>باقات الأعراس</h1>
+    <div class="ln"></div>
+    <div class="sub">تنسيق وديكور الأعراس · جميع الإمارات · EN / RU / AR</div>
+  </section>
+
+  <section class="slide">
+    <div class="kick">عنّا باختصار</div>
+    <h2>هدوء، موثوقية، وعمل متقن</h2>
+    <p class="lead">فريق ذو خبرة واهتمام حقيقي بالتفاصيل، على مستوى أفضل منظّمي الأعراس في دبي. بلا كلام كبير، ننجز عملنا ونصل به إلى النتيجة.</p>
+    <p style="margin-top:16px">نحن مغرمون بالزهور بشكل خاص. العرس يولد عندنا من التفاصيل الصغيرة: ديكور مدروس، زهور طبيعية، وإيقاع صحيح للأمسية. لا ننسّق فحسب، بل نقود وننسّق اليوم بأكمله ليكون دافئاً وحميمياً وعائلياً بحق.</p>
+    <p style="margin-top:14px">الفريق المتكامل لا يُقدّر بثمن: وإلا وقع الجدول الزمني والدعوات والمورّدون والبرنامج والتصاريح على عاتق العروسين. نتولّى ذلك كله لتكونوا في يومكم ضيوفاً لا مديرين.</p>
+  </section>
+
+  <section class="slide">
+    <div class="kick">كيف تسير الأمور</div>
+    <h2>مسار واضح</h2>
+    <div class="flow">
+      <div class="fstep"><div class="n">01</div><div class="t">استشارة</div><div class="d">الرؤية، الثقافة، الضيوف، الميزانية</div></div>
+      <div class="fstep"><div class="n">02</div><div class="t">اختيار المسار</div><div class="d">تخطيط حسب الميزانية أو باقة جاهزة</div></div>
+      <div class="fstep"><div class="n">03</div><div class="t">التصميم</div><div class="d">المفهوم، الألوان، الزهور، خصيصاً لكم</div></div>
+      <div class="fstep"><div class="n">04</div><div class="t">يومكم</div><div class="d">نتولّى التنسيق بالكامل</div></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kick">طريقتان للبدء</div>
+    <h2>بما يناسبكم</h2>
+    <div class="paths">
+      <div class="path">
+        <div class="pk">المسار A · مرن</div>
+        <h3>ابدأوا بالتخطيط</h3>
+        <p>تأخذون باقة التخطيط، ونبني العرس خطوة بخطوة <b>حسب ميزانيتكم</b>، مع إظهار تكلفة كل عنصر بوضوح. كل اختيار بيدكم.</p>
+        <div class="for">مناسب إذا أردتم اختيار كل شيء بشكل فردي والتحكّم في الميزانية.</div>
+      </div>
+      <div class="path" style="border-color:var(--green);background:#f3f6ee">
+        <div class="pk">المسار B · جاهز</div>
+        <h3>باقة ديكور جاهزة</h3>
+        <p>ثلاث باقات ديكور متكاملة بسعر <b>خاص</b>، الأساسيات بالداخل، والزهور مشمولة. ترون السعر النهائي فوراً.</p>
+        <div class="for">مناسب إذا أردتم حلاً جاهزاً دون عملية اختيار طويلة.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kick">كيفية الحجز</div>
+    <h2>طريقتان للبدء، اختاروا طريقكم</h2>
+    <p class="lead">مع Olga Events يبدأ كل شيء بالتخطيط، الفريق الذي يقود عرسكم ويتحمّل مسؤولية كل لحظة. نضيف الديكور إلى التخطيط، وأمامكم هنا مساران مريحان: أخذ الباقتين معاً للحصول على أفضل سعر، أو البدء بالتخطيط وإضافة الديكور لاحقاً. هكذا ننظّم كل مشروع لنمنحكم أفضل تجربة ونخصّص الموارد الصحيحة. أدناه نوضّح أي مسار أقرب إليكم.</p>
+    <div class="paths">
+      <div class="path" style="border-color:var(--green);background:#f3f6ee">
+        <div class="pk">موصى به · أفضل سعر</div>
+        <h3>التخطيط + الديكور معاً</h3>
+        <p style="font-size:14px">تأخذون الباقتين معاً وندير عرسكم <b>كمشروع واحد</b> منذ اليوم الأول. لماذا هو الخيار الأفضل:</p>
+        <div style="margin-top:10px">
+          <div style="display:flex;gap:8px;margin-top:9px"><span style="color:var(--green);font-weight:700">1.</span><span style="font-size:13.5px"><b>أفضل سعر.</b> يأتي الديكور بسعر خاص مخفّض، ويزداد توفيركم مع عدد الضيوف.</span></div>
+          <div style="display:flex;gap:8px;margin-top:9px"><span style="color:var(--green);font-weight:700">2.</span><span style="font-size:13.5px"><b>قرار سريع.</b> بخطوة واحدة تغلقون التخطيط والتنسيق معاً، وتقلّصون وقت التحضير 60-70%. قيّم بشكل خاص إذا كان العرس قريباً.</span></div>
+          <div style="display:flex;gap:8px;margin-top:9px"><span style="color:var(--green);font-weight:700">3.</span><span style="font-size:13.5px"><b>راحة بال كاملة.</b> كل شيء محجوز دفعة واحدة، دون قلق من إيجاد المورّدين في الوقت أو ارتفاع الأسعار.</span></div>
+          <div style="display:flex;gap:8px;margin-top:9px"><span style="color:var(--green);font-weight:700">4.</span><span style="font-size:13.5px"><b>رؤية واحدة، فريق واحد.</b> التخطيط والديكور يُصنعان معاً بأسلوب واحد، دون ضياع بين المراحل.</span></div>
+          <div style="display:flex;gap:8px;margin-top:9px"><span style="color:var(--green);font-weight:700">5.</span><span style="font-size:13.5px"><b>السعر مثبّت اليوم.</b> الديكور بسعر اليوم، دون زيادة موسمية.</span></div>
+        </div>
+        <p style="margin-top:10px;font-size:13.5px">الدفع عند الحجز: <b>50% من الإجمالي</b> (بداية مريحة دون دفع كامل مقدماً).</p>
+        <p style="margin-top:8px;font-size:12.5px;color:var(--muted)">السعر الخاص للديكور هو شكرنا لثقتكم بنا في التخطيط والتنسيق معاً. لذلك نلتقيكم في السعر.</p>
+        <p class="for">مثالي إذا كان العرس قريباً، أو أردتم إنهاء كل شيء بخطوة واحدة، بهدوء وبأفضل سعر.</p>
+      </div>
+      <div class="path">
+        <div class="pk">التخطيط فقط · مرن</div>
+        <h3>ميزانية مفتوحة</h3>
+        <p style="font-size:14px">تبدأون بباقة التخطيط، ونضيف الديكور لاحقاً. لماذا هذا المسار مريح:</p>
+        <div style="margin-top:10px">
+          <div style="display:flex;gap:8px;margin-top:9px"><span style="color:var(--gold);font-weight:700">1.</span><span style="font-size:13.5px"><b>بداية هادئة.</b> تدفعون مقابل التخطيط فقط، دون مبلغ كبير مقدماً.</span></div>
+          <div style="display:flex;gap:8px;margin-top:9px"><span style="color:var(--gold);font-weight:700">2.</span><span style="font-size:13.5px"><b>مرونة في الميزانية.</b> نختار الديكور لاحقاً حسب ميزانيتكم النهائية.</span></div>
+          <div style="display:flex;gap:8px;margin-top:9px"><span style="color:var(--gold);font-weight:700">3.</span><span style="font-size:13.5px"><b>ثقة تدريجية.</b> تشاهدون عملنا أولاً، ثم توسّعون التعاون.</span></div>
+          <div style="display:flex;gap:8px;margin-top:9px"><span style="color:var(--gold);font-weight:700">4.</span><span style="font-size:13.5px"><b>على إيقاعكم.</b> توزّعون القرارات والمدفوعات على الوقت دون عجلة.</span></div>
+        </div>
+        <p style="margin-top:10px;font-size:13.5px">هنا الأسعار الاعتيادية دون خصم: التخطيط من <b>AED 7,000</b>، والديكور لاحقاً من <b>AED 47,000</b> (يزداد مع عدد الضيوف).</p>
+        <p style="margin-top:8px;font-size:12.5px;color:var(--muted)">الخصم الخاص يُطبّق على الباقتين فقط عند حجزهما معاً. هنا تسيرون بهدوء ومرونة أكبر، لكن التخطيط والديكور بالسعر الاعتيادي.</p>
+        <div class="for"><b>يناسبكم إذا:</b>
+          <div style="display:flex;gap:8px;margin-top:7px"><span style="color:var(--gold);font-weight:700">·</span><span>كان أمامكم وقت قبل العرس وتريدون بداية خفيفة؛</span></div>
+          <div style="display:flex;gap:8px;margin-top:6px"><span style="color:var(--gold);font-weight:700">·</span><span>كنتم قد خطّطتم الديكور أو تخطّطونه مع شركة أخرى، لكنكم تحتاجون دعم منظّم أعراس محترف وفريق تنسيق.</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="note" style="margin-top:16px">كلا المسارين يقودان إلى عرس أحلامكم نفسه. إذا كان هناك متّسع من الوقت وتريدون السير بهدوء، ابدأوا بالتخطيط. وإذا كان العرس قريباً أو أردتم أفضل سعر وأسلوباً واحداً وإنهاء كل شيء بخطوة واحدة، <b>خذوا الباقتين معاً</b>: أسرع وأوفر.</p>
+  </section>
+
+  <section class="slide">
+    <div class="kick">المسار A · باقات التخطيط</div>
+    <h2>التخطيط، أساس عرسكم</h2>
+    <p class="lead">باقة التخطيط ليست خدمة إضافية، بل أساس العرس بأكمله. قبل أن نبدأ بالتصميم، من المهم أن نفهم مناسبتكم.</p>
+    <p style="margin-top:10px">ما نفهمه في هذه المرحلة:</p>
+    <ul class="blist">
+      <li>حجم المناسبة؛</li>
+      <li>مستوى الدعم المطلوب؛</li>
+      <li>حجم التنسيق؛</li>
+      <li>حجم الفريق؛</li>
+      <li>الموارد والوقت اللازم تخصيصهما.</li>
+    </ul>
+    <p style="margin-top:12px">التخطيط يتيح لنا:</p>
+    <ul class="blist">
+      <li>تعيين الفريق المناسب؛</li>
+      <li>حجز الوقت والموارد؛</li>
+      <li>تنظيم المورّدين والجداول؛</li>
+      <li>مرافقتكم طوال العملية؛</li>
+      <li>تخليصكم من التوتر وعدم اليقين.</li>
+    </ul>
+    <p style="margin-top:12px">كل ثنائي فريد، لذا نقدّم عدّة خيارات تخطيط لميزانيات ومستويات دعم مختلفة.</p>
+    <div class="cols">
+      <div class="pc">
+        <div class="nm">Essential Planning</div><div class="ro">البداية والتنسيق</div>
+        <div class="was">السعر الاعتيادي AED 7,000</div>
+        <div class="pr">AED 6,650</div>
+        <div class="grp">أساسيات التخطيط</div>
+        <ul><li>دعوة رقمية (بطاقة إلكترونية)</li><li>مفهوم تصميم العرس</li><li>تعديلات المفهوم، حتى 2</li></ul>
+        <div class="grp">مخطط القاعة</div>
+        <ul><li>مخطط أساسي للقاعة (CAD وCanva)</li></ul>
+        <div class="grp">المورّدون</div>
+        <ul><li>إدارة مورّديكم الخارجيين<span class="sub2">تحجزون المورّدين بأنفسكم وتعطوننا القائمة، ونتولّى تنسيقهم وإدارتهم يوم العرس.</span></li></ul>
+        <div class="grp">الجدول الزمني</div>
+        <ul><li>التجهيز · المراسم · الحفل</li></ul>
+        <div class="grp">يوم العرس</div>
+        <ul><li>منسّق: <b>حتى 8 ساعات</b></li><li>منسّق واحد: التجهيز، المراسم، الحفل</li></ul>
+        <div class="grp">الأنظمة</div>
+        <ul><li>الوصول إلى بوابة التخطيط الإلكترونية</li></ul>
+      </div>
+      <div class="pc">
+        <div class="nm">Classic Planning</div><div class="ro">تخطيط جزئي</div>
+        <div class="was">السعر الاعتيادي AED 10,000</div>
+        <div class="pr">AED 9,500</div>
+        <div class="grp">القاعة والضيوف</div>
+        <ul><li>المساعدة في اختيار القاعة وحجزها</li><li>دعوة رقمية (بطاقة إلكترونية)</li><li>RSVP إلكتروني (بسيط)</li></ul>
+        <div class="grp">التصميم والمفهوم</div>
+        <ul><li>مفهوم التصميم · حتى 3 تعديلات</li><li>مخطط القاعة (CAD وCanva)</li><li>مخطط جلوس ثنائي الأبعاد</li></ul>
+        <div class="grp">المورّدون</div>
+        <ul><li>اختيار المورّدين من قاعدتنا<span class="sub2">بالأسعار الخاصة التي يمنحها المورّدون لنا كوكالة.</span></li><li>إدارة ومفاوضة كاملة<span class="sub2">نتفاوض وندير المورّدين بالكامل، مورّدينا ومورّديكم الخارجيين.</span></li></ul>
+        <div class="grp">الجدول الزمني</div>
+        <ul><li>التجهيز · تجهيز العروس · المراسم · الحفل</li></ul>
+        <div class="grp">يوم العرس</div>
+        <ul><li>منسّقون: <b>حتى 8 ساعات</b></li><li>منسّق التجهيز</li><li>منسّق برنامج العرس</li></ul>
+        <div class="grp">الأنظمة</div>
+        <ul><li>بوابة التخطيط الإلكترونية</li></ul>
+      </div>
+      <div class="pc">
+        <div class="nm">Luxury Planning</div><div class="ro">تخطيط متكامل</div>
+        <div class="was">السعر الاعتيادي AED 18,000</div>
+        <div class="pr">AED 17,100</div>
+        <div class="grp">القاعة والضيوف</div>
+        <ul><li>المساعدة في اختيار القاعة وحجزها</li><li>دعوة رقمية (بطاقة إلكترونية)</li><li>RSVP إلكتروني متقدّم</li></ul>
+        <div class="grp">التصميم والمفهوم</div>
+        <ul><li>المفهوم · حتى 5 تعديلات</li><li>مخطط القاعة (CAD وCanva) · عرض ثنائي الأبعاد</li><li>مجسّم ثلاثي الأبعاد كامل للقاعة</li></ul>
+        <div class="grp">المورّدون</div>
+        <ul><li>اختيار المورّدين من قاعدتنا<span class="sub2">بالأسعار الخاصة التي يمنحها المورّدون لنا كوكالة.</span></li><li>إدارة ومفاوضة كاملة<span class="sub2">نتفاوض وندير المورّدين بالكامل، مورّدينا ومورّديكم الخارجيين.</span></li><li>سداد المورّدين عبر Olga Events<span class="sub2">تحوّلون لنا المبلغ حسب الفاتورة، ونسدّد نحن لجميع المورّدين.</span></li></ul>
+        <div class="grp">الجدول الزمني</div>
+        <ul><li>التجهيز · تجهيز العروس · المراسم · الحفل</li></ul>
+        <div class="grp">يوم العرس</div>
+        <ul><li>فريق بنظام النوبات، <b>حتى 8 ساعات</b></li><li>تنسيق التجهيز</li><li>منسّق الحفل</li><li>منسّق المراسم</li><li>منسّق الترفيه</li><li>مساعِدة العروس</li><li>مضيّفتان (استقبال الضيوف)</li></ul>
+        <div class="grp">التواصل والأنظمة</div>
+        <ul><li>محادثة الفريق · بوابة إلكترونية</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kick">المسار B · باقات الديكور</div>
+    <h2>باقات الديكور، كل ما يلزم لعرس جميل</h2>
+    <p class="lead">كل باقة تشمل كل ما يلزم لعرس جميل بصيغة قياسية، وعناصر الديكور الأساسية مجمّعة في حلّ واحد بسعر واضح. الأسعار معروضة لـ100 ضيف: حرّكوا الشريط حسب عدد الضيوف وسيُعاد حساب السعر. يتغيّر بعدد الكراسي وتنسيق الطاولات في الباقة المختارة. الزهور مشمولة، ويُنسّق الديكور بشكل منفصل عن باقة التخطيط.</p>
+    <div class="guestrow"><label>الضيوف</label><input type="range" id="cg" min="100" max="600" step="10" value="100"><input type="number" id="cgn" min="100" step="10" value="100"></div>
+    <span class="ghint">حرّكوا الشريط لمقارنة أسعار الباقات حسب عدد الضيوف.</span>
+    <div class="cols">
+      <div class="pc">
+        <div class="nm">Bloom</div><div class="ro">ديكور · المستوى 1</div>
+        <div class="was">السعر الاعتيادي <span data-was="soiree">AED 47,000</span></div>
+        <div class="pr"><span data-price="soiree">AED 39,050</span></div>
+        <div class="perg">طاولة إضافية لـ10 ضيوف: <b>+ AED 850</b> (10 كراسٍ + قطعة مركزية Standard)</div>
+        <div class="grp">المنصة والإنشاءات</div>
+        <ul><li>حلبة رقص 5×5 م</li><li>منصة 5 م، مع درجة</li><li>خلفية (أقواس من مجموعتنا)</li></ul>
+        <div class="grp">الطاولات والضيوف</div>
+        <ul><li><span class="d-cp">10</span> قطع مركزية Standard، زهور طبيعية</li><li><span class="d-ch">100</span> كرسي VIP</li></ul>
+        <div class="grp">التنسيق والتجهيز</div>
+        <ul><li>تنسيق منطقة المدخل</li><li>تنسيق القاعة بالزهور الصناعية (المدخل، القوس، اللمسات)</li><li>نظام إضاءة</li></ul>
+      </div>
+      <div class="pc win">
+        <div class="badge">الأكثر اختياراً</div>
+        <div class="nm">Signature</div><div class="ro">ديكور · المستوى 2</div>
+        <div class="was">السعر الاعتيادي <span data-was="signature">AED 57,000</span></div>
+        <div class="pr"><span data-price="signature">AED 46,930</span></div>
+        <div class="perg">طاولة إضافية لـ10 ضيوف: <b>+ AED 1,300</b> (10 كراسٍ + قطعة مركزية Premium)</div>
+        <div class="grp">المنصة والإنشاءات</div>
+        <ul><li>حلبة رقص 6×6 م</li><li>منصة 8 م، مع درجة</li><li>خلفية بعرض المنصة بالكامل</li></ul>
+        <div class="grp">الطاولات والضيوف</div>
+        <ul><li><span class="d-cp">10</span> قطع مركزية Premium، زهور طبيعية (وافرة)</li><li><span class="d-ch">100</span> كرسي VIP</li></ul>
+        <div class="grp">التنسيق والتجهيز</div>
+        <ul><li>تنسيق منطقة المدخل</li><li>تنسيق القاعة بالزهور الصناعية (المدخل، القوس، اللمسات)</li><li>نظام إضاءة</li></ul>
+      </div>
+      <div class="pc">
+        <div class="nm">Elegance</div><div class="ro">ديكور · المستوى 3</div>
+        <div class="was">السعر الاعتيادي <span data-was="atelier">AED 80,000</span></div>
+        <div class="pr"><span data-price="atelier">AED 66,000</span></div>
+        <div class="perg">طاولة إضافية لـ10 ضيوف: <b>+ AED 2,000</b> (10 كراسٍ + قطعة مركزية Exclusive)</div>
+        <div class="grp">المنصة والإنشاءات</div>
+        <ul><li>حلبة رقص 6×6 م</li><li>منصة 13 م، مع درجة</li><li>ممشى (catwalk) ~10 م</li><li>خلفية بالعرض الكامل</li></ul>
+        <div class="grp">الطاولات والضيوف</div>
+        <ul><li><span class="d-cp">10</span> قطع مركزية Exclusive، زهور طبيعية (كبيرة، فاخرة)</li><li><span class="d-ch">100</span> كرسي VIP · 4 طاولات VIP</li><li>4 أطقم لاونج (أرائك)</li><li>زهور لطاولات الكوكتيل</li></ul>
+        <div class="grp">التنسيق والتجهيز</div>
+        <ul><li>تنسيق منطقة المدخل</li><li>تنسيق القاعة بالزهور الصناعية (المدخل، القوس، اللمسات)</li><li>نظام إضاءة</li></ul>
+      </div>
+    </div>
+    <p style="max-width:820px;margin-top:22px;font-size:14px;color:#3a3833">تختلف الباقات بـ<b>مستوى التنسيق</b>، ومن ثمّ بالسعر. <b>Bloom</b>، أساس أنيق: قطع مركزية صغيرة، اختيار أساسي من الزهور والشموع. <b>Signature</b>، درجة أعلى: تنسيقات متوسطة الحجم، زهور وشموع أكثر، وحاملات شموع أكثر تميّزاً. <b>Elegance</b>، المستوى الفاخر: تنسيقات كبيرة فخمة، زهور فاخرة وثريات كريستالية. كلما ارتفعت الباقة، أصبحت المنصة والخلفية والزهور أغنى، ومن هنا فرق السعر.</p>
+    <div style="background:var(--cream);border:1px solid var(--line);border-right:3px solid var(--gold);border-radius:12px;padding:18px 20px;margin-top:22px;max-width:780px">
+      <p style="font-size:14px"><b>كل باقة مجموعة جاهزة بكل ما يلزم لعرس جميل:</b> منصة، حلبة رقص، خلفية، قطع مركزية بزهور طبيعية، تنسيق القاعة بالزهور الصناعية، كراسي VIP، تنسيق المدخل، إضاءة. نقطة انطلاق مريحة بسعر واضح.</p>
+      <p style="font-size:13.5px;margin-top:10px;color:#3a3833">العناصر الإضافية تبقى اختيارية، فكل قاعة وكل عرس مختلف. وقد تكون:</p>
+      <ul class="blist sm">
+        <li>تنسيق الأدراج؛</li>
+        <li>تنسيق منطقة المدخل؛</li>
+        <li>تغطية الأرضية؛</li>
+        <li>تغطية الجدران؛</li>
+        <li>إنشاءات سقفية؛</li>
+        <li>تركيبات معلّقة؛</li>
+        <li>مناطق تصوير؛</li>
+        <li>إنشاءات حسب الطلب.</li>
+      </ul>
+      <p style="font-size:13.5px;margin-top:10px;color:#3a3833">كثير من الثنائيات لا يحتاجون هذه العناصر. لذا نُبقي أساس الباقة بسيطاً ولا نجبركم على الدفع مقابل ما قد لا تستخدمونه، بل نترك كل عرس ينمو حسب أسلوبكم وأولوياتكم وميزانيتكم. وإن أردتم <b>نهجاً مخصّصاً بالكامل</b>، فمن المريح البدء بـ<b>ميزانية مفتوحة</b>: تأخذون التخطيط وتملؤون الديكور بما تحتاجونه تماماً.</p>
+      <p style="font-size:12.5px;margin-top:14px;color:var(--gold);font-weight:600;letter-spacing:.5px;text-transform:uppercase">الديكور المخصّص، كيف يعمل</p>
+      <div style="margin-top:8px">
+        <div style="display:flex;gap:8px;margin-top:7px"><span style="color:var(--gold);font-weight:700">·</span><span style="font-size:12.5px;color:#3a3833"><b>حد أدنى للطلب من AED 47,000.</b> يغطّي الخدمات اللوجستية والتحضير.</span></div>
+        <div style="display:flex;gap:8px;margin-top:6px"><span style="color:var(--gold);font-weight:700">·</span><span style="font-size:12.5px;color:#3a3833"><b>يعتمد على عدد الضيوف.</b> كلما زاد الضيوف، ارتفع الحد الأدنى (انظروا الشريط أعلاه).</span></div>
+        <div style="display:flex;gap:8px;margin-top:6px"><span style="color:var(--gold);font-weight:700">·</span><span style="font-size:12.5px;color:#3a3833"><b>الديكور على ذوقكم.</b> ضمن المبلغ يمكن إزالة أو استبدال أشياء: زهور أكثر بدل حلبة الرقص؛ ممشى أو قوس بدل منصة كبيرة.</span></div>
+        <div style="display:flex;gap:8px;margin-top:6px"><span style="color:var(--gold);font-weight:700">·</span><span style="font-size:12.5px;color:#3a3833"><b>حدود معقولة.</b> كل شيء محسوب على تكاليفنا، لذا نتّفق على التركيبة مع منظّمكم: ننصح بما يمكن إدخاله فعلاً وأين يلزم مبلغ إضافي.</span></div>
+      </div>
+    </div>
+    <div class="notesgrid">
+      <div class="ni"><span class="lbl">الزهور</span>القطع المركزية، <b>زهور طبيعية</b>. وبقية التنسيق، زهور صناعية عالية الجودة.</div>
+      <div class="ni"><span class="lbl">الزهور حسب شكل الطاولة</span>دائرية / مستطيلة / على شكل S، تُحسب بشكل فردي.</div>
+      <div class="ni"><span class="lbl">الشموع</span>الشموع الحية في أسطوانات زجاجية عالية <b>جزء من الباقة</b>: الماء بداخلها يجعل اللهب آمناً، لذا تناسب الأماكن الخارجية والداخلية حيث يُسمح باللهب المكشوف. نضعها في القطع المركزية وعلى الأرض وعلى حوامل حول الديكور؛ وإن لم يُسمح باللهب نستخدم شموعاً إلكترونية أنيقة. <b>شموع شمعية طبيعية، اختياري وبتكلفة إضافية:</b> شمع فاخر فقط دون قطرات على الأقمشة أو الحوامل، ونختار اللون والكمية بشكل فردي.</div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div class="ni"><span class="lbl">لماذا سعران</span>الرقم في الأعلى، السعر الاعتيادي للديكور وحده. الرقم الكبير، السعر الخاص عند حجز الديكور <b>مع التخطيط</b>. الفرق بينهما هو توفيركم.</div>
+        <div class="ni"><span class="lbl">السعر وعدد الضيوف</span>السعر معروض لـ<b>100 ضيف</b>. ومع كل طاولة إضافية لـ10 ضيوف يرتفع بمبلغ ثابت (كراسٍ جديدة وقطعة مركزية لتلك الطاولة). يعيد الشريط حساب الإجمالي تلقائياً.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kick">حسابكم</div>
+    <h2>احسبوا عرضكم في دقيقة</h2>
+    <p class="lead">اختاروا التخطيط والديكور وعدد الضيوف لرؤية الإجمالي. ضريبة القيمة المضافة والنقل والخدمات اللوجستية غير مشمولة وتُحتسب بشكل منفصل.</p>
+    <div class="quotebox">
+      <div class="qrow"><label>التخطيط</label>
+        <select id="qplan"><option value="6650" data-std="7000">Essential، AED 6,650</option><option value="9500" data-std="10000" selected>Classic، AED 9,500</option><option value="17100" data-std="18000">Luxury، AED 17,100</option></select></div>
+      <div class="qrow"><label>باقة الديكور</label>
+        <select id="qdec"><option value="soiree">Bloom، من AED 39,050</option><option value="signature" selected>Signature، من AED 46,930</option><option value="atelier">Elegance، من AED 66,000</option></select></div>
+      <div class="qrow"><label>الضيوف</label>
+        <input type="range" id="qg" min="100" max="600" step="10" value="100"><input type="number" id="qgn" min="100" step="10" value="100" style="max-width:92px;flex:0 0 auto"></div>
+      <div class="qsum">
+        <div class="ql"><span>التخطيط</span><span id="q-plan">—</span></div>
+        <div class="ql"><span id="q-decname">الديكور</span><span id="q-dec">—</span></div>
+        <div class="qtot"><span class="l">الإجمالي معاً</span><span class="v" id="q-total">—</span></div>
+        <div class="qsave2"><span style="color:var(--gold)">★</span> بحجز الباقتين معاً توفّرون <b id="q-save">—</b></div>
+        <div class="qincl">ضريبة القيمة المضافة والنقل والخدمات اللوجستية غير مشمولة وتُحتسب بشكل منفصل.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kick">اختياري · حسب الميزانية</div>
+    <h2>ديكور وخدمات إضافية</h2>
+    <p class="lead">تشمل الباقات كل ما يلزم لعرس جميل. وإن رغبتم بالمزيد، نضيفه حسب ميزانيتكم. التكلفة تُناقش بشكل منفصل عند الطلب، فقط إذا كنتم تحتاجونها فعلاً.</p>
+    <div class="cols">
+      <div class="pc">
+        <div class="grp">الإنشاءات والإنتاج</div>
+        <ul>
+          <li>تغطية الأرضية</li><li>تغطية الجدران</li><li>ديكور السقف</li>
+          <li>هياكل تراس</li><li>توسعة المنصة / الممشى / حلبة الرقص</li>
+          <li>بار</li><li>عناصر أكريليك ومرايا</li>
+        </ul>
+      </div>
+      <div class="pc">
+        <div class="grp">الإضاءة والمؤثرات</div>
+        <ul>
+          <li>إضاءة إضافية / تراس</li><li>ثريات وحوامل</li>
+          <li>ضباب خفيف</li><li>شرارات باردة</li>
+          <li>CO₂ / كونفيتي</li><li>بوث تصوير</li><li>إضاءة LED معلّقة</li>
+        </ul>
+      </div>
+      <div class="pc">
+        <div class="grp">الزهور والتنسيق</div>
+        <ul>
+          <li>ثريات زهرية وتركيبات معلّقة</li><li>قوس زهري · ديكور المدخل · ممر المراسم</li>
+          <li>زهور طبيعية فاخرة</li><li>تنسيق طاولة الكيك</li>
+          <li>كراسٍ فاخرة · أطباق تقديم · أقمشة</li><li>لوحة ترحيب · أرقام طاولات · طباعة</li>
+          <li>مناطق لاونج إضافية</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note" style="font-size:12.5px;color:var(--muted);margin-top:14px">نقدّم ما يحتاجه العرس القياسي. وكل ما يزيد عن ذلك حسب رغبتكم وميزانيتكم؛ والأسعار تُناقش بشكل فردي.</p>
+  </section>
+
+  <section class="slide">
+    <div class="kick">كيف يتكوّن السعر</div>
+    <h2>بشفافية</h2>
+    <div class="addsum">
+      <div class="row"><span>التخطيط</span><span class="pl">+</span><span>باقة الديكور</span><span class="pl">+</span><span>عدد الضيوف</span><span class="pl">+</span><span>إضافات اختيارية</span></div>
+      <p>باقة التخطيط هي عمل الفريق وراحة بالكم. وباقة الديكور هي كل ما يراه الضيوف ويشعرون به. أي إضافات اختيارية: نعرض مسبقاً 2-3 خيارات بأسعار مختلفة، تختارون الأكثر إعجاباً لكم (وغالباً يمكنكم التوفير)، وإن لزم نُعدّ حلاً يناسب ميزانيتكم تماماً. ونؤكّد دائماً التكلفة النهائية معكم قبل بدء أي عمل.</p>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kick">الشفافية · التوقيت والتحضير</div>
+    <h2>كيف نعمل ولماذا الحجز المبكر مهم</h2>
+    <p class="lead">نريد أن نكون صريحين تماماً معكم لتفهموا كيف يُنظَّم عملنا وتثقوا بنا براحة.</p>
+    <p style="margin-top:16px"><b>ما يدخل في الباقات جاهز لدينا.</b> هذه العناصر موجودة في مجموعتنا بتصاميم مدروسة وأسعار واضحة. هذه المجموعة القياسية نجهّزها بثقة وفي الموعد تماماً، دون انتظار.</p>
+    <p style="margin-top:12px"><b>كل ما هو إضافي يُصمَّم لعرسكم.</b> تغطية الأرضية والجدران، المظلّات والإنشاءات السقفية، التركيبات المعلّقة، مناطق التصوير والحوامل، كل عنصر منها نخطّطه ونحسبه على حدة: حسب قاعتكم وأبعادها ومناطقها وثيمتها.</p>
+    <p style="margin-top:12px"><b>لماذا يحتاج الديكور الإضافي وقتاً.</b> لنحدّد لكم سعراً دقيقاً قد نحتاج إلى:</p>
+    <ul class="blist">
+      <li>معاينة القاعة؛</li>
+      <li>مناقشة المشروع مع المصممين؛</li>
+      <li>حساب الزهور والمواد؛</li>
+      <li>التنسيق مع فريق الإنتاج؛</li>
+      <li>التحقق من مخزوننا؛</li>
+      <li>طلب عناصر زخرفية من الخارج؛</li>
+      <li>تصنيع قطع حسب الطلب من الأكريليك والفوم والزجاج؛</li>
+      <li>الاستعانة بمورّدين متخصّصين ومصانع؛</li>
+      <li>إجراء اختبارات عند الحاجة.</li>
+    </ul>
+    <p style="margin-top:10px">والإنتاج نفسه كثيراً ما يستغرق أشهراً.</p>
+    <p style="margin-top:12px"><b>لدينا مخزوننا الخاص</b>، لكنه يحتاج باستمرار إلى:</p>
+    <ul class="blist">
+      <li>طلاء؛</li>
+      <li>ترميم؛</li>
+      <li>تحسينات؛</li>
+      <li>تكييف مع كل عرس.</li>
+    </ul>
+    <p style="margin-top:10px">الأعراس الفاخرة لا تُجهّز في أمسية واحدة.</p>
+    <div style="display:flex;gap:12px;margin-top:18px;flex-wrap:wrap">
+      <div class="fstep" style="flex:1;min-width:180px"><div class="n">20-60 يوماً</div><div class="t">اختيار القاعة</div><div class="d">معاينة، خيارات، حجز التاريخ</div></div>
+      <div class="fstep" style="flex:1;min-width:180px"><div class="n">30-90 يوماً</div><div class="t">التصميم</div><div class="d">مفهوم، رسومات، موافقة</div></div>
+      <div class="fstep" style="flex:1;min-width:180px"><div class="n">20-60 يوماً</div><div class="t">اختيار المورّدين</div><div class="d">طلبات، تفاوض، تأكيدات</div></div>
+      <div class="fstep" style="flex:1;min-width:180px"><div class="n">3-6 أشهر</div><div class="t">الإنتاج</div><div class="d">توريد، تصنيع، طلاء، تركيب</div></div>
+    </div>
+    <p style="margin-top:18px"><b>لماذا 12 شهراً هي المدة المثالية.</b> هذا القدر من الوقت يتيح:</p>
+    <ul class="blist">
+      <li>للعروسين أن يعيشوا ويعملوا بهدوء دون ضغط؛</li>
+      <li>للمصممين ابتكار مفاهيم جميلة؛</li>
+      <li>لفريق الإنتاج التحضير كما يجب؛</li>
+      <li>للجميع اتخاذ أفضل القرارات.</li>
+    </ul>
+    <p style="margin-top:12px">وماذا لو كان الوقت أقل؟ ستة أشهر، ثلاثة، وأحياناً شهران، هذا طبيعي تماماً، ونتولّاه بكل سرور 🙂 ببساطة نكيّف سرعتنا وكامل العملية مع مدّتكم، وننجز كل شيء بجمال وفي الوقت.</p>
+    <p style="margin-top:12px">ولماذا نحبّ "مبكراً" مع ذلك: من خبرتنا، عندما يكون الوقت أوفر يستمتع الثنائي بالتحضير حقاً، وتقلّ مخاوف العروس وتوترها، ويصبح لدينا وقت لا للتخطيط فحسب بل أيضاً للاعتناء بمزاجكم وراحة بالكم، فهذا جزء من عملنا أيضاً. لكن مهما كانت المدّة، عاماً أو شهرين، نحن بجانبكم منذ اليوم الأول ونصل بكل شيء إلى النتيجة.</p>
+  </section>
+
+  <section class="slide">
+    <div class="kick">إن أردتموه بشكل مختلف</div>
+    <h2>مخصّص لكم بالكامل</h2>
+    <div class="quiet">
+      <p>الباقات نقطة انطلاق مريحة، لا إطار. إن أردتم بناء كل شيء من الصفر على ذوقكم، تأخذون باقة التخطيط وندير المشروع بهدوء حسب ميزانيتكم، مع إظهار تكلفة كل عنصر بوضوح. دون ضغط، وعلى إيقاعكم.</p>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="kick">الخطوة التالية</div>
+    <h2>لنبدأ باستشارة</h2>
+    <p style="margin:14px auto 0">كل عرس لدينا مصمّم خصيصاً، لذا نبدأ بالأهم: التعرّف عليكم وفهم رؤيتكم ورغباتكم. أخبرونا بما يهمّكم، وسنعدّ لكم عرضاً خاصاً بكم. دون أي التزام.</p>
+    <div class="pill">التخطيط + الديكور معاً، الديكور بسعر أفضل · عربون 50% يحجز · نحتفظ بالتاريخ 7 أيام</div>
+    <div class="fineprint">الأسعار لا تشمل ضريبة القيمة المضافة والنقل والخدمات اللوجستية، وتُحتسب بشكل منفصل. أسعار الديكور معروضة لـ100 ضيف وتزداد مع عددهم. Olga Events · hello@olga.events</div>
+  </section>
+
+<script>
+(function(){
+  var P={soiree:{base:39050,std:47000,cp:350},signature:{base:46930,std:57000,cp:800},atelier:{base:66000,std:80000,cp:1500}};
+  var f=function(n){return Math.round(n).toLocaleString('en-US');};
+  var g=document.getElementById('cg'),gn=document.getElementById('cgn');
+  function calc(){
+    var guests=Math.max(100,+gn.value||100);
+    var extraG=Math.max(0,guests-100), extraT=Math.max(0,Math.ceil(guests/10)-10);
+    var tables=Math.ceil(guests/10);
+    document.querySelectorAll('.d-cp').forEach(function(e){e.textContent=tables;});
+    document.querySelectorAll('.d-ch').forEach(function(e){e.textContent=guests;});
+    for(var k in P){
+      var add=extraG*50+extraT*P[k].cp;
+      var bundle=P[k].base+add, standard=Math.round(bundle*P[k].std/P[k].base);
+      var el=document.querySelector('[data-price="'+k+'"]');
+      if(el) el.textContent='AED '+f(bundle);
+      var ws=document.querySelector('[data-was="'+k+'"]');
+      if(ws) ws.textContent='AED '+f(standard);
+    }
+  }
+  g.addEventListener('input',function(){gn.value=g.value;calc();});
+  gn.addEventListener('input',function(){g.value=Math.min(600,Math.max(100,+gn.value||100));calc();});
+  calc();
+})();
+(function(){
+  var P={soiree:{base:39050,std:47000,cp:350},signature:{base:46930,std:57000,cp:800},atelier:{base:66000,std:80000,cp:1500}};
+  var NM={soiree:'Bloom',signature:'Signature',atelier:'Elegance'};
+  var f=function(n){return Math.round(n).toLocaleString('en-US');};
+  var qp=document.getElementById('qplan'),qd=document.getElementById('qdec'),qg=document.getElementById('qg'),qgn=document.getElementById('qgn');
+  function q(){
+    var plan=+qp.value, planStd=+qp.selectedOptions[0].dataset.std, k=qd.value, guests=Math.max(100,+qgn.value||100);
+    var eg=Math.max(0,guests-100), et=Math.max(0,Math.ceil(guests/10)-10), add=eg*50+et*P[k].cp;
+    var decor=P[k].base+add, standard=Math.round(decor*P[k].std/P[k].base), save=(standard-decor)+(planStd-plan), total=plan+decor;
+    document.getElementById('q-plan').textContent='AED '+f(plan);
+    document.getElementById('q-decname').textContent='الديكور، '+NM[k]+' · '+guests+' ضيف';
+    document.getElementById('q-dec').textContent='AED '+f(decor);
+    document.getElementById('q-total').textContent='AED '+f(total);
+    document.getElementById('q-save').textContent='AED '+f(save);
+  }
+  qp.onchange=q; qd.onchange=q;
+  qg.addEventListener('input',function(){qgn.value=qg.value;q();});
+  qgn.addEventListener('input',function(){qg.value=Math.min(600,Math.max(100,+qgn.value||100));q();});
+  q();
+})();
+</script>
+</body>
+</html>
