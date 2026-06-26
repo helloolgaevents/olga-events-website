@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Olga Events — Forfaits de mariage</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--green:#5E7D46;--green-d:#4a6337;--dark:#1a1a18;--ivory:#f5f3ef;--cream:#faf8f5;--beige:#efe8da;--gold:#b89b6e;--line:#e8e4dc;--muted:#857f73}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--ivory);color:var(--dark);font-family:'DM Sans','Inter',system-ui,sans-serif;font-weight:400;line-height:1.6}
+  .num{font-family:'DM Sans',sans-serif}
+  .slide{max-width:1000px;margin:0 auto;padding:56px 40px;border-bottom:1px solid var(--line)}
+  .kick{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:12px}
+  h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:54px;line-height:1.08}
+  h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:36px;line-height:1.15;margin-bottom:8px}
+  h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:25px}
+  p{font-size:16px;color:#3a3833;max-width:680px}
+  p.lead{font-size:18px;color:var(--muted)}
+  .cover{text-align:center;padding:88px 40px}
+  .cover h1{font-size:60px;color:var(--green)}
+  .cover .sub{font-size:13px;letter-spacing:5px;text-transform:uppercase;color:var(--muted);margin-top:18px}
+  .cover .ln{width:60px;height:1px;background:var(--gold);margin:24px auto}
+  .flow{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
+  .fstep{flex:1;min-width:150px;background:var(--cream);border:1px solid var(--line);border-radius:13px;padding:16px 18px}
+  .fstep .n{font-family:'DM Sans',sans-serif;font-weight:600;font-size:24px;color:var(--gold)}
+  .fstep .t{font-weight:500;font-size:15px;margin:4px 0 3px}
+  .fstep .d{font-size:12.5px;color:var(--muted)}
+  .blist{margin:8px 0 0 18px;padding:0}
+  .blist li{font-size:13.5px;color:#3a3833;margin-top:5px;line-height:1.5}
+  .blist.sm li{font-size:12.5px}
+  .paths{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
+  @media(max-width:760px){.paths{grid-template-columns:1fr}}
+  .path{border:1.5px solid var(--line);border-radius:16px;padding:22px;background:var(--cream)}
+  .path .pk{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:500}
+  .path h3{margin:6px 0 8px}.path p{font-size:14.5px}
+  .path .for{font-size:13px;color:var(--muted);margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
+  .cols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:24px}
+  @media(max-width:840px){.cols{grid-template-columns:1fr}}
+  .pc{border:1px solid var(--line);border-radius:16px;padding:22px;background:var(--cream);display:flex;flex-direction:column}
+  .pc.win{border:1.5px solid var(--green);box-shadow:0 10px 30px rgba(94,125,70,.12);position:relative}
+  .pc .badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--green);color:#fff;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;padding:4px 13px;border-radius:20px;white-space:nowrap}
+  .pc .nm{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:500}
+  .pc .ro{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin:2px 0 10px}
+  .pc .was{font-size:14px;color:var(--muted);text-decoration:line-through;text-decoration-color:var(--gold)}
+  .pc .pr{font-family:'DM Sans',sans-serif;font-size:27px;color:var(--green-d);font-weight:600;line-height:1}
+  .pc .perg{font-size:12.5px;color:var(--green-d);background:#eef3e6;border-radius:8px;padding:6px 10px;margin-top:10px}
+  .guestrow{display:inline-flex;align-items:center;gap:12px;background:var(--cream);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin-top:14px;flex-wrap:wrap}
+  .guestrow label{font-size:12.5px;font-weight:500;color:var(--muted)}
+  .guestrow input[type=range]{width:170px;accent-color:var(--green)}
+  .guestrow input[type=number]{width:84px;font-family:'DM Sans',sans-serif;font-size:16px;font-weight:600;color:var(--green-d);text-align:center;padding:6px 8px;border:1.5px solid var(--line);border-radius:9px;background:#fff}
+  .ghint{font-size:11.5px;color:var(--muted);margin-left:12px;font-style:italic}
+  .quotebox{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px 26px;margin-top:20px;max-width:660px}
+  .qrow{display:flex;align-items:center;gap:14px;margin-bottom:12px;flex-wrap:wrap}
+  .qrow>label{font-size:13px;font-weight:500;color:var(--muted);width:130px}
+  .qrow select,.qrow input[type=number]{font-family:'DM Sans',sans-serif;padding:9px 11px;border:1.5px solid var(--line);border-radius:9px;font-size:14px;background:#fff;flex:1;min-width:130px}
+  .qrow input[type=range]{flex:1;min-width:130px;accent-color:var(--green)}
+  .qsum{border-top:1px solid var(--line);margin-top:16px;padding-top:14px}
+  .qsum .ql{display:flex;justify-content:space-between;font-size:14px;padding:5px 0;color:#3a3833}
+  .qsum .ql span:last-child{font-family:'DM Sans',sans-serif;font-weight:500}
+  .qsum .qtot{display:flex;justify-content:space-between;align-items:baseline;margin-top:8px;padding-top:10px;border-top:2px solid var(--dark)}
+  .qsum .qtot .l{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
+  .qsum .qtot .v{font-family:'DM Sans',sans-serif;font-size:27px;font-weight:700;color:var(--green-d)}
+  .qsave2{background:#f3f6ee;border:1px solid #c7dcab;border-radius:10px;padding:10px 14px;margin-top:14px;font-size:13.5px;color:var(--green-d)}
+  .qsave2 b{font-family:'DM Sans',sans-serif;font-weight:700;font-size:16px;color:var(--green-d)}
+  .qincl{font-size:12px;color:var(--muted);margin-top:10px}
+  .notesgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px 24px;margin-top:18px}
+  @media(max-width:760px){.notesgrid{grid-template-columns:1fr}}
+  .notesgrid .ni{font-size:12.5px;color:#3a3833;line-height:1.5;border-left:2px solid var(--line);padding-left:12px}
+  .notesgrid .ni .lbl{display:block;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:3px}
+  .notesgrid .ni b{color:var(--green-d)}
+  .grp{font-size:10.5px;letter-spacing:.8px;text-transform:uppercase;color:var(--gold);margin:14px 0 4px;font-weight:500}
+  .pc ul{list-style:none;font-size:13px;color:#3a3833}
+  .pc li{padding:3px 0 3px 18px;position:relative;line-height:1.4}
+  .pc li:before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:600}
+  .pc li .sub2{display:block;color:var(--muted);font-size:11px;font-weight:400;line-height:1.35;margin-top:2px}
+  .addsum{background:var(--cream);border:1px solid var(--line);color:#3a3833;border-radius:16px;padding:28px 30px;margin-top:22px}
+  .addsum .row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--green-d)}
+  .addsum .row span{background:var(--beige);border-radius:10px;padding:8px 15px}
+  .addsum .row .pl{color:var(--gold);background:none;padding:0 2px}
+  .addsum p{color:var(--muted);margin-top:13px;max-width:700px}
+  .quiet{background:var(--cream);border:1px solid var(--line);border-radius:16px;padding:30px 32px;margin-top:8px}
+  .cta{text-align:center;background:var(--cream);padding:68px 40px}
+  .cta .pill{display:inline-block;margin-top:16px;border:1.5px solid var(--green);color:var(--green-d);border-radius:30px;padding:11px 24px;font-size:14px;font-weight:500}
+  .fineprint{font-size:12px;color:var(--muted);margin-top:14px;max-width:680px;margin-left:auto;margin-right:auto}
+  .langbar{position:sticky;top:0;z-index:40;background:#1a1a18;display:flex;justify-content:center;gap:8px;padding:10px;flex-wrap:wrap}
+  .langbar a{font-family:'Inter',sans-serif;font-size:13px;font-weight:500;letter-spacing:.5px;color:#cfc6b2;border:1px solid #3a3327;border-radius:8px;padding:6px 14px}
+  .langbar a.on{background:var(--gold);border-color:var(--gold);color:#1a1a18}
+</style>
+</head>
+<body>
+
+  <div class="langbar"><a href="packages-en.html">EN</a><a class="on" href="packages-fr.html">FR</a><a href="packages-ar.html">العربية</a><a href="packages-ru.html">RU</a></div>
+
+  <section class="cover">
+    <div class="kick">Olga Events · Dubai</div>
+    <h1>Forfaits de mariage</h1>
+    <div class="ln"></div>
+    <div class="sub">Organisation &amp; Décor de mariage · Tous les Émirats · EN / FR / AR / RU</div>
+  </section>
+
+  <section class="slide">
+    <div class="kick">À propos, en bref</div>
+    <h2>Posément, avec fiabilité, droit au but</h2>
+    <p class="lead">Une équipe expérimentée et attentive aux détails, au niveau des meilleurs organisateurs de Dubaï. Sans grands mots, nous faisons simplement notre travail et le menons jusqu'au résultat.</p>
+    <p style="margin-top:16px">Nous sommes particulièrement amoureux des fleurs. Un mariage naît chez nous des petites choses : un décor pensé, des fleurs fraîches, le juste rythme de la soirée. Nous ne faisons pas que styliser, nous menons et coordonnons toute la journée pour qu'elle soit chaleureuse, sincère et vraiment familiale.</p>
+    <p style="margin-top:14px">Une équipe clé en main est précieuse : sinon le planning, les invitations, les prestataires, le programme et les autorisations retombent sur le couple. Nous prenons cela en charge, pour que le jour J vous soyez des invités, non des organisateurs.</p>
+  </section>
+
+  <section class="slide">
+    <div class="kick">Comment ça marche</div>
+    <h2>Un parcours clair</h2>
+    <div class="flow">
+      <div class="fstep"><div class="n">01</div><div class="t">Consultation</div><div class="d">Vision, culture, invités, budget</div></div>
+      <div class="fstep"><div class="n">02</div><div class="t">Vous choisissez la voie</div><div class="d">Organisation « selon budget » ou forfait prêt</div></div>
+      <div class="fstep"><div class="n">03</div><div class="t">Design</div><div class="d">Concept, palette, fleurs, pour vous</div></div>
+      <div class="fstep"><div class="n">04</div><div class="t">Votre journée</div><div class="d">La coordination, c'est nous</div></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kick">Deux façons de commencer</div>
+    <h2>Comme il vous convient</h2>
+    <div class="paths">
+      <div class="path">
+        <div class="pk">Voie A · flexible</div>
+        <h3>Commencer par l'organisation</h3>
+        <p>Vous prenez un forfait d'organisation et, pas à pas, nous composons le mariage <b>selon votre budget</b>, en montrant ouvertement le coût de chaque élément. Chaque choix vous revient.</p>
+        <div class="for">Pratique si vous voulez tout choisir individuellement et garder le budget sous contrôle.</div>
+      </div>
+      <div class="path" style="border-color:var(--green);background:#f3f6ee">
+        <div class="pk">Voie B · prêt</div>
+        <h3>Un forfait décor prêt</h3>
+        <p>Trois forfaits décor complets à un <b>prix spécial</b>, l'essentiel déjà inclus, la fleuristerie comprise. Vous voyez le prix final tout de suite.</p>
+        <div class="for">Pratique si vous voulez une solution prête sans longue sélection.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kick">Comment réserver</div>
+    <h2>Deux façons de commencer, choisissez la vôtre</h2>
+    <p class="lead">Chez Olga Events, tout commence par l'organisation : c'est l'équipe qui mène votre mariage et répond de chaque instant. Le décor s'ajoute à l'organisation, et vous avez ici deux voies pratiques : prendre les deux forfaits ensemble pour le meilleur prix, ou commencer par l'organisation et ajouter le décor plus tard. C'est ainsi que nous organisons chaque projet, pour vous offrir la meilleure expérience et allouer les bonnes ressources. Ci-dessous, nous indiquons quelle voie vous convient le mieux.</p>
+    <div class="paths">
+      <div class="path" style="border-color:var(--green);background:#f3f6ee">
+        <div class="pk">Recommandé · meilleur prix</div>
+        <h3>Organisation + décor ensemble</h3>
+        <p style="font-size:14px">Vous prenez les deux forfaits ensemble et nous menons votre mariage comme <b>un seul projet</b> dès le premier jour. Pourquoi c'est le meilleur choix :</p>
+        <div style="margin-top:10px">
+          <div style="display:flex;gap:8px;margin-top:9px"><span style="color:var(--green);font-weight:700">1.</span><span style="font-size:13.5px"><b>Meilleur prix.</b> Le décor est à un tarif spécial, réduit, et vos économies augmentent avec le nombre d'invités.</span></div>
+          <div style="display:flex;gap:8px;margin-top:9px"><span style="color:var(--green);font-weight:700">2.</span><span style="font-size:13.5px"><b>Décision rapide.</b> En une étape, vous bouclez l'organisation et la décoration, réduisant le temps de préparation de 60 à 70 %. Précieux surtout si le mariage est proche.</span></div>
+          <div style="display:flex;gap:8px;margin-top:9px"><span style="color:var(--green);font-weight:700">3.</span><span style="font-size:13.5px"><b>Tranquillité totale.</b> Tout est réservé d'un coup, plus d'inquiétude sur les prestataires à temps ou les hausses de prix.</span></div>
+          <div style="display:flex;gap:8px;margin-top:9px"><span style="color:var(--green);font-weight:700">4.</span><span style="font-size:13.5px"><b>Une vision, une équipe.</b> Organisation et décor sont créés ensemble, un seul style, rien ne se perd entre les étapes.</span></div>
+          <div style="display:flex;gap:8px;margin-top:9px"><span style="color:var(--green);font-weight:700">5.</span><span style="font-size:13.5px"><b>Prix figé aujourd'hui.</b> Le décor au prix d'aujourd'hui, sans hausse saisonnière.</span></div>
+        </div>
+        <p style="margin-top:10px;font-size:13.5px">Paiement à la réservation : <b>50 % du total</b> (un début confortable sans prépaiement intégral).</p>
+        <p style="margin-top:8px;font-size:12.5px;color:var(--muted)">Le prix spécial du décor est notre remerciement pour nous confier à la fois l'organisation et la décoration. C'est pourquoi nous faisons un geste sur le prix.</p>
+        <p class="for">Idéal si le mariage est proche, ou si vous voulez tout régler en une étape, sereinement et au meilleur prix.</p>
+      </div>
+      <div class="path">
+        <div class="pk">Organisation seule · flexible</div>
+        <h3>Budget ouvert</h3>
+        <p style="font-size:14px">Vous commencez par le forfait d'organisation, le décor s'ajoute plus tard. En quoi cette voie est pratique :</p>
+        <div style="margin-top:10px">
+          <div style="display:flex;gap:8px;margin-top:9px"><span style="color:var(--gold);font-weight:700">1.</span><span style="font-size:13.5px"><b>Début serein.</b> Vous ne payez que l'organisation, sans grosse somme d'emblée.</span></div>
+          <div style="display:flex;gap:8px;margin-top:9px"><span style="color:var(--gold);font-weight:700">2.</span><span style="font-size:13.5px"><b>Souplesse budgétaire.</b> Nous choisissons le décor plus tard, selon votre budget final.</span></div>
+          <div style="display:flex;gap:8px;margin-top:9px"><span style="color:var(--gold);font-weight:700">3.</span><span style="font-size:13.5px"><b>Confiance progressive.</b> Vous voyez d'abord notre travail, puis vous élargissez la collaboration.</span></div>
+          <div style="display:flex;gap:8px;margin-top:9px"><span style="color:var(--gold);font-weight:700">4.</span><span style="font-size:13.5px"><b>Votre rythme.</b> Vous répartissez décisions et paiements dans le temps, sans précipitation.</span></div>
+        </div>
+        <p style="margin-top:10px;font-size:13.5px">Ici, prix normaux, sans remise : organisation à partir de <b>AED 7 000</b>, décor ajouté plus tard à partir de <b>AED 47 000</b> (augmente avec le nombre d'invités).</p>
+        <p style="margin-top:8px;font-size:12.5px;color:var(--muted)">La remise spéciale ne s'applique aux deux forfaits que s'ils sont réservés ensemble. Ici, vous avancez plus sereinement et plus souplement, mais l'organisation et le décor sont au prix normal.</p>
+        <div class="for"><b>Vous convient si :</b>
+          <div style="display:flex;gap:8px;margin-top:7px"><span style="color:var(--gold);font-weight:700">·</span><span>il reste du temps avant le mariage et vous voulez commencer en douceur ;</span></div>
+          <div style="display:flex;gap:8px;margin-top:6px"><span style="color:var(--gold);font-weight:700">·</span><span>vous avez déjà prévu le décor, ou le faites avec une autre société, mais avez besoin du soutien professionnel d'un organisateur et d'une équipe de coordination.</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="note" style="margin-top:16px">Les deux voies mènent au même mariage de vos rêves. S'il reste beaucoup de temps et que vous voulez avancer sereinement, commencez par l'organisation. Si le mariage est proche, ou si vous voulez le meilleur prix, un style unique et tout régler en une étape, <b>prenez les deux forfaits ensemble</b> : c'est plus rapide et plus avantageux.</p>
+  </section>
+
+  <section class="slide">
+    <div class="kick">Voie A · Forfaits d'organisation</div>
+    <h2>L'organisation, le fondement de votre mariage</h2>
+    <p class="lead">Un forfait d'organisation n'est pas un supplément, c'est le fondement de tout le mariage. Avant de commencer le design, il nous importe de comprendre votre célébration.</p>
+    <p style="margin-top:10px">Ce que nous comprenons à cette étape :</p>
+    <ul class="blist">
+      <li>l'ampleur de la célébration ;</li>
+      <li>le niveau de soutien nécessaire ;</li>
+      <li>le volume de coordination ;</li>
+      <li>la taille de l'équipe ;</li>
+      <li>les ressources et le temps à prévoir.</li>
+    </ul>
+    <p style="margin-top:12px">L'organisation nous permet de :</p>
+    <ul class="blist">
+      <li>affecter la bonne équipe ;</li>
+      <li>réserver le temps et les ressources ;</li>
+      <li>organiser les prestataires et les plannings ;</li>
+      <li>vous accompagner tout au long du processus ;</li>
+      <li>vous libérer du stress et de l'incertitude.</li>
+    </ul>
+    <p style="margin-top:12px">Chaque couple est unique, c'est pourquoi nous proposons plusieurs options d'organisation pour différents budgets et niveaux de soutien.</p>
+    <div class="cols">
+      <div class="pc">
+        <div class="nm">Essential Planning</div><div class="ro">Début et coordination</div>
+        <div class="was">standard AED 7 000</div>
+        <div class="pr">AED 6 650</div>
+        <div class="grp">Bases de l'organisation</div>
+        <ul><li>Invitation numérique (eCard, image)</li><li>Concept design du mariage</li><li>Révisions du concept, jusqu'à 2</li></ul>
+        <div class="grp">Plan de salle</div>
+        <ul><li>Plan de salle de base (CAD &amp; Canva)</li></ul>
+        <div class="grp">Prestataires</div>
+        <ul><li>Gestion de vos prestataires externes<span class="sub2">Vous réservez les prestataires vous-même et nous remettez la liste ; nous les coordonnons et les gérons le jour du mariage.</span></li></ul>
+        <div class="grp">Horaires</div>
+        <ul><li>Montage · cérémonie · réception</li></ul>
+        <div class="grp">Jour du mariage</div>
+        <ul><li>Coordinateur : <b>jusqu'à 8 heures</b></li><li>1 coordinateur : montage, cérémonie, réception</li></ul>
+        <div class="grp">Systèmes</div>
+        <ul><li>Accès à l'espace de planification en ligne</li></ul>
+      </div>
+      <div class="pc">
+        <div class="nm">Classic Planning</div><div class="ro">Organisation partielle</div>
+        <div class="was">standard AED 10 000</div>
+        <div class="pr">AED 9 500</div>
+        <div class="grp">Lieu et invités</div>
+        <ul><li>Aide au choix et à la réservation du lieu</li><li>Invitation numérique (eCard)</li><li>RSVP en ligne (simple)</li></ul>
+        <div class="grp">Design et concept</div>
+        <ul><li>Concept design · jusqu'à 3 révisions</li><li>Plan de salle (CAD &amp; Canva)</li><li>Plan 2D (placement)</li></ul>
+        <div class="grp">Prestataires</div>
+        <ul><li>Sélection de prestataires dans notre base<span class="sub2">Aux tarifs spéciaux que les prestataires nous accordent en tant qu'agence.</span></li><li>Gestion et négociation complètes<span class="sub2">Nous négocions et gérons entièrement les prestataires, les nôtres et vos externes.</span></li></ul>
+        <div class="grp">Horaires</div>
+        <ul><li>Montage · préparation de la mariée · cérémonie · réception</li></ul>
+        <div class="grp">Jour du mariage</div>
+        <ul><li>Coordinateurs : <b>jusqu'à 8 heures</b></li><li>Coordinateur de montage</li><li>Coordinateur du programme</li></ul>
+        <div class="grp">Systèmes</div>
+        <ul><li>Espace de planification en ligne</li></ul>
+      </div>
+      <div class="pc">
+        <div class="nm">Luxury Planning</div><div class="ro">Organisation clé en main</div>
+        <div class="was">standard AED 18 000</div>
+        <div class="pr">AED 17 100</div>
+        <div class="grp">Lieu et invités</div>
+        <ul><li>Aide au choix et à la réservation du lieu</li><li>Invitation numérique (eCard)</li><li>RSVP en ligne avancé</li></ul>
+        <div class="grp">Design et concept</div>
+        <ul><li>Concept · jusqu'à 5 révisions</li><li>Plan de salle (CAD &amp; Canva) · aperçu 2D</li><li>Rendu 3D complet du lieu</li></ul>
+        <div class="grp">Prestataires</div>
+        <ul><li>Sélection de prestataires dans notre base<span class="sub2">Aux tarifs spéciaux que les prestataires nous accordent en tant qu'agence.</span></li><li>Gestion et négociation complètes<span class="sub2">Nous négocions et gérons entièrement les prestataires, les nôtres et vos externes.</span></li><li>Paiement des prestataires via Olga Events<span class="sub2">Vous nous transférez le montant facturé et nous réglons tous les prestataires.</span></li></ul>
+        <div class="grp">Horaires</div>
+        <ul><li>Montage · préparation de la mariée · cérémonie · réception</li></ul>
+        <div class="grp">Jour du mariage</div>
+        <ul><li>L'équipe travaille par roulement, <b>jusqu'à 8 heures</b></li><li>Coordination du montage</li><li>Coordinateur de réception</li><li>Coordinateur de cérémonie</li><li>Coordinateur des animations</li><li>Assistante de la mariée</li><li>2 hôtesses (accueil des invités)</li></ul>
+        <div class="grp">Communication et systèmes</div>
+        <ul><li>Chat d'équipe · espace en ligne</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kick">Voie B · Forfaits décor</div>
+    <h2>Forfaits décor, tout le nécessaire pour un beau mariage</h2>
+    <p class="lead">Chaque forfait comprend tout le nécessaire pour un beau mariage dans un format standard ; les éléments de décoration essentiels sont réunis en une solution au prix clair. Les prix sont indiqués pour 100 invités : déplacez le curseur selon le nombre d'invités et le prix se recalcule. Il varie selon le nombre de chaises et la décoration des tables du forfait choisi. La fleuristerie est comprise ; le décor est organisé séparément du forfait d'organisation.</p>
+    <div class="guestrow"><label>Invités</label><input type="range" id="cg" min="100" max="600" step="10" value="100"><input type="number" id="cgn" min="100" step="10" value="100"></div>
+    <span class="ghint">Déplacez le curseur pour comparer les prix des forfaits selon le nombre d'invités.</span>
+    <div class="cols">
+      <div class="pc">
+        <div class="nm">Bloom</div><div class="ro">Décor · niveau 1</div>
+        <div class="was">standard <span data-was="soiree">AED 47 000</span></div>
+        <div class="pr"><span data-price="soiree">AED 39 050</span></div>
+        <div class="perg">Table supplémentaire pour 10 invités : <b>+ AED 850</b> (10 chaises + 1 pièce maîtresse Standard)</div>
+        <div class="grp">Scène et structures</div>
+        <ul><li>Piste de danse 5×5 m</li><li>Scène 5 m, avec marche</li><li>Backdrop (arches de la collection)</li></ul>
+        <div class="grp">Tables et invités</div>
+        <ul><li><span class="d-cp">10</span> pièces maîtresses Standard, fleurs fraîches</li><li><span class="d-ch">100</span> chaises VIP</li></ul>
+        <div class="grp">Décoration et installation</div>
+        <ul><li>Stylisme de la zone d'entrée</li><li>Décoration du lieu en fleurs artificielles (entrée, arche, accents)</li><li>Système d'éclairage</li></ul>
+      </div>
+      <div class="pc win">
+        <div class="badge">Le plus choisi</div>
+        <div class="nm">Signature</div><div class="ro">Décor · niveau 2</div>
+        <div class="was">standard <span data-was="signature">AED 57 000</span></div>
+        <div class="pr"><span data-price="signature">AED 46 930</span></div>
+        <div class="perg">Table supplémentaire pour 10 invités : <b>+ AED 1 300</b> (10 chaises + 1 pièce maîtresse Premium)</div>
+        <div class="grp">Scène et structures</div>
+        <ul><li>Piste de danse 6×6 m</li><li>Scène 8 m, avec marche</li><li>Backdrop sur toute la largeur de la scène</li></ul>
+        <div class="grp">Tables et invités</div>
+        <ul><li><span class="d-cp">10</span> pièces maîtresses Premium, fleurs fraîches (volumineuses)</li><li><span class="d-ch">100</span> chaises VIP</li></ul>
+        <div class="grp">Décoration et installation</div>
+        <ul><li>Stylisme de la zone d'entrée</li><li>Décoration du lieu en fleurs artificielles (entrée, arche, accents)</li><li>Système d'éclairage</li></ul>
+      </div>
+      <div class="pc">
+        <div class="nm">Elegance</div><div class="ro">Décor · niveau 3</div>
+        <div class="was">standard <span data-was="atelier">AED 80 000</span></div>
+        <div class="pr"><span data-price="atelier">AED 66 000</span></div>
+        <div class="perg">Table supplémentaire pour 10 invités : <b>+ AED 2 000</b> (10 chaises + 1 pièce maîtresse Exclusive)</div>
+        <div class="grp">Scène et structures</div>
+        <ul><li>Piste de danse 6×6 m</li><li>Scène 13 m, avec marche</li><li>Podium (catwalk) ~10 m</li><li>Backdrop sur toute la largeur</li></ul>
+        <div class="grp">Tables et invités</div>
+        <ul><li><span class="d-cp">10</span> pièces maîtresses Exclusive, fleurs fraîches (grandes, premium)</li><li><span class="d-ch">100</span> chaises VIP · 4 tables VIP</li><li>4 ensembles lounge (canapés)</li><li>Fleurs pour les tables cocktail</li></ul>
+        <div class="grp">Décoration et installation</div>
+        <ul><li>Stylisme de la zone d'entrée</li><li>Décoration du lieu en fleurs artificielles (entrée, arche, accents)</li><li>Système d'éclairage</li></ul>
+      </div>
+    </div>
+    <p style="max-width:820px;margin-top:22px;font-size:14px;color:#3a3833">Les forfaits diffèrent par le <b>niveau de décoration</b>, et donc par le prix. <b>Bloom</b>, une base soignée : pièces maîtresses compactes, choix de base de fleurs et de bougies. <b>Signature</b>, un cran au-dessus : compositions de taille moyenne, plus de fleurs et de bougies, des bougeoirs plus expressifs. <b>Elegance</b>, niveau premium : grandes compositions somptueuses, fleurs premium et candélabres en cristal. Plus le forfait est élevé, plus la scène, le backdrop et la fleuristerie sont riches, d'où la différence de prix.</p>
+    <div style="background:var(--cream);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:12px;padding:18px 20px;margin-top:22px;max-width:780px">
+      <p style="font-size:14px"><b>Chaque forfait est un ensemble prêt avec tout le nécessaire pour un beau mariage :</b> scène, piste de danse, backdrop, pièces maîtresses avec fleurs fraîches, décoration du lieu en fleurs artificielles, chaises VIP, stylisme de l'entrée, éclairage. Un point de départ pratique au prix clair.</p>
+      <p style="font-size:13.5px;margin-top:10px;color:#3a3833">Les éléments supplémentaires restent en option, car chaque lieu et chaque mariage sont différents. Cela peut être :</p>
+      <ul class="blist sm">
+        <li>décoration des escaliers ;</li>
+        <li>stylisme de la zone d'entrée ;</li>
+        <li>revêtement de sol ;</li>
+        <li>revêtement mural ;</li>
+        <li>structures de plafond ;</li>
+        <li>compositions suspendues ;</li>
+        <li>coins photo ;</li>
+        <li>structures sur mesure.</li>
+      </ul>
+      <p style="font-size:13.5px;margin-top:10px;color:#3a3833">Beaucoup de couples n'ont tout simplement pas besoin de ces éléments. Nous gardons donc la base du forfait simple et ne vous faisons pas payer ce que vous pourriez ne pas utiliser, en laissant chaque mariage grandir selon votre style, vos priorités et votre budget. Et si vous voulez une <b>approche entièrement personnalisée</b>, il est pratique de commencer par un <b>budget ouvert</b> : vous prenez l'organisation et remplissez le décor exactement de ce dont vous avez besoin.</p>
+      <p style="font-size:12.5px;margin-top:14px;color:var(--gold);font-weight:600;letter-spacing:.5px;text-transform:uppercase">Décor personnalisé, comment ça marche</p>
+      <div style="margin-top:8px">
+        <div style="display:flex;gap:8px;margin-top:7px"><span style="color:var(--gold);font-weight:700">·</span><span style="font-size:12.5px;color:#3a3833"><b>Commande minimale à partir de AED 47 000.</b> Couvre la logistique et la préparation.</span></div>
+        <div style="display:flex;gap:8px;margin-top:6px"><span style="color:var(--gold);font-weight:700">·</span><span style="font-size:12.5px;color:#3a3833"><b>Dépend du nombre d'invités.</b> Plus il y a d'invités, plus le minimum est élevé (voir l'échelle ci-dessus).</span></div>
+        <div style="display:flex;gap:8px;margin-top:6px"><span style="color:var(--gold);font-weight:700">·</span><span style="font-size:12.5px;color:#3a3833"><b>Le décor à votre façon.</b> Dans le cadre du montant, on peut retirer ou remplacer : plus de fleurs au lieu d'une piste de danse ; un podium ou une arche au lieu d'une grande scène.</span></div>
+        <div style="display:flex;gap:8px;margin-top:6px"><span style="color:var(--gold);font-weight:700">·</span><span style="font-size:12.5px;color:#3a3833"><b>Des limites raisonnables.</b> Tout est budgété selon nos coûts, donc nous convenons de la composition avec votre organisateur : nous indiquons ce qui entre vraiment et où un supplément est nécessaire.</span></div>
+      </div>
+    </div>
+    <div class="notesgrid">
+      <div class="ni"><span class="lbl">Fleurs</span>Pièces maîtresses, <b>fleurs fraîches</b>. Le reste de la décoration, des fleurs artificielles de qualité.</div>
+      <div class="ni"><span class="lbl">Fleuristerie selon la forme des tables</span>Ronde / rectangulaire / en S, calculée individuellement.</div>
+      <div class="ni"><span class="lbl">Bougies</span>Des bougies vives dans de hauts cylindres en verre font <b>partie du forfait</b> : l'eau à l'intérieur rend la flamme sûre, elles conviennent donc à l'extérieur et aux lieux intérieurs où la flamme nue est autorisée. Nous les plaçons dans les pièces maîtresses, au sol et sur des supports autour du décor ; si la flamme n'est pas autorisée, nous utilisons d'élégantes bougies électroniques. <b>Bougies en cire naturelle, en option et avec supplément :</b> uniquement de la cire premium sans coulures sur les nappes et bougeoirs, couleur et quantité choisies individuellement.</div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div class="ni"><span class="lbl">Pourquoi deux prix</span>Le chiffre du haut, le prix normal du décor seul. Le grand chiffre, le prix spécial en réservant le décor <b>avec l'organisation</b>. La différence entre les deux, c'est votre économie.</div>
+        <div class="ni"><span class="lbl">Prix et nombre d'invités</span>Le prix est indiqué pour <b>100 invités</b>. À chaque table supplémentaire de 10 invités, il augmente d'un montant fixe (nouvelles chaises et pièce maîtresse pour cette table). Le curseur recalcule le total automatiquement.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kick">Votre estimation</div>
+    <h2>Composez votre offre en une minute</h2>
+    <p class="lead">Choisissez l'organisation, le décor et le nombre d'invités, vous verrez le total. La TVA, le transport et la logistique ne sont pas inclus et sont facturés séparément.</p>
+    <div class="quotebox">
+      <div class="qrow"><label>Organisation</label>
+        <select id="qplan"><option value="6650" data-std="7000">Essential, AED 6 650</option><option value="9500" data-std="10000" selected>Classic, AED 9 500</option><option value="17100" data-std="18000">Luxury, AED 17 100</option></select></div>
+      <div class="qrow"><label>Forfait décor</label>
+        <select id="qdec"><option value="soiree">Bloom, à partir de AED 39 050</option><option value="signature" selected>Signature, à partir de AED 46 930</option><option value="atelier">Elegance, à partir de AED 66 000</option></select></div>
+      <div class="qrow"><label>Invités</label>
+        <input type="range" id="qg" min="100" max="600" step="10" value="100"><input type="number" id="qgn" min="100" step="10" value="100" style="max-width:92px;flex:0 0 auto"></div>
+      <div class="qsum">
+        <div class="ql"><span>Organisation</span><span id="q-plan">—</span></div>
+        <div class="ql"><span id="q-decname">Décor</span><span id="q-dec">—</span></div>
+        <div class="qtot"><span class="l">Total ensemble</span><span class="v" id="q-total">—</span></div>
+        <div class="qsave2"><span style="color:var(--gold)">★</span> En réservant les deux forfaits ensemble, vous économisez <b id="q-save">—</b></div>
+        <div class="qincl">La TVA, le transport et la logistique ne sont pas inclus et sont facturés séparément.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kick">En option · selon le budget</div>
+    <h2>Décorations et services supplémentaires</h2>
+    <p class="lead">Les forfaits comprennent tout le nécessaire pour un beau mariage. Si vous en voulez plus, nous l'ajoutons selon votre budget. Le coût se discute séparément, sur demande, uniquement si vous en avez vraiment besoin.</p>
+    <div class="cols">
+      <div class="pc">
+        <div class="grp">Structures et production</div>
+        <ul>
+          <li>Revêtement de sol</li><li>Revêtement mural</li><li>Décor de plafond</li>
+          <li>Structures de truss</li><li>Extension scène / podium / piste de danse</li>
+          <li>Comptoir de bar</li><li>Éléments acrylique et miroir</li>
+        </ul>
+      </div>
+      <div class="pc">
+        <div class="grp">Lumière et effets</div>
+        <ul>
+          <li>Éclairage supplémentaire / truss</li><li>Lustres et supports</li>
+          <li>Brume / fumée basse</li><li>Étincelles froides (cold spark)</li>
+          <li>CO₂ / confettis</li><li>Photobooth</li><li>Guirlandes LED suspendues</li>
+        </ul>
+      </div>
+      <div class="pc">
+        <div class="grp">Fleurs et art de la table</div>
+        <ul>
+          <li>Lustres floraux et installations suspendues</li><li>Arche florale · décor d'entrée · allée de cérémonie</li>
+          <li>Fleurs fraîches premium</li><li>Stylisme de la table à gâteau</li>
+          <li>Chaises premium · assiettes de présentation · textile</li><li>Panneau de bienvenue · numéros de table · impression</li>
+          <li>Espaces lounge supplémentaires</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note" style="font-size:12.5px;color:var(--muted);margin-top:14px">Nous proposons ce qu'il faut pour un mariage standard. Tout le reste, selon vos envies et votre budget ; les prix se discutent individuellement.</p>
+  </section>
+
+  <section class="slide">
+    <div class="kick">Comment le prix se compose</div>
+    <h2>En toute transparence</h2>
+    <div class="addsum">
+      <div class="row"><span>Organisation</span><span class="pl">+</span><span>Forfait décor</span><span class="pl">+</span><span>Nombre d'invités</span><span class="pl">+</span><span>Options au choix</span></div>
+      <p>Le forfait d'organisation, c'est le travail de l'équipe et votre tranquillité. Le forfait décor, c'est tout ce que les invités voient et ressentent. Tout supplément est au choix : nous montrons à l'avance 2 à 3 options à différents prix, vous choisissez celle qui vous plaît le plus (souvent on peut même économiser), et si besoin nous adaptons une solution exactement à votre budget. Nous confirmons toujours le coût final avec vous avant le début des travaux.</p>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kick">Transparence · délais et préparation</div>
+    <h2>Comment nous travaillons et pourquoi réserver tôt compte</h2>
+    <p class="lead">Nous voulons être pleinement ouverts avec vous, pour que vous compreniez comment notre travail est organisé et nous fassiez confiance sereinement.</p>
+    <p style="margin-top:16px"><b>Ce qui entre dans les forfaits est déjà prêt chez nous.</b> Ces éléments sont dans notre collection, avec des designs réfléchis et des prix clairs. Cet ensemble standard, nous l'assemblons avec assurance et juste à temps, vous n'avez pas à attendre.</p>
+    <p style="margin-top:12px"><b>Tout ce qui est supplémentaire est créé pour votre mariage.</b> Revêtement de sol et de murs, voiles et structures de plafond, compositions suspendues, coins photo et supports, chaque élément, nous le planifions et le chiffrons séparément : selon votre lieu, ses dimensions, ses zones et son thème.</p>
+    <p style="margin-top:12px"><b>Pourquoi le décor supplémentaire demande du temps.</b> Pour vous donner un prix exact, nous pouvons avoir besoin de :</p>
+    <ul class="blist">
+      <li>visiter le lieu ;</li>
+      <li>discuter du projet avec les designers ;</li>
+      <li>chiffrer les fleurs et les matériaux ;</li>
+      <li>valider avec l'équipe de production ;</li>
+      <li>vérifier notre inventaire ;</li>
+      <li>commander des éléments décoratifs à l'étranger ;</li>
+      <li>fabriquer sur mesure des pièces en acrylique, mousse et verre ;</li>
+      <li>faire appel à des prestataires spécialisés et des fabriques ;</li>
+      <li>réaliser des tests si nécessaire.</li>
+    </ul>
+    <p style="margin-top:10px">La production elle-même prend souvent des mois.</p>
+    <p style="margin-top:12px"><b>Nous avons notre propre inventaire</b>, mais il demande constamment :</p>
+    <ul class="blist">
+      <li>de la peinture ;</li>
+      <li>de la restauration ;</li>
+      <li>des retouches ;</li>
+      <li>une adaptation à chaque mariage.</li>
+    </ul>
+    <p style="margin-top:10px">Les mariages de luxe ne s'assemblent pas en une soirée.</p>
+    <div style="display:flex;gap:12px;margin-top:18px;flex-wrap:wrap">
+      <div class="fstep" style="flex:1;min-width:180px"><div class="n">20-60 jours</div><div class="t">Choix du lieu</div><div class="d">visite, options, blocage de la date</div></div>
+      <div class="fstep" style="flex:1;min-width:180px"><div class="n">30-90 jours</div><div class="t">Design</div><div class="d">concept, esquisses, validation</div></div>
+      <div class="fstep" style="flex:1;min-width:180px"><div class="n">20-60 jours</div><div class="t">Choix des prestataires</div><div class="d">demandes, négociations, confirmations</div></div>
+      <div class="fstep" style="flex:1;min-width:180px"><div class="n">3-6 mois</div><div class="t">Production</div><div class="d">achats, fabrication, peinture, montage</div></div>
+    </div>
+    <p style="margin-top:18px"><b>Pourquoi 12 mois est le délai idéal.</b> Une telle marge de temps permet :</p>
+    <ul class="blist">
+      <li>au couple de vivre et travailler sereinement, sans pression ;</li>
+      <li>aux designers de créer de beaux concepts ;</li>
+      <li>à l'équipe de production de se préparer comme il faut ;</li>
+      <li>à chacun de prendre les meilleures décisions.</li>
+    </ul>
+    <p style="margin-top:12px">Et s'il reste moins de temps ? Six mois, trois, et parfois même deux, c'est tout à fait normal, et nous nous en chargeons avec plaisir 🙂 Nous adaptons simplement notre rythme et tout le processus à votre délai, et nous faisons tout joliment et à temps.</p>
+    <p style="margin-top:12px">Pourquoi nous aimons tout de même « à l'avance » : d'expérience, quand il y a plus de temps, les couples profitent vraiment de la préparation, les mariées s'inquiètent et stressent moins, et nous avons le temps non seulement d'organiser le mariage mais aussi de veiller à votre humeur et à votre sérénité, car cela fait aussi partie de notre travail. Mais quel que soit le délai, un an ou quelques mois, nous sommes à vos côtés dès le premier jour et menons tout jusqu'au résultat.</p>
+  </section>
+
+  <section class="slide">
+    <div class="kick">Si vous le souhaitez autrement</div>
+    <h2>Entièrement sur mesure</h2>
+    <div class="quiet">
+      <p>Les forfaits sont un point de départ pratique, pas un cadre. Si vous voulez tout composer de zéro à votre goût, vous prenez un forfait d'organisation et nous menons sereinement le projet selon votre budget, en montrant ouvertement le coût de chaque élément. Sans pression, à votre rythme.</p>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="kick">Prochaine étape</div>
+    <h2>Commençons par une consultation</h2>
+    <p style="margin:14px auto 0">Chaque mariage chez nous est entièrement sur mesure, c'est pourquoi nous commençons par l'essentiel : faire connaissance et comprendre votre vision et vos souhaits. Dites-nous ce qui compte pour vous, et nous composerons une offre faite pour vous. Sans engagement.</p>
+    <div class="pill">Organisation + décor ensemble, décor à prix avantageux · acompte 50 % réserve · date tenue 7 jours</div>
+    <div class="fineprint">Les prix n'incluent pas la TVA, le transport ni la logistique, facturés séparément. Les prix du décor sont indiqués pour 100 invités et augmentent avec leur nombre. Olga Events · hello@olga.events</div>
+  </section>
+
+<script>
+(function(){
+  var P={soiree:{base:39050,std:47000,cp:350},signature:{base:46930,std:57000,cp:800},atelier:{base:66000,std:80000,cp:1500}};
+  var f=function(n){return Math.round(n).toLocaleString('fr-FR');};
+  var g=document.getElementById('cg'),gn=document.getElementById('cgn');
+  function calc(){
+    var guests=Math.max(100,+gn.value||100);
+    var extraG=Math.max(0,guests-100), extraT=Math.max(0,Math.ceil(guests/10)-10);
+    var tables=Math.ceil(guests/10);
+    document.querySelectorAll('.d-cp').forEach(function(e){e.textContent=tables;});
+    document.querySelectorAll('.d-ch').forEach(function(e){e.textContent=guests;});
+    for(var k in P){
+      var add=extraG*50+extraT*P[k].cp;
+      var bundle=P[k].base+add, standard=Math.round(bundle*P[k].std/P[k].base);
+      var el=document.querySelector('[data-price="'+k+'"]');
+      if(el) el.textContent='AED '+f(bundle);
+      var ws=document.querySelector('[data-was="'+k+'"]');
+      if(ws) ws.textContent='AED '+f(standard);
+    }
+  }
+  g.addEventListener('input',function(){gn.value=g.value;calc();});
+  gn.addEventListener('input',function(){g.value=Math.min(600,Math.max(100,+gn.value||100));calc();});
+  calc();
+})();
+(function(){
+  var P={soiree:{base:39050,std:47000,cp:350},signature:{base:46930,std:57000,cp:800},atelier:{base:66000,std:80000,cp:1500}};
+  var NM={soiree:'Bloom',signature:'Signature',atelier:'Elegance'};
+  var f=function(n){return Math.round(n).toLocaleString('fr-FR');};
+  var qp=document.getElementById('qplan'),qd=document.getElementById('qdec'),qg=document.getElementById('qg'),qgn=document.getElementById('qgn');
+  function q(){
+    var plan=+qp.value, planStd=+qp.selectedOptions[0].dataset.std, k=qd.value, guests=Math.max(100,+qgn.value||100);
+    var eg=Math.max(0,guests-100), et=Math.max(0,Math.ceil(guests/10)-10), add=eg*50+et*P[k].cp;
+    var decor=P[k].base+add, standard=Math.round(decor*P[k].std/P[k].base), save=(standard-decor)+(planStd-plan), total=plan+decor;
+    document.getElementById('q-plan').textContent='AED '+f(plan);
+    document.getElementById('q-decname').textContent='Décor, '+NM[k]+' · '+guests+' invités';
+    document.getElementById('q-dec').textContent='AED '+f(decor);
+    document.getElementById('q-total').textContent='AED '+f(total);
+    document.getElementById('q-save').textContent='AED '+f(save);
+  }
+  qp.onchange=q; qd.onchange=q;
+  qg.addEventListener('input',function(){qgn.value=qg.value;q();});
+  qgn.addEventListener('input',function(){qg.value=Math.min(600,Math.max(100,+qgn.value||100));q();});
+  q();
+})();
+</script>
+</body>
+</html>
